@@ -11,7 +11,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: white;
   color: white;
-  /* chỗ này tui sửa lại là auto nha ae do xài hiden nó ăn mất chữ của phần about section mất rồi :v */
+  /* chỗ này tui sửa lại là auto nha ae do xài hidden nó ăn mất chữ của phần about section mất rồi :v */
   overflow: auto;
   height: auto;
 }
@@ -176,7 +176,7 @@ body {
   padding: 0 50px;
 }
 
-.adress-phone {
+.address-phone {
   display: flex;
   align-items: center;
   margin: 20px 0;
