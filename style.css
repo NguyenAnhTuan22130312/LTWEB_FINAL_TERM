@@ -225,7 +225,9 @@ p {
   padding-right: 15px;
 }
 
-#footer .footer-content .footer-section p {
+#footer .footer-content .footer-section .title {
   margin: 20px;
   font-size: 14px;
+  text-decoration: none;
+  color: lightgray;
 }
