@@ -23,9 +23,9 @@ body{
 
 #header {
     width: 100%;
-    height: 150px;
+    height: 100px;
     padding: 2vh 2vw;
-    background-color: gray;
+    background-color: rgba(184, 79, 38, 255);
     position: relative;
     display: flex;
     justify-content: center;
@@ -33,24 +33,40 @@ body{
 }
 
 #header img{
+    width: 10%;
+    width: 100px;
+    margin-right: 100px;
     
-    width: 140px;
-
+}
+#header input{
+    width: 80%;
+    width: 900px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 20px;
+    
+}
+#header .cart-container{
+    width: 10%;
 }
 
 .cart-container{
-    position: absolute;
+    margin-left: 50px;
     display: flex;
     align-items: center;
     right: 2vh;
     gap: 10 px;
+    margin-top: 15px;
 }
 
 #header .fas{
     float: right;
-    color: black;
-    font-size: 24px;
+    color: white;
+    font-size: 30px;
+    margin: 10px;
     cursor: pointer; 
+    height: 50px;
+
 }
 
 /* Xử lý Navbar */
