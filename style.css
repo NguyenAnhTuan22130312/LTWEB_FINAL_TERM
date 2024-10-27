@@ -28,17 +28,17 @@ body {
   background-color: white;
   border-radius: 20px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo_section img {
   height: 80px;
-  margin-left: 80px;
+  margin-left: 50px;
 }
 .menu_section {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
+width: 900px;
 }
 .menu_bar {
   list-style: none;
@@ -54,21 +54,15 @@ body {
 .menu_bar a {
   text-decoration: none;
   color: #333;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .menu_bar a:hover{
   border-bottom: 2px solid #ffcc00;
 }
 
-
-
-
-
-
-
 .icon_section{
-  margin-right: 50px;
+  
 }
 
 .icon_section ul {
@@ -86,7 +80,7 @@ body {
 
 .login_section {
   display: flex;
-  margin-left: auto;
+  margin-right: 70px;
   gap: 10px;
 }
 
