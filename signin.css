@@ -1,8 +1,8 @@
 html,body {
-    font-family: tahoma, sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url(Images/bg2.jpg);
+    background-image: url(Images/1.jpg);
     background-size: cover; /* Điều chỉnh ảnh để bao phủ toàn bộ vùng chứa */
     background-position: center; /* Căn giữa ảnh trong vùng chứa */
     background-repeat: no-repeat; /* Không lặp lại ảnh */
@@ -44,7 +44,14 @@ border-radius: 5px;
 }
 .form .btn{
     margin: 20px;
+
 }
+
+.form .btn i{
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
 .form .btn input{
     width: 300px;
     height: 50px;
@@ -70,7 +77,7 @@ border-radius: 5px;
     height: 50px;
     border-radius: 30px;
     border: none;
-    background-color: #e91e63;
+    background-color: #9a4e13;
     font-size: 16px;
     color: white;
     font-weight: 600;
@@ -100,35 +107,49 @@ color: rgb(177, 176, 182);
     color: rgb(177, 176, 182);
     margin: 20px;
 }
+
 .right{
+    box-shadow: inset -4px 0px 37px 7px rgb(217 204 182);
+    -webkit-box-shadow: inset -4px 0px 37px 7px rgb(217 204 182);
+    -moz-box-shadow: inset -4px 0px 37px 7px rgb(217 204 182);
+    border-radius: 40px;
+    backdrop-filter: blur(3px); 
     width: 600px;
     height: 600px;
-}
-.right{
     margin-left: 100px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Poppins", sans-serif;
 }
 .right .textrightinfo1{
+    color: #ffffff;
     font-size: 40px;
     margin-top: 100px;
     margin-left: 20px;
     font-weight: 600;  
+    font-family: "Poppins", sans-serif;
 }
 .right .textrightinfo2{
-    font-size: 23px;
+    color: #ffffff;
+    font-size: 30px;
     margin-top: 5px;
     margin-left: 25px;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
 }
+
+.right .textrightinfo3{
+    color: #ffffff;
+    font-weight: 600;
+}
+
 .textRight1 .moveText{
     margin-top: 50px;
 }
 .right .txt{
+    
     font-size: 20px;
     margin-top: 20px;
     margin-left: 22px;
-    color: rgb(167 166 171);
+   
 }
 
 .footer {
@@ -153,15 +174,17 @@ color: rgb(177, 176, 182);
     height: 100%;
     border-top:  2px solid rgb(167 166 171) ;
     color: black;
-    font-family: 'Times New Roman', Times, serif;
+    
 }
 
 .footer h3 {
-    font-size: 28px;
+    font-size: 25px;
     width: 200px;
     margin: 0;
     margin-left: 100px;
+    gap: 40px;
     color: gray;
+    font-family: "Poppins", sans-serif;
 }
 .footer .social-icons{
     width: 300px;
