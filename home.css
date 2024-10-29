@@ -61,8 +61,8 @@ width: 900px;
   border-bottom: 2px solid #ffcc00;
 }
 
-.icon_section{
-  
+.icon_section a{
+  color: black;
 }
 
 .icon_section ul {

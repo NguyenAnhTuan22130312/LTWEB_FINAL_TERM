@@ -56,13 +56,6 @@ border-radius: 5px;
     
 
 }
-.form .btn input:focus {
-    background-color: #fff;
-    color: #000; 
-    border-color: #007BFF;
-    outline: none; 
-}
-
 .form .btn input::placeholder{
     color: rgb(177, 176, 182);
 }
