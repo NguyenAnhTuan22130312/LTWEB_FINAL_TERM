@@ -1,11 +1,10 @@
 html,
 body {
-  background-color: #4158d0;
   background-image: linear-gradient(
     90deg,
     #f6f7fa 0%,
-    #b4c850 46%,
-    #ffcc70 100%
+    #f2f0d5 46%,
+    #f2d338 100%
   );
   background-size: 100% 100%;
 }
