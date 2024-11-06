@@ -13,7 +13,10 @@
     color: white;
     /* chỗ này tui sửa lại là auto nha ae do xài hidden nó ăn mất chữ của phần about section mất rồi :v */
     overflow: auto;
+
     height: auto;
+=======
+
 
   }
   /* Xử lý Header */
