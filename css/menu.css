@@ -200,7 +200,7 @@ body {
 .content_section{
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 20px;
   justify-content: center;
   padding: 20px;
   
@@ -251,4 +251,29 @@ body {
   color: white;
   border-radius: 15px;
   cursor: pointer;
+}
+
+/* Xử lý pagination */
+.pagination{
+  text-align: center;
+}
+
+.pagination a{
+  color: darkred;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 8px 15px;
+  display:  inline-block;
+}
+
+.pagination a.active{
+  background-color: rgba(122, 8, 8, 0.905);
+  font-weight: bold;
+  border-radius: 5px;
+  color: black;
+}
+
+.pagination a:hover:not(.active){
+  background-color: rgb(182, 179, 177);
+  border-radius: 5px;
 }
