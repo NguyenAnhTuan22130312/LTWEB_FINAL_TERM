@@ -195,16 +195,20 @@ body {
   border-bottom: 3px solid darkred;
 }
 
-
+  .containerAll{
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
   /* Xử lý menu */
-.content_section{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  justify-content: center;
-  padding: 20px;
-  
-}
+  .content_section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+  }
 
 .card{
   background-color: white;
@@ -251,4 +255,29 @@ body {
   color: white;
   border-radius: 15px;
   cursor: pointer;
+}
+
+/* Xử lý pagination */
+.pagination{
+  text-align: center;
+}
+
+.pagination a{
+  color: darkred;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 8px 15px;
+  display:  inline-block;
+}
+
+.pagination a.active{
+  background-color: rgba(122, 8, 8, 0.905);
+  font-weight: bold;
+  border-radius: 5px;
+  color: black;
+}
+
+.pagination a:hover:not(.active){
+  background-color: rgb(182, 179, 177);
+  border-radius: 5px;
 }
