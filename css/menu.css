@@ -196,15 +196,15 @@
   }
 
 
-    /* Xử lý menu */
-  .content_section{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-    
-  }
+  /* Xử lý menu */
+.content_section{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  
+}
 
   .card{
     background-color: white;
