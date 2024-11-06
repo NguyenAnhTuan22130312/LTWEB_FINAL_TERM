@@ -1,23 +1,10 @@
-  @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-  * {
+body,html{
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: "Poppins", sans-serif;
-    background-color: white;
-    color: white;
-    /* chỗ này tui sửa lại là auto nha ae do xài hidden nó ăn mất chữ của phần about section mất rồi :v */
-    overflow: auto;
-    height: auto;
-
-  }
-  /* Xử lý Header */
-  #header{
+    padding: 0px;
+    font-family: sans-serif,Tahoma;
+    height: 100%;
+}
+#header{
     width: 100%;
     box-sizing: border-box;
     height: 140px;
@@ -223,17 +210,44 @@ margin-right: 10px;
 #footer .footer-social .mid{
     margin-left: 100px;
 }
-
-  /* Xử lý menu */
-.content_section{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-  
+#container{
+    width: 100%;
+    height: max-content;
+    background-color: white;
+    margin: 50px;
 }
 
+.intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  
+  .intro h2{
+    
+    color: black;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 3px solid darkred;
+  }
+  
+    .containerAll{
+      max-width: 1300px;
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+    /* Xử lý menu */
+    .content_section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      padding: 20px;
+    }
+  
   .card{
     background-color: white;
     border-radius: 10px;
@@ -244,30 +258,30 @@ margin-right: 10px;
     
     
   }
-
+  
   .card img{
     width: auto;
     height: 180px;
   }
-
+  
   .card_content{
     padding: 12px;
   }
-
+  
   .card_content h3{
     margin: 10px 0;
     font-size: 15px;
     color: #333;
     font-family: Arial, Helvetica, sans-serif;
   }
-
+  
   .card_content p{
     margin: 5px 0;
     font-size: 20px;
     font-weight: 500;
     color: darkred;
   }
-
+  
   .card_content .btn{
     display: block;
     margin: 10px 0;
@@ -280,12 +294,12 @@ margin-right: 10px;
     border-radius: 15px;
     cursor: pointer;
   }
-
+  
   /* Xử lý pagination */
   .pagination{
     text-align: center;
   }
-
+  
   .pagination a{
     color: darkred;
     font-size: 15px;
@@ -293,15 +307,20 @@ margin-right: 10px;
     padding: 8px 15px;
     display:  inline-block;
   }
-
+  
   .pagination a.active{
     background-color: rgba(122, 8, 8, 0.905);
     font-weight: bold;
     border-radius: 5px;
     color: black;
   }
-
+  
   .pagination a:hover:not(.active){
     background-color: rgb(182, 179, 177);
     border-radius: 5px;
+  }
+  #container{
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
   }
