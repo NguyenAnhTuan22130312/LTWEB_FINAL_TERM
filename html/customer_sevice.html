@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin</title>
-    <link rel="stylesheet" href="../css/admin.css" />
+    <title>Admin Service</title>
+    <link rel="stylesheet" href="../css/customer_service.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -61,39 +61,56 @@
         </ul>
       </div>
       <div class="content">
-        <div class="header">KHÁCH HÀNG LÀ THƯỢNG ĐẾ</div>
-        <div class="cards">
-          <div class="card">
-            <img
-              alt="Illustration of a person holding a shopping bag"
-              height="100"
-              src="../Images/logo/8dbd0fc142724d44ceeac980493bbf39.jpg"
-              width="100"
-            />
-            <div class="number">0</div>
-            <h3>Khách hàng</h3>
-          </div>
-          <div class="card">
-            <img
-              alt="Illustration of a person holding shopping bags"
-              height="100"
-              src="../Images/logo/8ed968cd1356c61727675e52fb62e52f.jpg"
-              width="100"
-            />
-            <div class="number">0</div>
-            <h3>Sản phẩm</h3>
-          </div>
-          <div class="card">
-            <img
-              alt="Illustration of a person using a mobile phone"
-              height="100"
-              src="../Images/logo/11eee4b7bd64359ac559565d5499dd1f.jpg"
-              width="100"
-            />
-            <div class="number">0 đ</div>
-            <h3>Doanh thu</h3>
-          </div>
-        </div>
+       
+        
+            <div class="header">
+             <select>
+              <option>
+               Tất cả
+              </option>
+             </select>
+             <input placeholder="Tìm kiếm khách hàng..." type="text"/>
+             <input placeholder="mm/dd/yyyy" type="text"/>
+             <input placeholder="mm/dd/yyyy" type="text"/>
+             <button>
+              <i class="fas fa-sync-alt">
+              </i>
+             </button>
+             <button>
+              <i class="fas fa-plus">
+              </i>
+              Thêm khách hàng
+             </button>
+            </div>
+            <table>
+             <thead>
+              <tr>
+               <th>
+                STT
+               </th>
+               <th>
+                HỌ VÀ TÊN
+               </th>
+               <th>
+                LIÊN HỆ
+               </th>
+               <th>
+                NGÀY THAM GIA
+               </th>
+               <th>
+                TÌNH TRẠNG
+               </th>
+              </tr>
+             </thead>
+             <tbody>
+              <tr>
+               <td class="no-data" colspan="5">
+                Không có dữ liệu
+               </td>
+              </tr>
+             </tbody>
+            </table>
+           
       </div>
     </div>
   </body>
