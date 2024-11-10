@@ -3,8 +3,8 @@ body {
   background-image: linear-gradient(
     90deg,
     #f6f7fa 0%,
-    rgba(249, 167, 167, 0.8) 46%,
-    #b5292f 100%
+    #f2f0d5 46%,
+    #f2d338 100%
   );
   background-size: 100% 100%;
 }
@@ -68,7 +68,7 @@ button:hover {
 }
 
 #overlay {
-  background-image: url(../Images/Food/Com/Com-ca-chien-xa-ot.png);
+  background-image: url(/Images/Food/Com/Com-ca-chien-xa-ot.png);
   height: 550px;
   width: 600px;
   position: absolute;
