@@ -286,13 +286,13 @@ margin-right: 10px;
 }
 
 /*phần này xử lí các container đồ ăn   */
-#container-monbanchay{
+#container-monban{
     max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 50px;
 }
-#container-monbanchay .content_section {
+#container-monban .content_section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 20px;
@@ -300,7 +300,7 @@ margin-right: 10px;
     padding: 20px;
   }
 
-  #container-monbanchay .card{
+  #container-monban .card{
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -311,30 +311,30 @@ margin-right: 10px;
   
 }
 
-#container-monbanchay .card img{
+#container-monban .card img{
   width: auto;
   height: 180px;
 }
 
-#container-monbanchay .card_content{
+#container-monban .card_content{
   padding: 12px;
 }
 
-#container-monbanchay .card_content h3{
+#container-monban .card_content h3{
   margin: 10px 0;
   font-size: 15px;
   color: #333;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#container-monbanchay .card_content p{
+#container-monban .card_content p{
   margin: 5px 0;
   font-size: 20px;
   font-weight: 500;
   color: darkred;
 }
 
-#container-monbanchay .card_content .btn{
+#container-monban .card_content .btn{
   display: block;
   margin: 10px 0;
   padding: 4px;
@@ -346,7 +346,7 @@ margin-right: 10px;
   border-radius: 15px;
   cursor: pointer;
 }
-#container-monbanchay .tag{
+#container-monban .tag{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -354,20 +354,20 @@ margin-right: 10px;
     font-weight: 500;
     font-size: 18px;
 }
-#container-monbanchay .tag::before,#container-monbanchay .tag::after{
+#container-monban .tag::before,#container-monban .tag::after{
     content: "";
     flex: 1;
     border-bottom: 2px solid #B5292F; /* Độ dày và màu của đường kẻ */
     margin: 0 10px;
    
 }
-#container-monbanchay .xemtatca{
+#container-monban .xemtatca{
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
-#container-monbanchay .xemtatca button{
+#container-monban .xemtatca button{
     width: 180px;
     height: 40px;
     font-size: 17px;
@@ -375,4 +375,32 @@ margin-right: 10px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     cursor: pointer;
+}
+
+#container-monban .content_section_bottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    padding: 20px;
+  }
+
+  #container-monban .card_bottom{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 250px;
+  text-align: center;
+  
+  
+}
+
+#container-monban .card_bottom img{
+  width: auto;
+  height: 180px;
+}
+#container-monban .card_bottom .text{
+    font-weight: 300;
+    color: #948170;
 }
