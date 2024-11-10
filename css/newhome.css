@@ -219,8 +219,9 @@ margin-right: 10px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    height: 600px;
+    
     margin-top: 25px;
+    margin-bottom: 50px;
     overflow: hidden;
     position: relative;
 }
@@ -282,4 +283,96 @@ margin-right: 10px;
 
 #container .active {
     background-color: #717171; 
+}
+
+/*phần này xử lí các container đồ ăn   */
+#container-monbanchay{
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+#container-monbanchay .content_section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+  }
+
+  #container-monbanchay .card{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 230px;
+  text-align: center;
+  
+  
+}
+
+#container-monbanchay .card img{
+  width: auto;
+  height: 180px;
+}
+
+#container-monbanchay .card_content{
+  padding: 12px;
+}
+
+#container-monbanchay .card_content h3{
+  margin: 10px 0;
+  font-size: 15px;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#container-monbanchay .card_content p{
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: darkred;
+}
+
+#container-monbanchay .card_content .btn{
+  display: block;
+  margin: 10px 0;
+  padding: 4px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background-color: #b12704;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+}
+#container-monbanchay .tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 18px;
+}
+#container-monbanchay .tag::before,#container-monbanchay .tag::after{
+    content: "";
+    flex: 1;
+    border-bottom: 2px solid #B5292F; /* Độ dày và màu của đường kẻ */
+    margin: 0 10px;
+   
+}
+#container-monbanchay .xemtatca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#container-monbanchay .xemtatca button{
+    width: 180px;
+    height: 40px;
+    font-size: 17px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
