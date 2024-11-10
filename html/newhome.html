@@ -1,140 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lunch store</title>
-    <link rel="stylesheet" href="../css/newhome.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
-  </head>
-  <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food T^3</title>
+    <link rel="stylesheet" href="../css/newhome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
     <div id="header">
-      <div class="containerheaderAll">
-        <div class="containers">
-          <div class="containerss">
-            <div class="left">
-              <div class="logo">
-                <img
-                  src="../Images/LOGO_V2.png"
-                  alt="Food store của Trung, Atuan, Atuan"
-                />
-              </div>
+        <div class="containerheaderAll">
+            <div class="containers">
+                <div class="containerss">
+                    <div class="left">
+                        <div class="logo">
+                            <img src="../Images/LOGO_V2.png" alt="Food store của Trung, Atuan, Atuan">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <a href="../html/signin.html" class="nav-item">
+                            <i class="fa-solid fa-user"></i> Đăng Nhập
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-phone"></i> 033.***.****
+                        </a>
+                        <div class="nav_item_shop">
+                            <a href="../html/cart.html" class="nav-item">
+                                <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
+                            </a>
+                            <a href="#" class="count"> 0</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="menu">
+                        <ul class="menu-list">
+
+                            <li class="menu-item">
+                                <a href="#" class="tabbar"> <i class="fa-solid fa-bars"></i>Danh mục</a>
+                                <ul class="submenu">
+                                    <li><a href="#"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-bowl-food"></i>Món bún</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-bowl-food"></i>Món phở</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-glass-water"></i>Nước</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a href="#">Trang chủ</a></li>
+                            <li class="menu-item"><a href="#">Contact</a></li>
+                            <li class="menu-item"><a href="#">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="search">
+                        <input type="text" placeholder="Tìm kiếm món ăn">
+                        <button type="submit">
+                            <i class="fa-solid fa-search"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="right">
-              <a href="../html/signin.html" class="nav-item">
-                <i class="fa-solid fa-user"></i> Đăng Nhập
-              </a>
-              <a href="#" class="nav-item">
-                <i class="fa-solid fa-phone"></i> 033.***.****
-              </a>
-              <div class="nav_item_shop">
-                <a href="../html/cart.html" class="nav-item">
-                  <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
-                </a>
-                <a href="#" class="count"> 0</a>
-              </div>
-            </div>
-          </div>
-          <div class="bottom">
-            <div class="menu">
-              <ul class="menu-list">
-                <li class="menu-item">
-                  <a href="#" class="tabbar">
-                    <i class="fa-solid fa-bars"></i>Danh mục</a
-                  >
-                  <ul class="submenu">
-                    <li>
-                      <a href="#"
-                        ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><i class="fa-solid fa-bowl-food"></i>Món bún</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><i class="fa-solid fa-bowl-food"></i>Món phở</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><i class="fa-solid fa-glass-water"></i>Nước</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="menu-item"><a href="#">Trang chủ</a></li>
-                <li class="menu-item"><a href="#">Contact</a></li>
-                <li class="menu-item"><a href="#">About</a></li>
-              </ul>
-            </div>
-            <div class="search">
-              <input type="text" placeholder="Tìm kiếm món ăn" />
-              <button type="submit">
-                <i class="fa-solid fa-search"></i>
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
     <!-- Xử lý content\  -->
 
     <div id="container">
-      <video class="video_intro" autoplay loop muted>
-        <source
-          src="../Videos/[appsgolem.com][00-00-00][00-00-16]_Miami_s_Best_New_Chef_is_Mak.mp4"
-        />
-      </video>
-      <div class="intro">
-        <h1>The making of our food</h1>
-      </div>
-      <p class="intro_text">
-        Cung cấp các món ăn ngon, chất lượng dịch vụ tận tâm, mang đến trải
-        nghiệm tuyệt vời cho bữa ăn của bạn!
-      </p>
+        <div class="w3-content w3-display-container">
+            <img class="mySlides" src="../Images/home/qc1.jpg" style="width:100%">
+            <img class="mySlides" src="../Images/home/qc2.jpg" style="width:100%">
+            <img class="mySlides" src="../Images/home/qc3.jpg" style="width:100%">
+        </div>
+
+        <button class="w3-button w3-black left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black right" onclick="plusDivs(1)">&#10095;</button>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
     </div>
 
     <!-- Xử lý footer -->
     <div id="footer">
-      <div class="footer-container">
-        <div class="footer-info">
-          <div class="right">
-            <p><strong>Địa chỉ:</strong></p>
-            <p>Khu phố 6, Phường Linh Trung, TP. Thủ Đức, Tp. Hồ Chí Minh</p>
-            <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
-          </div>
-          <div class="left">
-            <p><strong>Hotline:</strong> 033 *** 1234</p>
-            <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
-            <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
-            <div class="social-icons">
-              <a href="#" target="_blank"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
-              <a href="#" target="_blank"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="right">
+                    <p><strong>Địa chỉ:</strong> </p>
+                    <p>Khu phố 6, Phường Linh Trung, TP. Thủ Đức, Tp. Hồ Chí Minh</p>
+                    <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
+                </div>
+                <div class="left">
+                    <p><strong>Hotline:</strong> 033 *** 1234</p>
+                    <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
+                    <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="footer-social">
+                <div class="1">© 2024 Food T^3</div>
+                <div class="mid"><a href="#">Chính sách hoạt động</a> | <a href="#">Chính sách bảo mật thông tin</a>
+                </div>
+            </div>
         </div>
-        <div class="footer-social">
-          <div class="1">© 2024 Food T^3</div>
-          <div class="mid">
-            <a href="#">Chính sách hoạt động</a> |
-            <a href="#">Chính sách bảo mật thông tin</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </body>
+    <script src="../js/home.js">
+    </script>
+</body>
+
 </html>
