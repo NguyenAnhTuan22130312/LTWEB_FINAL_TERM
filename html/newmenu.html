@@ -1,597 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lunch store</title>
-    <link rel="stylesheet" href="../css/newmenu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lunch store</title>
+  <link rel="stylesheet" href="../css/newmenu.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
+
 <body>
-    <div id="header">
-        <div class="containerheaderAll">
-            <div class="containers">
-                <div class="containerss">
-                    <div class="left">
-                        <div class="logo">
-                            <img src="../Images/LOGO_V2.png" alt="Food store của Trung, Atuan, Atuan">
-                        </div>
-                    </div>
-                    <div class="right">
-                        <a href="#" class="nav-item">
-                            <i class="fa-solid fa-user"></i> Đăng Nhập
-                        </a>
-                        <a href="#" class="nav-item">
-                            <i class="fa-solid fa-phone"></i> 033.***.****
-                        </a>
-                        <div class="nav_item_shop">
-                            <a href="#" class="nav-item">
-                                <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
-                            </a>
-                            <a href="#" class="count"> 0</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="bottom">
-                        <div class="menu">
-                            <ul class="menu-list">
-                                <li class="menu-item">
-                                    <a href="#" class="tabbar"> <i class="fa-solid fa-bars"></i>Danh mục</a>
-                                    <ul class="submenu">
-                                        <li><a href="#"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a></li>
-                                        <li><a href="#"><i class="fa-solid fa-bowl-food"></i>Món bún</a></li>
-                                        <li><a href="#"><i class="fa-solid fa-bowl-food"></i>Món phở</a></li>
-                                        <li><a href="#"><i class="fa-solid fa-glass-water"></i>Nước</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item"><a href="#">Contact</a></li>
-                                <li class="menu-item"><a href="#">About</a></li>
-                            </ul>
-                        </div>
-                    <div class="search">
-                        <input type="text" placeholder="Tìm kiếm món ăn">
-                        <button type="submit">
-                            <i class="fa-solid fa-search"></i>
-                        </button>
-                    </div>
-                </div>
+  <div id="header">
+    <div class="containerheaderAll">
+      <div class="containers">
+        <div class="containerss">
+          <div class="left">
+            <div class="logo">
+              <img src="../Images/LOGO_V2.png" alt="Food store của Trung, Atuan, Atuan" />
             </div>
+          </div>
+          <div class="right">
+
+
+            <a href="#" class="nav-item">
+              <i class="fa-solid fa-user"></i> Đăng Nhập
+            </a>
+            <a href="#" class="nav-item">
+              <i class="fa-solid fa-phone"></i> 033.***.****
+            </a>
+            <div class="nav_item_shop">
+              <a href="#" class="nav-item">
+                <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
+              </a>
+              <a href="#" class="count"> 0</a>
+            </div>
+          </div>
         </div>
+        <div class="bottom">
+          <div class="menu">
+            <ul class="menu-list">
+              <li class="menu-item">
+                <a href="#" class="tabbar">
+                  <i class="fa-solid fa-bars"></i>Danh mục</a>
+                <ul class="submenu">
+                  <li>
+                    <a href="#"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-solid fa-glass-water"></i>Nước</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item"><a href="#">Trang chủ</a></li>
+              <li class="menu-item"><a href="#">Contact</a></li>
+              <li class="menu-item"><a href="#">About</a></li>
+            </ul>
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Tìm kiếm món ăn" />
+            <button type="submit">
+              <i class="fa-solid fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="container">
-        <div class="intro">
-            <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
-        </div>
-
-        <div id="content_section" class="content_section">
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-chien-dua-bo.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm chiên dưa bò
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-ba-roi-rim-tom.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm ba rọi rim tôm
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-ca-chien-xa-ot.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm cá chiên xả ớt
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-canh-chua-ca-hu.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm canh chua cá hú
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-chien-bo-luc-lac.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm chiên bò lúc lắc
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-chien-ga-xoi-mo.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm gà xối mỡ
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-chien-muc-trung-muoi.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm mực trứng muối
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-chien-trung-op-la.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm chiên trứng ốp la
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-ga-kho-xa-ot.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm gà kho xả ớt
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-ga-nau-Hai-Nam.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm gà nấu Hải Nam
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-kho-qua-cha-ca.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm khổ qua chả cá
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-suon-cong-mat-ong.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm sườn cọng mật ong
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-suon-non-rim-nuoc-dua.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm sườn non rim nước dừa
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-dui-ga-chien.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm đùi gà chiên
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm heo quay
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <!-- Page Menu 2 -->
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-suon-bi-cha.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm sườn bì chả
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-suon-trung.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm sườn trứng
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-thit-nuong.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm thịt nướng
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-xiu-mai.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm xíu mại
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-thit-kho-Dai-Loan.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm thịt kho đài loan
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-thit-kho-mam-ruoc.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm thịt kho mắm ruốc
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-thit-kho-trung.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm thịt kho trứng
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-trung-cuon-thit.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm trứng cuộn thịt
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <!-- Update tiếp từ đây -->
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm heo quay
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm heo quay
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm heo quay
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm heo quay
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm heo quay
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm heo quay
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" >
-                <div class="card_content">
-                    <h3>
-                        Cơm tấm heo quay
-                    </h3>
-                    <p>
-                        30.000đ
-                    </p>
-                    <a class="btn" href="">
-                        Thêm vào giỏ hàng
-                    </a>
-
-                </div>
-            </div>
-
-            
-
-        </div>
-
-        <div class="pagination">
-            <a href=""></a>
-            <a href="" class="active">1</a>
-            <a href="">2</a>
-            <a href="">3</a>
-            <a href="">></a>
-        </div>
-
+  </div>
+  <div id="container">
+    <div class="intro">
+      <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
+      <h4>Menu các món cơm</h4>
     </div>
-    <div id="footer">
-        <div class="footer-container">
-            <div class="footer-info">
-                <div class="right">
-                    <p><strong>Địa chỉ:</strong> </p>
-                    <p>Khu phố 6, Phường Linh Trung, TP. Thủ Đức, Tp. Hồ Chí Minh</p>
-                    <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
-                </div>
-                <div class="left">
-                    <p><strong>Hotline:</strong> 033 *** 1234</p>
-                    <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
-                    <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
-                    <div class="social-icons">
-                    <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                </div>
-            </div>
-            <div class="footer-social">
-                <div class="1">© 2024 Food T^3</div>
-                <div class="mid"><a href="#">Chính sách hoạt động</a> | <a href="#">Chính sách bảo mật thông tin</a></div>
-            </div>
+
+    <div id="content_section" class="content_section">
+      <div class="card" onclick="showPopup()">
+        <img src="../Images/Food/Com/Com-chien-dua-bo.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm chiên dưa bò</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
         </div>
+      </div>
+
+      <!-- Test pop up -->
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <h3>Cơm chiên dưa bò</h3>
+          <img src="../Images/Food/Com/Com-chien-dua-bo.png" alt="com rang" />
+          <p>Giá: 30.000đ</p>
+          <p>CƠM NGON LẮM</p>
+          <button class="btn">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-ba-roi-rim-tom.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm ba rọi rim tôm</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-ca-chien-xa-ot.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm cá chiên xả ớt</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-canh-chua-ca-hu.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm canh chua cá hú</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-chien-bo-luc-lac.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm chiên bò lúc lắc</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-chien-ga-xoi-mo.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm gà xối mỡ</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-chien-muc-trung-muoi.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm mực trứng muối</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-chien-trung-op-la.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm chiên trứng ốp la</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-ga-kho-xa-ot.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm gà kho xả ớt</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-ga-nau-Hai-Nam.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm gà nấu Hải Nam</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-kho-qua-cha-ca.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm khổ qua chả cá</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-suon-cong-mat-ong.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm sườn cọng mật ong</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-suon-non-rim-nuoc-dua.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm sườn non rim nước dừa</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-dui-ga-chien.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm đùi gà chiên</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm heo quay</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <!-- Page Menu 2 -->
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-suon-bi-cha.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm sườn bì chả</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-suon-trung.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm sườn trứng</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-thit-nuong.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm thịt nướng</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-xiu-mai.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm xíu mại</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-thit-kho-Dai-Loan.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm thịt kho đài loan</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-thit-kho-mam-ruoc.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm thịt kho mắm ruốc</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-thit-kho-trung.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm thịt kho trứng</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-trung-cuon-thit.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm trứng cuộn thịt</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <!-- Update tiếp từ đây -->
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm heo quay</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm heo quay</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm heo quay</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm heo quay</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm heo quay</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm heo quay</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Cơm tấm heo quay</h3>
+          <p>30.000đ</p>
+          <a class="btn" href=""> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
     </div>
-    <script src="../js/menu.js"></script>
+
+    <div class="pagination">
+      <a href=""></a>
+      <a href="" class="active">1</a>
+      <a href="">2</a>
+      <a href="">3</a>
+      <a href="">></a>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <div class="right">
+          <p><strong>Địa chỉ:</strong></p>
+          <p>Khu phố 6, Phường Linh Trung, TP. Thủ Đức, Tp. Hồ Chí Minh</p>
+          <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
+        </div>
+        <div class="left">
+          <p><strong>Hotline:</strong> 033 *** 1234</p>
+          <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
+          <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-social">
+        <div class="1">© 2024 Food T^3</div>
+        <div class="mid">
+          <a href="#">Chính sách hoạt động</a> |
+          <a href="#">Chính sách bảo mật thông tin</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/menu.js"></script>
 </body>
+
 </html>

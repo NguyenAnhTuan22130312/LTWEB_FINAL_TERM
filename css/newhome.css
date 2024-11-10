@@ -69,10 +69,12 @@ body,html{
     width: 100%;
     height: 45px;
     display: flex;
+    z-index: 1000;
 }
 #header .bottom .menu{
     width: 50%;
     height: 45px;
+    z-index: 1000;
 }
 #header .bottom   .menu .menu-item .tabbar .fa-solid{
 margin-left: 20px;
@@ -164,6 +166,8 @@ margin-right: 10px;
     right: 10px;
     top: 5px;
 }
+
+/* Xử lý footer */
 #footer {
     width: 100%;
     height: 200px;
@@ -210,8 +214,72 @@ margin-right: 10px;
 #footer .footer-social .mid{
     margin-left: 100px;
 }
+/*cotainer */
 #container{
-    width: 100%;
-    height: 1000px;
-    background-color: white;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+    margin-top: 25px;
+    overflow: hidden;
+    position: relative;
+}
+#container .w3-content {
+    display: flex; 
+    transition: transform 1s ease; 
+     
+}
+#container .mySlides {
+    min-width: 100%; 
+    height: 480px;
+    border-radius: 5px;
+}
+#container .dot-container {
+    text-align: center; 
+    padding: 10px 0; 
+}
+
+#container .w3-button {
+    width: 27px;
+    height: 60px;
+    opacity: 0; 
+    transition: opacity 0.3s;
+}
+#container:hover .w3-button {
+    opacity: 0.3;
+}
+#container .left{
+    position: absolute;
+    left: 0;
+    top: 35%;
+    background-color: black;
+    color: white;
+    border: none;
+}
+#container .right{
+    position: absolute;
+    right: 0;
+    top: 35%;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+#container .dot-container{
+    background-color: #f0eee6;
+    margin: 0;
+    padding: 0;
+}
+#container .dot {
+    height: 5px;
+    width: 5px;
+    margin: 0 2px;
+    background-color: #bbb; 
+    border-radius: 50%; 
+    display: inline-block;
+    transition: background-color 0.6s ease; 
+}
+
+#container .active {
+    background-color: #717171; 
 }
