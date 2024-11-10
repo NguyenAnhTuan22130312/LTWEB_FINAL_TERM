@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu các món cơm</title>
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="header">
+      <div class="containerheaderAll">
+        <div class="containers">
+          <div class="containerss">
+            <div class="left">
+              <div class="logo">
+                <img
+                  src="../Images/LOGO_V2.png"
+                  alt="Food store của Trung, Atuan, Atuan"
+                />
+              </div>
+            </div>
+            <div class="right">
+              <a href="#" class="nav-item">
+                <i class="fa-solid fa-user"></i> Đăng Nhập
+              </a>
+              <a href="#" class="nav-item">
+                <i class="fa-solid fa-phone"></i> 033.***.****
+              </a>
+              <div class="nav_item_shop">
+                <a href="#" class="nav-item">
+                  <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
+                </a>
+                <a href="#" class="count"> 0</a>
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="menu">
+              <ul class="menu-list">
+                <li class="menu-item">
+                  <a href="#" class="tabbar">
+                    <i class="fa-solid fa-bars"></i>Menu</a
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-bowl-food"></i>Món bún</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-bowl-food"></i>Món phở</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-glass-water"></i>Nước</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item"><a href="../html/newhome.html">Trang chủ</a></li>
+                <li class="menu-item"><a href="#">Contact</a></li>
+                <li class="menu-item"><a href="../html/about.html">About</a></li>
+              </ul>
+            </div>
+            <div class="search">
+              <input type="text" placeholder="Tìm kiếm món ăn" />
+              <button type="submit">
+                <i class="fa-solid fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="intro">
+        <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
+        <h4>Menu các món cơm</h4>
+      </div>
+
+      <div id="content_section" class="content_section">
+        <div class="card" onclick="showPopup('popup01')">
+          <img src="../Images/Food/Com/Com-chien-dua-bo.png" alt="com rang" />
+          <div class="card_content">
+            <h3>Cơm chiên dưa bò</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup01" class="popup">
+          <div class="popup-content">
+            <img src="../Images/Food/Com/Com-chien-dua-bo.png" alt="com rang" />
+            <h3>Cơm chiên dưa bò</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm chiên dưa bò là một món ăn kết hợp hoàn hảo giữa vị béo ngậy
+              của cơm chiên, sự tươi mát của dưa chua và vị ngọt mềm của thịt
+              bò. Cơm được chiên vàng thơm, hòa quyện với miếng thịt bò xào mềm,
+              thêm một chút dưa chua giòn giòn tạo nên sự cân bằng vị giác hấp
+              dẫn. <br />
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup01')">&times;</span>
+        </div>
+
+        <div class="card" onclick="showPopup('popup02')">
+          <img src="../Images/Food/Com/Com-ba-roi-rim-tom.png" alt="com rang" />
+          <div class="card_content">
+            <h3>Cơm ba rọi rim tôm</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup02" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-ba-roi-rim-tom.png"
+              alt="com rang"
+            />
+            <h3>Cơm ba rọi rim tôm</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm ba rọi rim tôm là một món ăn đậm đà hương vị, kết hợp giữa
+              thịt ba rọi heo mềm mịn và tôm tươi ngọt, tạo nên sự hòa quyện
+              hoàn hảo. Thịt ba rọi được rim trong nước mắm, đường, cùng các gia
+              vị thơm ngon, giúp miếng thịt trở nên đậm đà, vừa mềm vừa có chút
+              caramel hóa, trong khi tôm được rim nhẹ để giữ được vị ngọt tự
+              nhiên. <br />
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup02')">&times;</span>
+        </div>
+
+        <div class="card" onclick="showPopup('popup03')">
+          <img src="../Images/Food/Com/Com-ca-chien-xa-ot.png" alt="com rang" />
+          <div class="card_content">
+            <h3>Cơm cá chiên xả ớt</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup03" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-ca-chien-xa-ot.png"
+              alt="com rang"
+            />
+            <h3>Cơm cá chiên xả ớt</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cá chiên xả ớt là món ăn mang đậm hương vị đặc trưng của ẩm thực
+              Việt Nam, với sự kết hợp hài hòa giữa vị ngọt tự nhiên của cá và
+              hương thơm đặc trưng từ sả và ớt. Những miếng cá được chiên giòn
+              bên ngoài, mềm mịn bên trong, tạo cảm giác thơm ngon, béo ngậy khi
+              thưởng thức. Lớp sả và ớt thái mỏng, được xào lên với một chút gia
+              vị, vừa làm tăng độ thơm ngon của món ăn, vừa tạo nên sự cay nồng
+              kích thích vị giác. <br />
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup03')">&times;</span>
+        </div>
+
+        <div class="card" onclick="showPopup('popup04')">
+          <img
+            src="../Images/Food/Com/Com-canh-chua-ca-hu.png"
+            alt="com rang"
+          />
+          <div class="card_content">
+            <h3>Cơm canh chua cá hú</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup04" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-canh-chua-ca-hu.png"
+              alt="com rang"
+            />
+            <h3>Cơm canh chua cá hú</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm canh chua cá hú là một món ăn đậm đà và thanh mát, mang đặc
+              trưng của ẩm thực miền Nam Việt Nam. Món canh chua cá hú được nấu
+              từ những miếng cá hú tươi ngon, thịt cá mềm, ngọt, kết hợp với vị
+              chua nhẹ từ me và các loại rau thơm như ngò gai, giá đỗ, và bạc
+              hà, tạo nên một hương vị đặc trưng. Nước canh chua có màu trong,
+              vị chua thanh nhưng không quá gắt, lại có chút cay nhẹ từ ớt, giúp
+              kích thích vị giác. <br />
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup04')">&times;</span>
+        </div>
+
+        <!-- Cơm chiên bò lúc lắc -->
+        <div class="card" onclick="showPopup('popup05')">
+          <img
+            src="../Images/Food/Com/Com-chien-bo-luc-lac.png"
+            alt="com chien bo luc lac"
+          />
+          <div class="card_content">
+            <h3>Cơm chiên bò lúc lắc</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup05" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-chien-bo-luc-lac.png"
+              alt="com chien bo luc lac"
+            />
+            <h3>Cơm chiên bò lúc lắc</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm chiên bò lúc lắc là món ăn nổi bật với những miếng thịt bò
+              mềm, thấm đẫm gia vị, kết hợp với cơm chiên vàng ươm và rau củ
+              giòn ngọt. Món ăn mang đậm hương vị đặc trưng của ẩm thực phương
+              Tây nhưng lại có sự kết hợp tuyệt vời với gia vị Việt Nam, tạo nên
+              sự hòa quyện tuyệt vời.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup05')">&times;</span>
+        </div>
+
+        <!-- Cơm gà xối mỡ -->
+        <div class="card" onclick="showPopup('popup06')">
+          <img
+            src="../Images/Food/Com/Com-chien-ga-xoi-mo.png"
+            alt="com chien ga xoi mo"
+          />
+          <div class="card_content">
+            <h3>Cơm gà xối mỡ</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup06" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-chien-ga-xoi-mo.png"
+              alt="com chien ga xoi mo"
+            />
+            <h3>Cơm gà xối mỡ</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm gà xối mỡ là món ăn truyền thống với thịt gà được chiên giòn
+              rụm, kết hợp cùng cơm trắng dẻo thơm và các loại rau sống tươi
+              mát. Món ăn đặc trưng với lớp da gà giòn tan, ăn kèm với cơm và
+              nước sốt đậm đà.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup06')">&times;</span>
+        </div>
+
+        <!-- Cơm mực trứng muối -->
+        <div class="card" onclick="showPopup('popup07')">
+          <img
+            src="../Images/Food/Com/Com-chien-muc-trung-muoi.png"
+            alt="com chien muc trung muoi"
+          />
+          <div class="card_content">
+            <h3>Cơm mực trứng muối</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup07" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-chien-muc-trung-muoi.png"
+              alt="com chien muc trung muoi"
+            />
+            <h3>Cơm mực trứng muối</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm mực trứng muối là món ăn thơm ngon với mực tươi, trứng muối
+              béo ngậy, hòa quyện cùng cơm chiên mềm và gia vị đậm đà. Mực được
+              chiên giòn, trứng muối tan chảy khi ăn, tạo nên một sự kết hợp độc
+              đáo.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup07')">&times;</span>
+        </div>
+
+        <!-- Cơm chiên trứng ốp la -->
+        <div class="card" onclick="showPopup('popup08')">
+          <img
+            src="../Images/Food/Com/Com-chien-trung-op-la.png"
+            alt="com chien trung op la"
+          />
+          <div class="card_content">
+            <h3>Cơm chiên trứng ốp la</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup08" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-chien-trung-op-la.png"
+              alt="com chien trung op la"
+            />
+            <h3>Cơm chiên trứng ốp la</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm chiên trứng ốp la là món ăn đơn giản nhưng cực kỳ ngon miệng,
+              với cơm chiên thơm dẻo và một quả trứng ốp la vàng ươm, ăn kèm với
+              thịt, rau củ và gia vị. Món ăn này rất phổ biến trong các bữa sáng
+              hoặc bữa trưa nhanh.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup08')">&times;</span>
+        </div>
+
+        <!-- Cơm gà kho sả ớt -->
+        <div class="card" onclick="showPopup('popup09')">
+          <img
+            src="../Images/Food/Com/Com-ga-kho-xa-ot.png"
+            alt="com ga kho xa ot"
+          />
+          <div class="card_content">
+            <h3>Cơm gà kho sả ớt</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup09" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-ga-kho-xa-ot.png"
+              alt="com ga kho xa ot"
+            />
+            <h3>Cơm gà kho sả ớt</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm gà kho sả ớt là món ăn đậm đà hương vị với thịt gà thơm ngon,
+              thấm đẫm gia vị sả và ớt cay nồng. Vị ngọt tự nhiên của gà kết hợp
+              cùng hương thơm của sả và vị cay nhẹ của ớt tạo nên món ăn hấp
+              dẫn.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup09')">&times;</span>
+        </div>
+
+        <!-- Cơm gà nấu Hải Nam -->
+        <div class="card" onclick="showPopup('popup10')">
+          <img
+            src="../Images/Food/Com/Com-ga-nau-Hai-Nam.png"
+            alt="com ga nau hai nam"
+          />
+          <div class="card_content">
+            <h3>Cơm gà nấu Hải Nam</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup10" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-ga-nau-Hai-Nam.png"
+              alt="com ga nau hai nam"
+            />
+            <h3>Cơm gà nấu Hải Nam</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm gà nấu Hải Nam có nguồn gốc từ Trung Quốc, với thịt gà được
+              nấu mềm mịn và cơm thơm lừng. Cơm được nấu với nước dùng gà, tạo
+              nên hương vị đặc trưng và dễ gây nghiện.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup10')">&times;</span>
+        </div>
+
+        <!-- Cơm khổ qua chả cá -->
+        <div class="card" onclick="showPopup('popup11')">
+          <img
+            src="../Images/Food/Com/Com-kho-qua-cha-ca.png"
+            alt="com kho qua cha ca"
+          />
+          <div class="card_content">
+            <h3>Cơm khổ qua chả cá</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup11" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-kho-qua-cha-ca.png"
+              alt="com kho qua cha ca"
+            />
+            <h3>Cơm khổ qua chả cá</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Món cơm khổ qua chả cá độc đáo với chả cá thơm ngon và khổ qua
+              tươi xanh. Vị đắng nhẹ của khổ qua hòa quyện cùng chả cá mềm ngọt
+              tạo nên sự cân bằng hoàn hảo. Món ăn này không chỉ ngon mà còn rất
+              tốt cho sức khỏe.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup11')">&times;</span>
+        </div>
+
+        <!-- Cơm sườn cọng mật ong -->
+        <div class="card" onclick="showPopup('popup12')">
+          <img
+            src="../Images/Food/Com/Com-suon-cong-mat-ong.png"
+            alt="com suon cong mat ong"
+          />
+          <div class="card_content">
+            <h3>Cơm sườn cọng mật ong</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup12" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-suon-cong-mat-ong.png"
+              alt="com suon cong mat ong"
+            />
+            <h3>Cơm sườn cọng mật ong</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm sườn cọng mật ong nổi bật với hương vị ngọt ngào của mật ong
+              thấm vào từng miếng sườn nướng. Sườn được chế biến mềm, không khô,
+              và có lớp ngoài giòn nhẹ. Món này kết hợp tuyệt vời với cơm trắng
+              và nước chấm đặc trưng.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup12')">&times;</span>
+        </div>
+
+        <!-- Cơm sườn non rim nước dừa -->
+        <div class="card" onclick="showPopup('popup13')">
+          <img
+            src="../Images/Food/Com/Com-suon-non-rim-nuoc-dua.png"
+            alt="com suon non rim nuoc dua"
+          />
+          <div class="card_content">
+            <h3>Cơm sườn non rim nước dừa</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup13" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-suon-non-rim-nuoc-dua.png"
+              alt="com suon non rim nuoc dua"
+            />
+            <h3>Cơm sườn non rim nước dừa</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm sườn non rim nước dừa mang đến hương vị đậm đà và béo ngậy của
+              nước dừa. Miếng sườn được nấu mềm, ngấm vị ngọt của dừa và nước
+              mắm, tạo nên một món ăn hấp dẫn, ngon miệng.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup13')">&times;</span>
+        </div>
+
+        <!-- Cơm tấm đùi gà chiên -->
+        <div class="card" onclick="showPopup('popup14')">
+          <img
+            src="../Images/Food/Com/Com-tam-dui-ga-chien.png"
+            alt="com tam dui ga chien"
+          />
+          <div class="card_content">
+            <h3>Cơm tấm đùi gà chiên</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup14" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-tam-dui-ga-chien.png"
+              alt="com tam dui ga chien"
+            />
+            <h3>Cơm tấm đùi gà chiên</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm tấm đùi gà chiên là món ăn phổ biến với đùi gà giòn rụm, cơm
+              tấm mềm dẻo và chén nước mắm pha đặc trưng. Đùi gà được chiên giòn
+              bên ngoài, giữ nguyên độ mềm ngọt bên trong, tạo cảm giác ngon
+              miệng khi thưởng thức.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup14')">&times;</span>
+        </div>
+
+        <div class="card" onclick="showPopup('popup15')">
+          <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" />
+          <div class="card_content">
+            <h3>Cơm tấm heo quay</h3>
+            <p>30.000đ</p>
+            <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup15" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-tam-heo-quay.png"
+              alt="com tam dui ga chien"
+            />
+            <h3>Cơm tấm heo quay</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm tấm heo quay là một món ăn đặc trưng của ẩm thực miền Nam, nổi
+              bật với hương vị đậm đà, dễ ăn và rất được ưa chuộng. Món cơm này
+              được làm từ những hạt gạo tấm mềm dẻo, được xới lên thơm lừng,
+              thường được ăn kèm với miếng thịt heo quay vàng giòn, lớp da heo
+              thơm lừng, giòn tan, còn phần thịt bên trong thì mềm, ngọt và đậm
+              đà.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup15')">&times;</span>
+        </div>
+
+        <!-- Page Menu 2 -->
+
+        <!-- Cơm tấm sườn bì chả -->
+        <div class="card" onclick="showPopup('popup16')">
+          <img
+            src="../Images/Food/Com/Com-tam-suon-bi-cha.png"
+            alt="com tam suon bi cha"
+          />
+          <div class="card_content">
+            <h3>Cơm tấm sườn bì chả</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup16" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-tam-suon-bi-cha.png"
+              alt="com tam suon bi cha"
+            />
+            <h3>Cơm tấm sườn bì chả</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm tấm sườn bì chả là món ăn đặc trưng của ẩm thực miền Nam. Sườn
+              nướng thơm ngon, bì giòn và chả lụa béo ngậy được kết hợp với cơm
+              tấm dẻo, tạo nên một món ăn ngon, đậm đà và đầy đủ dinh dưỡng cho
+              bữa ăn.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup16')">&times;</span>
+        </div>
+
+        <!-- Cơm tấm sườn trứng -->
+        <div class="card" onclick="showPopup('popup17')">
+          <img
+            src="../Images/Food/Com/Com-tam-suon-trung.png"
+            alt="com tam suon trung"
+          />
+          <div class="card_content">
+            <h3>Cơm tấm sườn trứng</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup17" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-tam-suon-trung.png"
+              alt="com tam suon trung"
+            />
+            <h3>Cơm tấm sườn trứng</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm tấm sườn trứng là món ăn phổ biến với sự kết hợp giữa sườn
+              nướng thơm lừng, trứng ốp la mềm và cơm tấm dẻo. Món ăn này không
+              chỉ ngon miệng mà còn rất dễ ăn, thích hợp cho bữa sáng hoặc bữa
+              trưa.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup17')">&times;</span>
+        </div>
+
+        <!-- Cơm tấm thịt nướng -->
+        <div class="card" onclick="showPopup('popup18')">
+          <img
+            src="../Images/Food/Com/Com-tam-thit-nuong.png"
+            alt="com tam thit nuong"
+          />
+          <div class="card_content">
+            <h3>Cơm tấm thịt nướng</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup18" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-tam-thit-nuong.png"
+              alt="com tam thit nuong"
+            />
+            <h3>Cơm tấm thịt nướng</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm tấm thịt nướng là món ăn đậm đà hương vị, với thịt nướng vàng
+              ươm, mềm, thấm đẫm gia vị. Khi ăn kèm với cơm tấm dẻo và nước mắm
+              pha, món ăn này mang lại cảm giác thỏa mãn, đầy đủ cho một bữa ăn.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup18')">&times;</span>
+        </div>
+
+        <!-- Cơm tấm xíu mại -->
+        <div class="card" onclick="showPopup('popup19')">
+          <img
+            src="../Images/Food/Com/Com-tam-xiu-mai.png"
+            alt="com tam xiu mai"
+          />
+          <div class="card_content">
+            <h3>Cơm tấm xíu mại</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup19" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-tam-xiu-mai.png"
+              alt="com tam xiu mai"
+            />
+            <h3>Cơm tấm xíu mại</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm tấm xíu mại là món ăn đặc trưng với sự kết hợp giữa cơm tấm
+              mềm, xíu mại thịt thơm lừng, đậm đà gia vị.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup19')">&times;</span>
+        </div>
+
+        <!-- Cơm tấm thịt kho đài loan -->
+        <div class="card" onclick="showPopup('popup20')">
+          <img
+            src="../Images/Food/Com/Com-thit-kho-Dai-Loan.png"
+            alt="com thit kho dai loan"
+          />
+          <div class="card_content">
+            <h3>Cơm tấm thịt kho đài loan</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup20" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-thit-kho-Dai-Loan.png"
+              alt="com thit kho dai loan"
+            />
+            <h3>Cơm tấm thịt kho đài loan</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm tấm thịt kho Đài Loan với thịt kho mềm, thấm đẫm gia vị, nước
+              kho đậm đà, ăn kèm với cơm tấm dẻo, tạo nên một món ăn rất đặc
+              biệt. Đây là món ăn lý tưởng cho những ai yêu thích món ăn đậm đà
+              hương vị.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup20')">&times;</span>
+        </div>
+
+        <!-- Cơm thịt kho mắm ruốc -->
+        <div class="card" onclick="showPopup('popup21')">
+          <img
+            src="../Images/Food/Com/Com-thit-kho-mam-ruoc.png"
+            alt="com thit kho mam ruoc"
+          />
+          <div class="card_content">
+            <h3>Cơm thịt kho mắm ruốc</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup21" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-thit-kho-mam-ruoc.png"
+              alt="com thit kho mam ruoc"
+            />
+            <h3>Cơm thịt kho mắm ruốc</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm thịt kho mắm ruốc có hương vị đặc trưng của mắm ruốc kết hợp
+              với thịt kho mềm, nước kho đậm đà. Món ăn này mang lại cảm giác
+              thỏa mãn, vừa cay cay vừa mặn mà, ăn kèm với cơm tấm là một sự kết
+              hợp tuyệt vời.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup21')">&times;</span>
+        </div>
+
+        <!-- Cơm thịt kho trứng -->
+        <div class="card" onclick="showPopup('popup22')">
+          <img
+            src="../Images/Food/Com/Com-thit-kho-trung.png"
+            alt="com thit kho trung"
+          />
+          <div class="card_content">
+            <h3>Cơm thịt kho trứng</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup22" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-thit-kho-trung.png"
+              alt="com thit kho trung"
+            />
+            <h3>Cơm thịt kho trứng</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm thịt kho trứng là món ăn quen thuộc với sự kết hợp giữa thịt
+              kho mềm ngọt và trứng kho thơm, đậm đà. Nước kho từ thịt và trứng
+              tạo thành một món ăn tuyệt vời khi ăn cùng cơm.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup22')">&times;</span>
+        </div>
+
+        <!-- Cơm trứng cuộn thịt -->
+        <div class="card" onclick="showPopup('popup23')">
+          <img
+            src="../Images/Food/Com/Com-trung-cuon-thit.png"
+            alt="com trung cuon thit"
+          />
+          <div class="card_content">
+            <h3>Cơm trứng cuộn thịt</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup23" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-trung-cuon-thit.png"
+              alt="com trung cuon thit"
+            />
+            <h3>Cơm trứng cuộn thịt</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm trứng cuộn thịt là món ăn đơn giản nhưng đầy đủ dinh dưỡng,
+              với trứng cuộn mềm mại, bên trong là thịt xay thơm ngon. Món này
+              ăn cùng cơm tấm dẻo và gia vị đậm đà sẽ mang lại trải nghiệm ẩm
+              thực tuyệt vời.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup23')">&times;</span>
+        </div>
+
+        <!-- Cơm chiên dương châu -->
+        <div class="card" onclick="showPopup('popup24')">
+          <img
+            src="../Images/Food/Com/Com-chien-duong-chau.png"
+            alt="com chien duong chau"
+          />
+          <div class="card_content">
+            <h3>Cơm chiên dương châu</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup24" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-chien-duong-chau.png"
+              alt="com chien duong chau"
+            />
+            <h3>Cơm chiên dương châu</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm chiên dương châu là món ăn đặc trưng của ẩm thực Trung Hoa,
+              với cơm chiên thơm lừng kết hợp với thịt gà, tôm, trứng và rau củ
+              tươi ngon. Món ăn này đầy đủ dinh dưỡng, mang đến một hương vị
+              thanh mát và đậm đà.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup24')">&times;</span>
+        </div>
+
+        <!-- Cơm thịt kho tiêu -->
+        <div class="card" onclick="showPopup('popup25')">
+          <img
+            src="../Images/Food/Com/Com-thit-kho-tieu.png"
+            alt="com thit kho tieu"
+          />
+          <div class="card_content">
+            <h3>Cơm thịt kho tiêu</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup25" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-thit-kho-tieu.png"
+              alt="com thit kho tieu"
+            />
+            <h3>Cơm thịt kho tiêu</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm thịt kho tiêu là món ăn quen thuộc với hương vị đặc trưng của
+              thịt heo kho đậm đà, kết hợp với tiêu đen thơm nồng. Thịt kho mềm,
+              thấm gia vị, ăn kèm cơm tấm trắng dẻo tạo nên một món ăn vừa ngon
+              vừa dễ ăn.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup25')">&times;</span>
+        </div>
+
+        <!-- Cơm mực xào -->
+        <div class="card" onclick="showPopup('popup26')">
+          <img src="../Images/Food/Com/Com-muc-xao.png" alt="com muc xao" />
+          <div class="card_content">
+            <h3>Cơm mực xào</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup26" class="popup">
+          <div class="popup-content">
+            <img src="../Images/Food/Com/Com-muc-xao.png" alt="com muc xao" />
+            <h3>Cơm mực xào</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm mực xào là món ăn ngon với mực tươi xào cùng gia vị đậm đà,
+              tạo ra sự kết hợp hoàn hảo với cơm trắng. Món ăn này không chỉ
+              ngon mà còn rất bổ dưỡng, mang lại hương vị mới mẻ cho bữa ăn.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup26')">&times;</span>
+        </div>
+
+        <!-- Cơm thịt luộc cà pháo -->
+        <div class="card" onclick="showPopup('popup27')">
+          <img
+            src="../Images/Food/Com/Com-thit-luoc-ca-phao.png"
+            alt="com thit luoc ca phao"
+          />
+          <div class="card_content">
+            <h3>Cơm thịt luộc cà pháo</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup27" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-thit-luoc-ca-phao.png"
+              alt="com thit luoc ca phao"
+            />
+            <h3>Cơm thịt luộc cà pháo</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Cơm thịt luộc cà pháo là món ăn dân dã nhưng rất ngon miệng, với
+              thịt luộc tươi ngon ăn kèm với cà pháo muối chua, tạo nên hương vị
+              đậm đà, dễ ăn. Món ăn này phù hợp cho những bữa cơm gia đình.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup27')">&times;</span>
+        </div>
+
+        <!-- Cơm giò heo kho cải chua -->
+        <div class="card" onclick="showPopup('popup28')">
+          <img
+            src="../Images/Food/Com/Com-gio-heo-kho-cai-chua.png"
+            alt="com gio heo kho cai chua"
+          />
+          <div class="card_content">
+            <h3>Cơm giò heo kho cải chua</h3>
+            <p>30.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup28" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-gio-heo-kho-cai-chua.png"
+              alt="com gio heo kho cai chua"
+            />
+            <h3>Cơm giò heo kho cải chua</h3>
+            <p>Giá: 30.000đ</p>
+            <span>
+              Món cơm giò heo kho cải chua là sự kết hợp hoàn hảo giữa giò heo
+              kho mềm ngon, đậm đà gia vị, ăn kèm với cải chua làm món ăn thêm
+              phần hấp dẫn.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup28')">&times;</span>
+        </div>
+
+        <!-- Cơm đậu hũ kho sườn chay -->
+        <div class="card" onclick="showPopup('popup29')">
+          <img
+            src="../Images/Food/Com/Com-dau-hu-kho-suon-chay.png"
+            alt="com dau hu kho suon chay"
+          />
+          <div class="card_content">
+            <h3>Cơm đậu hũ kho sườn chay</h3>
+            <p>25.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup29" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-dau-hu-kho-suon-chay.png"
+              alt="com dau hu kho suon chay"
+            />
+            <h3>Cơm đậu hũ kho sườn chay</h3>
+            <p>Giá: 25.000đ</p>
+            <span>
+              Cơm đậu hũ kho sườn chay là một món ăn thanh đạm, phù hợp cho
+              những ai muốn thưởng thức ẩm thực chay. Đậu hũ mềm mịn kết hợp với
+              sườn chay kho đậm đà tạo nên một món ăn đầy đủ dinh dưỡng và dễ
+              ăn.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup29')">&times;</span>
+        </div>
+
+        <!-- Cơm đậu hũ kho cà ri -->
+        <div class="card" onclick="showPopup('popup30')">
+          <img
+            src="../Images/Food/Com/Com-dau-hu-kho-ca-ri.png"
+            alt="com dau hu kho ca ri"
+          />
+          <div class="card_content">
+            <h3>Cơm đậu hũ kho cà ri</h3>
+            <p>25.000đ</p>
+            <a class="btn" href=""> Thêm vào giỏ hàng </a>
+          </div>
+        </div>
+
+        <div id="popup30" class="popup">
+          <div class="popup-content">
+            <img
+              src="../Images/Food/Com/Com-dau-hu-kho-ca-ri.png"
+              alt="com dau hu kho ca ri"
+            />
+            <h3>Cơm đậu hũ kho cà ri</h3>
+            <p>Giá: 25.000đ</p>
+            <span>
+              Cơm đậu hũ kho cà ri là món ăn vừa ngon lại vừa dễ ăn với đậu hũ
+              mềm được kho thấm gia vị cà ri đặc trưng. Món ăn này mang lại sự
+              nhẹ nhàng nhưng vẫn đầy đủ hương vị, phù hợp với những ai thích
+              món chay hoặc ít gia vị.
+            </span>
+            <button
+              class="button-cart"
+              id="add-cart"
+              onclick="window.location.href='../html/cart.html'"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+          <span class="close" onclick="closePopup('popup30')">&times;</span>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <a href=""></a>
+        <a href="" class="active">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">></a>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="footer-container">
+        <div class="footer-info">
+          <div class="right">
+            <p><strong>Địa chỉ:</strong></p>
+            <p>Khu phố 6, Phường Linh Trung, TP. Thủ Đức, Tp. Hồ Chí Minh</p>
+            <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
+          </div>
+          <div class="left">
+            <p><strong>Hotline:</strong> 033 *** 1234</p>
+            <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
+            <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
+            <div class="social-icons">
+              <a href="#" target="_blank"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-social">
+          <div class="1">© 2024 Food T^3</div>
+          <div class="mid">
+            <a href="#">Chính sách hoạt động</a> |
+            <a href="#">Chính sách bảo mật thông tin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/menu.js"></script>
+  </body>
+</html>
