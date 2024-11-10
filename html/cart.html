@@ -7,157 +7,175 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="../css/cart.css" />
-    <title>App Bán Đồ Ăn</title>
+    <title>Giỏ hàng</title>
   </head>
   <body>
-    <div class="container-fluid">
-      <div id="header_section">
-        <div class="logo_section">
-            <img src="../Images/logo/testLOGO.jpg" alt="logo">
-        </div>
-        <div class="menu_section">
-            <ul class="menu_bar">
-                <li><a href="home.html">HOME</a></li>
-                <li><a href="">MENU</a></li>
-                <li><a href="">SERVICE</a></li>
-                <li><a href="">SHOP</a></li>
-            </ul>
-        </div>
-        <div class="icon_section">
-            <ul>
-                <li>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-basket-shopping"></i>
-                </li>
-            </ul>
-        </div>
-        <div class="login_section">
-            <button type="button" onclick="window.location.href='signin.html'">Sign In</button>
-            <button>Login</button>
-        </div>
-      </div>
-
-      <div id="content_section">
-        <div class="cart-container">
-            <div class="cart-left">
-              <table class="cart-table">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Tên sản phẩm</th>
-                    <th>Hình ảnh</th>
-                    <th>Số lượng</th>
-                    <th>Giá</th>
-                    <th>Thành tiền</th>
-                    <th>
-                      <i
-                        class="fa-regular fa-trash-can"
-                        onclick="removeSelectedProducts()"
-                      ></i>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody id="cart-items-container" class="cart-body">
-                  <!-- Các sản phẩm sẽ được thêm vào đây -->
-                </tbody>
-              </table>
-              <div class="cart-buttons">
-                <button class="continue-btn">← Tiếp tục xem sản phẩm</button>
+    <div id="header">
+      <div class="containerheaderAll">
+        <div class="containers">
+          <div class="containerss">
+            <div class="left">
+              <div class="logo">
+                <img
+                  src="../Images/LOGO_V2.png"
+                  alt="Food store của Trung, Atuan, Atuan"
+                />
               </div>
             </div>
-  
-            <div class="cart-right">
-              <h2>Tổng Sản Phẩm</h2>
-              <div class="cart-summary">
-                <div class="summary-item">
-                  <span>Tạm tính:</span>
-                  <span id="subtotal">0₫</span>
-                </div>
-                <div class="summary-item">
-                  <span>Phí vận chuyển:</span>
-                  <span id="vat">0₫</span>
-                </div>
-              </div>
-              <div class="summary-item total">
-                <span>Tổng cộng:</span>
-                <span id="total">0₫</span>
-              </div>
-              <button class="checkout-btn">Tiến hành thanh toán</button>
-  
-              <div class="voucher">
-                <label for="voucher">Phiếu ưu đãi</label>
-                <input type="text" id="voucher" placeholder="Mã ưu đãi" />
-                <button class="apply-btn" onclick="applyVoucher()">
-                  Áp dụng
-                </button>
+            <div class="right">
+              <a href="../html/signin.html" class="nav-item">
+                <i class="fa-solid fa-user"></i> Đăng Nhập
+              </a>
+              <a href="#" class="nav-item">
+                <i class="fa-solid fa-phone"></i> 033.***.****
+              </a>
+              <div class="nav_item_shop">
+                <a href="../html/cart.html" class="nav-item">
+                  <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
+                </a>
+                <a href="#" class="count"> 0</a>
               </div>
             </div>
           </div>
-      </div>
-      <div id="about_section">
-        <div class="about-content">
-            <div class="left-section">
-                <div class="slogan">
-                    <p>
-                        <strong>Good To Eat</strong> - Hành trình của Hương Vị và Sự
-                        Tiện Lợi Ngay Bên Bạn!
-                    </p>
-                </div>
-                <div class="adress-phone">
-                    <div class="adress">
-                        <i class="fas fa-solid fa-map-marker-alt"></i>
-                        <p>Địa chỉ: Đại học Nông Lâm Tp.HCM, khu phố 6, Thủ Đức, Hồ Chí Minh</p>
-                    </div>
-                    <div class="phone">
-                        <i class="fas fa-solid fa-phone"></i>
-                        <p>Điện thoại: 0123456789</p>
-                    </div>
-                </div>
-            </div>
-            <div class="right-section">
-                <p>Contact us</p>
-                <div class="social-icons">
-                    <a href="#" class="social_media_icons"
-                    ><i class="fab fa-facebook-f fa-xl" style="color: #999;"></i
-                  ></a>
-                  <a href="#" class="social_media_icons"
-                    ><i class="fa-brands fa-whatsapp fa-xl" style="color: #999;"></i
-                  ></a>
-                  <a href="#" class="social_media_icons">
-                    <i class="fa-brands fa-facebook-messenger fa-xl" style="color: #999;"></i>
-                  </a>
-                </div>
-            </div>
-        </div>
-      </div>
-      <div id="footer">
-        <div class="footer-content">
-          <hr class="custom-line" >
-            <div class="footer-section">
-              <ul>
-                <li><a href="/about">Giới thiệu</a></li>
-                <li><a href="/services">Dịch vụ</a></li>
-                <li><a href="/contact">Liên hệ</a></li>
-                <li><a href="/privacy-policy">Chính sách bảo mật</a></li>
+          <div class="bottom">
+            <div class="menu">
+              <ul class="menu-list">
+                <li class="menu-item">
+                  <a href="#" class="tabbar">
+                    <i class="fa-solid fa-bars"></i>Menu</a
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <a href="../html/menucom.html"
+                        ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-bowl-food"></i>Món bún</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-bowl-food"></i>Món phở</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-glass-water"></i>Nước</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <a href="../html/newhome.html">Trang chủ</a>
+                </li>
+                <li class="menu-item"><a href="#">Contact</a></li>
+                <li class="menu-item">
+                  <a href="../html/about.html">About</a>
+                </li>
               </ul>
             </div>
+            <div class="search">
+              <input type="text" placeholder="Tìm kiếm món ăn" />
+              <button type="submit">
+                <i class="fa-solid fa-search"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div id="content_section">
+      <div class="cart-container">
+        <div class="cart-left">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Tên sản phẩm</th>
+                <th>Hình ảnh</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Thành tiền</th>
+                <th>
+                  <i
+                    class="fa-regular fa-trash-can"
+                    onclick="removeSelectedProducts()"
+                  ></i>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="cart-items-container" class="cart-body">
+              <!-- Các sản phẩm sẽ được thêm vào đây -->
+            </tbody>
+          </table>
+          <div class="cart-buttons">
+            <button class="continue-btn">← Tiếp tục xem sản phẩm</button>
+          </div>
+        </div>
+
+        <div class="cart-right">
+          <h2>Tổng Sản Phẩm</h2>
+          <div class="cart-summary">
+            <div class="summary-item">
+              <span>Tạm tính:</span>
+              <span id="subtotal">0₫</span>
+            </div>
+            <div class="summary-item">
+              <span>Phí vận chuyển:</span>
+              <span id="vat">0₫</span>
+            </div>
+          </div>
+          <div class="summary-item total">
+            <span>Tổng cộng:</span>
+            <span id="total">0₫</span>
+          </div>
+          <button class="checkout-btn">Tiến hành thanh toán</button>
+
+          <div class="voucher">
+            <label for="voucher">Phiếu ưu đãi</label>
+            <input type="text" id="voucher" placeholder="Mã ưu đãi" />
+            <button class="apply-btn" onclick="applyVoucher()">Áp dụng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="footer-container">
+        <div class="footer-info">
+          <div class="right">
+            <p><strong>Địa chỉ:</strong></p>
+            <p>Khu phố 6, Phường Linh Trung, TP. Thủ Đức, Tp. Hồ Chí Minh</p>
+            <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
+          </div>
+          <div class="left">
+            <p><strong>Hotline:</strong> 033 *** 1234</p>
+            <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
+            <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
+            <div class="social-icons">
+              <a href="#" target="_blank"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-social">
+          <div class="1">© 2024 Food T^3</div>
+          <div class="mid">
+            <a href="#">Chính sách hoạt động</a> |
+            <a href="#">Chính sách bảo mật thông tin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="../js/cart.js"></script>
   </body>
 </html>

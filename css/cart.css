@@ -1,104 +1,222 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-* {
+body,
+html {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  padding: 0px;
+  font-family: sans-serif, Tahoma;
+  height: 100%;
 }
-
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: white;
-  color: white;
-  overflow: auto;
-  height: auto;
-}
-
-/* Xử lý Header */
-.container-fluid {
-  padding: 0;
-}
-
-#header_section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: white;
-  border-radius: 20px;
+#header {
   width: 100%;
-  max-width: 1500px;
+  box-sizing: border-box;
+  height: 140px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e6e6e6;
+}
+#header .containerheaderAll {
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px 0;
 }
-
-.logo_section img {
-  height: 80px;
-  margin-left: 50px;
+#header .containers {
+  max-width: 1200px;
+  max-height: 140px;
 }
-.menu_section {
-  width: 900px;
-}
-.menu_bar {
-  list-style: none;
+#header .containerss {
   display: flex;
-  gap: 40px;
-  padding: 0;
-  margin: 0;
-}
-.menu_bar li {
-  font-weight: 600;
-  display: inline;
-}
-.menu_bar a {
-  text-decoration: none;
-  color: #333;
-  font-size: 18px;
-}
-
-.menu_bar a:hover {
-  border-bottom: 2px solid #ffcc00;
-}
-
-.icon_section ul {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  padding: 0;
-  margin: 0;
-  margin-right: 40px;
-}
-.icon_section li {
-  font-size: 20px;
-  color: #333;
-}
-
-.login_section {
-  display: flex;
-  margin-right: 70px;
-  gap: 10px;
-}
-
-.login_section button {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 5px;
-  padding: 5px 15px;
-  border: 2px solid #333;
-  border-radius: 20px;
-  background-color: transparent;
-  color: #333;
-  font-size: 16px;
-  cursor: pointer;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 95px;
 }
-.login_section button:last-child {
-  background-color: #ffcc00;
-  border-color: #ffcc00;
+#header .containerss .left {
+  width: 50%;
+}
+#header .containerss img {
+  width: 310px;
+  height: 100px;
+}
+#header .containerss .right {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  gap: 40px;
+  margin-right: 30px;
+}
+#header .containerss .right .nav_item_shop {
+  position: relative;
+}
+#header .containerss .right .count {
+  position: absolute;
+  margin: 5px;
+  background-color: yellow;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  top: 5px;
+}
+#header .containerss .right .fa-solid {
+  color: #b5292f;
+  margin: 10px;
+}
+#header .containerss .right a {
+  color: rgb(2, 2, 2);
+  text-decoration: none;
+  font-weight: 550;
+}
+#header .bottom {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  z-index: 1000;
+}
+#header .bottom .menu {
+  width: 50%;
+  height: 45px;
+  z-index: 1000;
+}
+#header .bottom .menu .menu-item .tabbar .fa-solid {
+  margin-left: 20px;
+  color: #b5292f;
+  margin-right: 10px;
+}
+#header .bottom .menu .menu-list {
+  padding: 0px;
+}
+#header .bottom .menu a {
+  text-decoration: none;
+  color: rgb(39, 39, 39);
+}
+#header .bottom .menu ul {
+  height: 100%;
+}
+#header .bottom .menu ul > li {
+  list-style-type: none;
+  width: max-content;
+  float: left;
+  font-weight: 600;
+  cursor: pointer;
+  padding-right: 40px;
+}
+#header .bottom .menu ul > li > a:hover {
+  color: #b5292f;
+}
+#header .bottom .menu .menu-item {
+  position: relative;
+  height: 100%;
+}
+#header .bottom .menu ul .submenu {
+  position: absolute;
+  height: 400px;
+  width: auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: none;
+  top: 29px;
+  left: 20px;
+  display: none;
+  background-color: white;
+  color: black;
+  border-radius: 0;
+}
+#header .menu ul > li:hover .submenu {
+  display: block;
+}
+#header .menu ul.submenu > li {
+  float: none;
+  width: 150px;
+  height: 30px;
+}
+#header .menu .submenu a {
+  position: relative;
+}
+#header .menu .submenu i {
+  position: absolute;
+  left: -25px;
+  width: auto;
+  height: auto;
+}
+#header .bottom .search {
+  width: 50%;
+  height: 35px;
+  display: flex;
+  justify-content: end;
+  position: relative;
+}
+#header .bottom .search input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #918f8f;
+  border-radius: 20px;
+  margin-right: 20px;
+  font-weight: 600;
+  background: #f9f9f9;
+  color: #222222;
+  margin: 0;
+}
+#header .bottom .search button {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #b5292f;
+  border-radius: 50%;
+  background-color: #b5292f;
+  color: white;
+  right: 10px;
+  top: 5px;
+}
+
+/* Xử lý footer */
+#footer {
+  width: 100%;
+  height: 215px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b5292f;
+  border-top: 2px solid #e6e6e6;
+  padding-left: 400px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+#footer .footer-info {
+  width: 100%;
+  width: 1200px;
+  height: 50%;
+  display: flex;
+}
+#footer .footer-info .right {
+  width: 50%;
+  color: white;
+}
+#footer .footer-info .left {
+  width: 50%;
+  color: white;
+}
+#footer .footer-info .left i {
+  color: white;
+  font-size: 20px;
+  margin: 5px;
+}
+#footer .footer-social {
+  display: flex;
+  gap: 10px;
+  color: #e6e6e6;
+  margin-top: 20px;
+  margin-bottom: -25px;
+}
+#footer .footer-social a {
+  color: white;
+  text-decoration: none;
+}
+#footer .footer-social .mid {
+  margin-left: 100px;
 }
 
 /* Xử lý content */
 #content_section {
+  font-family: "popins", sans-serif;
   height: 500px;
   padding: 20px 0;
   background-color: #f2f2f2;
@@ -347,89 +465,4 @@ body {
   border-radius: 5px;
   margin-top: 15px;
   transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng khi hover và nhấn */
-}
-
-/* Xử lý about_section */
-
-#about_section {
-  background-color: white;
-  color: black;
-  padding-top: 20px;
-}
-
-#about_section .about-content {
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: black;
-}
-
-#about_section .about-content .left-section {
-  width: 50%;
-  padding: 0 50px;
-}
-
-.address-phone {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-}
-
-#about_section .about-content .right-section {
-  display: grid;
-  width: 50%;
-  margin-top: -110px;
-  margin-right: 100px;
-  justify-content: flex-end;
-}
-
-#about_section .about-content .right-section .social-icons {
-  display: flex;
-}
-
-p {
-  font-size: 20px;
-  margin-left: -10px;
-  font-weight: 400;
-}
-
-.social-icons {
-  display: flex;
-  gap: 15px;
-}
-
-/* Xử lý footer */
-#footer {
-  background-color: #333;
-  color: #d1d1d1;
-  margin-bottom: -15px;
-}
-
-#footer ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-}
-
-#footer ul li {
-  padding: 15px;
-  margin-bottom: 10px;
-  margin-right: 20px;
-}
-
-#footer ul li a {
-  text-decoration: none;
-  color: #d1d1d1;
-  transition: color 0.3s, border-bottom 0.3s;
-  border-bottom: 2px solid transparent;
-}
-
-#footer ul li a:hover {
-  color: #ffffff;
-  border-bottom: 2px solid #ffffff;
-  /* Hiệu ứng underline khi hover */
 }
