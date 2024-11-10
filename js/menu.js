@@ -45,19 +45,6 @@ function updatePagination(page) {
   }
 }
 
-<<<<<<< HEAD
-    showPage(1);
-
-
-    function showPopup() {
-        document.getElementById("popup").style.display = "flex";
-      }
-      
-      function closePopup() {
-        document.getElementById("popup").style.display = "none";
-      }
-      
-=======
 showPage(1);
 
 function showPopup(popupId) {
@@ -74,4 +61,3 @@ function showPopup(popupId) {
 function closePopup(popupId) {
   document.getElementById(popupId).style.display = "none";
 }
->>>>>>> main
