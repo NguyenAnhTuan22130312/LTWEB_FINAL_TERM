@@ -259,35 +259,6 @@ html {
   border-bottom: 1px solid #ddd;
 }
 
-.cart-table th:first-child,
-.cart-table td:first-child {
-  max-width: 50px;
-  text-align: center;
-}
-
-.cart-table th:nth-child(1),
-.cart-table td:nth-child(1) {
-  width: 180px;
-}
-
-.cart-table td:nth-child(4) {
-  width: 150px;
-}
-.cart-table th:nth-child(4) {
-  width: 120px;
-}
-
-.cart-table td:nth-child(4),
-.cart-table td:nth-child(5),
-.cart-table td:nth-child(6) {
-  text-align: left;
-}
-
-.cart-table th:last-child {
-  text-align: center;
-  width: 8%;
-}
-
 .cart-table tr {
   display: table; /* Đảm bảo các hàng vẫn hiển thị như bảng */
   table-layout: fixed; /* Đảm bảo chiều rộng các ô không bị thay đổi */
@@ -302,7 +273,7 @@ html {
 .cart-body {
   display: block; /* Chuyển đổi thành block để có thể cuộn */
   max-height: 300px;
-  overflow-y: auto; /* Cuộn theo chiều dọc */
+  overflow-y: auto;
 }
 
 #cart-items-container::-webkit-scrollbar {
@@ -326,9 +297,9 @@ html {
   height: 50px;
 }
 
-.quantity .qty-input {
-  width: 40px; /* Đặt chiều rộng cho ô nhập số lượng */
-  text-align: center; /* Căn giữa văn bản bên trong */
+.quantity-input {
+  width: 50px;
+  text-align: center;
 }
 
 .quantity .qty-btn {
