@@ -112,6 +112,7 @@ html {
   width: auto;
   border: 1px solid rgba(0, 0, 0, 0.2);
   
+
   border-top: none;
   top: 29px;
   left: 20px;
@@ -124,12 +125,12 @@ html {
   display: block;
   border-radius: 10px;
   padding-top: 10px;
+
 }
 #header .menu ul.submenu > li {
   float: none;
   width: 100px;
   height: 30px;
-  
 }
 #header .menu .submenu a {
   position: relative;
@@ -173,19 +174,21 @@ html {
 /* Xử lý footer */
 #footer {
   width: 100%;
+
   height: max-content;
+
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #b5292f;
   border-top: 2px solid #e6e6e6;
-  
   padding-top: 10px;
   padding-bottom: 10px;
   box-sizing: border-box;
 }
 #footer .footer-info {
   width: 100%;
+
   width: 800px;
   height: 50%;
   display: flex;
@@ -199,6 +202,7 @@ html {
   color: white;
 }
 #footer .footer-info .right i {
+
   color: white;
   font-size: 20px;
   margin: 5px;
