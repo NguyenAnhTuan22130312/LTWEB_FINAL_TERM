@@ -173,37 +173,36 @@ margin-right: 10px;
 /* Xử lý footer */
 #footer {
     width: 100%;
-    height: 200px;
+    height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #B5292F;
+    background-color: #b5292f;
     border-top: 2px solid #e6e6e6;
-    padding-left: 400px;
+    
     padding-top: 10px;
     padding-bottom: 10px;
     box-sizing: border-box;
-}
-#footer .footer-info{
+  }
+  #footer .footer-info {
     width: 100%;
-    width: 1200px;
+    width: 800px;
     height: 50%;
-    display: flex;   
-}
-#footer .footer-info .right{
-    width: 50%;
+    display: flex;
+  }
+  #footer .footer-info .left {
+    width: 70%;
     color: white;
-    
-}
-#footer .footer-info .left{
-    width: 50%;
+  }
+  #footer .footer-info .right {
+    width: 30%;
     color: white;
-}
-#footer .footer-info .left i{
+  }
+  #footer .footer-info .right i {
     color: white;
     font-size: 20px;
     margin: 5px;
-}
+  }
 #footer .footer-social {
     display: flex;
     gap: 10px;
