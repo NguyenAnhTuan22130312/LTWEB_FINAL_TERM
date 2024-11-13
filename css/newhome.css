@@ -366,7 +366,12 @@ html {
   justify-content: center;
   align-items: center;
 }
-#container-monban .xemtatca button {
+#container-monban .xemtatca a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
   width: 180px;
   height: 40px;
   font-size: 17px;
@@ -375,6 +380,7 @@ html {
   border: 1px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+
 
 #container-monban .content_section_bottom {
   display: grid;
