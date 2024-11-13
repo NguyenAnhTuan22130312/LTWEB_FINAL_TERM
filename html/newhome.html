@@ -24,9 +24,19 @@
                         </div>
                     </div>
                     <div class="right">
-                        <a href="../html/signin.html" class="nav-item">
+                        <a href="../html/signin.html" class="nav-item" id="login-link">
                             <i class="fa-solid fa-user"></i> Đăng Nhập
                         </a>
+                        <div class="user-menu" id="user-menu" style="display: none;">
+                            <i class="fa-solid fa-user"></i> 
+                            <a href="#" class=" user-name" id="user-name">
+                                Tên người dùng
+                            </a>
+                            <div class="submenu" id="submenu">
+                                <a href="#" id="logout">Đăng xuất</a>
+                                <a href="../html/admin.html" id="admin-link" style="display: none;">Quản trị</a>
+                            </div>
+                        </div>
                         <a href="#" class="nav-item">
                             <i class="fa-solid fa-phone"></i> 033.***.****
                         </a>
@@ -34,9 +44,10 @@
                             <a href="../html/cart.html" class="nav-item">
                                 <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                             </a>
-                            <a href="#" class="count"> 0</a>
+                            <a href="#" class="count">0</a>
                         </div>
                     </div>
+
                 </div>
                 <div class="bottom">
                     <div class="menu">
@@ -650,6 +661,7 @@
     <script src="../js/home.js">
     </script>
     <script src="../js/module_popup_home.js"></script>
+    <script src="../js/module_dangnhap.js"></script>
 </body>
 
 </html>
