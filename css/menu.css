@@ -109,7 +109,7 @@ html {
   height: 150px;
   width: auto;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  
+
   border-top: none;
   top: 29px;
   left: 20px;
@@ -127,7 +127,6 @@ html {
   float: none;
   width: 100px;
   height: 30px;
-  
 }
 #header .menu .submenu a {
   position: relative;
@@ -176,7 +175,7 @@ html {
   align-items: center;
   background-color: #b5292f;
   border-top: 2px solid #e6e6e6;
-  
+
   padding-top: 10px;
   padding-bottom: 10px;
   box-sizing: border-box;
@@ -325,7 +324,7 @@ html {
   background-color: rgba(122, 8, 8, 0.905);
   font-weight: bold;
   border-radius: 5px;
-  color: black;
+  color: white;
 }
 
 .pagination a:hover:not(.active) {
