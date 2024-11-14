@@ -68,12 +68,12 @@ html {
 /*xu li dang nhap*/
 .user-menu {
   position: relative;
+  z-index: 9999;
 }
-
-
 
 .right .submenu {
   position: absolute;
+  
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;

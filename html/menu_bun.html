@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu Bún</title>
-    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="../css/menu.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div id="header">
-      <div class="containerheaderAll">
-        <div class="containers">
-          <div class="containerss">
-            <div class="left">
-              <div class="logo">
-                <img
-                  src="../Images/LOGO_V2.png"
-                  alt="Food store của Trung, Atuan, Atuan"
-                />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu các món bún</title>
+  <link rel="stylesheet" href="../css/menu.css" />
+  <link rel="stylesheet" href="../css/signinCssModule.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+  <div id="header">
+    <div class="containerheaderAll">
+      <div class="containers">
+        <div class="containerss">
+          <div class="left">
+            <div class="logo">
+              <a href="../html/newhome.html">
+                <img src="../Images/LOGO_V2.png" alt="Food store của Trung, Atuan, Atuan">
+              </a>
+            </div>
+          </div>
+          <div class="right">
+            <a href="../html/signin.html" class="nav-item" id="login-link">
+              <i class="fa-solid fa-user"></i> Đăng Nhập
+            </a>
+            <div class="user-menu" id="user-menu" style="display: none;">
+              <i class="fa-solid fa-user"></i>
+              <a href="#" class=" user-name" id="user-name">
+                Tên người dùng
+              </a>
+              <div class="submenu" id="submenu">
+                <a href="../html/admin.html" id="admin-link" style="display: none;">Quản trị</a>
+                <a href="../html/info.html" id="user-link" style="display: none;">Thông tin</a>
+                <a href="#" id="logout">Đăng xuất</a>
+
               </div>
             </div>
-            <div class="right">
-              <a href="../html/signin.html" class="nav-item">
-                <i class="fa-solid fa-user"></i> Đăng Nhập
-              </a>
-              <a href="#" class="nav-item">
-                <i class="fa-solid fa-phone"></i> 033.***.****
+            <a href="#" class="nav-item">
+              <i class="fa-solid fa-phone"></i> 033.***.****
+            </a>
+            <div class="nav_item_shop">
+              <a href="../html/cart.html" class="nav-item">
+                <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
+
               </a>
               <div class="nav_item_shop">
                 <a href="../html/cart.html" class="nav-item">
@@ -555,6 +566,9 @@
         </div>
       </div>
     </div>
-    <script src="../js/menu.js"></script>
-  </body>
+  </div>
+  <script src="../js/menu.js"></script>
+  <script src="../js/module_dangnhap.js"></script>
+</body>
 </html>
+
