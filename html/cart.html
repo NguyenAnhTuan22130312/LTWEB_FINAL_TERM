@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="stylesheet" href="../css/cart.css" />
+  <link rel="stylesheet" href="../css/signinCssModule.css" />
   <title>Giỏ hàng</title>
 </head>
 
@@ -23,9 +24,21 @@
             </div>
           </div>
           <div class="right">
-            <a href="../html/signin.html" class="nav-item">
+            <a href="../html/signin.html" class="nav-item" id="login-link">
               <i class="fa-solid fa-user"></i> Đăng Nhập
             </a>
+            <div class="user-menu" id="user-menu" style="display: none;">
+              <i class="fa-solid fa-user"></i>
+              <a href="#" class=" user-name" id="user-name">
+                Tên người dùng
+              </a>
+              <div class="submenu" id="submenu">
+                <a href="../html/admin.html" id="admin-link" style="display: none;">Quản trị</a>
+                <a href="../html/info.html" id="user-link" style="display: none;">Thông tin</a>
+                <a href="#" id="logout">Đăng xuất</a>
+
+              </div>
+            </div>
             <a href="#" class="nav-item">
               <i class="fa-solid fa-phone"></i> 033.***.****
             </a>
@@ -240,6 +253,7 @@
   </div>
 
   <script src="../js/cart.js"></script>
+  <script src="../js/module_dangnhap.js"></script>
 </body>
 
 </html>
