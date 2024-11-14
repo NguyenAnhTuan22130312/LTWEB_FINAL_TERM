@@ -106,11 +106,12 @@ margin-right: 10px;
     position: relative;
     height: 100%;
 }
-#header .bottom   .menu ul .submenu{
+#header .bottom .menu ul .submenu {
     position: absolute;
-    height: 400px;
+    height: 150px;
     width: auto;
     border: 1px solid rgba(0, 0, 0, 0.2);
+    
     border-top: none;
     top: 29px;
     left: 20px;
@@ -118,16 +119,18 @@ margin-right: 10px;
     background-color: white;
     color: black;
     border-radius: 0;
-}
-#header .menu ul>li:hover .submenu {
+  }
+  #header .menu ul > li:hover .submenu {
     display: block;
-    
-}
-#header .menu ul.submenu>li{
+    border-radius: 10px;
+    padding-top: 10px;
+  }
+  #header .menu ul.submenu > li {
     float: none;
-    width: 100px ;
-    height: 30px; 
-}
+    width: 100px;
+    height: 30px;
+    
+  }
 #header .menu .submenu a{
     position: relative;
 }
@@ -170,37 +173,36 @@ margin-right: 10px;
 /* Xử lý footer */
 #footer {
     width: 100%;
-    height: 200px;
+    height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #B5292F;
+    background-color: #b5292f;
     border-top: 2px solid #e6e6e6;
-    padding-left: 400px;
+    
     padding-top: 10px;
     padding-bottom: 10px;
     box-sizing: border-box;
-}
-#footer .footer-info{
+  }
+  #footer .footer-info {
     width: 100%;
-    width: 1200px;
+    width: 800px;
     height: 50%;
-    display: flex;   
-}
-#footer .footer-info .right{
-    width: 50%;
+    display: flex;
+  }
+  #footer .footer-info .left {
+    width: 70%;
     color: white;
-    
-}
-#footer .footer-info .left{
-    width: 50%;
+  }
+  #footer .footer-info .right {
+    width: 30%;
     color: white;
-}
-#footer .footer-info .left i{
+  }
+  #footer .footer-info .right i {
     color: white;
     font-size: 20px;
     margin: 5px;
-}
+  }
 #footer .footer-social {
     display: flex;
     gap: 10px;
