@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,525 +45,360 @@
             <div class="nav_item_shop">
               <a href="../html/cart.html" class="nav-item">
                 <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
-
               </a>
-              <div class="nav_item_shop">
-                <a href="../html/cart.html" class="nav-item">
-                  <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
-                </a>
-                <a href="#" class="count"> 0</a>
-              </div>
+              <a href="#" class="count"> 0</a>
             </div>
           </div>
-          <div class="bottom">
-            <div class="menu">
-              <ul class="menu-list">
-                <li class="menu-item">
-                  <a href="#" class="tabbar">
-                    <i class="fa-solid fa-bars"></i>Menu</a
-                  >
-                  <ul class="submenu">
-                    <li>
-                      <a href="../html/menu_com.html"
-                        ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
-                      >
-                    </li>
-                    <li>
-                      <a href="../html/menu_bun.html"
-                        ><i class="fa-solid fa-bowl-food"></i>Món bún</a
-                      >
-                    </li>
-                    <li>
-                      <a href="../html/menu_pho.html"
-                        ><i class="fa-solid fa-bowl-food"></i>Món phở</a
-                      >
-                    </li>
-                    <li>
-                      <a href="../html/menu_nuoc.html"
-                        ><i class="fa-solid fa-glass-water"></i>Nước</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="menu-item">
-                  <a href="../html/newhome.html">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                  <a href="../html/contact.html">Contact</a>
-                </li>
-                <li class="menu-item">
-                  <a href="../html/about.html">About</a>
-                </li>
-              </ul>
-            </div>
-            <div class="search">
-              <input type="text" placeholder="Tìm kiếm món ăn" />
-              <button type="submit">
-                <i class="fa-solid fa-search"></i>
-              </button>
-            </div>
+        </div>
+        <div class="bottom">
+          <div class="menu">
+            <ul class="menu-list">
+              <li class="menu-item">
+                <a href="#" class="tabbar">
+                  <i class="fa-solid fa-bars"></i>Menu</a>
+                <ul class="submenu">
+                  <li>
+                    <a href="../html/menu_com.html"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
+                  </li>
+                  <li>
+                    <a href="../html/menu_bun.html"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
+                  </li>
+                  <li>
+                    <a href="../html/menu_pho.html"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
+                  </li>
+                  <li>
+                    <a href="../html/menu_nuoc.html"><i class="fa-solid fa-glass-water"></i>Nước</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item"><a href="../html/newhome.html">Trang chủ</a></li>
+              <li class="menu-item"><a href="../html/contact.html">Contact</a></li>
+              <li class="menu-item"><a href="../html/about.html">About</a></li>
+            </ul>
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Tìm kiếm món ăn" />
+            <button type="submit">
+              <i class="fa-solid fa-search"></i>
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div id="container">
-      <div class="intro">
-        <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
-        <h4>Menu các món bún</h4>
+  </div>
+  <div id="container">
+    <div class="intro">
+      <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
+      <h4>Menu các món bún</h4>
+    </div>
+
+    <div id="content_section" class="content_section">
+      <div class="card" onclick="showPopup('popup01')">
+        <img src="../Images/Food/Bun/Bun-Bo-Hue.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Bún bò Huế</h3>
+          <p>40.000đ</p>
+          <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+        </div>
       </div>
 
-      <div id="content_section" class="content_section">
-        <div class="card" onclick="showPopup('popup01')">
+      <div id="popup01" class="popup">
+        <div class="popup-content">
           <img src="../Images/Food/Bun/Bun-Bo-Hue.png" alt="com rang" />
-          <div class="card_content">
-            <h3>Bún bò Huế</h3>
-            <p>40.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
+          <h3>Bún bò Huế</h3>
+          <p>Giá: 40.000đ</p>
+          <span>
+            Bún bò Huế là một món ăn đặc trưng của miền Trung, nổi bật với hương vị đậm đà, cay nồng.
+            Sợi bún mềm mại được kết hợp với nước dùng hầm từ xương bò và các loại gia vị như sả, ớt,
+            tạo nên một món ăn vừa thơm ngon vừa đầy đủ chất dinh dưỡng. Thịt bò thái mỏng, giò heo
+            và huyết bò làm tăng thêm sự phong phú, đặc biệt khi ăn kèm với rau sống tươi mát.<br />
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
         </div>
+        <span class="close" onclick="closePopup('popup01')">&times;</span>
+      </div>
 
-        <div id="popup01" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/Bun/Bun-Bo-Hue.png" alt="com rang" />
-            <h3>Bún bò Huế</h3>
-            <p>Giá: 40.000đ</p>
-            <span>
-              Bún bò Huế là một món ăn đặc trưng của miền Trung, nổi bật với
-              hương vị đậm đà, cay nồng. Sợi bún mềm mại được kết hợp với nước
-              dùng hầm từ xương bò và các loại gia vị như sả, ớt, tạo nên một
-              món ăn vừa thơm ngon vừa đầy đủ chất dinh dưỡng. Thịt bò thái
-              mỏng, giò heo và huyết bò làm tăng thêm sự phong phú, đặc biệt khi
-              ăn kèm với rau sống tươi mát.<br />
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup01')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup02')">
-          <img src="../Images/Food/Bun/Bun-cha-ghe.png" alt="com rang" />
-          <div class="card_content">
-            <h3>Bún chả ghẹ</h3>
-            <p>45.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup02" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/Bun/Bun-cha-ghe.png" alt="com rang" />
-            <h3>Bún chả ghẹ</h3>
-            <p>Giá: 45.000đ</p>
-            <span>
-              Bún chả ghẹ là một món ăn đặc biệt kết hợp giữa chả ghẹ tươi ngon
-              và sợi bún mềm mại. Chả ghẹ được chế biến từ thịt ghẹ tươi, giòn
-              ngọt và đậm đà gia vị, khi ăn kèm với bún và nước mắm chua ngọt sẽ
-              tạo nên sự hòa quyện tuyệt vời. <br />
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup02')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup03')">
-          <img src="../Images/Food/Bun/Bun-cha-ha-noi.png" alt="com rang" />
-          <div class="card_content">
-            <h3>Bún chả Hà Nội</h3>
-            <p>30.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup03" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/Bun/Bun-cha-ha-noi.png" alt="com rang" />
-            <h3>Bún chả Hà Nội</h3>
-            <p>Giá: 30.000đ</p>
-            <span>
-              Bún chả Hà Nội là món ăn nổi tiếng với sự kết hợp hoàn hảo giữa
-              bún tươi và chả nướng thơm lừng. Chả được làm từ thịt heo xay
-              nhuyễn, nêm gia vị rồi nướng trên than hồng, mang lại hương vị đặc
-              trưng. Khi ăn, bạn sẽ cảm nhận được sự giòn ngọt của chả, kết hợp
-              với nước mắm pha chua ngọt, và rau sống tươi mát. <br />
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup03')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup04')">
-          <img src="../Images/Food/Bun/Bun-ga-sa-te.png" alt="com rang" />
-          <div class="card_content">
-            <h3>Bún gà sa tế</h3>
-            <p>35.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup04" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/Bun/Bun-ga-sa-te.png" alt="com rang" />
-            <h3>Bún gà sa tế</h3>
-            <p>Giá: 35.000đ</p>
-            <span>
-              Bún gà sa tế là món ăn đậm đà và cay nồng, đặc trưng với hương vị
-              sa tế thơm lừng. Thịt gà được nấu mềm, ngấm gia vị cay nồng của sa
-              tế, hòa quyện với sợi bún mềm mại. Nước dùng có màu đỏ hấp dẫn, có
-              độ cay vừa phải và vị ngọt từ gà. Món ăn này được ăn kèm với rau
-              sống tươi ngon, tạo nên một sự kết hợp hoàn hảo giữa cay, ngọt và
-              chua. <br />
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup04')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup05')">
-          <img
-            src="../Images/Food/Bun/Bun-heo-quay-cha-gio-top-mo.png"
-            alt="com chien bo luc lac"
-          />
-          <div class="card_content">
-            <h3>Bún heo quay chả giò tóp mỡ</h3>
-            <p>30.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup05" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/Bun/Bun-heo-quay-cha-gio-top-mo.png"
-              alt="com chien bo luc lac"
-            />
-            <h3>Bún heo quay chả giò tóp mỡ</h3>
-            <p>Giá: 30.000đ</p>
-            <span>
-              Bún heo quay chả giò tóp mỡ là sự kết hợp tuyệt vời giữa các món
-              ăn yêu thích của người Việt. Heo quay vàng giòn, thấm đẫm gia vị
-              được ăn kèm với chả giò giòn rụm và tóp mỡ béo ngậy, tạo nên một
-              món ăn đầy hương vị. Sợi bún mềm mại kết hợp với nước mắm pha chua
-              ngọt, mang lại một sự hòa quyện thơm ngon, vừa béo vừa giòn.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup05')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup06')">
-          <img
-            src="../Images/Food/Bun/Bun-Hue-chay.png"
-            alt="com chien ga xoi mo"
-          />
-          <div class="card_content">
-            <h3>Bún Huế chay</h3>
-            <p>30.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup06" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/Bun/Bun-Hue-chay.png"
-              alt="com chien ga xoi mo"
-            />
-            <h3>Bún Huế chay</h3>
-            <p>Giá: 30.000đ</p>
-            <span>
-              Bún Huế chay là món ăn thuần Việt mang đậm hương vị miền Trung,
-              nhưng không sử dụng thịt mà thay vào đó là những nguyên liệu chay
-              thanh đạm. Nước dùng đậm đà, được chế biến từ rau củ, gia vị
-              truyền thống như sả, ớt, tạo nên hương vị cay nồng đặc trưng. Món
-              ăn này có sự kết hợp tuyệt vời giữa bún mềm, rau tươi và các loại
-              nấm, đậu hũ, mang đến cảm giác thanh mát, đầy đủ chất dinh dưỡng
-              mà vẫn giữ được hương vị đặc trưng của bún Huế.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup06')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup07')">
-          <img
-            src="../Images/Food/Bun/Bun-mang-ga.png"
-            alt="com chien muc trung muoi"
-          />
-          <div class="card_content">
-            <h3>Bún măng gà</h3>
-            <p>30.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup07" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/Bun/Bun-mang-ga.png"
-              alt="com chien muc trung muoi"
-            />
-            <h3>Bún măng gà</h3>
-            <p>Giá: 30.000đ</p>
-            <span>
-              Món bún măng gà hấp dẫn với thịt gà mềm, măng tươi giòn, hòa quyện
-              trong nước dùng thanh ngọt, đậm đà. Được trang trí với hành phi và
-              rau sống tươi ngon, tạo nên một bữa ăn vừa bổ dưỡng vừa thơm ngon.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup07')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup08')">
-          <img
-            src="../Images/Food/Bun/Bun-nem-thit-nuong.png"
-            alt="com chien trung op la"
-          />
-          <div class="card_content">
-            <h3>Bún nem thịt nướng</h3>
-            <p>30.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup08" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/Bun/Bun-nem-thit-nuong.png"
-              alt="com chien trung op la"
-            />
-            <h3>Bún nem thịt nướng</h3>
-            <p>Giá: 30.000đ</p>
-            <span>
-              Bún nem thịt nướng là sự kết hợp hoàn hảo giữa nem nướng thơm lừng
-              và thịt heo nướng xém vàng, chín mềm. Món ăn được ăn kèm với bún
-              tươi, rau sống và nước mắm chua ngọt, mang đến hương vị đậm đà khó
-              quên.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup08')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup09')">
-          <img
-            src="../Images/Food/Bun/Bun-thit-luoc-rau-song-mam-nem.png"
-            alt="com ga kho xa ot"
-          />
-          <div class="card_content">
-            <h3>Bún thịt luộc mắm nêm</h3>
-            <p>30.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup09" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/Bun/Bun-thit-luoc-rau-song-mam-nem.png"
-              alt="com ga kho xa ot"
-            />
-            <h3>Bún thịt luộc mắm nêm</h3>
-            <p>Giá: 30.000đ</p>
-            <span>
-              Bún thịt luộc mắm nêm là món ăn dân dã với thịt heo luộc thái
-              mỏng, ăn kèm rau sống tươi ngon và mắm nêm đậm đà. Món ăn này mang
-              lại sự hòa quyện giữa vị ngọt của thịt, vị mặn của mắm nêm và độ
-              tươi mát của rau sống.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup09')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup10')">
-          <img
-            src="../Images/Food/Bun/Bun-thit-nuong.png"
-            alt="com ga nau hai nam"
-          />
-          <div class="card_content">
-            <h3>Bún thịt nướng</h3>
-            <p>25.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup10" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/Bun/Bun-thit-nuong.png"
-              alt="com ga nau hai nam"
-            />
-            <h3>Bún thịt nướng</h3>
-            <p>Giá: 25.000đ</p>
-            <span>
-              Bún thịt nướng là món ăn quen thuộc với thịt heo nướng thơm ngon,
-              giòn rụm, kết hợp với bún tươi, rau sống và đậu phộng rang. Đặc
-              biệt, nước mắm pha chua ngọt sẽ làm tăng thêm vị đậm đà cho món
-              ăn, mang đến trải nghiệm ẩm thực đậm chất Việt.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup10')">&times;</span>
+      <div class="card" onclick="showPopup('popup02')">
+        <img src="../Images/Food/Bun/Bun-cha-ghe.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Bún chả ghẹ</h3>
+          <p>45.000đ</p>
+          <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
         </div>
       </div>
-    </div>
 
-    <div class="pagination">
-      <a href=""></a>
-      <a href="" class="active">1</a>
-      <a href="">2</a>
-      <a href="">3</a>
-      <a href="">></a>
+      <div id="popup02" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/Bun/Bun-cha-ghe.png" alt="com rang" />
+          <h3>Bún chả ghẹ</h3>
+          <p>Giá: 45.000đ</p>
+          <span>
+            Bún chả ghẹ là một món ăn đặc biệt kết hợp giữa chả ghẹ tươi ngon và sợi bún mềm mại.
+            Chả ghẹ được chế biến từ thịt ghẹ tươi, giòn ngọt và đậm đà gia vị, khi ăn kèm với
+            bún và nước mắm chua ngọt sẽ tạo nên sự hòa quyện tuyệt vời. <br />
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup02')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup03')">
+        <img src="../Images/Food/Bun/Bun-cha-ha-noi.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Bún chả Hà Nội</h3>
+          <p>30.000đ</p>
+          <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div id="popup03" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/Bun/Bun-cha-ha-noi.png" alt="com rang" />
+          <h3>Bún chả Hà Nội</h3>
+          <p>Giá: 30.000đ</p>
+          <span>
+            Bún chả Hà Nội là món ăn nổi tiếng với sự kết hợp hoàn hảo giữa bún tươi
+            và chả nướng thơm lừng. Chả được làm từ thịt heo xay nhuyễn, nêm gia vị
+            rồi nướng trên than hồng, mang lại hương vị đặc trưng. Khi ăn, bạn sẽ cảm
+            nhận được sự giòn ngọt của chả, kết hợp với nước mắm pha chua ngọt, và rau
+            sống tươi mát. <br />
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup03')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup04')">
+        <img src="../Images/Food/Bun/Bun-ga-sa-te.png" alt="com rang" />
+        <div class="card_content">
+          <h3>Bún gà sa tế</h3>
+          <p>35.000đ</p>
+          <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div id="popup04" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/Bun/Bun-ga-sa-te.png" alt="com rang" />
+          <h3>Bún gà sa tế</h3>
+          <p>Giá: 35.000đ</p>
+          <span>
+            Bún gà sa tế là món ăn đậm đà và cay nồng, đặc trưng với hương
+            vị sa tế thơm lừng. Thịt gà được nấu mềm, ngấm gia vị cay nồng
+            của sa tế, hòa quyện với sợi bún mềm mại. Nước dùng có màu đỏ
+            hấp dẫn, có độ cay vừa phải và vị ngọt từ gà. Món ăn này được ăn
+            kèm với rau sống tươi ngon, tạo nên một sự kết hợp hoàn hảo giữa
+            cay, ngọt và chua. <br />
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup04')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup05')">
+        <img src="../Images/Food/Bun/Bun-heo-quay-cha-gio-top-mo.png" alt="com chien bo luc lac" />
+        <div class="card_content">
+          <h3>Bún heo quay chả giò tóp mỡ</h3>
+          <p>30.000đ</p>
+          <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div id="popup05" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/Bun/Bun-heo-quay-cha-gio-top-mo.png" alt="com chien bo luc lac" />
+          <h3>Bún heo quay chả giò tóp mỡ</h3>
+          <p>Giá: 30.000đ</p>
+          <span>
+            Bún heo quay chả giò tóp mỡ là sự kết hợp tuyệt vời giữa các món ăn
+            yêu thích của người Việt. Heo quay vàng giòn, thấm đẫm gia vị được
+            ăn kèm với chả giò giòn rụm và tóp mỡ béo ngậy, tạo nên một món ăn
+            đầy hương vị. Sợi bún mềm mại kết hợp với nước mắm pha chua ngọt,
+            mang lại một sự hòa quyện thơm ngon, vừa béo vừa giòn.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup05')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup06')">
+        <img src="../Images/Food/Bun/Bun-Hue-chay.png" alt="com chien ga xoi mo" />
+        <div class="card_content">
+          <h3>Bún Huế chay</h3>
+          <p>30.000đ</p>
+          <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div id="popup06" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/Bun/Bun-Hue-chay.png" alt="com chien ga xoi mo" />
+          <h3>Bún Huế chay</h3>
+          <p>Giá: 30.000đ</p>
+          <span>
+            Bún Huế chay là món ăn thuần Việt mang đậm hương vị miền Trung,
+            nhưng không sử dụng thịt mà thay vào đó là những nguyên liệu chay
+            thanh đạm. Nước dùng đậm đà, được chế biến từ rau củ, gia vị truyền
+            thống như sả, ớt, tạo nên hương vị cay nồng đặc trưng. Món ăn này
+            có sự kết hợp tuyệt vời giữa bún mềm, rau tươi và các loại nấm, đậu
+            hũ, mang đến cảm giác thanh mát, đầy đủ chất dinh dưỡng mà vẫn giữ
+            được hương vị đặc trưng của bún Huế.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup06')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup07')">
+        <img src="../Images/Food/Bun/Bun-mang-ga.png" alt="com chien muc trung muoi" />
+        <div class="card_content">
+          <h3>Bún măng gà</h3>
+          <p>30.000đ</p>
+          <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div id="popup07" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/Bun/Bun-mang-ga.png" alt="com chien muc trung muoi" />
+          <h3>Bún măng gà</h3>
+          <p>Giá: 30.000đ</p>
+          <span>
+            Món bún măng gà hấp dẫn với thịt gà mềm, măng tươi giòn, hòa quyện
+            trong nước dùng thanh ngọt, đậm đà. Được trang trí với hành phi và
+            rau sống tươi ngon, tạo nên một bữa ăn vừa bổ dưỡng vừa thơm ngon.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup07')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup08')">
+        <img src="../Images/Food/Bun/Bun-nem-thit-nuong.png" alt="com chien trung op la" />
+        <div class="card_content">
+          <h3>Bún nem thịt nướng</h3>
+          <p>30.000đ</p>
+          <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div id="popup08" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/Bun/Bun-nem-thit-nuong.png" alt="com chien trung op la" />
+          <h3>Bún nem thịt nướng</h3>
+          <p>Giá: 30.000đ</p>
+          <span>
+            Bún nem thịt nướng là sự kết hợp hoàn hảo giữa nem nướng thơm
+            lừng và thịt heo nướng xém vàng, chín mềm. Món ăn được ăn kèm
+            với bún tươi, rau sống và nước mắm chua ngọt, mang đến hương
+            vị đậm đà khó quên.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup08')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup09')">
+        <img src="../Images/Food/Bun/Bun-thit-luoc-rau-song-mam-nem.png" alt="com ga kho xa ot" />
+        <div class="card_content">
+          <h3>Bún thịt luộc mắm nêm</h3>
+          <p>30.000đ</p>
+          <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div id="popup09" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/Bun/Bun-thit-luoc-rau-song-mam-nem.png" alt="com ga kho xa ot" />
+          <h3>Bún thịt luộc mắm nêm</h3>
+          <p>Giá: 30.000đ</p>
+          <span>
+            Bún thịt luộc mắm nêm là món ăn dân dã với thịt heo luộc thái mỏng,
+            ăn kèm rau sống tươi ngon và mắm nêm đậm đà. Món ăn này mang lại sự
+            hòa quyện giữa vị ngọt của thịt, vị mặn của mắm nêm và độ tươi mát
+            của rau sống.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup09')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup10')">
+        <img src="../Images/Food/Bun/Bun-thit-nuong.png" alt="com ga nau hai nam" />
+        <div class="card_content">
+          <h3>Bún thịt nướng</h3>
+          <p>25.000đ</p>
+          <a class="btn" href="../html/cart.html"> Thêm vào giỏ hàng </a>
+        </div>
+      </div>
+
+      <div id="popup10" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/Bun/Bun-thit-nuong.png" alt="com ga nau hai nam" />
+          <h3>Bún thịt nướng</h3>
+          <p>Giá: 25.000đ</p>
+          <span>
+            Bún thịt nướng là món ăn quen thuộc với thịt heo nướng thơm ngon,
+            giòn rụm, kết hợp với bún tươi, rau sống và đậu phộng rang. Đặc
+            biệt, nước mắm pha chua ngọt sẽ làm tăng thêm vị đậm đà cho món
+            ăn, mang đến trải nghiệm ẩm thực đậm chất Việt.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup10')">&times;</span>
+      </div>
     </div>
-    <div id="footer">
-      <div class="footer-container">
-        <div class="footer-info">
-          <div class="right">
-            <p><strong>Địa chỉ:</strong></p>
-            <p>Khu phố 6, Phường Linh Trung, TP. Thủ Đức, Tp. Hồ Chí Minh</p>
-            <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
-          </div>
-          <div class="left">
-            <p><strong>Hotline:</strong> 033 *** 1234</p>
-            <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
-            <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
-            <div class="social-icons">
-              <a href="#" target="_blank"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
-              <a href="#" target="_blank"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-            </div>
+  </div>
+
+  <div class="pagination">
+    <a href=""></a>
+    <a href="" class="active">1</a>
+    <a href="">2</a>
+    <a href="">3</a>
+    <a href="">></a>
+  </div>
+  </div>
+  <div id="footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <div class="left">
+          <p><strong>Địa chỉ:</strong> Khu phố 6, Phường Linh Trung, TP. Thủ Đức, </p>
+          <p style="text-indent: 60px">Tp. Hồ Chí Minh.</p>
+          <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
+        </div>
+        <div class="right">
+          <p><strong>Hotline:</strong> 033 *** 1234</p>
+          <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
+          <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
-        <div class="footer-social">
-          <div class="1">© 2024 Food T^3</div>
-          <div class="mid">
-            <a href="#">Chính sách hoạt động</a> |
-            <a href="#">Chính sách bảo mật thông tin</a>
-          </div>
+      </div>
+      <div class="footer-social">
+        <div class="1">© 2024 Food T^3</div>
+        <div class="mid"><a href="#">Chính sách hoạt động</a> | <a href="#">Chính sách bảo mật thông tin</a>
         </div>
       </div>
     </div>
@@ -570,5 +406,5 @@
   <script src="../js/menu.js"></script>
   <script src="../js/module_dangnhap.js"></script>
 </body>
-</html>
 
+</html>
