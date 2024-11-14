@@ -71,58 +71,39 @@
     </div>
     <!-- Xử lý content\  -->
 
-    <div id="container">
-        <div class="input_section">
+    <div class="container">
+        <div class="form-section">
             <h2>Liên hệ với chúng tôi</h2>
-
-            <div class="stc">
-                <div class="form">
-                    <input type="text" placeholder="Nhập tên của bạn">
-                    <label for="text">Họ và tên *</label>
-                    </input>
-                </div>
-
-
-
-                <div class="form">
-                    <input type="text" placeholder="Nhập số điện thoại">
-                    <label for="text">Số điện thoại *</label>
-                    </input>
-                </div>
-            </div>
-
-            <div class="stc">
-                <div class="form">
-                    <input type="text" placeholder="Nhập tên của bạn">
-                    <label for="text">Họ và tên *</label>
-                    </input>
-                </div>
-
+            <div class="form-group">
                 <div>
-                    <div class="form">
-                        <input type="text" placeholder="Nhập số điện thoại">
-                        <label for="text">Số điện thoại *</label>
-                        </input>
-                    </div>
+                    <label for="name">Họ và Tên *</label>
+                    <input type="text" id="name" placeholder="Nhập tên của bạn.">
+                </div>
+                <div>
+                    <label for="phone">Số điện thoại *</label>
+                    <input type="text" id="phone" placeholder="Nhập số điện thoại">
                 </div>
             </div>
-
-                <div class="form">
-                    <input type="text" placeholder="Nội dung">
-                    <label for="text">Nội dung *</label>
-                    </input>
+            <div class="form-group">
+                <div>
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" placeholder="Nhập địa chỉ email của bạn.">
                 </div>
-
-
-            </div>
-            
-            <div class="image_section">
-                <div class="img_section">
-                    <img src="../Images/LOGO_V2.png" alt="">
+                <div>
+                    <label for="subject">Tiêu đề *</label>
+                    <input type="text" id="subject" placeholder="Nhập chủ đề.">
                 </div>
             </div>
-
-
+            <div class="form-group">
+                <div class="full-width">
+                    <label for="message">Nội dung *</label>
+                    <textarea id="message" placeholder="Nhập yêu cầu của bạn."></textarea>
+                </div>
+            </div>
+            <button class="submit-btn">Gửi <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="image-section">
+        </div>
     </div>
 
         <!-- Xử lý footer -->
