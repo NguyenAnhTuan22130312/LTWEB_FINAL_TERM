@@ -235,8 +235,8 @@ margin-right: 10px;
 }
 .right_content {
   flex: 3;
-  background-color: rgba(116, 22, 22, 0.804);
-  color: white;
+  background-color: #FFFDEF;
+  color: #A7292F;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -260,8 +260,7 @@ margin-right: 10px;
   left: 20px;
 }
 .button {
-  background-color: white;
-  color: darkred;
+  background-color: #A7292F;
   border: none;
   border-radius: 50%;
   padding: 20px 40px;
@@ -271,5 +270,10 @@ margin-right: 10px;
   position: absolute;
   bottom: 20px;
   left: 20px;
+}
+
+.button a{
+  text-decoration: none;
+  color: #FFFDEF;
 }
 
