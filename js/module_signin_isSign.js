@@ -14,8 +14,7 @@ function login() {
     // Kiểm tra thông tin đăng nhập
     if (accounts[email] && accounts[email].password === password) {
         // Lưu trạng thái đăng nhập vào localStorage
-        localStorage.setItem("loggedInUser", JSON.stringify({ email: email, role: accounts[email].role }));
-        
+        localStorage.setItem("loggedInUser", JSON.stringify({ email: email, role: accounts[email].role, password: password }));
         // Chuyển hướng về trang chủ
         window.location.href = "../html/newhome.html";
     } else {

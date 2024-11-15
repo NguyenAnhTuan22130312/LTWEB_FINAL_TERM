@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food T^3</title>
     <link href='../Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
-    <link rel="stylesheet" href="../css/contact.css">
-    <link rel="stylesheet" href="../css/signinCssModule.css">
+    <link rel="stylesheet" href="../css/module_header_footer.css">
+    <link rel="stylesheet" href="../css/module_informationuser.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
@@ -27,18 +27,19 @@
                     <div class="right">
                         <a href="../html/signin.html" class="nav-item" id="login-link">
                             <i class="fa-solid fa-user"></i> Đăng Nhập
-                          </a>
-                          <div class="user-menu" id="user-menu" style="display: none">
+                        </a>
+                        <div class="user-menu" id="user-menu" style="display: none;">
                             <i class="fa-solid fa-user"></i>
-                            <a href="#" class="user-name" id="user-name">
-                              Tên người dùng
+                            <a href="#" class=" user-name" id="user-name">
+                                Tên người dùng
                             </a>
-                            <div class="submenu" id="submenu">
-                              <a href="../html/admin.html" id="admin-link" style="display: none">Quản trị</a>
-                              <a href="../html/UserInformation.html" id="user-link" style="display: none">Thông tin</a>
-                              <a href="#" id="logout">Đăng xuất</a>
+                            <div class="submenu" id="submenu" style="display: none;">
+                                <a href="../html/admin.html" id="admin-link" style="display: none;">Quản trị</a>
+                                <a href="../html/info.html" id="user-link" style="display: none;">Thông tin</a>
+                                <a href="#" id="logout">Đăng xuất</a>
+
                             </div>
-                          </div>
+                        </div>
                         <a href="#" class="nav-item">
                             <i class="fa-solid fa-phone"></i> 033.***.****
                         </a>
@@ -46,9 +47,10 @@
                             <a href="../html/cart.html" class="nav-item">
                                 <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                             </a>
-                            <a href="#" class="count"> 0</a>
+                            <a href="#" class="count">0</a>
                         </div>
                     </div>
+
                 </div>
                 <div class="bottom">
                     <div class="menu">
@@ -83,43 +85,52 @@
         </div>
     </div>
     <!-- Xử lý content\  -->
+    <div id="container">
+        <div class="contain">
+            <h1>Thông tin tài khoản</h1>
 
-    <div class="container">
-        <div class="form-section">
-            <h2>Liên hệ với chúng tôi</h2>
-            <div class="form-group">
-                <div>
-                    <label for="name">Họ và Tên *</label>
-                    <input type="text" id="name" placeholder="Nhập tên của bạn.">
-                </div>
-                <div>
-                    <label for="phone">Số điện thoại *</label>
-                    <input type="text" id="phone" placeholder="Nhập số điện thoại">
-                </div>
+            <div class="info">
+                <label class="lb">Tên tài khoản:</label>
+                <input class="inp" type="text" id="username" placeholder="Nhập tên tài khoản" disabled>
             </div>
-            <div class="form-group">
-                <div>
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" placeholder="Nhập địa chỉ email của bạn.">
-                </div>
-                <div>
-                    <label for="subject">Tiêu đề *</label>
-                    <input type="text" id="subject" placeholder="Nhập chủ đề.">
-                </div>
+            <div class="info">
+                <label class="lb">Email:</label>
+                <input class="inp" type="email" id="email" placeholder="Nhập email" disabled>
             </div>
-            <div class="form-group">
-                <div class="full-width">
-                    <label for="message">Nội dung *</label>
-                    <textarea id="message" placeholder="Nhập yêu cầu của bạn."></textarea>
-                </div>
+            <div class="info">
+                <label class="lb">Mật khẩu:</label>
+                <input class="inp" type="password" id="password" placeholder="Nhập mật khẩu" disabled>
             </div>
-            <button class="submit-btn">Gửi <i class="fas fa-arrow-right"></i></button>
+
+            <div class="btn">
+                <button class="btnleft" onclick="editPersonal()">Sửa</button>
+                <button class="btnright" onclick="savePersonal()" id="savePersonalBtn"
+                    style="display: none;">Lưu</button>
+            </div>
         </div>
-        <div class="image-section">
+
+        <div class="contain">
+            <h2>Thông tin cá nhân</h2>
+            <div class="info">
+                <label class="lb">Họ và tên:</label>
+                <input class="inp" type="text" id="fullname" placeholder="Nhập họ và tên" disabled>
+            </div>
+            <div class="info">
+                <label class="lb">Số điện thoại:</label>
+                <input class="inp" type="tel" id="phone" placeholder="Nhập số điện thoại" disabled>
+            </div>
+            <div class="info2">
+                <label class="locate">Địa chỉ nhận hàng:</label>
+                <textarea class="inplocate" id="address" placeholder="Nhập địa chỉ" disabled></textarea>
+            </div>
+            <div class="btn">
+                <button class="btnleft" onclick="editPersonal()">Sửa</button>
+                <button class="btnright" onclick="savePersonal()" id="savePersonalBtn"
+                    style="display: none;">Lưu</button>
+            </div>
         </div>
     </div>
 
-    <!-- Xử lý footer -->
     <div id="footer">
         <div class="footer-container">
             <div class="footer-info">
@@ -145,10 +156,31 @@
             </div>
         </div>
     </div>
-    <script src="../js/home.js">
-        
+    <script src="../js/module_dangnhap_UserInfor.js"></script>
+    <script>
+        function toggleEdit(container) {
+            const isEditing = container.classList.toggle("editing");
+            const inputs = container.querySelectorAll(".inp, .inplocate");
+            const toggleButton = container.querySelector("button");
+
+            inputs.forEach(input => {
+                input.disabled = !isEditing;
+            });
+
+            toggleButton.textContent = isEditing ? "Lưu" : "Sửa";
+        }
+
+
+        document.querySelectorAll(".contain").forEach(container => {
+            const toggleButton = container.querySelector("button");
+            toggleButton.addEventListener("click", () => toggleEdit(container));
+        });
+
+        document.querySelectorAll(".inp, .inplocate").forEach(input => {
+            input.disabled = true;
+        });
+
     </script>
-    <script src="../js/module_dangnhap.js"></script>
 </body>
 
 </html>

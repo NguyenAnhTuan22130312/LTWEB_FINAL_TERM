@@ -1,956 +1,711 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu Nước giải khát</title>
-    <link href='../Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
-    <link rel="stylesheet" href="../css/menu.css" />
-    <link rel="stylesheet" href="../css/signinCssModule.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div id="header">
-      <div class="containerheaderAll">
-        <div class="containers">
-          <div class="containerss">
-            <div class="left">
-              <div class="logo">
-                <a href="../html/newhome.html">
-                  <img
-                    src="../Images/LOGO_V2.png"
-                    alt="Food store của Trung, Atuan, Atuan"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="right">
-              <a href="../html/signin.html" class="nav-item" id="login-link">
-                <i class="fa-solid fa-user"></i> Đăng Nhập
-              </a>
-              <div class="user-menu" id="user-menu" style="display: none">
-                <i class="fa-solid fa-user"></i>
-                <a href="#" class="user-name" id="user-name">
-                  Tên người dùng
-                </a>
-                <div class="submenu" id="submenu">
-                  <a
-                    href="../html/admin.html"
-                    id="admin-link"
-                    style="display: none"
-                    >Quản trị</a
-                  >
-                  <a
-                    href="../html/info.html"
-                    id="user-link"
-                    style="display: none"
-                    >Thông tin</a
-                  >
-                  <a href="#" id="logout">Đăng xuất</a>
-                </div>
-              </div>
-              <a href="#" class="nav-item">
-                <i class="fa-solid fa-phone"></i> 033.***.****
-              </a>
-              <div class="nav_item_shop">
-                <a href="../html/cart.html" class="nav-item">
-                  <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
-                </a>
-                <a href="#" class="count"> 0</a>
-              </div>
-            </div>
-          </div>
-          <div class="bottom">
-            <div class="menu">
-              <ul class="menu-list">
-                <li class="menu-item">
-                  <a href="#" class="tabbar">
-                    <i class="fa-solid fa-bars"></i>Menu</a
-                  >
-                  <ul class="submenu">
-                    <li>
-                      <a href="../html/menu_com.html"
-                        ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
-                      >
-                    </li>
-                    <li>
-                      <a href="../html/menu_bun.html"
-                        ><i class="fa-solid fa-bowl-food"></i>Món bún</a
-                      >
-                    </li>
-                    <li>
-                      <a href="../html/menu_pho.html"
-                        ><i class="fa-solid fa-bowl-food"></i>Món phở</a
-                      >
-                    </li>
-                    <li>
-                      <a href="../html/menu_nuoc.html"
-                        ><i class="fa-solid fa-glass-water"></i>Nước</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="menu-item">
-                  <a href="../html/newhome.html">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                  <a href="../html/contact.html">Contact</a>
-                </li>
-                <li class="menu-item">
-                  <a href="../html/about.html">About</a>
-                </li>
-              </ul>
-            </div>
-            <div class="search">
-              <input type="text" placeholder="Tìm kiếm món ăn" />
-              <button type="submit">
-                <i class="fa-solid fa-search"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="container">
-      <div class="intro">
-        <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
-        <h4>Menu các món cơm</h4>
-      </div>
 
-      <div id="content_section" class="content_section">
-        <div class="card" onclick="showPopup('popup01')">
-          <img src="../Images/Food/nuoc/chanh-muoi.png" alt="chanh muoi" />
-          <div class="card_content">
-            <h3>Chanh muối</h3>
-            <p>15.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Nước giải khát</title>
+  <link href='../Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
+  <link rel="stylesheet" href="../css/menu.css" />
+  <link rel="stylesheet" href="../css/signinCssModule.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
 
-        <div id="popup01" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/nuoc/chanh-muoi.png" alt="chanh muoi" />
-            <h3>Chanh muối</h3>
-            <p>Giá: 15.000đ</p>
-            <span>
-              Chanh muối là thức uống giải khát truyền thống với vị chua ngọt và
-              chút mặn nhẹ, giúp thanh lọc cơ thể và giải nhiệt nhanh chóng. Đồ
-              uống này còn mang đến cảm giác sảng khoái, giúp giảm mệt mỏi.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup01')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup02')">
-          <img src="../Images/Food/nuoc/espresso.png" alt="espresso" />
-          <div class="card_content">
-            <h3>Espresso</h3>
-            <p>25.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup02" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/nuoc/espresso.png" alt="espresso" />
-            <h3>Espresso</h3>
-            <p>Giá: 25.000đ</p>
-            <span>
-              Espresso là loại cà phê đậm đà, được pha chế từ máy với áp suất
-              cao, tạo nên lớp bọt mịn trên bề mặt. Đây là thức uống yêu thích
-              cho những ai cần sự tỉnh táo và thích hương vị mạnh mẽ của cà phê
-              nguyên chất.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup02')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup03')">
-          <img src="../Images/Food/nuoc/latte.png" alt="latte" />
-          <div class="card_content">
-            <h3>Latte</h3>
-            <p>30.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup03" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/nuoc/latte.png" alt="latte" />
-            <h3>Latte</h3>
-            <p>Giá: 30.000đ</p>
-            <span>
-              Latte là sự kết hợp hài hòa giữa cà phê espresso và sữa tươi được
-              đánh nóng, tạo nên lớp bọt sữa mềm mịn, thơm béo. Đây là thức uống
-              lý tưởng cho những ai yêu thích cà phê với vị nhẹ nhàng, êm dịu.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup03')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup04')">
-          <img src="../Images/Food/nuoc/matcha-latte.png" alt="matcha latte" />
-          <div class="card_content">
-            <h3>Matcha Latte</h3>
-            <p>35.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup04" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/matcha-latte.png"
-              alt="matcha latte"
-            />
-            <h3>Matcha Latte</h3>
-            <p>Giá: 35.000đ</p>
-            <span>
-              Matcha Latte là sự kết hợp giữa bột trà xanh nguyên chất và sữa
-              tươi, tạo nên vị ngọt nhẹ, thơm mát và hơi đắng đặc trưng của
-              matcha. Món này không chỉ thơm ngon mà còn giàu chất chống oxy
-              hóa, tốt cho sức khỏe.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup04')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup05')">
-          <img src="../Images/Food/nuoc/nuoc-cam.png" alt="nuoc cam" />
-          <div class="card_content">
-            <h3>Nước cam</h3>
-            <p>20.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup05" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/nuoc/nuoc-cam.png" alt="nuoc cam" />
-            <h3>Nước cam</h3>
-            <p>Giá: 20.000đ</p>
-            <span>
-              Nước cam tươi ép là thức uống bổ dưỡng, giàu vitamin C, giúp tăng
-              cường miễn dịch và cung cấp năng lượng tức thì. Hương vị cam ngọt
-              mát, thơm ngon, là lựa chọn hoàn hảo cho những ngày hè oi bức hoặc
-              khi bạn cần sự tươi mới.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup05')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup06')">
-          <img src="../Images/Food/nuoc/nuoc-chanh.png" alt="nuoc chanh" />
-          <div class="card_content">
-            <h3>Nước chanh</h3>
-            <p>15.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup06" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/nuoc/nuoc-chanh.png" alt="nuoc chanh" />
-            <h3>Nước chanh</h3>
-            <p>Giá: 15.000đ</p>
-            <span>
-              Nước chanh tươi mát là thức uống quen thuộc giúp giải khát hiệu
-              quả, thanh lọc cơ thể và tăng cường sức đề kháng nhờ lượng vitamin
-              C dồi dào. Đồ uống này mang vị chua ngọt nhẹ, dễ uống và sảng
-              khoái.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup06')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup07')">
-          <img src="../Images/Food/nuoc/nuoc-dua-hau.png" alt="nuoc dua hau" />
-          <div class="card_content">
-            <h3>Nước dưa hấu</h3>
-            <p>18.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup07" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/nuoc-dua-hau.png"
-              alt="nuoc dua hau"
-            />
-            <h3>Nước dưa hấu</h3>
-            <p>Giá: 18.000đ</p>
-            <span>
-              Nước dưa hấu tươi mát mang lại cảm giác sảng khoái tức thì nhờ vị
-              ngọt tự nhiên và giàu nước. Đây là thức uống lý tưởng để giải
-              nhiệt trong những ngày nắng nóng, bổ sung vitamin và khoáng chất
-              cần thiết.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup07')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup08')">
-          <img
-            src="../Images/Food/nuoc/nuoc-ep-buoi-ca-rot.png"
-            alt="nuoc ep buoi ca rot"
-          />
-          <div class="card_content">
-            <h3>Nước ép bưởi cà rốt</h3>
-            <p>25.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup08" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/nuoc-ep-buoi-ca-rot.png"
-              alt="nuoc ep buoi ca rot"
-            />
-            <h3>Nước ép bưởi cà rốt</h3>
-            <p>Giá: 25.000đ</p>
-            <span>
-              Nước ép bưởi cà rốt kết hợp hai thành phần giàu vitamin C và
-              beta-carotene, giúp tăng cường sức khỏe và đẹp da. Vị ngọt dịu từ
-              cà rốt hòa quyện với chút chua nhẹ của bưởi, mang lại hương vị
-              tươi ngon, bổ dưỡng.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup08')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup09')">
-          <img
-            src="../Images/Food/nuoc/nuoc-ep-dua-cam.png"
-            alt="nuoc ep dua cam"
-          />
-          <div class="card_content">
-            <h3>Nước ép dứa cam</h3>
-            <p>28.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup09" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/nuoc-ep-dua-cam.png"
-              alt="nuoc ep dua cam"
-            />
-            <h3>Nước ép dứa cam</h3>
-            <p>Giá: 28.000đ</p>
-            <span>
-              Nước ép dứa cam kết hợp vị ngọt đậm đà của dứa với vị chua thanh
-              của cam, tạo nên thức uống vừa ngon miệng vừa giàu vitamin. Đồ
-              uống này giúp tăng cường sức đề kháng và hỗ trợ tiêu hóa hiệu quả.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup09')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup10')">
-          <img src="../Images/Food/nuoc/nuoc-ep-tao.png" alt="nuoc ep tao" />
-          <div class="card_content">
-            <h3>Nước ép táo</h3>
-            <p>22.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup10" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/nuoc/nuoc-ep-tao.png" alt="nuoc ep tao" />
-            <h3>Nước ép táo</h3>
-            <p>Giá: 22.000đ</p>
-            <span>
-              Nước ép táo tươi mát với hương vị ngọt thanh nhẹ nhàng, giúp cung
-              cấp năng lượng và bổ sung vitamin A, C. Thức uống này mang lại sự
-              tươi mới và lành mạnh, thích hợp cho mọi lứa tuổi.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup10')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup11')">
-          <img
-            src="../Images/Food/nuoc/sinh-to-dau-sua-chua.png"
-            alt="sinh to dau sua chua"
-          />
-          <div class="card_content">
-            <h3>Sinh tố dâu sữa chua</h3>
-            <p>30.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup11" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/sinh-to-dau-sua-chua.png"
-              alt="sinh to dau sua chua"
-            />
-            <h3>Sinh tố dâu sữa chua</h3>
-            <p>Giá: 30.000đ</p>
-            <span>
-              Sinh tố dâu tươi kết hợp sữa chua mịn màng, tạo nên thức uống chua
-              ngọt độc đáo, giàu vitamin C và tốt cho hệ tiêu hóa. Phù hợp với
-              những ai yêu thích hương vị trái cây tự nhiên. <br />
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup11')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup12')">
-          <img src="../Images/Food/nuoc/sinh-to-xoai.png" alt="sinh to xoai" />
-          <div class="card_content">
-            <h3>Sinh tố xoài</h3>
-            <p>28.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup12" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/sinh-to-xoai.png"
-              alt="sinh to xoai"
-            />
-            <h3>Sinh tố xoài</h3>
-            <p>Giá: 28.000đ</p>
-            <span>
-              Sinh tố xoài đậm đà, thơm lừng vị xoài chín, giàu chất xơ và
-              vitamin C, mang lại cảm giác sảng khoái và giải nhiệt cho cơ thể
-              trong những ngày nắng nóng.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup12')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup13')">
-          <img
-            src="../Images/Food/nuoc/sua-chua-viet-quat.png"
-            alt="sua chua viet quat"
-          />
-          <div class="card_content">
-            <h3>Sữa chua việt quất</h3>
-            <p>32.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup13" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/sua-chua-viet-quat.png"
-              alt="sua chua viet quat"
-            />
-            <h3>Sữa chua việt quất</h3>
-            <p>Giá: 32.000đ</p>
-            <span>
-              Sữa chua việt quất với vị chua ngọt tự nhiên, bổ sung lợi khuẩn và
-              chất chống oxy hóa từ việt quất, mang đến thức uống tốt cho sức
-              khỏe và làn da.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup13')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup14')">
-          <img
-            src="../Images/Food/nuoc/Tra_chanh_gia_tay.png"
-            alt="tra chanh gia tay"
-          />
-          <div class="card_content">
-            <h3>Trà chanh gài Tây</h3>
-            <p>20.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup14" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/Tra_chanh_gia_tay.png"
-              alt="tra chanh gia tay"
-            />
-            <h3>Trà chanh gài Tây</h3>
-            <p>Giá: 20.000đ</p>
-            <span>
-              Trà chanh gài Tây có hương vị chua thanh của chanh kết hợp với vị
-              trà đậm đà, giúp thanh lọc cơ thể và giải khát hiệu quả. Thức uống
-              này rất thích hợp trong ngày hè. <br />
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup14')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup15')">
-          <img src="../Images/Food/nuoc/tra-bac-ha.png" alt="tra bac ha" />
-          <div class="card_content">
-            <h3>Trà bạc hà</h3>
-            <p>25.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup15" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/nuoc/tra-bac-ha.png" alt="tra bac ha" />
-            <h3>Trà bạc hà</h3>
-            <p>Giá: 25.000đ</p>
-            <span>
-              Trà bạc hà thơm mát, giúp thư giãn và giảm căng thẳng. Vị mát lạnh
-              từ bạc hà làm dịu đi sự oi bức của ngày hè, đồng thời hỗ trợ tiêu
-              hóa hiệu quả.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup15')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup16')">
-          <img src="../Images/Food/nuoc/tra-dao.png" alt="tra dao" />
-          <div class="card_content">
-            <h3>Trà đào</h3>
-            <p>28.000đ</p>
-            <a onclick="event.stopPropagation()" href="../html/cart.html">
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup16" class="popup">
-          <div class="popup-content">
-            <img src="../Images/Food/nuoc/tra-dao.png" alt="tra dao" />
-            <h3>Trà đào</h3>
-            <p>Giá: 28.000đ</p>
-            <span>
-              Trà đào ngọt ngào, kết hợp vị chua nhẹ của đào chín mọng, mang đến
-              hương vị tươi mát và sảng khoái. Thích hợp cho những ai yêu thích
-              vị trà trái cây tự nhiên. <br />
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup16')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup17')">
-          <img src="../Images/Food/nuoc/tra-hoa-nhai.png" alt="tra hoa nhai" />
-          <div class="card_content">
-            <h3>Trà hoa nhài</h3>
-            <p>24.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup17" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/tra-hoa-nhai.png"
-              alt="tra hoa nhai"
-            />
-            <h3>Trà hoa nhài</h3>
-            <p>Giá: 24.000đ</p>
-            <span>
-              Trà hoa nhài dịu nhẹ, mang hương thơm thanh khiết giúp thư giãn và
-              làm dịu tinh thần. Thức uống thanh mát này là lựa chọn lý tưởng
-              cho những buổi tối thư thái. <br />
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup17')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup18')">
-          <img
-            src="../Images/Food/nuoc/tra-sua-cookie.png"
-            alt="tra sua cookie"
-          />
-          <div class="card_content">
-            <h3>Trà sữa cookie</h3>
-            <p>35.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup18" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/tra-sua-cookie.png"
-              alt="tra sua cookie"
-            />
-            <h3>Trà sữa cookie</h3>
-            <p>Giá: 35.000đ</p>
-            <span>
-              Trà sữa cookie là sự hòa quyện giữa vị trà sữa thơm béo và hương
-              vị giòn tan của cookie. Một thức uống ngọt ngào và thú vị dành cho
-              các bạn trẻ. <br />
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup18')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup19')">
-          <img
-            src="../Images/Food/nuoc/tra-sua-kem-trung-chay.png"
-            alt="tra sua kem trung chay"
-          />
-          <div class="card_content">
-            <h3>Trà sữa kem trứng cháy</h3>
-            <p>40.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup19" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/tra-sua-kem-trung-chay.png"
-              alt="tra sua kem trung chay"
-            />
-            <h3>Trà sữa kem trứng cháy</h3>
-            <p>Giá: 40.000đ</p>
-            <span>
-              Trà sữa kem trứng cháy độc đáo với lớp kem trứng béo ngậy và vị
-              trà thơm đậm đà. Sự kết hợp tuyệt vời này mang lại trải nghiệm mới
-              mẻ và hấp dẫn cho người thưởng thức. <br />
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup19')">&times;</span>
-        </div>
-
-        <div class="card" onclick="showPopup('popup20')">
-          <img
-            src="../Images/Food/nuoc/tra-tran-chau-khoai-lang.png"
-            alt="tra tran chau khoai lang"
-          />
-          <div class="card_content">
-            <h3>Trà trân châu khoai lang</h3>
-            <p>38.000đ</p>
-            <a
-              class="btn"
-              href="../html/cart.html"
-              onclick="event.stopPropagation()"
-            >
-              Thêm vào giỏ hàng
-            </a>
-          </div>
-        </div>
-
-        <div id="popup20" class="popup">
-          <div class="popup-content">
-            <img
-              src="../Images/Food/nuoc/tra-tran-chau-khoai-lang.png"
-              alt="tra tran chau khoai lang"
-            />
-            <h3>Trà trân châu khoai lang</h3>
-            <p>Giá: 38.000đ</p>
-            <span>
-              Trà trân châu khoai lang với trân châu dẻo thơm vị khoai lang, hòa
-              quyện với trà thanh mát. Đây là món uống đặc biệt, hấp dẫn và phù
-              hợp cho mọi lứa tuổi.
-            </span>
-            <button
-              class="button-cart"
-              id="add-cart"
-              onclick="window.location.href='../html/cart.html'"
-            >
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-          <span class="close" onclick="closePopup('popup20')">&times;</span>
-        </div>
-      </div>
-
-      <div class="pagination">
-        <a href=""></a>
-        <a href="" class="active">1</a>
-        <a href="">2</a>
-        <a href="">3</a>
-        <a href="">></a>
-      </div>
-    </div>
-    <div id="footer">
-      <div class="footer-container">
-        <div class="footer-info">
+<body>
+  <div id="header">
+    <div class="containerheaderAll">
+      <div class="containers">
+        <div class="containerss">
           <div class="left">
-            <p>
-              <strong>Địa chỉ:</strong> Khu phố 6, Phường Linh Trung, TP. Thủ
-              Đức,
-            </p>
-            <p style="text-indent: 60px">Tp. Hồ Chí Minh.</p>
-            <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
+            <div class="logo">
+              <a href="../html/newhome.html">
+                <img src="../Images/LOGO_V2.png" alt="Food store của Trung, Atuan, Atuan" />
+              </a>
+            </div>
           </div>
           <div class="right">
-            <p><strong>Hotline:</strong> 033 *** 1234</p>
-            <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
-            <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
-            <div class="social-icons">
-              <a href="#" target="_blank"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
-              <a href="#" target="_blank"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
+            <a href="../html/signin.html" class="nav-item" id="login-link">
+              <i class="fa-solid fa-user"></i> Đăng Nhập
+            </a>
+            <div class="user-menu" id="user-menu" style="display: none">
+              <i class="fa-solid fa-user"></i>
+              <a href="#" class="user-name" id="user-name">
+                Tên người dùng
+              </a>
+              <div class="submenu" id="submenu">
+                <a href="../html/admin.html" id="admin-link" style="display: none">Quản trị</a>
+                <a href="../html/UserInformation.html" id="user-link" style="display: none;">Thông tin</a>
+                <a href="#" id="logout">Đăng xuất</a>
+              </div>
+            </div>
+            <a href="#" class="nav-item">
+              <i class="fa-solid fa-phone"></i> 033.***.****
+            </a>
+            <div class="nav_item_shop">
+              <a href="../html/cart.html" class="nav-item">
+                <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
+              </a>
+              <a href="#" class="count"> 0</a>
             </div>
           </div>
         </div>
-        <div class="footer-social">
-          <div class="1">© 2024 Food T^3</div>
-          <div class="mid">
-            <a href="#">Chính sách hoạt động</a> |
-            <a href="#">Chính sách bảo mật thông tin</a>
+        <div class="bottom">
+          <div class="menu">
+            <ul class="menu-list">
+              <li class="menu-item">
+                <a href="#" class="tabbar">
+                  <i class="fa-solid fa-bars"></i>Menu</a>
+                <ul class="submenu">
+                  <li>
+                    <a href="../html/menu_com.html"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
+                  </li>
+                  <li>
+                    <a href="../html/menu_bun.html"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
+                  </li>
+                  <li>
+                    <a href="../html/menu_pho.html"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
+                  </li>
+                  <li>
+                    <a href="../html/menu_nuoc.html"><i class="fa-solid fa-glass-water"></i>Nước</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a href="../html/newhome.html">Trang chủ</a>
+              </li>
+              <li class="menu-item">
+                <a href="../html/contact.html">Contact</a>
+              </li>
+              <li class="menu-item">
+                <a href="../html/about.html">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Tìm kiếm món ăn" />
+            <button type="submit">
+              <i class="fa-solid fa-search"></i>
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <script src="../js/menu.js"></script>
-    <script src="../js/module_dangnhap.js"></script>
-  </body>
+  </div>
+  <div id="container">
+    <div class="intro">
+      <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
+      <h4>Menu các món cơm</h4>
+    </div>
+
+    <div id="content_section" class="content_section">
+      <div class="card" onclick="showPopup('popup01')">
+        <img src="../Images/Food/nuoc/chanh-muoi.png" alt="chanh muoi" />
+        <div class="card_content">
+          <h3>Chanh muối</h3>
+          <p>15.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup01" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/chanh-muoi.png" alt="chanh muoi" />
+          <h3>Chanh muối</h3>
+          <p>Giá: 15.000đ</p>
+          <span>
+            Chanh muối là thức uống giải khát truyền thống với vị chua ngọt và
+            chút mặn nhẹ, giúp thanh lọc cơ thể và giải nhiệt nhanh chóng. Đồ
+            uống này còn mang đến cảm giác sảng khoái, giúp giảm mệt mỏi.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup01')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup02')">
+        <img src="../Images/Food/nuoc/espresso.png" alt="espresso" />
+        <div class="card_content">
+          <h3>Espresso</h3>
+          <p>25.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup02" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/espresso.png" alt="espresso" />
+          <h3>Espresso</h3>
+          <p>Giá: 25.000đ</p>
+          <span>
+            Espresso là loại cà phê đậm đà, được pha chế từ máy với áp suất
+            cao, tạo nên lớp bọt mịn trên bề mặt. Đây là thức uống yêu thích
+            cho những ai cần sự tỉnh táo và thích hương vị mạnh mẽ của cà phê
+            nguyên chất.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup02')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup03')">
+        <img src="../Images/Food/nuoc/latte.png" alt="latte" />
+        <div class="card_content">
+          <h3>Latte</h3>
+          <p>30.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup03" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/latte.png" alt="latte" />
+          <h3>Latte</h3>
+          <p>Giá: 30.000đ</p>
+          <span>
+            Latte là sự kết hợp hài hòa giữa cà phê espresso và sữa tươi được
+            đánh nóng, tạo nên lớp bọt sữa mềm mịn, thơm béo. Đây là thức uống
+            lý tưởng cho những ai yêu thích cà phê với vị nhẹ nhàng, êm dịu.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup03')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup04')">
+        <img src="../Images/Food/nuoc/matcha-latte.png" alt="matcha latte" />
+        <div class="card_content">
+          <h3>Matcha Latte</h3>
+          <p>35.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup04" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/matcha-latte.png" alt="matcha latte" />
+          <h3>Matcha Latte</h3>
+          <p>Giá: 35.000đ</p>
+          <span>
+            Matcha Latte là sự kết hợp giữa bột trà xanh nguyên chất và sữa
+            tươi, tạo nên vị ngọt nhẹ, thơm mát và hơi đắng đặc trưng của
+            matcha. Món này không chỉ thơm ngon mà còn giàu chất chống oxy
+            hóa, tốt cho sức khỏe.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup04')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup05')">
+        <img src="../Images/Food/nuoc/nuoc-cam.png" alt="nuoc cam" />
+        <div class="card_content">
+          <h3>Nước cam</h3>
+          <p>20.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup05" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/nuoc-cam.png" alt="nuoc cam" />
+          <h3>Nước cam</h3>
+          <p>Giá: 20.000đ</p>
+          <span>
+            Nước cam tươi ép là thức uống bổ dưỡng, giàu vitamin C, giúp tăng
+            cường miễn dịch và cung cấp năng lượng tức thì. Hương vị cam ngọt
+            mát, thơm ngon, là lựa chọn hoàn hảo cho những ngày hè oi bức hoặc
+            khi bạn cần sự tươi mới.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup05')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup06')">
+        <img src="../Images/Food/nuoc/nuoc-chanh.png" alt="nuoc chanh" />
+        <div class="card_content">
+          <h3>Nước chanh</h3>
+          <p>15.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup06" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/nuoc-chanh.png" alt="nuoc chanh" />
+          <h3>Nước chanh</h3>
+          <p>Giá: 15.000đ</p>
+          <span>
+            Nước chanh tươi mát là thức uống quen thuộc giúp giải khát hiệu
+            quả, thanh lọc cơ thể và tăng cường sức đề kháng nhờ lượng vitamin
+            C dồi dào. Đồ uống này mang vị chua ngọt nhẹ, dễ uống và sảng
+            khoái.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup06')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup07')">
+        <img src="../Images/Food/nuoc/nuoc-dua-hau.png" alt="nuoc dua hau" />
+        <div class="card_content">
+          <h3>Nước dưa hấu</h3>
+          <p>18.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup07" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/nuoc-dua-hau.png" alt="nuoc dua hau" />
+          <h3>Nước dưa hấu</h3>
+          <p>Giá: 18.000đ</p>
+          <span>
+            Nước dưa hấu tươi mát mang lại cảm giác sảng khoái tức thì nhờ vị
+            ngọt tự nhiên và giàu nước. Đây là thức uống lý tưởng để giải
+            nhiệt trong những ngày nắng nóng, bổ sung vitamin và khoáng chất
+            cần thiết.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup07')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup08')">
+        <img src="../Images/Food/nuoc/nuoc-ep-buoi-ca-rot.png" alt="nuoc ep buoi ca rot" />
+        <div class="card_content">
+          <h3>Nước ép bưởi cà rốt</h3>
+          <p>25.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup08" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/nuoc-ep-buoi-ca-rot.png" alt="nuoc ep buoi ca rot" />
+          <h3>Nước ép bưởi cà rốt</h3>
+          <p>Giá: 25.000đ</p>
+          <span>
+            Nước ép bưởi cà rốt kết hợp hai thành phần giàu vitamin C và
+            beta-carotene, giúp tăng cường sức khỏe và đẹp da. Vị ngọt dịu từ
+            cà rốt hòa quyện với chút chua nhẹ của bưởi, mang lại hương vị
+            tươi ngon, bổ dưỡng.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup08')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup09')">
+        <img src="../Images/Food/nuoc/nuoc-ep-dua-cam.png" alt="nuoc ep dua cam" />
+        <div class="card_content">
+          <h3>Nước ép dứa cam</h3>
+          <p>28.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup09" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/nuoc-ep-dua-cam.png" alt="nuoc ep dua cam" />
+          <h3>Nước ép dứa cam</h3>
+          <p>Giá: 28.000đ</p>
+          <span>
+            Nước ép dứa cam kết hợp vị ngọt đậm đà của dứa với vị chua thanh
+            của cam, tạo nên thức uống vừa ngon miệng vừa giàu vitamin. Đồ
+            uống này giúp tăng cường sức đề kháng và hỗ trợ tiêu hóa hiệu quả.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup09')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup10')">
+        <img src="../Images/Food/nuoc/nuoc-ep-tao.png" alt="nuoc ep tao" />
+        <div class="card_content">
+          <h3>Nước ép táo</h3>
+          <p>22.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup10" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/nuoc-ep-tao.png" alt="nuoc ep tao" />
+          <h3>Nước ép táo</h3>
+          <p>Giá: 22.000đ</p>
+          <span>
+            Nước ép táo tươi mát với hương vị ngọt thanh nhẹ nhàng, giúp cung
+            cấp năng lượng và bổ sung vitamin A, C. Thức uống này mang lại sự
+            tươi mới và lành mạnh, thích hợp cho mọi lứa tuổi.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup10')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup11')">
+        <img src="../Images/Food/nuoc/sinh-to-dau-sua-chua.png" alt="sinh to dau sua chua" />
+        <div class="card_content">
+          <h3>Sinh tố dâu sữa chua</h3>
+          <p>30.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup11" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/sinh-to-dau-sua-chua.png" alt="sinh to dau sua chua" />
+          <h3>Sinh tố dâu sữa chua</h3>
+          <p>Giá: 30.000đ</p>
+          <span>
+            Sinh tố dâu tươi kết hợp sữa chua mịn màng, tạo nên thức uống chua
+            ngọt độc đáo, giàu vitamin C và tốt cho hệ tiêu hóa. Phù hợp với
+            những ai yêu thích hương vị trái cây tự nhiên. <br />
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup11')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup12')">
+        <img src="../Images/Food/nuoc/sinh-to-xoai.png" alt="sinh to xoai" />
+        <div class="card_content">
+          <h3>Sinh tố xoài</h3>
+          <p>28.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup12" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/sinh-to-xoai.png" alt="sinh to xoai" />
+          <h3>Sinh tố xoài</h3>
+          <p>Giá: 28.000đ</p>
+          <span>
+            Sinh tố xoài đậm đà, thơm lừng vị xoài chín, giàu chất xơ và
+            vitamin C, mang lại cảm giác sảng khoái và giải nhiệt cho cơ thể
+            trong những ngày nắng nóng.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup12')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup13')">
+        <img src="../Images/Food/nuoc/sua-chua-viet-quat.png" alt="sua chua viet quat" />
+        <div class="card_content">
+          <h3>Sữa chua việt quất</h3>
+          <p>32.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup13" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/sua-chua-viet-quat.png" alt="sua chua viet quat" />
+          <h3>Sữa chua việt quất</h3>
+          <p>Giá: 32.000đ</p>
+          <span>
+            Sữa chua việt quất với vị chua ngọt tự nhiên, bổ sung lợi khuẩn và
+            chất chống oxy hóa từ việt quất, mang đến thức uống tốt cho sức
+            khỏe và làn da.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup13')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup14')">
+        <img src="../Images/Food/nuoc/Tra_chanh_gia_tay.png" alt="tra chanh gia tay" />
+        <div class="card_content">
+          <h3>Trà chanh gài Tây</h3>
+          <p>20.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup14" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/Tra_chanh_gia_tay.png" alt="tra chanh gia tay" />
+          <h3>Trà chanh gài Tây</h3>
+          <p>Giá: 20.000đ</p>
+          <span>
+            Trà chanh gài Tây có hương vị chua thanh của chanh kết hợp với vị
+            trà đậm đà, giúp thanh lọc cơ thể và giải khát hiệu quả. Thức uống
+            này rất thích hợp trong ngày hè. <br />
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup14')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup15')">
+        <img src="../Images/Food/nuoc/tra-bac-ha.png" alt="tra bac ha" />
+        <div class="card_content">
+          <h3>Trà bạc hà</h3>
+          <p>25.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup15" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/tra-bac-ha.png" alt="tra bac ha" />
+          <h3>Trà bạc hà</h3>
+          <p>Giá: 25.000đ</p>
+          <span>
+            Trà bạc hà thơm mát, giúp thư giãn và giảm căng thẳng. Vị mát lạnh
+            từ bạc hà làm dịu đi sự oi bức của ngày hè, đồng thời hỗ trợ tiêu
+            hóa hiệu quả.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup15')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup16')">
+        <img src="../Images/Food/nuoc/tra-dao.png" alt="tra dao" />
+        <div class="card_content">
+          <h3>Trà đào</h3>
+          <p>28.000đ</p>
+          <a onclick="event.stopPropagation()" href="../html/cart.html">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup16" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/tra-dao.png" alt="tra dao" />
+          <h3>Trà đào</h3>
+          <p>Giá: 28.000đ</p>
+          <span>
+            Trà đào ngọt ngào, kết hợp vị chua nhẹ của đào chín mọng, mang đến
+            hương vị tươi mát và sảng khoái. Thích hợp cho những ai yêu thích
+            vị trà trái cây tự nhiên. <br />
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup16')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup17')">
+        <img src="../Images/Food/nuoc/tra-hoa-nhai.png" alt="tra hoa nhai" />
+        <div class="card_content">
+          <h3>Trà hoa nhài</h3>
+          <p>24.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup17" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/tra-hoa-nhai.png" alt="tra hoa nhai" />
+          <h3>Trà hoa nhài</h3>
+          <p>Giá: 24.000đ</p>
+          <span>
+            Trà hoa nhài dịu nhẹ, mang hương thơm thanh khiết giúp thư giãn và
+            làm dịu tinh thần. Thức uống thanh mát này là lựa chọn lý tưởng
+            cho những buổi tối thư thái. <br />
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup17')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup18')">
+        <img src="../Images/Food/nuoc/tra-sua-cookie.png" alt="tra sua cookie" />
+        <div class="card_content">
+          <h3>Trà sữa cookie</h3>
+          <p>35.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup18" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/tra-sua-cookie.png" alt="tra sua cookie" />
+          <h3>Trà sữa cookie</h3>
+          <p>Giá: 35.000đ</p>
+          <span>
+            Trà sữa cookie là sự hòa quyện giữa vị trà sữa thơm béo và hương
+            vị giòn tan của cookie. Một thức uống ngọt ngào và thú vị dành cho
+            các bạn trẻ. <br />
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup18')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup19')">
+        <img src="../Images/Food/nuoc/tra-sua-kem-trung-chay.png" alt="tra sua kem trung chay" />
+        <div class="card_content">
+          <h3>Trà sữa kem trứng cháy</h3>
+          <p>40.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup19" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/tra-sua-kem-trung-chay.png" alt="tra sua kem trung chay" />
+          <h3>Trà sữa kem trứng cháy</h3>
+          <p>Giá: 40.000đ</p>
+          <span>
+            Trà sữa kem trứng cháy độc đáo với lớp kem trứng béo ngậy và vị
+            trà thơm đậm đà. Sự kết hợp tuyệt vời này mang lại trải nghiệm mới
+            mẻ và hấp dẫn cho người thưởng thức. <br />
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup19')">&times;</span>
+      </div>
+
+      <div class="card" onclick="showPopup('popup20')">
+        <img src="../Images/Food/nuoc/tra-tran-chau-khoai-lang.png" alt="tra tran chau khoai lang" />
+        <div class="card_content">
+          <h3>Trà trân châu khoai lang</h3>
+          <p>38.000đ</p>
+          <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
+            Thêm vào giỏ hàng
+          </a>
+        </div>
+      </div>
+
+      <div id="popup20" class="popup">
+        <div class="popup-content">
+          <img src="../Images/Food/nuoc/tra-tran-chau-khoai-lang.png" alt="tra tran chau khoai lang" />
+          <h3>Trà trân châu khoai lang</h3>
+          <p>Giá: 38.000đ</p>
+          <span>
+            Trà trân châu khoai lang với trân châu dẻo thơm vị khoai lang, hòa
+            quyện với trà thanh mát. Đây là món uống đặc biệt, hấp dẫn và phù
+            hợp cho mọi lứa tuổi.
+          </span>
+          <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+        <span class="close" onclick="closePopup('popup20')">&times;</span>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <a href=""></a>
+      <a href="" class="active">1</a>
+      <a href="">2</a>
+      <a href="">3</a>
+      <a href="">></a>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <div class="left">
+          <p>
+            <strong>Địa chỉ:</strong> Khu phố 6, Phường Linh Trung, TP. Thủ
+            Đức,
+          </p>
+          <p style="text-indent: 60px">Tp. Hồ Chí Minh.</p>
+          <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
+        </div>
+        <div class="right">
+          <p><strong>Hotline:</strong> 033 *** 1234</p>
+          <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
+          <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-social">
+        <div class="1">© 2024 Food T^3</div>
+        <div class="mid">
+          <a href="#">Chính sách hoạt động</a> |
+          <a href="#">Chính sách bảo mật thông tin</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/menu.js"></script>
+  <script src="../js/module_dangnhap.js"></script>
+</body>
+
 </html>
