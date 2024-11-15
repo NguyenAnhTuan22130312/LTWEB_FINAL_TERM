@@ -218,33 +218,70 @@ margin-right: 10px;
 }
 
 /* Xử lý container */
-#container{
-    width: 100%;
-    height: auto;
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+    max-width: 900px;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
 }
-
-.input_section{
-    padding: 20px;
-    border: 1px solid darkred;
-    align-items: center;
-
-
+.form-section {
+    padding: 40px;
+    flex: 1;
 }
-
-.input_section input{
+.form-section h2 {
+    color: #a60e0e;
+    margin-bottom: 20px;
+}
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input, .form-group textarea {
+    width: calc(90% - 10px);
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.form-group textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+.form-group .full-width {
+    width: 100%;
+}
+.submit-btn {
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px 20px;
     border: none;
-    outline: none;
-    border: 1px solid ;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submit-btn i {
+    margin-left: 10px;
+}
+.image-section {
+    background-image: url("../Images/home/qc1.jpg");
+    background-size: cover;
+    flex: 1;
+    opacity: 0.8;
 }
 
 
-
-.stc{
-    text-align: center;
-}
 
