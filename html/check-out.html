@@ -144,7 +144,8 @@
                     class="radio"
                   />
                   <label for="chinhanh-1"
-                    >273 An Dương Vương, Phường 3, Quận 5</label
+                    >Trường Đại học Nông Lâm Thành phố HCM phố 6, phường Linh
+                    Trung, Thủ Đức</label
                   >
                 </div>
                 <div class="delivery-time">
@@ -155,8 +156,25 @@
                     class="radio"
                   />
                   <label for="chinhanh-2"
-                    >04 Tôn Đức Thắng, Phường Bến Nghé, Quận 1</label
+                    >169/8, phường Dĩ An, TP. Dĩ An, Bình Dương</label
                   >
+                </div>
+              </div>
+              <div class="content-group">
+                <p class="checkout-content-label">Phương thức thanh toán</p>
+                <div class="checkout-payment-type">
+                  <button class="payment-btn active" id="tienmat">
+                    <i class="fa-duotone fa-money-bill"></i>
+                    Thanh toán khi nhận hàng
+                  </button>
+                  <button class="payment-btn" id="thenganhang">
+                    <i class="fa-duotone fa-solid fa-credit-card"></i>
+                    Thanh toán bằng thẻ ngân hàng
+                  </button>
+                  <button class="payment-btn" id="vidientu">
+                    <i class="fa-duotone fa-solid fa-wallet"></i>
+                    Thanh toán bằng ví điện tử
+                  </button>
                 </div>
               </div>
               <div class="content-group">
@@ -211,9 +229,44 @@
         </div>
         <div class="checkout-col-right">
           <p class="checkout-content-label">Đơn hàng</p>
-          <div class="bill-total" id="list-order-checkout"></div>
+          <div class="bill-total" id="list-order-checkout">
+            <div class="food-total">
+              <div class="count">1x</div>
+              <div class="info-food">
+                <div class="name-food">Phở bò tái</div>
+              </div>
+            </div>
+            <div class="food-total">
+              <div class="count">3x</div>
+              <div class="info-food">
+                <div class="name-food">Bún thịt nướng</div>
+              </div>
+            </div>
+            <div class="food-total">
+              <div class="count">4x</div>
+              <div class="info-food">
+                <div class="name-food">Trà chanh giã tay</div>
+              </div>
+            </div>
+          </div>
           <div class="bill-payment">
-            <div class="total-bill-order"></div>
+            <div class="total-bill-order">
+              <div class="priceFlx">
+                <div class="text">
+                  " Tiền hàng"
+                  <span class="count">3 món</span>
+                </div>
+                <div class="price-detail">
+                  <span id="checkout-cart-total">190.000&nbsp;đ</span>
+                </div>
+              </div>
+              <div class="priceFlx chk-ship">
+                <div class="text">Phí vận chuyển</div>
+                <div class="price-detail chk-free-ship">
+                  <span>30.000&nbsp;đ</span>
+                </div>
+              </div>
+            </div>
             <div class="policy-note">
               Bằng việc bấm vào nút “Đặt hàng”, tôi đồng ý với
               <a href="#" target="_blank">chính sách hoạt động</a>
@@ -223,7 +276,9 @@
           <div class="total-checkout">
             <div class="text">Tổng tiền</div>
             <div class="price-bill">
-              <div class="price-final" id="checkout-cart-price-final">0</div>
+              <div class="price-final" id="checkout-cart-price-final">
+                220.000&nbsp;đ
+              </div>
             </div>
           </div>
           <button class="complete-checkout-btn">Đặt hàng</button>
