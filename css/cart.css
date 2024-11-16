@@ -322,8 +322,8 @@ html {
 .continue-btn {
   margin-left: 38%;
   background-color: white; /* Màu chủ đạo */
-  border: 2px solid #ff6767; /* Viền màu đỏ */
-  color: #ff6767;
+  border: 2px solid #b5292f; /* Viền màu đỏ */
+  color: #b5292f;
   padding: 10px 15px;
   font-size: 14px;
   cursor: pointer;
@@ -349,7 +349,7 @@ html {
 }
 
 .fa-trash-can {
-  color: #ff4d4d;
+  color: #b5292f;
   cursor: pointer;
   font-size: 18px;
   transition: color 0.3s ease, transform 0.2s;
@@ -385,7 +385,7 @@ html {
 }
 
 .checkout-btn {
-  background-color: #03299b;
+  background-color: #b5292f;
   color: white;
   width: 100%;
   padding: 15px;
@@ -398,7 +398,7 @@ html {
 
 /* Hiệu ứng khi di chuột vào button */
 .checkout-btn:hover {
-  background-color: #001f7f;
+  background-color: #b5292f;
   color: white;
   font-weight: 600; /* Màu sáng hơn khi di chuột */
 }
@@ -406,7 +406,7 @@ html {
 /* Hiệu ứng khi nhấn vào button */
 .checkout-btn:active {
   transform: scale(0.95); /* Button thu nhỏ khi nhấn vào */
-  background-color: #001f7f;
+  background-color: #b5292f;
   color: white;
   font-weight: 600; /* Màu sáng hơn khi nhấn */
 }
@@ -430,7 +430,7 @@ html {
 }
 
 .apply-btn {
-  background-color: #ff6767;
+  background-color: #b5292f;
   border: none;
   color: white;
   padding: 10px;

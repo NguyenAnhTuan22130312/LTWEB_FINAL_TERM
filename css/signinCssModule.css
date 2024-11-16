@@ -1,7 +1,8 @@
 /*xu li dang nhap*/
 .user-menu {
     position: relative;
-    z-index: 9999;
+    z-index: 1;
+    
   }
   
   .right .submenu {
