@@ -66,6 +66,8 @@ tienmat.addEventListener("click", () => {
   thenganhang.classList.remove("active");
   vidientu.classList.remove("active");
   tienmat.classList.add("active");
+  thenganhangGroup.style.display = "none";
+  vidientuGroup.style.display = "none";
   chkPay.forEach((item) => {
     item.style.display = "none";
   });
@@ -75,6 +77,7 @@ thenganhang.addEventListener("click", () => {
   tienmat.classList.remove("active");
   vidientu.classList.remove("active");
   thenganhang.classList.add("active");
+  vidientuGroup.style.display = "none";
   chkPay.forEach((item) => {
     item.style.display = "none";
   });
@@ -89,5 +92,71 @@ vidientu.addEventListener("click", () => {
   chkPay.forEach((item) => {
     item.style.display = "none";
   });
-  vidientuGroup.style.display = "block";
+  vidientuGroup.style.display = "flex";
+});
+
+//Xu ly vi dien tu
+let googlepay = document.querySelector("#google-pay-icon");
+let applepay = document.querySelector("#apple-pay-icon");
+let amazonpay = document.querySelector("#amazon-pay-icon");
+let paypal = document.querySelector("#paypal-icon");
+let chkVidientu = document.querySelectorAll(".chk-vidientu");
+
+googlepay.addEventListener("click", () => {
+  applepay.classList.remove("active");
+  amazonpay.classList.remove("active");
+  paypal.classList.remove("active");
+  googlepay.classList.add("active");
+  chkVidientu.forEach((item) => {
+    item.style.display = "none";
+  });
+});
+
+applepay.addEventListener("click", () => {
+  googlepay.classList.remove("active");
+  amazonpay.classList.remove("active");
+  paypal.classList.remove("active");
+  applepay.classList.add("active");
+  chkVidientu.forEach((item) => {
+    item.style.display = "none";
+  });
+});
+
+amazonpay.addEventListener("click", () => {
+  googlepay.classList.remove("active");
+  applepay.classList.remove("active");
+  paypal.classList.remove("active");
+  amazonpay.classList.add("active");
+  chkVidientu.forEach((item) => {
+    item.style.display = "none";
+  });
+});
+
+paypal.addEventListener("click", () => {
+  googlepay.classList.remove("active");
+  applepay.classList.remove("active");
+  amazonpay.classList.remove("active");
+  paypal.classList.add("active");
+  chkVidientu.forEach((item) => {
+    item.style.display = "none";
+  });
+});
+
+//Xu ly tong tien
+const giaotannoiBtn = document.getElementById("giaotannoi");
+const tudenlayBtn = document.getElementById("tudenlay");
+const tongtiengiao = document.getElementById("tongtiengiao");
+const tongtientudenlay = document.getElementById("tongtientudenlay");
+
+tongtiengiao.style.display = "block";
+tongtientudenlay.style.display = "none";
+
+giaotannoiBtn.addEventListener("click", function () {
+  tongtiengiao.style.display = "block";
+  tongtientudenlay.style.display = "none";
+});
+
+tudenlayBtn.addEventListener("click", function () {
+  tongtientudenlay.style.display = "block";
+  tongtiengiao.style.display = "none";
 });
