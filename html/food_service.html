@@ -1,162 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Food Service</title>
-    <link href='../Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
-    <link rel="stylesheet" href="../css/food_service.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="sidebar">
-        <img
-          alt="HEHE"
-          
-          src="../Images/LOGO_V2.png"
-          
-        />
-        <h2>Bros Restaurant</h2>
-        <ul>
-          <li>
-            <a class="active" href="../html/admin.html">
-              <i class="fas fa-home"> </i>
-              Trang tổng quan
-            </a>
-          </li>
-          <li>
-            <a href="../html/food_service.html">
-              <i class="fas fa-utensils"> </i>
-              Sản phẩm
-            </a>
-          </li>
-          <li>
-            <a href="../html/customer_sevice.html">
-              <i class="fas fa-users"> </i>
-              Khách hàng
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-shopping-cart"> </i>
-              Đơn hàng
-            </a>
-          </li>
-          <li>
-            <a href="../html/statistical.html">
-              <i class="fas fa-chart-bar"> </i>
-              Thống kê
-            </a>
-          </li>
-          
-          <li>
-            <a href="#">
-              <i class="fas fa-sign-out-alt"> </i>
-              Đăng xuất
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <div class="header">
-            <select>
-             <option>
-              Tất cả
-             </option>
-            </select>
-            <input placeholder="Tìm kiếm tên món..." type="text"/>
-            <div>
-             <button>
-              + Thêm món mới
-             </button>
-            </div>
-           </div>
-           <div class="menu-item">
-            <img alt="A plate of stir-fried mushrooms with garlic" height="100" src="../Images/Food/Com/Com-chien-bo-luc-lac.png" />
-            <div class="menu-item-content">
-             <h3>
-              Cơm chiên bò lúc lắc
-             </h3>
-             <p>
-                Cơm chiên bò lúc lắc là món ăn nổi bật với những miếng thịt bò mềm, thấm đẫm gia vị, kết hợp với cơm chiên vàng ươm và rau củ giòn ngọt. Món ăn mang đậm hương vị đặc trưng của ẩm thực phương Tây nhưng lại có sự kết hợp tuyệt vời với gia vị Việt Nam, tạo nên sự hòa quyện tuyệt vời.
-             </p>
-             <span class="badge">
-              Món cơm
-             </span>
-            </div>
-            <div class="menu-item-actions">
-             <span>
-              30.000 đ
-             </span>
-             <button>
-              <i class="fas fa-edit">
-              </i>
-             </button>
-             <button>
-              <i class="fas fa-trash">
-              </i>
-             </button>
-            </div>
-           </div>
-           <div class="menu-item">
-            <img alt="A plate of stir-fried mixed vegetables" height="100" src="../Images/Food/Com/Com-tam-suon-bi-cha.png" width="100"/>
-            <div class="menu-item-content">
-             <h3>
-              Cơm tấm sườn bì chả
-             </h3>
-             <p>
-                Cơm tấm sườn bì chả là món ăn đặc trưng của ẩm thực miền Nam. Sườn nướng thơm ngon, bì giòn và chả lụa béo ngậy được kết hợp với cơm tấm dẻo, tạo nên một món ăn ngon, đậm đà và đầy đủ dinh dưỡng cho bữa ăn.
-             </p>
-             <span class="badge">
-              Món cơm
-             </span>
-            </div>
-            <div class="menu-item-actions">
-             <span>
-              30.000 đ
-             </span>
-             <button>
-              <i class="fas fa-edit">
-              </i>
-             </button>
-             <button>
-              <i class="fas fa-trash">
-              </i>
-             </button>
-            </div>
-           </div>
-           <div class="menu-item">
-            <img alt="A tray of baked lava cheese bread" height="100" src="../Images/Food/Com/Com-dau-hu-kho-suon-chay.png" width="100"/>
-            <div class="menu-item-content">
-             <h3>
-              Cơm đậu hủ kho sườn chay
-             </h3>
-             <p>
-                Cơm đậu hũ kho sườn chay là một món ăn thanh đạm, phù hợp cho những ai muốn thưởng thức ẩm thực chay. Đậu hũ mềm mịn kết hợp với sườn chay kho đậm đà tạo nên một món ăn đầy đủ dinh dưỡng và dễ ăn
-             </p>
-             <span class="badge">
-              Món cơm
-             </span>
-            </div>
-            <div class="menu-item-actions">
-             <span>
-              30.000 đ
-             </span>
-             <button>
-              <i class="fas fa-edit">
-              </i>
-             </button>
-             <button>
-              <i class="fas fa-trash">
-              </i>
-             </button>
-            </div>
-           </div>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Service</title>
+  <link href='../Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
+  <link rel="stylesheet" href="../css/food_service.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <img alt="HEHE" src="../Images/LOGO_V2.png" />
+      <h2>T^3 Restaurant</h2>
+      <ul>
+        <li>
+          <a class="active" href="../html/admin.html">
+            <i class="fas fa-home"> </i>
+            Trang tổng quan
+          </a>
+        </li>
+        <li>
+          <a href="../html/food_service.html">
+            <i class="fas fa-utensils"> </i>
+            Sản phẩm
+          </a>
+        </li>
+        <li>
+          <a href="../html/customer_sevice.html">
+            <i class="fas fa-users"> </i>
+            Khách hàng
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-shopping-cart"> </i>
+            Đơn hàng
+          </a>
+        </li>
+        <li>
+          <a href="../html/statistical.html">
+            <i class="fas fa-chart-bar"> </i>
+            Thống kê
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="fas fa-sign-out-alt"> </i>
+            Đăng xuất
+          </a>
+        </li>
+      </ul>
     </div>
-  </body>
+    <div class="content">
+      <div class="header">
+        <select>
+          <option>
+            Tất cả
+          </option>
+          <option>
+            Món cơm
+          </option>
+          <option>
+            Món bún
+          </option>
+          <option>
+            Món phở
+          </option>
+          <option>
+            Thức uống
+          </option>
+        </select>
+        <input placeholder="Tìm kiếm tên món..." type="text" />
+        <button>
+          Làm mới
+        </button>
+        <button>
+          + Thêm món mới
+        </button>
+      </div>
+      <div class="menu_container">
+
+        <div class="menu-item">
+          <img alt="" height="100" src="../Images/Food/Com/Com-ba-roi-rim-tom.png" />
+          <div class="details">
+            <h3>
+              Cơm ba rọi rim tôm
+            </h3>
+
+            <button>
+              Món cơm
+            </button>
+          </div>
+          <div class="price">
+            30.000đ
+          </div>
+          <div class="actions">
+            <button>
+              <i class="fas fa-edit">
+              </i>
+            </button>
+            <button>
+              <i class="fas fa-trash">
+              </i>
+            </button>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img alt="A plate of stir-fried mixed vegetables" height="100"
+            src="../Images/Food/Com/Com-ca-chien-xa-ot.png" />
+          <div class="details">
+            <h3>
+              Cơm cá chiên xả ớt
+            </h3>
+
+            <button>
+              Món cơm
+            </button>
+          </div>
+          <div class="price">
+            30.000đ
+          </div>
+          <div class="actions">
+            <button>
+              <i class="fas fa-edit">
+              </i>
+            </button>
+            <button>
+              <i class="fas fa-trash">
+              </i>
+            </button>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img alt="A plate of lava cheese bread" height="100" src="../Images/Food/Com/Com-canh-chua-ca-hu.png" />
+          <div class="details">
+            <h3>
+              Cơm canh chua cá hú
+            </h3>
+
+            <button>
+              Món cơm
+            </button>
+          </div>
+          <div class="price">
+            30.000đ
+          </div>
+          <div class="actions">
+            <button>
+              <i class="fas fa-edit">
+              </i>
+            </button>
+            <button>
+              <i class="fas fa-trash">
+              </i>
+            </button>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img alt="A set of Thai Tomyum hotpot ingredients" height="100"
+            src="../Images/Food/Com/Com-chien-bo-luc-lac.png" />
+          <div class="details">
+            <h3>
+              Cơn chiên bò lúc lắc
+            </h3>
+
+            <button>
+              Món cơm
+            </button>
+          </div>
+          <div class="price">
+            30.000đ
+          </div>
+          <div class="actions">
+            <button>
+              <i class="fas fa-edit">
+              </i>
+            </button>
+            <button>
+              <i class="fas fa-trash">
+              </i>
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <img alt="" height="100" src="../Images/Food/Com/Com-chien-dua-bo.png" />
+          <div class="details">
+            <h3>
+              Cơm chiên dưa bò
+            </h3>
+
+            <button>
+              Món cơm
+            </button>
+          </div>
+          <div class="price">
+            30.000đ
+          </div>
+          <div class="actions">
+            <button>
+              <i class="fas fa-edit">
+              </i>
+            </button>
+            <button>
+              <i class="fas fa-trash">
+              </i>
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <img alt="" height="100" src="../Images/Food/Com/Com-chien-duong-chau.png" />
+          <div class="details">
+            <h3>
+              Cơm chiên dương châu
+            </h3>
+
+            <button>
+              Món cơm
+            </button>
+          </div>
+          <div class="price">
+            30.000đ
+          </div>
+          <div class="actions">
+            <button>
+              <i class="fas fa-edit">
+              </i>
+            </button>
+            <button>
+              <i class="fas fa-trash">
+              </i>
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <img alt="" height="100" src="../Images/Food/Com/Com-chien-ga-xoi-mo.png" />
+          <div class="details">
+            <h3>
+              Cơm chiên gà xối mỡ
+            </h3>
+
+            <button>
+              Món cơm
+            </button>
+          </div>
+          <div class="price">
+            30.000đ
+          </div>
+          <div class="actions">
+            <button>
+              <i class="fas fa-edit">
+              </i>
+            </button>
+            <button>
+              <i class="fas fa-trash">
+              </i>
+            </button>
+          </div>
+        </div>
+
+
+
+        <div class="menu-item">
+          <img alt="" height="100" src="../Images/Food/Com/Com-chien-muc-trung-muoi.png" />
+          <div class="details">
+            <h3>
+              Cơm mực trứng muối
+            </h3>
+
+            <button>
+              Món cơm
+            </button>
+          </div>
+          <div class="price">
+            30.000đ
+          </div>
+          <div class="actions">
+            <button>
+              <i class="fas fa-edit">
+              </i>
+            </button>
+            <button>
+              <i class="fas fa-trash">
+              </i>
+            </button>
+          </div>
+        </div>
+
+
+
+        <div class="menu-item">
+          <img alt="" height="100" src="../Images/Food/Com/Com-chien-trung-op-la.png" />
+          <div class="details">
+            <h3>
+              Cơm chiên trứng ốp la
+            </h3>
+
+            <button>
+              Món cơm
+            </button>
+          </div>
+          <div class="price">
+            30.000đ
+          </div>
+          <div class="actions">
+            <button>
+              <i class="fas fa-edit">
+              </i>
+            </button>
+            <button>
+              <i class="fas fa-trash">
+              </i>
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <img alt="" height="100" src="../Images/Food/Com/Com-dau-hu-kho-ca-ri.png" />
+          <div class="details">
+            <h3>
+              Cơm đậu hủ kho cà ri
+            </h3>
+
+            <button>
+              Món cơm
+            </button>
+          </div>
+          <div class="price">
+            30.000đ
+          </div>
+          <div class="actions">
+            <button>
+              <i class="fas fa-edit">
+              </i>
+            </button>
+            <button>
+              <i class="fas fa-trash">
+              </i>
+            </button>
+          </div>
+        </div>
+
+
+        <div class="menu-item">
+          <img alt="" height="100" src="../Images/Food/Com/Com-dau-hu-kho-suon-chay.png" />
+          <div class="details">
+            <h3>
+              Cơm đậu hủ kho sườn cay
+            </h3>
+
+            <button>
+              Món cơm
+            </button>
+          </div>
+          <div class="price">
+            30.000đ
+          </div>
+          <div class="actions">
+            <button>
+              <i class="fas fa-edit">
+              </i>
+            </button>
+            <button>
+              <i class="fas fa-trash">
+              </i>
+            </button>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="pagi">
+        <a href="#" class="prev">«</a>
+        <a href="#" class="page-number active" data-page="1">1</a>
+        <a href="#" class="page-number" data-page="2">2</a>
+        <a href="#" class="page-number" data-page="3">3</a>
+        <a href="#" class="next">»</a>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+  <script src="../js/food_service.js"></script>
+</body>
+
 </html>

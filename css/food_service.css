@@ -71,86 +71,129 @@ body {
   }
 
   /* Xử lý content */
-  .content {
-    margin: 0;
+.content {
+  margin: 0;
     width: 100%;
     padding: 20px;
 }
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 .header select, .header input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 .header button {
-    background-color: #d9534f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d9534f;
+  color: white;
+  cursor: pointer;
 }
 .header button:first-of-type {
-    margin-right: 10px;
+  background-color: #d9534f;
 }
+
+.menu_container{
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Xử lý menu-item */
+
 .menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px; /* Padding hợp lý cho các phần tử trong menu-item */
+  margin: 10px 0; /* Giữ khoảng cách giữa các món ăn */
+  border: 1px solid #ddd; /* Tạo đường viền cho mỗi mục */
+  border-radius: 8px; /* Bo góc */
+  background-color: #fff; /* Màu nền trắng */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 
 }
 .menu-item img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    object-fit: cover;
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  margin-right: 20px;
 }
-.menu-item-content {
-    flex: 1;
-    margin-left: 20px;
+.menu-item .details {
+  flex-grow: 1;
 }
-.menu-item-content h3 {
-    margin: 0;
-    font-size: 18px;
+.menu-item .details h3 {
+  margin: 0;
+  font-size: 18px;
 }
-.menu-item-content p {
-    margin: 10px 0;
-    color: #666;
+.menu-item .details p {
+  margin: 5px 0;
+  color: #666;
 }
-.menu-item-content .badge {
+.menu-item .details button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+.menu-item .price {
+  text-align: right;
+  font-weight: bold;
+  font-size: 18px;
+  color: #d9534f;
+  margin-right: 20px;
+}
+.menu-item .actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu-item .actions button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.menu-item .actions button:first-of-type {
+  background-color: #d9534f;
+}
+
+  /* Xử lý pagination */
+  .pagi {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .pagi a {
+    color: darkred;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 8px 15px;
     display: inline-block;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
+  }
+  
+  .pagi a.active {
+    background-color: rgba(122, 8, 8, 0.905);
+    font-weight: bold;
     border-radius: 5px;
-    font-size: 12px;
-    color: #666;
-}
-.menu-item-actions {
-    display: flex;
-    align-items: center;
-}
-.menu-item-actions span {
-    font-size: 18px;
-    color: #d9534f;
-    margin-right: 20px;
-}
-.menu-item-actions button {
-    background-color: #d9534f;
     color: white;
-    border: none;
-    padding: 10px;
+  }
+  
+  .pagi a:hover:not(.active) {
+    background-color: rgb(182, 179, 177);
     border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10px;
-}
+  }
+
+
+
+
+

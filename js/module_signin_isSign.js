@@ -1,20 +1,34 @@
 // Tạo các tài khoản giả
 const accounts = {
     "admin@gmail.com": { password: "123", role: "admin" },
-    "user@gmail.com": { password: "123", role: "user" },
+    "user@gmail.com": {id: 1,  password: "123", role: "user" },
+    "user2@gmail.com": {id:2, password: "123", role: "user"},
+    "user3@gmail.com": {id:3, password: "123", role: "user"},
 };
 
 // Hàm xử lý đăng nhập
 function login() {
+    
     const emailInput = document.querySelector('.sign-in-container input[type="email"]');
     const passwordInput = document.querySelector('.sign-in-container input[type="password"]');
-    const email = emailInput ? emailInput.value : '';
+   
+    const email = emailInput ? emailInput.value.trim() : '';
     const password = passwordInput ? passwordInput.value : '';
+    
+   
 
     // Kiểm tra thông tin đăng nhập
     if (accounts[email] && accounts[email].password === password) {
         // Lưu trạng thái đăng nhập vào localStorage
-        localStorage.setItem("loggedInUser", JSON.stringify({ email: email, role: accounts[email].role, password: password }));
+        const loggedInUser = {
+            email: email,
+            role: accounts[email].role,
+            ...(accounts[email].role !== "admin" && { id: accounts[email].id }), // Thêm id nếu không phải admin
+        };
+
+        // Lưu trạng thái đăng nhập vào localStorage
+        localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+
         // Chuyển hướng về trang chủ
         window.location.href = "../html/newhome.html";
     } else {
