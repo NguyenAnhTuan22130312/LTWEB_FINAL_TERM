@@ -71,10 +71,10 @@ body {
   }
 
   /* Xử lý content */
-  .content {
-    margin: 0;
+.content {
+  margin: 0;
     width: 100%;
-    padding: 25px;
+    padding: 20px;
 }
 .header {
   display: flex;
@@ -98,14 +98,25 @@ body {
 .header button:first-of-type {
   background-color: #d9534f;
 }
+
+.menu_container{
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Xử lý menu-item */
+
 .menu-item {
   display: flex;
   align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 10px; /* Padding hợp lý cho các phần tử trong menu-item */
+  margin: 10px 0; /* Giữ khoảng cách giữa các món ăn */
+  border: 1px solid #ddd; /* Tạo đường viền cho mỗi mục */
+  border-radius: 8px; /* Bo góc */
+  background-color: #fff; /* Màu nền trắng */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 
 }
 .menu-item img {
   width: 120px;
@@ -132,13 +143,15 @@ body {
   cursor: pointer;
 }
 .menu-item .price {
+  text-align: right;
+  font-weight: bold;
   font-size: 18px;
   color: #d9534f;
   margin-right: 20px;
 }
 .menu-item .actions {
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
 }
 .menu-item .actions button {
   background-color: #d9534f;
@@ -152,3 +165,34 @@ body {
 .menu-item .actions button:first-of-type {
   background-color: #d9534f;
 }
+
+  /* Xử lý pagination */
+  .pagi {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .pagi a {
+    color: darkred;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: inline-block;
+  }
+  
+  .pagi a.active {
+    background-color: rgba(122, 8, 8, 0.905);
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .pagi a:hover:not(.active) {
+    background-color: rgb(182, 179, 177);
+    border-radius: 5px;
+  }
+
+
+
+
+
