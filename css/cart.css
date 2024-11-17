@@ -332,21 +332,14 @@ html {
 }
 
 /* Hiệu ứng khi di chuột vào button */
-.continue-btn:hover,
-.apply-btn:hover {
-  background-color: rgba(255, 0, 0, 0.736);
+.continue-btn:hover
+ {
+  background-color: #b5292f;
   color: white;
   font-weight: 500; /* Màu sáng hơn khi di chuột */
 }
 
-/* Hiệu ứng khi nhấn vào button */
-.continue-btn:active,
-.apply-btn:active {
-  transform: scale(0.95); /* Button thu nhỏ khi nhấn vào */
-  background-color: rgba(255, 0, 0, 0.736);
-  color: white;
-  font-weight: 5 00; /* Màu sáng hơn khi nhấn */
-}
+
 
 .fa-trash-can {
   color: #b5292f;
@@ -356,12 +349,12 @@ html {
 }
 
 .fa-trash-can:hover {
-  color: #cc3d3d;
+  color: #b5292f;
   transform: scale(1.2);
 }
 
 .fa-trash-can:active {
-  color: #a83232;
+  color: #b5292f;
   transform: scale(1.1);
 }
 
