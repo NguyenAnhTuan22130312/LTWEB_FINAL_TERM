@@ -36,7 +36,7 @@ body {
 
 .sidebar h2 {
   text-align: center;
-  color: #e76f51;
+  color: #d9534f;
   margin-bottom: 30px;
 }
 
@@ -62,7 +62,7 @@ body {
 }
 
 .sidebar ul li a:hover {
-  background-color: #e76f51;
+  background-color: #d9534f;
   color: #fff;
 }
 
@@ -76,7 +76,7 @@ body {
 }
 
 .header {
-  background-color: rgb(226, 81, 81);
+  background-color: #d9534f;
   color: #fff;
   padding: 20px;
   text-align: center;

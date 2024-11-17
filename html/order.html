@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Service</title>
+    <title>Đơn hàng</title>
     <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="../css/customer_service.css" />
+    <link rel="stylesheet" href="../css/order.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -61,55 +61,51 @@
           <select>
             <option>Tất cả</option>
           </select>
-          <input placeholder="Tìm kiếm khách hàng..." type="text" />
-          <input placeholder="mm/dd/yyyy" type="text" />
-          <input placeholder="mm/dd/yyyy" type="text" />
-          <button>
+          <input placeholder="Tìm kiếm mã đơn hoặc khách hàng..." type="text" />
+          <input
+            onblur="(this.type='text')"
+            onfocus="(this.type='date')"
+            placeholder="Từ"
+            type="text"
+          />
+          <input
+            onblur="(this.type='text')"
+            onfocus="(this.type='date')"
+            placeholder="Đến"
+            type="text"
+          />
+          <div class="icons">
+            <i class="fas fa-sort-amount-down"> </i>
+            <i class="fas fa-sort-amount-up"> </i>
             <i class="fas fa-sync-alt"> </i>
-          </button>
-          <button>
-            <i class="fas fa-plus"> </i>
-            Thêm khách hàng
-          </button>
+          </div>
         </div>
+
         <table>
-          <thead>
-            <tr>
-              <th>STT</th>
-
-              <th>HỌ VÀ TÊN</th>
-
-              <th>LIÊN HỆ</th>
-
-              <th>EMAIL</th>
+            <thead>
+              <tr>
+                <th>MÃ ĐƠN</th>
+                <th>KHÁCH HÀNG</th>
+                <th>NGÀY ĐẶT</th>
+                <th>TỔNG TIỀN</th>
+                <th>TRẠNG THÁI</th>
+              </tr>
+            </thead>
+            <tbody>
+                <td>DH1</td>
+                <td>TuanAnh</td>
+                <td>17/11/2024</td>
+                <td>50.000đ</td>
+                <td>
+                    <button class="details-button">Đang xử lý</button>
+                </td>
+             
               
-            </tr>
-
-            <tr>
-              <th>1</th>
-              <th>Nguyễn Tuấn Anh</th>
-              <th>03512345678</th>
-              <th>user@gmail.com</th>
-            </tr>
-
-            <tr>
-              <th>2</th>
-              <th>Nguyễn Anh Tuấn</th>
-              <th>03599999999</th>
-              <th>user2@gmail.com</th>
-            </tr>
-
-            <tr>
-              <th>3</th>
-              <th>Hán Hữu Trung</th>
-              <th>0335625672</th>
-              <th>user3@gmail.com</th>
-            </tr>
+            </tbody>
+          </table>
 
 
-          </thead>
-          
-        </table>
+       
       </div>
     </div>
   </body>

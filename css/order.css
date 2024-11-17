@@ -94,43 +94,11 @@ body {
 .header .icons i {
     margin-right: 10px;
     cursor: pointer;
-}
+}   
 
 
-.summary {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-.summary .card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.summary .card:last-child {
-    margin-right: 0;
-}
-.summary .card i {
-    font-size: 2em;
-    color: #b5651d;
-}
-.summary .card .text {
-    text-align: right;
-}
-.summary .card .text p {
-    margin: 0;
-}
-.summary .card .text .number {
-    font-size: 1.5em;
-    font-weight: bold;
-}
 
+/* Xử lý table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -139,23 +107,20 @@ table {
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 table th, table td {
     padding: 15px;
     text-align: left;
     
 }
+
 table th {
     background-color: #f1f1f1;
 }
 table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
-table img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
+
 .details-button {
     background-color: #f1f1f1;
     border: none;
@@ -164,14 +129,6 @@ table img {
     cursor: pointer;
     display: flex;
     align-items: center;
-}
-.details-button i {
-    margin-right: 5px;
+    font-weight: bold;
 }
 
-.product_name {
-    display: flex;
-    align-items: center;
-  }
-  
-  
