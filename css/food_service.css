@@ -107,6 +107,8 @@ body {
 /* Xử lý menu-item */
 
 .menu-item {
+
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -148,6 +150,7 @@ body {
   font-size: 18px;
   color: #d9534f;
   margin-right: 20px;
+
 }
 .menu-item .actions {
   display: flex;
@@ -162,6 +165,7 @@ body {
   margin-left: 10px;
   cursor: pointer;
 }
+
 .menu-item .actions button:first-of-type {
   background-color: #d9534f;
 }
@@ -181,7 +185,9 @@ body {
   }
   
   .pagi a.active {
+
     background-color: #d9534f;
+
     font-weight: bold;
     border-radius: 5px;
     color: white;

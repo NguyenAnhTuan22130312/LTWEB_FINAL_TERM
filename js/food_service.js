@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const itemsPerPage = 4; // Số món trên mỗi trang
+
+  const itemsPerPage = 5; // Số món trên mỗi trang
+
   const menuItems = document.querySelectorAll('.menu-item');
   const pageNumbers = document.querySelectorAll('.page-number');
   const prevButton = document.querySelector('.prev');
@@ -12,7 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
     menuItems.forEach((item, index) => {
       item.style.display = 'none';
       if (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) {
-        item.style.display = 'block';
+
+        item.style.display = '';
+
       }
     });
 
