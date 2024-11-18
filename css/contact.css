@@ -227,6 +227,9 @@ margin-right: 10px;
     width: 100%;
     overflow: hidden;
     margin: auto;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    
 }
 .form-section {
     padding: 40px;
