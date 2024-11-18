@@ -16,7 +16,7 @@ function checkLoginStatus() {
         const userLink = document.getElementById("user-link");
         if (loggedInUser.role === "admin") {
             adminLink.style.display = "block";  
-            userLink.style.display = "none";  
+            userLink.style.display = "block";  
         } else {
             adminLink.style.display = "none"; 
             userLink.style.display = "block";

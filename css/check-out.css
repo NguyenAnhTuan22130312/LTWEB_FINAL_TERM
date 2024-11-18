@@ -371,6 +371,37 @@ body {
   flex-direction: column;
 }
 
+.type-wallet-btn {
+  width: 50%;
+  height: 50px;
+  cursor: pointer;
+  background-color: #f6f6f6;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #666666;
+}
+
+.type-wallet-btn:hover,
+.type-wallet-btn.active {
+  border: 1px solid #b5292f;
+  background-color: #b5292f;
+  color: #fff;
+}
+
+.type-wallet-btn i {
+  margin-right: 20px;
+  font-size: 22px;
+}
+
+.container .chk-Vidientu {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Custom radio buttons */
 input[type="radio"] + label {
   display: inline-block;

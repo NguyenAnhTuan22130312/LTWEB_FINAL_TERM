@@ -40,7 +40,7 @@
     <div class="checkout-page">
       <div class="checkout-header">
         <div class="checkout-return">
-          <button onclick="window.location.href='../html/newhome.html'">
+          <button onclick="window.location.href='../html/cart.html'">
             <i class="fa-regular fa-chevron-left"></i>
           </button>
         </div>
@@ -171,10 +171,75 @@
                     <i class="fa-duotone fa-solid fa-credit-card"></i>
                     Thanh toán bằng thẻ ngân hàng
                   </button>
+                  <div class="content-group chk-ship" id="thenganhang-group">
+                    <div class="content-group">
+                      <form action="" class="info-the-ngan-hang">
+                        <div class="form-group">
+                          <input
+                            id="tenchuthe"
+                            name="tenchuthe"
+                            type="text"
+                            placeholder="Tên chủ thẻ"
+                            class="form-control"
+                          />
+                          <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                          <input
+                            id="sotk"
+                            name="sotk"
+                            type="text"
+                            placeholder="Số tài khoản"
+                            class="form-control"
+                          />
+                          <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                          <input
+                            id="ngayhethan"
+                            name="ngayhethan"
+                            type="text"
+                            placeholder="Ngày hết hạn"
+                            class="form-control"
+                          />
+                          <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                          <input
+                            id="cvv"
+                            name="cvv"
+                            type="text"
+                            placeholder="Mã CVV"
+                            class="form-control"
+                          />
+                          <span class="form-message"></span>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
                   <button class="payment-btn" id="vidientu">
                     <i class="fa-duotone fa-solid fa-wallet"></i>
                     Thanh toán bằng ví điện tử
                   </button>
+                  <div class="content-group chk-ship" id="vidientu-group">
+                    <div class="checkout-type-order">
+                      <button
+                        class="type-wallet-btn active"
+                        id="google-pay-icon"
+                      >
+                        <i class="fa-brands fa-google-pay"></i>
+                      </button>
+                      <button class="type-wallet-btn" id="apple-pay-icon">
+                        <i class="fa-brands fa-apple-pay"></i>
+                      </button>
+                      <button class="type-wallet-btn" id="amazon-pay-icon">
+                        <i class="fa-brands fa-amazon-pay"></i>
+                      </button>
+                      <button class="type-wallet-btn" id="paypal-icon">
+                        <i class="fa-brands fa-paypal"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="content-group">
@@ -275,9 +340,14 @@
           </div>
           <div class="total-checkout">
             <div class="text">Tổng tiền</div>
-            <div class="price-bill">
+            <div class="price-bill" id="tongtiengiao">
               <div class="price-final" id="checkout-cart-price-final">
                 220.000&nbsp;đ
+              </div>
+            </div>
+            <div class="price-bill" id="tongtientudenlay">
+              <div class="price-final" id="checkout-cart-price-final">
+                190.000&nbsp;đ
               </div>
             </div>
           </div>

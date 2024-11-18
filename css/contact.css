@@ -217,6 +217,7 @@ margin-right: 10px;
     margin-left: 100px;
 }
 
+
 /* Xử lý container */
 .container {
     background-color: white;
@@ -227,6 +228,9 @@ margin-right: 10px;
     width: 100%;
     overflow: hidden;
     margin: auto;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    
 }
 .form-section {
     padding: 40px;
@@ -282,6 +286,43 @@ margin-right: 10px;
     flex: 1;
     opacity: 0.8;
 }
+.container2{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}.contact_address_item {
+    border: 5px solid black;
+}
+
+ul li p::before {
+    display: inline-block;
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 900; 
+    margin-right: 8px; 
+}
+
+
+.location::before {
+    content: "\f54f"; 
+}
+
+.phone::before {
+    content: "\f879"; 
+}
+
+.email::before {
+    content: "\f0e0"; 
+}
+.line{
+    margin-top: 70px;
+    max-width: 1200px;
+    height: 1px;
+    background-color: black;
+}
+
+
+
 
 
 
