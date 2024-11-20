@@ -1,38 +1,43 @@
 // Tạo các tài khoản giả
 const accounts = {
-    "admin": { password: "123", role: "admin" },
-    "user": {id: 1,  password: "123", role: "user" },
-    "user2": {id:2, password: "123", role: "user"},
-    "user3": {id:3, password: "123", role: "user"},
+    "admin": { email: "admin@gmail.com", password: "123", role: "admin" },
+    "user": { id: 1, email: "user@gmail.com", password: "123", role: "user" },
+    "user2": { id: 2, email: "user2@gmail.com", password: "123", role: "user" },
+    "user3": { id: 3, email: "user3@gmail.com", password: "123", role: "user" },
 };
 
 // Hàm xử lý đăng nhập
 function login() {
-    
-    const emailInput = document.querySelector('.sign-in-container input[type="text"]');
+    const inputField = document.querySelector('.sign-in-container input[type="text"]');
     const passwordInput = document.querySelector('.sign-in-container input[type="password"]');
-   
-    const email = emailInput ? emailInput.value.trim() : '';
-    const password = passwordInput ? passwordInput.value : '';
-    
-   
 
-    // Kiểm tra thông tin đăng nhập
-    if (accounts[email] && accounts[email].password === password) {
+    const input = inputField ? inputField.value.trim() : '';
+    const password = passwordInput ? passwordInput.value : '';
+
+    // Tìm tài khoản phù hợp dựa trên username hoặc email
+    const userAccount = Object.keys(accounts).find(
+        (username) => (username === input || accounts[username].email === input) && accounts[username].password === password
+    );
+
+    if (userAccount) {
+        const account = accounts[userAccount];
+
         // Lưu trạng thái đăng nhập vào localStorage
         const loggedInUser = {
-            email: email,
-            role: accounts[email].role,
-            ...(accounts[email].role !== "admin" && { id: accounts[email].id }), // Thêm id nếu không phải admin
+            username: userAccount,
+            email: account.email,
+            role: account.role,
+            password: account.password,
+            ...(account.role !== "admin" && { id: account.id }), // Thêm id nếu không phải admin
         };
 
-        // Lưu trạng thái đăng nhập vào localStorage
+        // Lưu trạng thái đăng nhập
         localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
 
         // Chuyển hướng về trang chủ
         window.location.href = "../html/newhome.html";
     } else {
-        alert("Email hoặc mật khẩu không đúng. Vui lòng thử lại.");
+        alert("Email, tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại.");
     }
 }
 
