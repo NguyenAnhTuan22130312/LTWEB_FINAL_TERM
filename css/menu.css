@@ -125,7 +125,7 @@ html {
 }
 #header .menu ul.submenu > li {
   float: none;
-  width: 100px;
+  width: 80px;
   height: 30px;
 }
 #header .menu .submenu a {

@@ -1,15 +1,15 @@
 // Tạo các tài khoản giả
 const accounts = {
-    "admin@gmail.com": { password: "123", role: "admin" },
-    "user@gmail.com": {id: 1,  password: "123", role: "user" },
-    "user2@gmail.com": {id:2, password: "123", role: "user"},
-    "user3@gmail.com": {id:3, password: "123", role: "user"},
+    "admin": { password: "123", role: "admin" },
+    "user": {id: 1,  password: "123", role: "user" },
+    "user2": {id:2, password: "123", role: "user"},
+    "user3": {id:3, password: "123", role: "user"},
 };
 
 // Hàm xử lý đăng nhập
 function login() {
     
-    const emailInput = document.querySelector('.sign-in-container input[type="email"]');
+    const emailInput = document.querySelector('.sign-in-container input[type="text"]');
     const passwordInput = document.querySelector('.sign-in-container input[type="password"]');
    
     const email = emailInput ? emailInput.value.trim() : '';
