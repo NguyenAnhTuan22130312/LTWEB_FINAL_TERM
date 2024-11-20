@@ -9,7 +9,7 @@ function checkLoginStatus() {
         
         // Hiển thị tên người dùng
         const userName = document.getElementById("user-name");
-        userName.textContent = loggedInUser.email;
+        userName.textContent = loggedInUser.username;
 
         // Kiểm tra xem người dùng có phải là admin không
         const adminLink = document.getElementById("admin-link");
