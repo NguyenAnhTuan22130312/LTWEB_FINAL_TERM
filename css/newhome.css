@@ -69,11 +69,12 @@ html {
 .user-menu {
   position: relative;
   z-index: 9999;
+  
 }
 
 .right .submenu {
   position: absolute;
-  
+  width: 100px;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -135,6 +136,7 @@ html {
 #header .bottom .menu ul > li > a:hover {
   color: #b5292f;
 }
+
 #header .bottom .menu .menu-item {
   position: relative;
   height: 100%;
@@ -147,7 +149,7 @@ html {
   
   border-top: none;
   top: 29px;
-  left: 20px;
+  left: 18px;
   display: none;
   background-color: white;
   color: black;
@@ -160,7 +162,7 @@ html {
 }
 #header .menu ul.submenu > li {
   float: none;
-  width: 100px;
+  width: 80px;
   height: 30px;
   
 }

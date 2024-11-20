@@ -73,7 +73,7 @@ html {
 
 .right .submenu {
   position: absolute;
-  
+  width: 100px;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -160,7 +160,7 @@ html {
 }
 #header .menu ul.submenu > li {
   float: none;
-  width: 100px;
+  width: 80px;
   height: 30px;
   
 }
