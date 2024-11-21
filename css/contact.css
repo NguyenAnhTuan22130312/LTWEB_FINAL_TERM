@@ -46,16 +46,17 @@ body,html{
 #header .containerss .right .nav_item_shop {
     position: relative;
 }
-#header .containerss .right .count{
+#header .containerss .right .count {
     position: absolute;
     margin: 5px;
-    background-color: yellow;
-    width: 20px;
-    height: 20px;
+    background-color: #ffe600;
+    width: 28px;
+    height: 28px;
     text-align: center;
     border-radius: 50%;
-    top: 5px;
-}
+    top: -2px;
+    line-height: 28px;
+  }
 #header .containerss .right .fa-solid{
     color: #B5292F;
     margin: 10px;
