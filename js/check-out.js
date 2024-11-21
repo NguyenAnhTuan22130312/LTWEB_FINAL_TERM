@@ -50,11 +50,12 @@ giaotannoi.addEventListener("click", () => {
   giaotannoi.classList.add("active");
   tudenlayGroup.style.display = "none";
   chkShip.forEach((item) => {
-    item.style.display = "flex";
+    item.style.display = "none";
   });
 });
 
 //Xu ly phuong thuc thanh toan
+// Xu ly phuong thuc thanh toan
 let tienmat = document.querySelector("#tienmat");
 let thenganhang = document.querySelector("#thenganhang");
 let vidientu = document.querySelector("#vidientu");
@@ -62,37 +63,35 @@ let thenganhangGroup = document.querySelector("#thenganhang-group");
 let vidientuGroup = document.querySelector("#vidientu-group");
 let chkPay = document.querySelectorAll(".chk-pay");
 
-tienmat.addEventListener("click", () => {
+function togglePaymentMethod(method, group) {
+  const isActive = method.classList.contains("active");
+  // Reset trạng thái tất cả phương thức thanh toán
+  tienmat.classList.remove("active");
   thenganhang.classList.remove("active");
   vidientu.classList.remove("active");
-  tienmat.classList.add("active");
   thenganhangGroup.style.display = "none";
   vidientuGroup.style.display = "none";
   chkPay.forEach((item) => {
     item.style.display = "none";
   });
+
+  // Nếu đã active thì tắt, nếu chưa thì bật
+  if (!isActive) {
+    method.classList.add("active");
+    if (group) group.style.display = method === vidientu ? "flex" : "block";
+  }
+}
+
+tienmat.addEventListener("click", () => {
+  togglePaymentMethod(tienmat);
 });
 
 thenganhang.addEventListener("click", () => {
-  tienmat.classList.remove("active");
-  vidientu.classList.remove("active");
-  thenganhang.classList.add("active");
-  vidientuGroup.style.display = "none";
-  chkPay.forEach((item) => {
-    item.style.display = "none";
-  });
-  thenganhangGroup.style.display = "block";
+  togglePaymentMethod(thenganhang, thenganhangGroup);
 });
 
 vidientu.addEventListener("click", () => {
-  tienmat.classList.remove("active");
-  thenganhang.classList.remove("active");
-  vidientu.classList.add("active");
-  thenganhangGroup.style.display = "none";
-  chkPay.forEach((item) => {
-    item.style.display = "none";
-  });
-  vidientuGroup.style.display = "flex";
+  togglePaymentMethod(vidientu, vidientuGroup);
 });
 
 //Xu ly vi dien tu
