@@ -57,3 +57,33 @@ document.addEventListener("DOMContentLoaded", function () {
   // Hiển thị trang đầu tiên
   showPage(currentPage);
 });
+
+
+// Xử lý popup thêm món ăn
+
+const popup = document.getElementById("popup");
+const addButton = document.querySelector(".add_item_btn");
+const closeButton =  document.querySelector(".close_btn");
+
+addButton.addEventListener("click", () => {
+  popup.classList.remove("hidden");
+});
+
+closeButton.addEventListener("click", () =>{
+  popup.classList.add("hidden");
+});
+
+popup.addEventListener("click", (event) => {
+  if (event.target === popup) {
+    popup.classList.add("hidden");
+  }
+});
+
+document.getElementById("new_item_form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+
+  alert("Món mới đã được lưu!");
+  popup.classList.add("hidden");
+});
+

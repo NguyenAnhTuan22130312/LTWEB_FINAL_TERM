@@ -10,11 +10,14 @@
 }
 .content_dis{
   width: 100%;
+  padding-left: 50px;
   display: flex;
+  
   background-color: #b5292f;
   border-radius: 10px;
 }
 .left_content {
+  
   width: 200px;
   height:550px;
   padding: 15px;
@@ -22,11 +25,13 @@
   margin-right: auto;
 }
 .left_content p{
+  
   font-size: 22px;
   color:white ;
   font-weight: bold;
-  line-height: 1.2;
+  line-height: 1.5;
   font-style: italic;
+  
 }
 
 .right_content video {
@@ -36,8 +41,8 @@
   border-radius: 10px;
 }
 .text{
-  font-style: italic;
-    font-family: "Playfair Display", serif;
+    font-style: italic;
+    
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 20px;
