@@ -24,7 +24,6 @@ min-height: 700px;
     padding: 10px 22px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
     background-color: white;
     color: #333;
     cursor: pointer;
@@ -78,12 +77,25 @@ min-height: 700px;
   
 /*---------------------------*/
 
+.idDonHang{
+  
+  height: 30px;
+}
+.line_st{
+  max-width: 1000px;
+  height: 1px;
+  background-color: #e8e8e8;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
 .order-container {
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
     background-color: #f5f5f5; 
     border-radius: 8px;
+
   }
   
 
@@ -165,7 +177,7 @@ min-height: 700px;
   
   .cancel-order-button {
     padding: 5px 15px;
-    background-color: #ff4d4f; 
+    background-color: #b5292f; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -194,5 +206,12 @@ min-height: 700px;
   .money{
     color: #b5292f;
     font-size: 17px;
+  }
+  .line_end{
+    max-width: 1000px;
+    height: 1px;
+    background-color: #e8e8e8;
+    margin-left: auto;
+    margin-right: auto;
   }
   

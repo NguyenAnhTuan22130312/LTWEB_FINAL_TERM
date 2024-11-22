@@ -55,6 +55,8 @@
         </li>
       </ul>
     </div>
+
+
     <div class="content">
       <div class="header">
         <select>
@@ -78,10 +80,45 @@
         <button>
           Làm mới
         </button>
-        <button>
+        
+        <button class="add_item_btn">
           + Thêm món mới
         </button>
+
+
       </div>
+
+      <div id="popup" class="popup hidden">
+        <div class="popup_content">
+          <span class="close_btn">
+            <i class="fa-solid fa-xmark"></i> 
+          </span>
+            <h2>THÊM MÓN MỚI</h2>
+            <form id="new_item_form">
+              <label for="item_name">Tên Món:</label>
+              <input type="text" id="item_name" placeholder="Nhập tên món ăn..." required>
+
+              <label for="item_category">Loại Món:</label>
+              <select id="item_category">
+                <option value="1">Món cơm</option>
+                <option value="2">Món phở</option>
+                <option value="3">Món bún</option>
+                <option value="4">Món nước</option>
+              </select>
+
+              <label for="item_price"> Giá:</label>
+              <input type="text" id="item_price" placeholder="Nhập giá của món ăn:" required>
+              
+              <label for="item_image">Hình ảnh:</label>
+              <input type="file" id="item_image">
+
+              <button type="submit">Lưu</button>
+            </form>
+        </div>
+      </div>
+
+
+
       <div class="menu_container">
 
         <div class="menu-item">
