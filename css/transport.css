@@ -1,0 +1,176 @@
+#containe{
+    background-color: #f6f6f6;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1050px;
+    min-height: 700px;
+    }
+
+    
+    
+    /* submenu search*/
+    
+    .order-status-container {
+        max-width: 1030px;
+        margin: 20px auto;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); 
+        margin-bottom: 10px;
+      }
+      
+      .status-button {
+        padding: 10px 22px;
+        font-size: 16px;
+        border: none;
+        background-color: white;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center; 
+      }
+      
+      .status-button:hover {
+        background-color: #b5292f;
+        color: white;
+      }
+      
+      .status-button.active {
+        background-color: #b5292f;
+        color: white;
+      }
+      
+      
+      .search-box-container {
+        max-width: 1030px;
+        margin: 0px auto;
+        
+        display: flex;
+        align-items: center;
+        gap: 5px; 
+      }
+      
+    
+      .search-input {
+        flex: 1; 
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      
+      .search-button {
+        padding: 10px 20px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        background-color: #b5292f;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .search-button:hover {
+        background-color: #a01e25;
+      }
+      
+    /*---------------------------*/
+    
+    .address_tracking_container {
+        display: flex;
+        justify-content: space-between; 
+        gap: 20px; 
+        max-width: 1050px;
+        margin: 20px auto; 
+      }
+
+    .address {
+        text-align: center;
+        width: 20%;
+    }
+    .address h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .address p {
+        margin: 5px 0;
+        line-height: 1.5;
+    }
+
+    
+
+    .tracking {
+        
+        width: 70%;
+    }
+    .tracking .header_status {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .tracking .header_status .status {
+        color: #00a65a;
+        font-weight: bold;
+    }
+    .tracking .header_status .status span {
+        color: #00a65a;
+    }
+    .tracking .timeline {
+        position: relative;
+        padding-left: 20px;
+    }
+    .tracking .timeline::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: #ddd;
+    }
+    .tracking .timeline .event {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+    .tracking .timeline .event::before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border: 2px solid #ddd;
+        border-radius: 50%;
+    }
+    .tracking .timeline .event.completed::before {
+        background-color: #00a65a;
+        border-color: #00a65a;
+    }
+    .tracking .timeline .event .time {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .tracking .timeline .event .status {
+        font-weight: bold;
+        color: #00a65a;
+    }
+    .tracking .timeline .event .details {
+        color: #666;
+    }
+    .tracking .timeline .event .link {
+        color: #00a65a;
+        text-decoration: none;
+    }
+    .tracking .more {
+        color: #00a65a;
+        text-decoration: none;
+    }
+    
+
+      
