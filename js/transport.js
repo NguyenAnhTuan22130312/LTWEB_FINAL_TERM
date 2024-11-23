@@ -13,3 +13,7 @@ document.getElementById("btn_transport").addEventListener("click", function () {
   document.getElementById("btn_cancelled").addEventListener("click", function () {
     window.location.href = "../html/Cancelled.html"; // Đường dẫn đến trang HTML đích
   });
+  document.getElementById("btn_comment").addEventListener("click", function () {
+    window.location.href = "../html/Comment_Food.html"; // Đường dẫn đến trang HTML đích
+  });
+

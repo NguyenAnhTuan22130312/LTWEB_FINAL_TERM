@@ -7,7 +7,7 @@
     <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="../css/module_header_footer.css" />
     <link rel="stylesheet" href="../css/signinCssModule.css" />
-    <link rel="stylesheet" href="../css/transport.css">
+    <link rel="stylesheet" href="../css/Comment_Food.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -136,10 +136,10 @@
 
       <div class="order-status-container">
         <button class="status-button" id="btn_all">Tất cả</button>
-        <button class="status-button active" id="btn_transport">Đang vận chuyển</button>
+        <button class="status-button" id="btn_transport">Đang vận chuyển</button>
         <button class="status-button" id="btn_delivered">Đã vận chuyển</button>
         <button class="status-button" id="btn_cancelled">Đã hủy</button>
-        <button class="status-button" id="btn_comment">Đánh giá</button>
+        <button class="status-button active" id="btn_comment">Đánh giá</button>
       </div>
 
       <div class="search-box-container">
@@ -151,59 +151,61 @@
         <button class="search-button">Tìm kiếm</button>
       </div>
 
-    <div class="address_tracking_container">
-
-      <div class="address">
-        <h2>Địa Chỉ Nhận Hàng</h2>
-        <p>Anh Tuan</p>
-        
-        <p>0123456789</p>
-        
-        <p>Linh Trung, Thủ Đức</p>
-        
-        <p>Cơm thêm, Không cho ớt, Lấy nhiều nước mắm, Nước 80% đường và ít đá nhé quán.</p>
-    </div>
-
-    <div class="tracking">
-        <div class="header_status">
-            <div class="status">SPX Express<br>SPXVN04200875317B</div>
+      
+        <div class="cmt-header">ĐÁNH GIÁ SẢN PHẨM CỦA CỬA HÀNG CHÚNG TÔI</div>
+        <div class="rating-section">
+            <label>Bạn có hài lòng khi sử dụng dịch vụ của chúng tôi:</label>
+            <div class="stars">
+                <button class="star" data-value="1"><i class="fas fa-star"></i></button>
+                <button class="star" data-value="2"><i class="fas fa-star"></i></button>
+                <button class="star" data-value="3"><i class="fas fa-star"></i></button>
+                <button class="star" data-value="4"><i class="fas fa-star"></i></button>
+                <button class="star" data-value="5"><i class="fas fa-star"></i></button>
+            </div>
+        </div>
+        <div class="comment-section">
+            <label>Nhận xét: (Ý kiến của bạn sẽ thêm thông tin cho nhiều người mua khác.)</label>
+            <textarea></textarea>
+            <small>(Tối đa 1.000 ký tự)</small>
+        </div>
+        <div class="buttons">
+            <button>ĐÁNH GIÁ</button>
             
         </div>
 
-
-        <div class="timeline">
-            <div class="event completed">
-                <div class="time">11:00 23-11-2024</div>
-                <div class="status">Đã giao</div>
-                <div class="details">Giao hàng thành công<br>Người nhận hàng: Anh Tuan </div>
+        <div class="rating-info">
+            <div class="info-item">
+                <i class="fas fa-lightbulb"></i>
+                <span class="description">- Chất lượng đồ ăn vượt ngoài mong đợi</span>
             </div>
-            <div class="event">
-                <div class="time">10:45 23-11-2024</div>
-                <div class="status">Đang vận chuyển</div>
-                <div class="details">Đơn hàng sẽ sớm được giao, vui lòng chú ý điện thoại</div>
+            <div class="info-item">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="description">- Chất lượng đồ ăn tốt</span>
             </div>
-            <div class="event">
-                <div class="time">10:40 23-11-2024</div>
-                <div class="details">Đã sắp xếp tài xế giao hàng cho bạn</div>
+            <div class="info-item">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="description">- Chất lượng đồ ăn tương đối ổn</span>
             </div>
-            <div class="event">
-                <div class="time">10:30 23-11-2024</div>
-                <div class="details">Đơn hàng đang được đầu bếp chế biến</div>
+            <div class="info-item">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="description">- Chất lượng đồ ăn không tốt</span>
             </div>
-            <div class="event">
-                <div class="time">10:20 23-11-2024</div>
-                <div class="details">Đơn hàng đang được chuẩn bị</div>
-            </div>
-            <div class="event">
-                <div class="time">10:10 23-11-2024</div>
-                <div class="details">Đơn hàng được chấp thuận</div>
+            <div class="info-item">
+                <i class="fas fa-star"></i>
+                <span class="description">- Chất lượng đồ ăn tệ</span>
             </div>
         </div>
-        <a href="#" class="more">Xem thêm</a>
-    </div>
 
-    </div>
+        
 
+      
     </div>
 
 
