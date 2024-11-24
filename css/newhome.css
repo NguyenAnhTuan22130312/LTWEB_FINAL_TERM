@@ -2,7 +2,7 @@ body,
 html {
   margin: 0;
   padding: 0px;
-  font-family: sans-serif, Tahoma;
+  font-family: "Poppins", sans-serif;
   height: 100%;
 }
 #header {
@@ -70,7 +70,6 @@ html {
 .user-menu {
   position: relative;
   z-index: 9999;
-  
 }
 
 .right .submenu {
@@ -85,7 +84,6 @@ html {
 
 .right .user-menu:hover .submenu {
   display: block;
-  
 }
 
 .right .submenu a {
@@ -147,7 +145,7 @@ html {
   height: 150px;
   width: auto;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  
+
   border-top: none;
   top: 29px;
   left: 18px;
@@ -165,7 +163,6 @@ html {
   float: none;
   width: 80px;
   height: 30px;
-  
 }
 #header .menu .submenu a {
   position: relative;
@@ -215,7 +212,7 @@ html {
   align-items: center;
   background-color: #b5292f;
   border-top: 2px solid #e6e6e6;
-  
+
   padding-top: 10px;
   padding-bottom: 10px;
   box-sizing: border-box;
@@ -402,7 +399,7 @@ html {
   justify-content: center;
   align-items: center;
 }
-#container-monban .xemtatca a{
+#container-monban .xemtatca a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -416,7 +413,6 @@ html {
   border: 1px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-
 
 #container-monban .content_section_bottom {
   display: grid;
