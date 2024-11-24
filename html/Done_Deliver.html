@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Food T^3</title>
+    <title>Đã vận chuyển</title>
     <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="../css/about.css" />
+    <link rel="stylesheet" href="../css/module_header_footer.css" />
     <link rel="stylesheet" href="../css/signinCssModule.css" />
+    <link rel="stylesheet" href="../css/Done_Deliver.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -15,7 +16,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../css/module_header_footer.css" />
+
     <script src="../js/module_dangnhap.js" defer></script>
   </head>
 
@@ -130,61 +131,118 @@
       </div>
     </div>
 
-    <!-- Xử lý content\  -->
-    <div class="container">
-      <div class="text">Welcome to Food T^3</div>
-      <div class="content_dis">
-        <div class="left_content">
-          <p>
-            Chào mừng bạn đến với Food T^3 nơi mang đến những bữa trưa thơm
-            ngon, đầy đủ dinh dưỡng và tràn đầy năng lượng cho một ngày làm việc
-            hiệu quả!
-          </p>
-        </div>
-        <div class="right_content">
-          <video autoplay muted loop>
-            <source
-              src="../Videos/[appsgolem.com][00-00-00][00-00-16]_Miami_s_Best_New_Chef_is_Mak.mp4"
-              type="video/mp4"
+    <div id="containe">
+      <div class="order-status-container">
+        <button class="status-button" id="btn_all">Tất cả</button>
+        <button class="status-button" id="btn_transport">
+          Đang vận chuyển
+        </button>
+        <button class="status-button active" id="btn_delivered">
+          Đã vận chuyển
+        </button>
+        <button class="status-button" id="btn_cancelled">Đã hủy</button>
+        <button class="status-button" id="btn_comment">Đánh giá</button>
+      </div>
+
+      <div class="search-box-container">
+        <input
+          type="text"
+          placeholder="Tìm kiếm đơn hàng..."
+          class="search-input"
+        />
+        <button class="search-button">Tìm kiếm</button>
+      </div>
+
+      <div class="order-container">
+        <div class="order-card">
+          <div class="idDonHang">
+            <i class="fa-regular fa-copy"></i> 123456678
+          </div>
+          <div class="line_st"></div>
+          <div class="product-item">
+            <img
+              src="../Images/Food/Com/Com-tam-heo-quay.png"
+              alt="Cơm tấm heo quay"
+              class="product-image"
             />
-          </video>
+            <div class="product-info">
+              <h3 class="product-name">Cơm tấm heo quay</h3>
+              <p class="product-quantity">Số lượng: 2</p>
+            </div>
+            <div class="product-total">
+              <div class="money">60.000 đ</div>
+            </div>
+          </div>
+
+          <div class="product-item">
+            <img
+              src="../Images/Food/nuoc/tra-sua-kem-trung-chay.png"
+              alt="Trà sữa kem trứng cháy"
+              class="product-image"
+            />
+            <div class="product-info">
+              <h3 class="product-name">Trà sữa kem trứng cháy</h3>
+              <p class="product-quantity">Số lượng: 1</p>
+            </div>
+            <div class="product-total">
+              <div class="money">30.000 đ</div>
+            </div>
+          </div>
+          <div class="line_end"></div>
+          <div class="order-total">
+            <strong>Tổng tiền:</strong>
+            <span class="total-money">90.000 đ</span>
+          </div>
+          <div class="order-footer">
+            <div class="order-status">Trạng thái: Đã Hoàn Thành</div>
+            <button class="info-order-button">Chi tiết</button>
+          </div>
         </div>
       </div>
-      <div class="line"></div>
-      <div class="allInfo">
-        <div class="text2">About Our Staff</div>
-        <div class="card-container">
-          <div class="card">
-            <img src="../Images/team/tr.jpg" alt="Hình ảnh cá nhân" />
-            <div class="info">
-              <h3>Hán Hữu Trung</h3>
-              <p>MSSV: 22130302</p>
-              <p>Lớp: DH22DTC</p>
+
+      <div class="order-container">
+        <div class="order-card">
+          <div class="idDonHang">
+            <i class="fa-regular fa-copy"></i> 9876543
+          </div>
+          <div class="line_st"></div>
+          <div class="product-item">
+            <img
+              src="../Images/Food/Pho/Pho-cuon-thit-heo.png"
+              alt="Cơm tấm heo quay"
+              class="product-image"
+            />
+            <div class="product-info">
+              <h3 class="product-name">Phở cuộn thịt heo</h3>
+              <p class="product-quantity">Số lượng: 1</p>
+            </div>
+            <div class="product-total">
+              <div class="money">30.000 đ</div>
             </div>
           </div>
 
-          <div class="card">
+          <div class="product-item">
             <img
-              src="../Images/team/tuan_22130311.jpg"
-              alt="Hình ảnh cá nhân"
+              src="../Images/Food/nuoc/Tra-dao.png"
+              alt="Trà sữa kem trứng cháy"
+              class="product-image"
             />
-            <div class="info">
-              <h3>Nguyễn Anh Tuấn</h3>
-              <p>MSSV: 22130311</p>
-              <p>Lớp: DH22DTC</p>
+            <div class="product-info">
+              <h3 class="product-name">Trà đào</h3>
+              <p class="product-quantity">Số lượng: 4</p>
+            </div>
+            <div class="product-total">
+              <div class="money">120.000 đ</div>
             </div>
           </div>
-
-          <div class="card">
-            <img
-              src="../Images/team/tuan_22130312.jpg"
-              alt="Hình ảnh cá nhân"
-            />
-            <div class="info">
-              <h3>Nguyễn Anh Tuấn</h3>
-              <p>MSSV: 22130312</p>
-              <p>Lớp: DH22DTA</p>
-            </div>
+          <div class="line_end"></div>
+          <div class="order-total">
+            <strong>Tổng tiền:</strong>
+            <span class="total-money">150.000 đ</span>
+          </div>
+          <div class="order-footer">
+            <div class="order-status">Trạng thái: Đã Hoàn Thành</div>
+            <button class="info-order-button">Chi tiết</button>
           </div>
         </div>
       </div>
@@ -225,5 +283,6 @@
       </div>
     </div>
     <script src="../js/home.js"></script>
+    <script src="../js/transport.js"></script>
   </body>
 </html>

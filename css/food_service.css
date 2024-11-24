@@ -118,8 +118,11 @@ body {
   border-radius: 8px; /* Bo góc */
   background-color: #fff; /* Màu nền trắng */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
  
 }
+
+
 .menu-item img {
   width: 120px;
   height: 120px;

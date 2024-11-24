@@ -67,11 +67,38 @@
           <button>
             <i class="fas fa-sync-alt"> </i>
           </button>
-          <button>
+          <button class="add_cus_btn">
             <i class="fas fa-plus"> </i>
             Thêm khách hàng
           </button>
         </div>
+
+        <div id="popup" class="popup hidden">
+          <div class="popup_content">
+            <span class="close_btn">
+              <i class="fa-solid fa-xmark"></i> 
+            </span>
+              <h2>THÊM KHÁCH HÀNG</h2>
+              <form id="new_cus_form">
+                <label for="cus_name">Tên Khách Hàng:</label>
+                <input type="text" id="cus_name" placeholder="Nhập tên khách hàng..." required>
+
+                <label for="cus_phone">Số Điện thoại:</label>
+                <input type="text" id="cus_phone" placeholder="Nhập số điện thoại..." required>
+
+                <label for="cus_email">Email:</label>
+                <input type="email" id="cus_email" placeholder="Nhập email khách hàng..." required>
+                
+                <button type="submit">
+                  Thêm Khách Hàng Mới
+                </button>
+                
+              </form>
+          </div>
+        </div>
+
+
+
         <table>
           <thead>
             <tr>
@@ -112,6 +139,7 @@
         </table>
       </div>
     </div>
+    <script src="../js/cus_service.js"></script>
     <script src="../js/module_dangnhap.js"></script>
   </body>
 </html>
