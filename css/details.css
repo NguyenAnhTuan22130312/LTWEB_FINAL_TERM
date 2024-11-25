@@ -1,14 +1,75 @@
 #containe{
-    background-color: #f6f6f6;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1050px;
-    min-height: 700px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
+    .address{
+        width: 30%;
+    }
+    .tracking{
+        width: 60%;
+    }
+    .address h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .address .inBold{
+        font-weight: bold;
+    }
+    .address p {
+        margin: 5px 0;
+        line-height: 1.5;
+    }
+    .tracking {
+        border-left: 2px solid #e0e0e0;
+        padding-left: 20px;
+    }
+    .tracking-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .tracking-item:last-child {
+        margin-bottom: 0;
+    }
+    .tracking-item .status {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+    }
+    .tracking-item .status.completed {
+        background-color: #4caf50;
+    }
+
+    .tracking-item .details {
+        flex-grow: 1;
+    }
+    .tracking-item .details p {
+        margin: 0;
+        line-height: 1.5;
+    }
+    .tracking-item .details .time {
+        font-size: 15px;
+        color: #888;
+    }
+    .tracking-item .details .status-text {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .tracking-item .details .description {
+        font-size: 15px;
+        color: #888;
+    }
+    
     
     
    

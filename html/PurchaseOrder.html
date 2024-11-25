@@ -19,14 +19,6 @@
     />
 
     <script src="../js/module_dangnhap.js" defer></script>
-    <style>
-      .section{
-        display: none;
-      }
-      .active{
-        display: block;
-      }
-    </style>
   </head>
 
   <body>
@@ -142,7 +134,7 @@
     <!-- Xử lý container -->
     <div id="containe">
       <div class="order-status-container">
-        <button class="status-button active" id="btn_all" onclick="showSection('all_purchase')">Tất cả</button>
+        <button class="status-button" id="btn_all" onclick="showSection('all_purchase')">Tất cả</button>
         <button class="status-button" id="btn_transport" onclick="showSection('ondelivering')">Đang vận chuyển</button>
         <button class="status-button" id="btn_delivered" onclick="showSection('alreadyDelivered')">Đã vận chuyển</button>
         <button class="status-button" id="btn_cancelled" onclick="showSection('checkcancelled')">Đã hủy</button>
@@ -216,7 +208,7 @@
             </div>
             <div class="order-footer">
               <div class="order-status">Trạng thái: Đang xử lý</div>
-              <button class="info-order-button">Chi tiết</button>
+              <button class="info-order-button" onclick="goToDetails()">Chi tiết</button>
               <button class="cancel-order-button">Hủy đơn hàng</button>
             </div>
           </div>
@@ -333,7 +325,7 @@
             </div>
             <div class="order-footer">
               <div class="order-status">Trạng thái: Đang vận chuyển</div>
-              <button class="info-order-button">Chi tiết</button>
+              <button class="info-order-button" onclick="goToDetails()">Chi tiết</button>
             </div>
           </div>
         </div>
@@ -382,7 +374,7 @@
             </div>
             <div class="order-footer">
               <div class="order-status">Trạng thái: Đã Hủy</div>
-              <button class="info-order-button">Chi tiết</button>
+              <button class="info-order-button" onclick="goToDetails()">Chi tiết</button>
               <button class="buy-again">Mua lại</button>
             </div>
           </div>
@@ -430,7 +422,7 @@
             </div>
             <div class="order-footer">
               <div class="order-status">Trạng thái: Đã Hủy</div>
-              <button class="info-order-button">Chi tiết</button>
+              <button class="info-order-button" onclick="goToDetails()">Chi tiết</button>
               <button class="buy-again">Mua lại</button>
             </div>
           </div>
@@ -480,7 +472,7 @@
             </div>
             <div class="order-footer">
               <div class="order-status">Trạng thái: Đã Vận Chuyển</div>
-              <button class="info-order-button">Chi tiết</button>
+              <button class="info-order-button" onclick="goToDetails()">Chi tiết</button>
             </div>
           </div>
         </div>
@@ -525,5 +517,6 @@
     </div>
     <script src="../js/home.js"></script>
     <script src="../js/transport.js"></script>
+    <script src="../js/details.js"></script>
   </body>
 </html>

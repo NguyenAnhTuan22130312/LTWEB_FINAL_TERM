@@ -36,10 +36,7 @@ min-height: 700px;
     color: white;
   }
   
-  .status-button.active {
-    background-color: #b5292f;
-    color: white;
-  }
+
   
   
   .search-box-container {
@@ -228,5 +225,12 @@ min-height: 700px;
 
   .buy-again:hover{
     background-color: #d9363e;
+  }
+
+  .section{
+    display: none;
+  }
+  .active{
+    display: block;
   }
   
