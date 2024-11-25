@@ -351,9 +351,23 @@
               </div>
             </div>
           </div>
-          <button class="complete-checkout-btn">Đặt hàng</button>
+          <button class="complete-checkout-btn" onclick="showOrderSuccess()">
+            Đặt hàng
+          </button>
         </div>
       </main>
+    </div>
+    <div id="order-success-modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <div class="modal-check">
+          <i class="fa-solid fa-check fa-2xl"></i>
+        </div>
+        <p>
+          Đặt hàng thành công! <br />
+          Đơn hàng của bạn đang được xử lý
+        </p>
+        <button onclick="closeModal()">Đóng</button>
+      </div>
     </div>
 
     <script src="../js/check-out.js"></script>
