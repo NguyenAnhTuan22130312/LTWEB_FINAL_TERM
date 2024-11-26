@@ -436,47 +436,44 @@ html {
 }
 
 /* Xử lý comment */
-/* Xử lý comment  */
-/* Xử lý popup của đánh giá món ăn */
-.review-section {
-  margin-top: 10px;
-  text-align: center;
+.popup-content  .user-reviews {
+  margin-top: 20px;
 }
 
-.stars {
-  margin: 12px 0;
+.popup-content .user-reviews h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.star {
-  font-size: 30px;
-  color: #ccc;
-  cursor: pointer;
+.popup-content .user-reviews .review-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
 }
 
-.star:hover,
-.star.active {
-  color: #b5292f;
+.popup-content .user-reviews .review-item:last-child {
+  border-bottom: none;
 }
 
-textarea#comment {
-  width: 80%;
-  height: 60px;
-  margin: 10px 0;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: none;
+.popup-content .user-reviews .review-item .user-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
-.submit-review {
-  background-color: #b5292f;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.popup-content .user-reviews .review-item .review-date{
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
-.submit-review:hover {
-  background-color: #b5292f;
+.popup-content .user-reviews .review-item .review-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.popup-content .user-reviews .review-item .info-review{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
 }
