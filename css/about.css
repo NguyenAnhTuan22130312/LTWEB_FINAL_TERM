@@ -10,9 +10,7 @@
 }
 .content_dis{
   width: 100%;
-  padding-left: 50px;
   display: flex;
-  
   background-color: #b5292f;
   border-radius: 10px;
 }
@@ -40,13 +38,7 @@
   object-fit: cover;
   border-radius: 10px;
 }
-.text{
-    font-style: italic;
-    
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
+
 
 .allInfo{
   margin-top: 50px;
@@ -54,8 +46,8 @@
 }
 
 .text2{
+  
   font-style: italic;
-    font-family: "Playfair Display", serif;
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 20px;
