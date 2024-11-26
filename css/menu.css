@@ -349,6 +349,7 @@ html {
   background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .popup-content {
@@ -359,6 +360,20 @@ html {
   width: 600px;
   padding: 10px;
   text-align: left;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.popup-content::-webkit-scrollbar {
+  width: 8px; /* Chiều rộng thanh cuộn */
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+  background: #b12704; /* Màu của thanh cuộn */
+  border-radius: 4px; /* Bo góc */
 }
 
 .close {
@@ -413,10 +428,55 @@ html {
   cursor: pointer;
   font-size: 15px;
   margin-top: 30px;
-  margin-left: 180px;
 }
 
 .popup-content .button-cart:hover {
   background-color: #c0392b;
   color: white;
+}
+
+/* Xử lý comment */
+/* Xử lý comment  */
+/* Xử lý popup của đánh giá món ăn */
+.review-section {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.stars {
+  margin: 12px 0;
+}
+
+.star {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star:hover,
+.star.active {
+  color: #b5292f;
+}
+
+textarea#comment {
+  width: 80%;
+  height: 60px;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+}
+
+.submit-review {
+  background-color: #b5292f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-review:hover {
+  background-color: #b5292f;
 }
