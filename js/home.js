@@ -10,7 +10,7 @@ function showSlides() {
     document.querySelector('.w3-content').style.transform = `translateX(${offset}%)`;
 
     for (let i = 0; i < totalSlides; i++) {
-        dots[i].className = dots[i].className.replace(" active", ""); // Xóa lớp active
+        dots[i].className = dots[i].className.replace(" active", ""); 
     }
     dots[slideIndex].className += " active";
 }
@@ -43,7 +43,7 @@ function startSlideShow() {
             slideIndex = 0;
         }
         showSlides();
-    }, 3000);
+    }, 8000);
 }
 
 function resetSlideInterval() {

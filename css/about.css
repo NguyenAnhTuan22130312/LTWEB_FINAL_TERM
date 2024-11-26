@@ -1,37 +1,28 @@
-
-
 /* Xử lý container */
 .container {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-
 }
-.content_dis{
+.content_dis {
   width: 100%;
-  padding-left: 50px;
   display: flex;
-  
   background-color: #b5292f;
   border-radius: 10px;
 }
 .left_content {
-  
   width: 200px;
-  height:550px;
+  height: 550px;
   padding: 15px;
   margin-left: auto;
   margin-right: auto;
 }
-.left_content p{
-  
+.left_content p {
   font-size: 22px;
-  color:white ;
+  color: white;
   font-weight: bold;
   line-height: 1.5;
-  font-style: italic;
-  
 }
 
 .right_content video {
@@ -40,42 +31,32 @@
   object-fit: cover;
   border-radius: 10px;
 }
-.text{
-    font-style: italic;
-    
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
 
-.allInfo{
+.allInfo {
   margin-top: 50px;
-  
 }
 
-.text2{
-  font-style: italic;
-    font-family: "Playfair Display", serif;
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    margin-left: 50px;
+.text2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-left: 50px;
 }
-.showtm{
+.showtm {
   display: flex;
   justify-content: center;
   gap: 50px;
 }
 .card-container {
   max-width: 1200px;
-  margin: 0 auto; 
-  display: flex; 
-  justify-content: space-between; 
-  gap: 20px; 
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
   padding: 20px;
 }
 
-.line{
+.line {
   margin-top: 100px;
   width: 1200px;
   height: 1px;
@@ -84,7 +65,7 @@
 
 .card {
   flex: 1;
-  max-width: 250px; 
+  max-width: 250px;
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
@@ -93,14 +74,12 @@
   text-align: center;
 }
 
-
 .card img {
   width: 100%;
   height: 260px;
-  object-fit: cover; 
+  object-fit: cover;
   border-bottom: 1px solid #ccc;
 }
-
 
 .card .info {
   padding: 15px;

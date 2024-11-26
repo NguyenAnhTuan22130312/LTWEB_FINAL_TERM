@@ -225,7 +225,7 @@ margin-right: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    max-width: 900px;
+    max-width: 1200px;
     width: 100%;
     overflow: hidden;
     margin: auto;
@@ -252,7 +252,7 @@ margin-right: 10px;
     font-weight: bold;
 }
 .form-group input, .form-group textarea {
-    width: calc(90% - 10px);
+    width: calc(100% - 10px);
     padding: 10px;
     border: 1px solid #ced4da;
     border-radius: 4px;
@@ -267,7 +267,7 @@ margin-right: 10px;
     width: 100%;
 }
 .submit-btn {
-    background-color: #d32f2f;
+    background-color: #b5292f;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -286,11 +286,12 @@ margin-right: 10px;
     background-size: cover;
     flex: 1;
     opacity: 0.8;
+    padding: 80px;
 }
 .container2{
     max-width: 1200px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 25px;
     margin-bottom: 50px;
 }.contact_address_item {
     border: 5px solid black;
@@ -321,6 +322,7 @@ ul li p::before {
     height: 1px;
     background-color: black;
 }
+
 
 
 
