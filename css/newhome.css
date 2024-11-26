@@ -288,7 +288,7 @@ html {
 #container .left {
   position: absolute;
   left: 0;
-  top: 35%;
+  top: 40%;
   background-color: black;
   color: white;
   border: none;
@@ -296,7 +296,7 @@ html {
 #container .right {
   position: absolute;
   right: 0;
-  top: 35%;
+  top: 40%;
   background-color: black;
   color: white;
   border: none;
