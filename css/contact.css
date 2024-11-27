@@ -231,18 +231,20 @@ margin-right: 10px;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 16px;
+    border: 1px solid #cecece;
     
 }
 .form-section {
     padding: 40px;
-    flex: 1;
+    width: 45%;
 }
 .form-section h2 {
     color: #a60e0e;
     margin-bottom: 20px;
+    text-align: center;
 }
 .form-group {
-    display: flex;
+    
     justify-content: space-between;
     margin-bottom: 20px;
 }
@@ -281,13 +283,16 @@ margin-right: 10px;
 .submit-btn i {
     margin-left: 10px;
 }
-.image-section {
-    background-image: url("../Images/home/qc1.jpg");
-    background-size: cover;
-    flex: 1;
-    opacity: 0.8;
-    padding: 80px;
+.submit-btn:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
 }
+.containerright{
+    width: 55%;
+    border-left: 1px solid #cecece;
+}
+
 .container2{
     max-width: 1200px;
     margin: auto;
@@ -322,6 +327,7 @@ ul li p::before {
     height: 1px;
     background-color: black;
 }
+
 
 
 
