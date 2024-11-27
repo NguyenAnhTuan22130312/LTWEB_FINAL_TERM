@@ -133,8 +133,8 @@
     <div class="container">
       <!-- Sidebar -->
       <div class="sidebar">
-        <div class="username">hant1234</div>
-        <div class="edit-profile">Sửa Hồ Sơ</div>
+        <div class="usernamediv">Thông tin</div>
+        <div class="linename"></div>
         <ul>
           <li>
             <a href="#" onclick="showContent('profile')">
@@ -155,7 +155,7 @@
             </a>
           </li>
           <li>
-            <a href="checkout.html">
+            <a href="../html/PurchaseOrder.html">
               <i class="fas fa-shopping-cart"></i>
               Đơn Mua
             </a>
@@ -173,27 +173,27 @@
         <!-- Hồ Sơ -->
         <div id="profile" class="content-section">
           <h2>Hồ Sơ Của Tôi</h2>
-          <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+          <div class="linehead"></div>
           <form>
             <div class="form-group">
               <label> Tên đăng nhập </label>
-              <input disabled type="text" value="hant1234" />
+              <input id="username" disabled type="text" value="hant1234" />
             </div>
             <div class="form-group">
               <label> Tên </label>
-              <input type="text" value="Han Trung" />
+              <input id="name" disabled type="text" value="Han Trung" />
             </div>
             <div class="form-group">
               <label> Email </label>
-              <input disabled type="email" value="ng************@gmail.com" />
+              <input id="email" disabled type="email" value="ng************@gmail.com" />
             </div>
             <div class="form-group">
               <label> Số điện thoại </label>
-              <input disabled type="text" value="********72" />
+              <input id="phone" disabled type="text" value="********72" />
             </div>
             <div class="form-group">
               <label> Ngày sinh </label>
-              <input type="date" value="2000-01-01" />
+              <input id="birthdate" disabled type="date" value="2000-01-01" />
             </div>
             <div class="form-group">
               <label> Giới tính </label>
@@ -213,26 +213,28 @@
               </div>
             </div>
             <div class="form-group">
-              <button class="save-btn" type="submit">Lưu</button>
+              <button id="edit-save-btn" type="button">Sửa</button>
+  
             </div>
           </form>
         </div>
         <!-- Địa Chỉ -->
         <div id="address" class="content-section hidden">
           <h2>Địa Chỉ Của Tôi</h2>
+          <div class="linehead"></div>
           <form>
-            <div class="form-group">
-              <label> Địa chỉ </label>
-              <textarea placeholder="Nhập địa chỉ của bạn..."></textarea>
-            </div>
-            <div class="form-group">
-              <button class="save-btn" type="submit">Lưu</button>
-            </div>
+              <div class="form-group">
+                  <label for="inplocate">Địa chỉ nhận hàng</label>
+                  <textarea id="inplocate" disabled class="inplocate">123 Đường ABC, Quận X</textarea>
+                  <button id="edit-save-textarea-btn" type="button">Sửa</button>
+                </div>
+                
           </form>
         </div>
         <!-- Đổi Mật Khẩu -->
         <div id="password" class="content-section hidden">
           <h2>Đổi Mật Khẩu</h2>
+          <div class="linehead"></div>
           <form>
             <div class="form-group">
               <label> Mật khẩu mới </label>
@@ -250,17 +252,11 @@
         <!-- Kho Voucher -->
         <div id="voucher" class="content-section hidden">
           <h2>Kho Voucher</h2>
+          <div class="linehead"></div>
           <p>Không có voucher nào!</p>
         </div>
       </div>
     </div>
-    <script>
-      function showContent(sectionId) {
-        const sections = document.querySelectorAll(".content-section");
-        sections.forEach((section) => section.classList.add("hidden"));
-        document.getElementById(sectionId).classList.remove("hidden");
-      }
-    </script>
 
     <div id="footer">
       <div class="footer-container">
@@ -298,5 +294,6 @@
     </div>
     <script src="../js/module_dangnhap_UserInfor.js"></script>
     <script src="../js/UserInformation.js"></script>
+    
   </body>
 </html>
