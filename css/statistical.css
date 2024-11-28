@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
@@ -36,7 +35,7 @@ body {
 
 .sidebar h2 {
   text-align: center;
-  color: #d9534f;
+  color: #b5292f;
   margin-bottom: 30px;
 }
 
@@ -62,7 +61,7 @@ body {
 }
 
 .sidebar ul li a:hover {
-  background-color: #d9534f;
+  background-color: #b5292f;
   color: #fff;
 }
 
@@ -118,7 +117,7 @@ body {
 }
 .summary .card i {
     font-size: 2em;
-    color: #b5651d;
+    color: #b5292f;
 }
 .summary .card .text {
     text-align: right;

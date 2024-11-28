@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
@@ -36,7 +34,7 @@ body {
 
 .sidebar h2 {
   text-align: center;
-  color: #d9534f;
+  color: #b5292f;
   margin-bottom: 30px;
 }
 
@@ -62,7 +60,7 @@ body {
 }
 
 .sidebar ul li a:hover {
-  background-color: #d9534f;
+  background-color: #b5292f;
   color: #fff;
 }
 
@@ -76,7 +74,7 @@ body {
 }
 
 .header {
-  background-color: #d9534f;
+  background-color: #b5292f;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -86,6 +84,22 @@ body {
   margin-bottom: 30px;
 }
 
+
+.store-management {
+  margin: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.store-management h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
 .cards {
   display: flex;
   gap: 20px;
@@ -93,17 +107,17 @@ body {
 }
 
 .card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 250px;
+  background: #f8f9fa;
+  padding: 15px;
   text-align: center;
+  border-radius: 10px;
+  width: 30%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-20px);
+  transform: translateY(-10px);
 }
 
 .card img {
@@ -124,3 +138,61 @@ body {
   margin-bottom: 15px;
   font-weight: 600;
 }
+
+/* ------ */
+.best-sellers {
+  margin: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.best-sellers h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.best-seller-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.best-seller-card {
+  background: #f8f9fa;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  width: 30%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.best-seller-card:hover {
+  transform: translateY(-10px);
+}
+
+.best-seller-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.best-seller-card h3 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.best-seller-card p {
+  font-size: 16px;
+  color: #555;
+}
+
+/*  */
+
+
