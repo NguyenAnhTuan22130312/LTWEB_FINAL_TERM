@@ -22,7 +22,7 @@ body {
 }
 
 .sidebar img {
-    margin-left: 20px;
+  margin-left: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@ body {
 }
 
 .sidebar ul li {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .sidebar ul li a {
