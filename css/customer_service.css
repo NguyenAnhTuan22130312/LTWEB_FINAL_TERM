@@ -1,7 +1,6 @@
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
@@ -36,7 +35,7 @@ body {
   
   .sidebar h2 {
     text-align: center;
-    color: #d9534f;
+    color: #b5292f;
     margin-bottom: 30px;
   }
   
@@ -47,7 +46,7 @@ body {
   }
   
   .sidebar ul li {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   
   .sidebar ul li a {
@@ -62,7 +61,7 @@ body {
   }
   
   .sidebar ul li a:hover {
-    background-color: #d9534f;
+    background-color: #b5292f;
     color: #fff;
   }
   
@@ -91,7 +90,7 @@ body {
     cursor: pointer;
 }
 .content .header button {
-    background-color: #d9534f;
+    background-color: #b5292f;
     color: #fff;
     border: none;
 }
@@ -147,7 +146,7 @@ body {
 
 .popup h2{
   margin-top: 0;
-  color: #d9534f;
+  color: #b5292f;
   text-align: center;
 }
 
@@ -166,7 +165,7 @@ body {
 }
 
 #new_cus_form label{
-  color :#d9534f ;
+  color :#b5292f ;
   font-weight: 500;
   font-size: 20px;
 }
@@ -184,13 +183,26 @@ body {
   padding: 10px;
   outline: none;
   border: none;
-  background-color: #d9534f;
+  background-color: #b5292f;
   width: auto;
   height: auto;
   border-radius: 5px;
   color: white;
   margin-top: 10px;
 }
+
+
+/* Tùy chỉnh cho phần giới tính */
+.gender-options {
+  display: flex;
+  gap: 15px;
+}
+
+#popup .popup_content .gender-options label{
+  font-size: 16px;
+  color: #333;
+}
+
 
   
 

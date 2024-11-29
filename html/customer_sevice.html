@@ -15,7 +15,7 @@
     <div class="container">
       <div class="sidebar">
         <img alt="HEHE" src="../Images/LOGO_V2.png" />
-        <h2>Bros Restaurant</h2>
+        <h2>T^3 Restaurant</h2>
         <ul>
           <li>
             <a class="active" href="../html/admin.html">
@@ -64,9 +64,7 @@
           <input placeholder="Tìm kiếm khách hàng..." type="text" />
           <input placeholder="mm/dd/yyyy" type="text" />
           <input placeholder="mm/dd/yyyy" type="text" />
-          <button>
-            <i class="fas fa-sync-alt"> </i>
-          </button>
+         
           <button class="add_cus_btn">
             <i class="fas fa-plus"> </i>
             Thêm khách hàng
@@ -83,12 +81,33 @@
                 <label for="cus_name">Tên Khách Hàng:</label>
                 <input type="text" id="cus_name" placeholder="Nhập tên khách hàng..." required>
 
+                <label for="cus_gender">Giới tính:</label>
+                <div id="cus_gender" class="gender-options">
+                  <label>
+                    <input type="radio" name="gender" value="male" required>
+                    Nam
+                  </label>
+                  <label>
+                    <input type="radio" name="gender" value="female" required>
+                    Nữ
+                  </label>
+                </div>
+
+                <label for="cus_dob">Ngày sinh:</label>
+                <input type="date" id="cus_dob" required>
+
+                <label for="cus_address">Địa chỉ:</label>
+                <input type="text" id="cus_address" placeholder="Nhập địa chỉ khách hàng..." required>
+
                 <label for="cus_phone">Số Điện thoại:</label>
                 <input type="text" id="cus_phone" placeholder="Nhập số điện thoại..." required>
 
                 <label for="cus_email">Email:</label>
                 <input type="email" id="cus_email" placeholder="Nhập email khách hàng..." required>
                 
+                
+
+
                 <button type="submit">
                   Thêm Khách Hàng Mới
                 </button>
