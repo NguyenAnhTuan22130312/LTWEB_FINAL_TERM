@@ -381,6 +381,7 @@
               </div>
               <div class="product-total">
                 <div class="money">60.000 đ</div>
+                <button class="info-order-button comment-button" >Đánh giá</button>
               </div>
             </div>
   
@@ -396,6 +397,7 @@
               </div>
               <div class="product-total">
                 <div class="money">30.000 đ</div>
+                <button class="info-order-button comment-button" >Đánh giá</button>
               </div>
             </div>
             <div class="line_end"></div>
@@ -410,6 +412,31 @@
           </div>
         </div>
       </div>
+
+      <div id="rating-popup" class="popup">
+        <div class="popup-content">
+          <span class="close-button">&times;</span>
+          <h2>Đánh giá đơn hàng</h2>
+          <form id="rating-form">
+            <label for="rating-stars">Chọn số sao:</label>
+            <div id="rating-stars">
+              <i class="fa-solid fa-star" data-value="1"></i>
+              <i class="fa-solid fa-star" data-value="2"></i>
+              <i class="fa-solid fa-star" data-value="3"></i>
+              <i class="fa-solid fa-star" data-value="4"></i>
+              <i class="fa-solid fa-star" data-value="5"></i>
+            </div>
+            <textarea
+              id="rating-comment"
+              placeholder="Hãy để lại nhận xét của bạn..."
+              rows="4"
+              required
+            ></textarea>
+            <button type="submit">Gửi đánh giá</button>
+          </form>
+        </div>
+      </div>
+      
 
     </div>
 
@@ -451,5 +478,6 @@
     <script src="../js/home.js"></script>
     <script src="../js/transport.js"></script>
     <script src="../js/details.js"></script>
+    <script src="../js/module_popup_purchase.js"></script>
   </body>
 </html>
