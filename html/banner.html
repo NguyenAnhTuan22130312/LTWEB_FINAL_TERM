@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đơn hàng</title>
+    <title>Admin</title>
     <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="../css/order.css" />
+    <link rel="stylesheet" href="../css/banner_management.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -64,53 +64,73 @@
           </li>
         </ul>
       </div>
-      <div class="content">
-        <div class="header">
-          <select>
-            <option>Tất cả</option>
-          </select>
-          <input placeholder="Tìm kiếm mã đơn hoặc khách hàng..." type="text" />
-          <input
-            onblur="(this.type='text')"
-            onfocus="(this.type='date')"
-            placeholder="Từ"
-            type="text"
-          />
-          <input
-            onblur="(this.type='text')"
-            onfocus="(this.type='date')"
-            placeholder="Đến"
-            type="text"
-          />
-          <div class="icons">
-            <i class="fas fa-sort-amount-down"> </i>
-            <i class="fas fa-sort-amount-up"> </i>
-            <i class="fas fa-sync-alt"> </i>
-          </div>
-        </div>
-
+        <div class="content">
+            <div class="header">QUẢN LÝ BANNER</div>
+      <div class="banner-management">
+        <h2>Danh sách Banner</h2>
         <table>
           <thead>
             <tr>
-              <th>MÃ ĐƠN</th>
-              <th>KHÁCH HÀNG</th>
-              <th>NGÀY ĐẶT</th>
-              <th>TỔNG TIỀN</th>
-              <th>TRẠNG THÁI</th>
+              <th>#</th>
+              <th>Hình ảnh</th>
+              <th>Hành động</th>
             </tr>
           </thead>
           <tbody>
-            <td>DH1</td>
-            <td>TuanAnh</td>
-            <td>17/11/2024</td>
-            <td>50.000đ</td>
-            <td>
-              <button class="details-button">Đang vận chuyển</button>
-            </td>
+            <tr>
+              <td>1</td>
+              <td><img src="../Images/home/qc1.jpg" alt="Banner 1" /></td>
+             
+              <td>
+                <button class="edit"><i class="fas fa-edit"></i> Sửa</button>
+                <button class="delete"><i class="fas fa-trash"></i> Xóa</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><img src="../Images/home/qc2.jpg" alt="Banner 2" /></td>
+
+              <td>
+                <button class="edit"><i class="fas fa-edit"></i> Sửa</button>
+                <button class="delete"><i class="fas fa-trash"></i> Xóa</button>
+              </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><img src="../Images/home/qc3.jpg" alt="Banner 2" /></td>
+              
+                <td>
+                  <button class="edit"><i class="fas fa-edit"></i> Sửa</button>
+                  <button class="delete"><i class="fas fa-trash"></i> Xóa</button>
+                </td>
+              </tr>
+            
           </tbody>
         </table>
+        <button class="add-banner"><i class="fas fa-plus"></i> Thêm Banner Mới</button>
       </div>
+
+      <div id="popup" class="popup hidden">
+        <div class="popup_content">
+          <span class="close_btn">
+            <i class="fa-solid fa-xmark"></i> 
+          </span>
+            <h2>THÊM BANNER MỚI</h2>
+            <form id="new_item_form">
+            
+              <label for="item_image">Hình ảnh:</label>
+              <input type="file" id="item_image">
+
+
+
+              <button type="submit">Lưu</button>
+            </form>
+        </div>
+      </div>
+
+        </div>
     </div>
     <script src="../js/module_dangnhap.js"></script>
+    <script src="../js/banner.js"></script>
   </body>
 </html>

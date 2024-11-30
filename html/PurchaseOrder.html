@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../css/module_header_footer.css" />
     <link rel="stylesheet" href="../css/signinCssModule.css" />
     <link rel="stylesheet" href="../css/module_container_PurchaseOrder.css" />
-    <link rel="stylesheet" href="../css/Comment_Food.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -139,7 +138,6 @@
         <button class="status-button" id="btn_transport" onclick="showSection('ondelivering')">Đang vận chuyển</button>
         <button class="status-button" id="btn_delivered" onclick="showSection('alreadyDelivered')">Đã vận chuyển</button>
         <button class="status-button" id="btn_cancelled" onclick="showSection('checkcancelled')">Đã hủy</button>
-        <button class="status-button" id="btn_comment" onclick="showSection('danhGia')">Đánh giá</button>
       </div>
 
       <div class="search-box-container">
@@ -215,72 +213,6 @@
           </div>
         </div>
 
-      </div>
-
-      <div id="danhGia" class="section">  
-        <div class="rating-section">
-          <label>Bạn có hài lòng khi sử dụng dịch vụ của chúng tôi:</label>
-          <div class="stars">
-            <button class="star" data-value="1">
-              <i class="fas fa-star"></i>
-            </button>
-            <button class="star" data-value="2">
-              <i class="fas fa-star"></i>
-            </button>
-            <button class="star" data-value="3">
-              <i class="fas fa-star"></i>
-            </button>
-            <button class="star" data-value="4">
-              <i class="fas fa-star"></i>
-            </button>
-            <button class="star" data-value="5">
-              <i class="fas fa-star"></i>
-            </button>
-          </div>
-        </div>
-        <div class="comment-section">
-          <label
-            >Nhận xét: (Ý kiến của bạn sẽ thêm thông tin cho nhiều người mua
-            khác.)</label
-          >
-          <textarea></textarea>
-          <small>(Tối đa 1.000 ký tự)</small>
-        </div>
-        <div class="buttons">
-          <button>ĐÁNH GIÁ</button>
-        </div>
-  
-        <div class="rating-info">
-          <div class="info-item">
-            <i class="fas fa-lightbulb"></i>
-            <span class="description"
-              >- Chất lượng đồ ăn vượt ngoài mong đợi</span
-            >
-          </div>
-          <div class="info-item">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span class="description">- Chất lượng đồ ăn tốt</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span class="description">- Chất lượng đồ ăn tương đối ổn</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span class="description">- Chất lượng đồ ăn không tốt</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-star"></i>
-            <span class="description">- Chất lượng đồ ăn tệ</span>
-          </div>
-        </div>
       </div>
 
       <div id="ondelivering" class="section">

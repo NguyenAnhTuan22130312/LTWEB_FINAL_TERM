@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  
 }
 
 .popup-content {
@@ -23,11 +24,10 @@
   padding: 10px;
   text-align: left;
   overflow-y: auto;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   flex-direction: column;
- 
 }
 
 .popup-content::-webkit-scrollbar {

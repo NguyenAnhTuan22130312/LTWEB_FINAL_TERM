@@ -415,3 +415,15 @@ html {
   margin-top: 15px;
   transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng khi hover và nhấn */
 }
+
+/* Cart delete button */
+.delete-btn {
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
