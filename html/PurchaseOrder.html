@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../css/module_header_footer.css" />
     <link rel="stylesheet" href="../css/signinCssModule.css" />
     <link rel="stylesheet" href="../css/module_container_PurchaseOrder.css" />
-    <link rel="stylesheet" href="../css/Comment_Food.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -139,7 +138,6 @@
         <button class="status-button" id="btn_transport" onclick="showSection('ondelivering')">Đang vận chuyển</button>
         <button class="status-button" id="btn_delivered" onclick="showSection('alreadyDelivered')">Đã vận chuyển</button>
         <button class="status-button" id="btn_cancelled" onclick="showSection('checkcancelled')">Đã hủy</button>
-        <button class="status-button" id="btn_comment" onclick="showSection('danhGia')">Đánh giá</button>
       </div>
 
       <div class="search-box-container">
@@ -215,72 +213,6 @@
           </div>
         </div>
 
-      </div>
-
-      <div id="danhGia" class="section">  
-        <div class="rating-section">
-          <label>Bạn có hài lòng khi sử dụng dịch vụ của chúng tôi:</label>
-          <div class="stars">
-            <button class="star" data-value="1">
-              <i class="fas fa-star"></i>
-            </button>
-            <button class="star" data-value="2">
-              <i class="fas fa-star"></i>
-            </button>
-            <button class="star" data-value="3">
-              <i class="fas fa-star"></i>
-            </button>
-            <button class="star" data-value="4">
-              <i class="fas fa-star"></i>
-            </button>
-            <button class="star" data-value="5">
-              <i class="fas fa-star"></i>
-            </button>
-          </div>
-        </div>
-        <div class="comment-section">
-          <label
-            >Nhận xét: (Ý kiến của bạn sẽ thêm thông tin cho nhiều người mua
-            khác.)</label
-          >
-          <textarea></textarea>
-          <small>(Tối đa 1.000 ký tự)</small>
-        </div>
-        <div class="buttons">
-          <button>ĐÁNH GIÁ</button>
-        </div>
-  
-        <div class="rating-info">
-          <div class="info-item">
-            <i class="fas fa-lightbulb"></i>
-            <span class="description"
-              >- Chất lượng đồ ăn vượt ngoài mong đợi</span
-            >
-          </div>
-          <div class="info-item">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span class="description">- Chất lượng đồ ăn tốt</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span class="description">- Chất lượng đồ ăn tương đối ổn</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span class="description">- Chất lượng đồ ăn không tốt</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-star"></i>
-            <span class="description">- Chất lượng đồ ăn tệ</span>
-          </div>
-        </div>
       </div>
 
       <div id="ondelivering" class="section">
@@ -449,6 +381,7 @@
               </div>
               <div class="product-total">
                 <div class="money">60.000 đ</div>
+             
               </div>
             </div>
   
@@ -464,6 +397,7 @@
               </div>
               <div class="product-total">
                 <div class="money">30.000 đ</div>
+              
               </div>
             </div>
             <div class="line_end"></div>
@@ -473,11 +407,62 @@
             </div>
             <div class="order-footer">
               <div class="order-status">Trạng thái: Đã Vận Chuyển</div>
-              <button class="info-order-button" onclick="goToDetails()">Chi tiết</button>
+              <button class="info-order-button comment-button">Đánh giá</button>
+              <button class="info-order-button" onclick="goToDetails()">Chi tiết</button>   
             </div>
           </div>
         </div>
       </div>
+
+      <div id="rating-popup" class="popup">
+        <div class="popup-content">
+          <span class="close-button">&times;</span>
+          <h3>Đánh giá đơn hàng</h3>
+          
+          <div class="product-rating">
+            <div class="product-container">
+            <div class="product-item">
+              <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="Cơm tấm heo quay" class="product-image" />
+              <div class="product-info">
+                <h4 class="product-name">Cơm tấm heo quay</h4>
+                <div id="rating-stars">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <textarea placeholder="Viết nhận xét cho món ăn này..."></textarea>
+        </div>
+          
+          <div class="product-rating">
+            <div class="product-container">
+            <div class="product-item">
+              <img src="../Images/Food/nuoc/tra-sua-kem-trung-chay.png" alt="Trà sữa kem trứng cháy" class="product-image" />
+              <div class="product-info">
+                <h4 class="product-name">Trà sữa kem trứng cháy</h4>
+                <div id="rating-stars">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <textarea placeholder="Viết nhận xét cho món ăn này..."></textarea>
+        </div>
+
+
+          <button>Gửi đánh giá</button>
+        </div>
+      </div>
+      
+      
 
     </div>
 
@@ -519,5 +504,6 @@
     <script src="../js/home.js"></script>
     <script src="../js/transport.js"></script>
     <script src="../js/details.js"></script>
+    <script src="../js/module_popup_purchase.js"></script>
   </body>
 </html>

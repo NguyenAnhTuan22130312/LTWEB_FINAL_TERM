@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/banner_management.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <img alt="admin" src="../Images/LOGO_V2.png" />
+        <h2>T^3 Restaurant</h2>
+        <ul>
+          <li>
+            <a class="active" href="../html/admin.html">
+              <i class="fas fa-home"> </i>
+              Trang tổng quan
+            </a>
+          </li>
+          <li>
+            <a href="../html/food_service.html">
+              <i class="fas fa-utensils"> </i>
+              Sản phẩm
+            </a>
+          </li>
+            <li>
+                <a href="../html/banner.html">
+                    <i class="fas fa-image">
+                    </i>
+                    Quản lý Banner
+                </a>
+            </li>
+          <li>
+            <a href="../html/customer_sevice.html">
+              <i class="fas fa-users"> </i>
+              Khách hàng
+            </a>
+          </li>
+          <li>
+            <a href="../html/order.html">
+              <i class="fas fa-shopping-cart"> </i>
+              Đơn hàng
+            </a>
+          </li>
+          <li>
+            <a href="../html/statistical.html">
+              <i class="fas fa-chart-bar"> </i>
+              Thống kê
+            </a>
+          </li>
+
+          <li>
+            <a id="logout" href="../html/newhome.html">
+              <i class="fas fa-sign-out-alt"> </i>
+              Đăng xuất
+            </a>
+            
+          </li>
+        </ul>
+      </div>
+        <div class="content">
+            <div class="header">QUẢN LÝ BANNER</div>
+      <div class="banner-management">
+        <h2>Danh sách Banner</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Hình ảnh</th>
+              <th>Hành động</th>
+              <th>Ngày tạo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><img src="../Images/home/qc1.jpg" alt="Banner 1" /></td>
+             
+              <td>
+                <button class="edit"><i class="fas fa-edit"></i> Sửa</button>
+                <button class="delete"><i class="fas fa-trash"></i> Xóa</button>
+              </td>
+              <td>
+                10/10/2024
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><img src="../Images/home/qc2.jpg" alt="Banner 2" /></td>
+
+              <td>
+                <button class="edit"><i class="fas fa-edit"></i> Sửa</button>
+                <button class="delete"><i class="fas fa-trash"></i> Xóa</button>
+              </td>
+              <td>
+                10/10/2024
+              </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><img src="../Images/home/qc3.jpg" alt="Banner 2" /></td>
+              
+                <td>
+                  <button class="edit"><i class="fas fa-edit"></i> Sửa</button>
+                  <button class="delete"><i class="fas fa-trash"></i> Xóa</button>
+                </td>
+                <td>
+                  10/10/2024
+                </td>
+              </tr>
+            
+          </tbody>
+        </table>
+        <button class="add-banner"><i class="fas fa-plus"></i> Thêm Banner Mới</button>
+      </div>
+
+      <div id="popup" class="popup hidden">
+        <div class="popup_content">
+          <span class="close_btn">
+            <i class="fa-solid fa-xmark"></i> 
+          </span>
+            <h2>THÊM BANNER MỚI</h2>
+            <form id="new_item_form">
+            
+              <label for="item_image">Hình ảnh:</label>
+              <input type="file" id="item_image">
+
+              <button type="submit">Lưu</button>
+            </form>
+        </div>
+      </div>
+
+        </div>
+    </div>
+    <script src="../js/module_dangnhap.js"></script>
+    <script src="../js/banner.js"></script>
+  </body>
+</html>
