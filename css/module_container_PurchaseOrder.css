@@ -322,7 +322,7 @@ min-height: 700px;
     
   }
   
-  button {
+.sendDG {
     background-color: #b5292f;
     color: white;
     padding: 10px 20px;
@@ -332,8 +332,9 @@ min-height: 700px;
     transition: all 0.3s ease;
   }
   
-  button:hover {
+  .sendDG:hover {
     background-color: #a01e25;
   }
+
   
   
