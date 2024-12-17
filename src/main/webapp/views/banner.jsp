@@ -6,8 +6,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
-    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="../css/banner_management.css" />
+    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="css/banner_management.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -16,56 +16,56 @@
   <body>
     <div class="container">
       <div class="sidebar">
-        <img alt="admin" src="../Images/LOGO_V2.png" />
+        <img alt="admin" src="Images/LOGO_V2.png" />
         <h2>T^3 Restaurant</h2>
         <ul>
           <li>
-            <a class="active" href="../html/admin.html">
+            <a class="active" href="views/admin.jsp">
               <i class="fas fa-home"> </i>
               Trang tổng quan
             </a>
           </li>
           <li>
-            <a href="../html/food_service.html">
+            <a href="views/food_service.jsp">
               <i class="fas fa-utensils"> </i>
               Sản phẩm
             </a>
           </li>
             <li>
-                <a href="../html/banner.html">
+                <a href="views/banner.jsp">
                     <i class="fas fa-image">
                     </i>
                     Quản lý Banner
                 </a>
             </li>
           <li>
-            <a href="../html/customer_sevice.html">
+            <a href="views/customer_sevice.jsp">
               <i class="fas fa-users"> </i>
               Khách hàng
             </a>
           </li>
           <li>
-            <a href="../html/order.html">
+            <a href="views/order.jsp">
               <i class="fas fa-shopping-cart"> </i>
               Đơn hàng
             </a>
           </li>
           <li>
-            <a href="../html/statistical.html">
+            <a href="views/statistical.jsp">
               <i class="fas fa-chart-bar"> </i>
               Thống kê
             </a>
           </li>
 
           <li>
-            <a href="../html/discount.html">
+            <a href="views/discount.jsp">
               <i class="fas fa-chart-bar"> </i>
               Quản lý mã giảm giá
             </a>
           </li>
 
           <li>
-            <a id="logout" href="../html/newhome.html">
+            <a id="logout" href="views/newhome.jsp">
               <i class="fas fa-sign-out-alt"> </i>
               Đăng xuất
             </a>
@@ -89,7 +89,7 @@
           <tbody>
             <tr>
               <td>1</td>
-              <td><img src="../Images/home/qc1.jpg" alt="Banner 1" /></td>
+              <td><img src="Images/home/qc1.jpg" alt="Banner 1" /></td>
              
               <td>
                 <button class="edit"><i class="fas fa-edit"></i> Sửa</button>
@@ -101,7 +101,7 @@
             </tr>
             <tr>
               <td>2</td>
-              <td><img src="../Images/home/qc2.jpg" alt="Banner 2" /></td>
+              <td><img src="Images/home/qc2.jpg" alt="Banner 2" /></td>
 
               <td>
                 <button class="edit"><i class="fas fa-edit"></i> Sửa</button>
@@ -113,7 +113,7 @@
             </tr>
             <tr>
                 <td>3</td>
-                <td><img src="../Images/home/qc3.jpg" alt="Banner 2" /></td>
+                <td><img src="Images/home/qc3.jpg" alt="Banner 2" /></td>
               
                 <td>
                   <button class="edit"><i class="fas fa-edit"></i> Sửa</button>
@@ -147,7 +147,7 @@
 
         </div>
     </div>
-    <script src="../js/module_dangnhap.js"></script>
-    <script src="../js/admin_popup.js"></script>
+    <script src="js/module_dangnhap.js"></script>
+    <script src="js/admin_popup.js"></script>
   </body>
 </html>

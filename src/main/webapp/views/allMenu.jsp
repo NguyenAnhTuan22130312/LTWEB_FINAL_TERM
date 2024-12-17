@@ -40,7 +40,7 @@
               </div>
             </div>
             <div class="right">
-              <a href="signin.jsp" class="nav-item" id="login-link">
+              <a href="views/signin.jsp" class="nav-item" id="login-link">
                 <i class="fa-solid fa-user"></i> Đăng Nhập
               </a>
               <div class="user-menu" id="user-menu" style="display: none">
@@ -114,14 +114,14 @@
                   </ul>
                 </li>
                 <li class="menu-item">
-                  <a href="newhome.jsp">Trang chủ</a>
+                  <a href="views/newhome.jsp">Trang chủ</a>
                 </li>
                 
                 <li class="menu-item">
-                  <a href="about.jsp">Giới thiệu</a>
+                  <a href="views/about.jsp">Giới thiệu</a>
                 </li>
                 <li class="menu-item">
-                  <a href="contact.html.jsp">Liên hệ</a>
+                  <a href="views/contact.html.jsp">Liên hệ</a>
                 </li>
               </ul>
             </div>
@@ -139,10 +139,10 @@
       <div class="intro">
         <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
         <div class="category-container">
-          <a href="allMenu.jsp"
+          <a href="views/allMenu.jsp"
             ><div class="category-item">Tất cả</div></a
           >
-          <a href="allMenu.jsp"
+          <a href="views/allMenu.jsp"
             ><div class="category-item">Món được ưa thích</div></a
           >
           <a href="allMenu.jsp"

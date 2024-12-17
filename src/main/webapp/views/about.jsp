@@ -6,9 +6,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food T^3</title>
-    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="../css/about.css" />
-    <link rel="stylesheet" href="../css/signinCssModule.css" />
+    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/signinCssModule.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -17,9 +17,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../css/module_header_footer.css" />
-    <script src="../js/module_dangnhap.js" defer></script>
-    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="css/module_header_footer.css" />
+    <script src="js/module_dangnhap.js" defer></script>
+    <link rel="stylesheet" href="css/menu.css">
   </head>
 
   <body>
@@ -29,16 +29,16 @@
           <div class="containerss">
             <div class="left">
               <div class="logo">
-                <a href="../html/newhome.html">
+                <a href="views/newhome.jsp">
                   <img
-                    src="../Images/LOGO_V2.png"
+                    src="Images/LOGO_V2.png"
                     alt="Food store của Trung, Atuan, Atuan"
                   />
                 </a>
               </div>
             </div>
             <div class="right">
-              <a href="../html/signin.html" class="nav-item" id="login-link">
+              <a href="views/signin.jsp" class="nav-item" id="login-link">
                 <i class="fa-solid fa-user"></i> Đăng Nhập
               </a>
               <div class="user-menu" id="user-menu" style="display: none">
@@ -48,13 +48,13 @@
                 </a>
                 <div class="submenu" id="submenu">
                   <a
-                    href="../html/admin.html"
+                    href="views/admin.jsp"
                     id="admin-link"
                     style="display: none"
                     >Quản trị</a
                   >
                   <a
-                    href="../html/UserInformation.html"
+                    href="views/UserInformation.jsp"
                     id="user-link"
                     style="display: none"
                     >Thông tin</a
@@ -63,13 +63,13 @@
                 </div>
               </div>
               <div class="nav_item_shop">
-                <a href="../html/PurchaseOrder.html" class="nav-item">
+                <a href="views/PurchaseOrder.jsp" class="nav-item">
                   <i class="fa-solid fa-truck-fast"></i> Đơn hàng
                 </a>
                 <a href="#" class="count">2</a>
               </div>
               <div class="nav_item_shop">
-                <a href="../html/cart.html" class="nav-item">
+                <a href="views/cart.jsp" class="nav-item">
                   <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                 </a>
                 <a href="#" class="count">8</a>
@@ -80,46 +80,46 @@
             <div class="menu">
               <ul class="menu-list">
                 <li class="menu-item">
-                  <a href="../html/allMenu.html" class="tabbar">
+                  <a href="views/allMenu.jsp" class="tabbar">
                     <i class="fa-solid fa-bars"></i>Thực đơn</a
                   >
                   <ul class="submenu">
                     <li>
-                      <a href="../html/allMenu.html"
+                      <a href="views/allMenu.jsp"
                         ><i class="fa-solid fa-bowl-rice"></i>Tất cả</a
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_com.html"
+                      <a href="views/menu_com.jsp"
                         ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_bun.html"
+                      <a href="views/menu_bun.jsp"
                         ><i class="fa-solid fa-bowl-food"></i>Món bún</a
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_pho.html"
+                      <a href="views/menu_pho.jsp"
                         ><i class="fa-solid fa-bowl-food"></i>Món phở</a
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_nuoc.html"
+                      <a href="views/menu_nuoc.jsp"
                         ><i class="fa-solid fa-glass-water"></i>Nước</a
                       >
                     </li>
                   </ul>
                 </li>
                 <li class="menu-item">
-                  <a href="../html/newhome.html">Trang chủ</a>
+                  <a href="views/newhome.jsp">Trang chủ</a>
                 </li>
                 
                 <li class="menu-item">
-                  <a href="../html/about.html">Giới thiệu</a>
+                  <a href="views/about.jsp">Giới thiệu</a>
                 </li>
                 <li class="menu-item">
-                  <a href="../html/contact.html">Liên hệ</a>
+                  <a href="views/contact.jsp">Liên hệ</a>
                 </li>
               </ul>
             </div>
@@ -147,7 +147,7 @@
         <div class="right_content">
           <video autoplay muted loop>
             <source
-              src="../Videos/[appsgolem.com][00-00-00][00-00-16]_Miami_s_Best_New_Chef_is_Mak.mp4"
+              src="Videos/[appsgolem.com][00-00-00][00-00-16]_Miami_s_Best_New_Chef_is_Mak.mp4"
               type="video/mp4"
             />
           </video>
@@ -158,7 +158,7 @@
         <div class="text2">Quản Lý Cửa Hàng</div>
         <div class="card-container">
           <div class="card-info">
-            <img src="../Images/team/trung_han.jpg" alt="Hình ảnh cá nhân" />
+            <img src="Images/team/trung_han.jpg" alt="Hình ảnh cá nhân" />
             <div class="info">
               <h3>Hán Hữu Trung</h3>
               <p>MSSV: 22130302</p>
@@ -168,7 +168,7 @@
 
           <div class="card-info">
             <img
-              src="../Images/team/tuan_22130311.jpg"
+              src="Images/team/tuan_22130311.jpg"
               alt="Hình ảnh cá nhân"
             />
             <div class="info">
@@ -180,7 +180,7 @@
 
           <div class="card-info">
             <img
-              src="../Images/team/tuan_22130312.jpg"
+              src="Images/team/tuan_22130312.jpg"
               alt="Hình ảnh cá nhân"
             />
             <div class="info">
@@ -202,19 +202,19 @@
       </div>
       <div class="content_section_bottom">
           <div class="card_bottom">
-              <img src="../Images/home/pic1.jpg" />
+              <img src="Images/home/pic1.jpg" />
               <div class="text">Nguyên liệu tươi mới</div>
           </div>
           <div class="card_bottom">
-              <img src="../Images/home/pic2.jpg" />
+              <img src="Images/home/pic2.jpg" />
               <div class="text">Món ăn ngon miệng</div>
           </div>
           <div class="card_bottom">
-              <img src="../Images/home/pic3.jpg" />
+              <img src="Images/home/pic3.jpg" />
               <div class="text">Đóng gói tiện lợi</div>
           </div>
           <div class="card_bottom">
-              <img src="../Images/home/pic4.jpg" />
+              <img src="Images/home/pic4.jpg" />
               <div class="text">Giao hàng tận nơi</div>
           </div>
 
@@ -255,8 +255,8 @@
         </div>
       </div>
     </div>
-    <script src="../js/home.js"></script>
-    <script src="../js/module_popup_home.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/module_popup_home.js"></script>
 
   </body>
 </html>

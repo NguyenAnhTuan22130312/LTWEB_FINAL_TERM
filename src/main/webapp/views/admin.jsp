@@ -21,52 +21,52 @@
         <h2>T^3 Restaurant</h2>
         <ul>
           <li>
-            <a class="active" href="Views/admin.jsp">
+            <a class="active" href="views/admin.jsp">
               <i class="fas fa-home"> </i>
               Trang tổng quan
             </a>
           </li>
           <li>
-            <a href="Views/food_service.jsp">
+            <a href="views/food_service.jsp">
               <i class="fas fa-utensils"> </i>
               Sản phẩm
             </a>
           </li>
             <li>
-                <a href="Views/banner.jsp">
+                <a href="views/banner.jsp">
                     <i class="fas fa-image">
                     </i>
                     Quản lý Banner
                 </a>
             </li>
           <li>
-            <a href="Views/customer_sevice.jsp">
+            <a href="views/customer_sevice.jsp">
               <i class="fas fa-users"> </i>
               Khách hàng
             </a>
           </li>
           <li>
-            <a href="Views/order.jsp">
+            <a href="views/order.jsp">
               <i class="fas fa-shopping-cart"> </i>
               Đơn hàng
             </a>
           </li>
           <li>
-            <a href="Views/statistical.jsp">
+            <a href="views/statistical.jsp">
               <i class="fas fa-chart-bar"> </i>
               Thống kê
             </a>
           </li>
 
           <li>
-            <a href="Views/discount.jsp">
+            <a href="views/discount.jsp">
               <i class="fas fa-chart-bar"> </i>
               Quản lý mã giảm giá
             </a>
           </li>
 
           <li>
-            <a id="logout" href="Views/newhome.jsp">
+            <a id="logout" href="views/newhome.jsp">
               <i class="fas fa-sign-out-alt"> </i>
               Đăng xuất
             </a>

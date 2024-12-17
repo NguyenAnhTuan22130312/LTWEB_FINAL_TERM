@@ -6,8 +6,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thanh toán</title>
-    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="../css/check-out.css" />
+    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="css/check-out.css" />
     <link
       rel="stylesheet"
       href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
@@ -42,7 +42,7 @@
     <div class="checkout-page">
       <div class="checkout-header">
         <div class="checkout-return">
-          <button onclick="window.location.href='../html/cart.jsp'">
+          <button onclick="window.location.href='views/cart.jsp'">
             <i class="fa-regular fa-chevron-left"></i>
           </button>
         </div>
@@ -372,6 +372,6 @@
       </div>
     </div>
 
-    <script src="../js/check-out.js"></script>
+    <script src="js/check-out.js"></script>
   </body>
 </html>
