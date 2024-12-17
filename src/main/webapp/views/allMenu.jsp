@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu các món cơm</title>
-    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
+    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="css/allmenu.css" />
     <link rel="stylesheet" href="css/signinCssModule.css" />
     <link rel="stylesheet" href="css/module_submenu_catelory.css" />
@@ -92,36 +92,36 @@
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_com.html"
+                      <a href="menu_com.jsp"
                         ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_bun.html"
+                      <a href="menu_bun.jsp"
                         ><i class="fa-solid fa-bowl-food"></i>Món bún</a
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_pho.html"
+                      <a href="menu_pho.jsp"
                         ><i class="fa-solid fa-bowl-food"></i>Món phở</a
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_nuoc.html"
+                      <a href="menu_nuoc.jsp"
                         ><i class="fa-solid fa-glass-water"></i>Nước</a
                       >
                     </li>
                   </ul>
                 </li>
                 <li class="menu-item">
-                  <a href="../html/newhome.html">Trang chủ</a>
+                  <a href="newhome.jsp">Trang chủ</a>
                 </li>
                 
                 <li class="menu-item">
-                  <a href="../html/about.html">Giới thiệu</a>
+                  <a href="about.jsp">Giới thiệu</a>
                 </li>
                 <li class="menu-item">
-                  <a href="../html/contact.html">Liên hệ</a>
+                  <a href="contact.html.jsp">Liên hệ</a>
                 </li>
               </ul>
             </div>
