@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
     <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -139,7 +139,7 @@
 
       </div>
     </div>
-    <script src="js/module_dangnhap.js"></script>
-    <script src="js/admin.js"></script>
+    <script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
+    <script src="${pageContext.request.contextPath}/js/admin.js"></script>
   </body>
 </html>

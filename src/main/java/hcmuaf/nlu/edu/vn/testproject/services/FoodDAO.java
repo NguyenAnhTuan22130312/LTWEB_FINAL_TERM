@@ -59,6 +59,35 @@ public class FoodDAO {
         return foodList;
     }
 
+    public  List<Food> searchByName (String textSearcg){
+        List<Food> foodList = new ArrayList<>();
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String query = "SELECT * FROM Food WHERE foodName LIKE ?";
+        try{
+            con = new DbContext().getConnection();
+            ps = con.prepareStatement(query);
+            ps.setString(1, "%"+textSearcg+ "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                foodList.add(new Food(rs.getInt("idFood"),
+                        rs.getString("foodName"),
+                        rs.getInt("price"),
+                        rs.getString("img"),
+                        rs.getString("description")));
+            }
+
+        } catch (RuntimeException | ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+
+        }
+
+
+
+        return foodList;
+    }
+
     // Phương thức đóng các tài nguyên
     private void closeResources(ResultSet rs, PreparedStatement ps, Connection con) {
         try {

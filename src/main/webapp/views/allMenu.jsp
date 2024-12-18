@@ -9,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu các món cơm</title>
     <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="css/allmenu.css" />
-    <link rel="stylesheet" href="css/signinCssModule.css" />
-    <link rel="stylesheet" href="css/module_submenu_catelory.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/allmenu.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_submenu_catelory.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -20,7 +20,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <script src="js/module_dangnhap.js" defer></script>
+    <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
   </head>
 
 
@@ -31,7 +31,7 @@
           <div class="containerss">
             <div class="left">
               <div class="logo">
-                <a href="newhome.jsp">
+                <a href="views/newhome.jsp">
                   <img
                     src="Images/LOGO_V2.png"
                     alt="Food store của Trung, Atuan, Atuan"
@@ -50,7 +50,7 @@
                 </a>
                 <div class="submenu" id="submenu">
                   <a
-                    href="admin.jsp"
+                    href="views/admin.jsp"
                     id="admin-link"
                     style="display: none"
                     >Quản trị</a
@@ -65,13 +65,13 @@
                 </div>
               </div>
               <div class="nav_item_shop">
-                <a href="PurchaseOrder.jsp" class="nav-item">
+                <a href="views/PurchaseOrder.jsp" class="nav-item">
                   <i class="fa-solid fa-truck-fast"></i> Đơn hàng
                 </a>
                 <a href="#" class="count">2</a>
               </div>
               <div class="nav_item_shop">
-                <a href="cart.jsp" class="nav-item">
+                <a href="views/cart.jsp" class="nav-item">
                   <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                 </a>
                 <a href="#" class="count"> 8</a>
@@ -87,27 +87,27 @@
                   >
                   <ul class="submenu">
                     <li>
-                      <a href="allMenu.jsp"
+                      <a href="views/allMenu.jsp"
                         ><i class="fa-solid fa-bowl-rice"></i>Tất cả</a
                       >
                     </li>
                     <li>
-                      <a href="menu_com.jsp"
+                      <a href="views/menu_com.jsp"
                         ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
                       >
                     </li>
                     <li>
-                      <a href="menu_bun.jsp"
+                      <a href="views/menu_bun.jsp"
                         ><i class="fa-solid fa-bowl-food"></i>Món bún</a
                       >
                     </li>
                     <li>
-                      <a href="menu_pho.jsp"
+                      <a href="views/menu_pho.jsp"
                         ><i class="fa-solid fa-bowl-food"></i>Món phở</a
                       >
                     </li>
                     <li>
-                      <a href="menu_nuoc.jsp"
+                      <a href="views/menu_nuoc.jsp"
                         ><i class="fa-solid fa-glass-water"></i>Nước</a
                       >
                     </li>
@@ -121,16 +121,19 @@
                   <a href="views/about.jsp">Giới thiệu</a>
                 </li>
                 <li class="menu-item">
-                  <a href="views/contact.html.jsp">Liên hệ</a>
+                  <a href="views/contact.jsp">Liên hệ</a>
                 </li>
               </ul>
             </div>
-            <div class="search">
-              <input type="text" placeholder="Tìm kiếm món ăn" />
-              <button type="submit">
-                <i class="fa-solid fa-search"></i>
-              </button>
-            </div>
+
+            <form action="search" method="post">
+              <div class="search">
+                <input name="text" type="text" placeholder="Tìm kiếm món ăn" />
+                <button type="submit">
+                  <i class="fa-solid fa-search"></i>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -145,25 +148,25 @@
           <a href="views/allMenu.jsp"
             ><div class="category-item">Món được ưa thích</div></a
           >
-          <a href="allMenu.jsp"
+          <a href="views/allMenu.jsp"
             ><div class="category-item">Món được đề xuất</div></a
           >
-          <a href="allMenu.jsp"
+          <a href="views/allMenu.jsp"
             ><div class="category-item">Món được quan tâm nhiều</div></a
           >
-          <a href="allMenu.jsp"
+          <a href="views/allMenu.jsp"
             ><div class="category-item">Món bán chạy</div></a
           >
-          <a href="menu_com.jsp"
+          <a href="views/menu_com.jsp"
             ><div class="category-item">Món cơm</div></a
           >
-          <a href="menu_bun.jsp"
+          <a href="views/menu_bun.jsp"
             ><div class="category-item">Món bún</div></a
           >
-          <a href="menu_pho.jsp"
+          <a href="views/menu_pho.jsp"
             ><div class="category-item">Món phở</div></a
           >
-          <a href="menu_nuoc.jsp"
+          <a href="views/menu_nuoc.jsp"
             ><div class="category-item">Nước</div></a
           >
         </div>
@@ -258,6 +261,6 @@
         </div>
       </div>
     </div>
-    <script src="js/menu.js"></script>
+    <script src="${pageContext.request.contextPath}/js/menu.js"></script>
   </body>
 </html>

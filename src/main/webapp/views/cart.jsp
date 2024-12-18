@@ -13,11 +13,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="css/cart.css" />
-    <link rel="stylesheet" href="css/signinCssModule.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cart.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css" />
     <title>Giỏ hàng</title>
     <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <script src="js/module_dangnhap.js" defer></script>
+    <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
   </head>
 
   <body>
@@ -308,6 +308,6 @@
       </div>
     </div>
 
-    <script src="js/cart.js"></script>
+    <script src="${pageContext.request.contextPath}/js/cart.js"></script>
   </body>
 </html>

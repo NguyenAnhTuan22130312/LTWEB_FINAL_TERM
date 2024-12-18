@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
     <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="css/banner_management.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/banner_management.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -147,7 +147,7 @@
 
         </div>
     </div>
-    <script src="js/module_dangnhap.js"></script>
-    <script src="js/admin_popup.js"></script>
+    <script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
+    <script src="${pageContext.request.contextPath}/js/admin_popup.js"></script>
   </body>
 </html>
