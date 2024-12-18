@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,14 +18,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
     <title>Đăng nhập</title>
-    <link href='../Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
-    <link rel="stylesheet" href="css/signin.css" />
+    <link href='Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signin.css" />
   </head>
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="#">
-          <a href="../html/newhome.html" class="back-to-home">
+        <form action="signup" method="post">
+          <a href="views/newhome.jsp" class="back-to-home">
             <i class="fas fa-arrow-left"></i>
           </a>
           <h1>Tạo tài khoản</h1>
@@ -34,15 +35,15 @@
             <a href="#" class="social"><i class="fa-brands fa-twitter"></i></a>
           </div>
           <span>hoặc sử dụng email của bạn</span>
-          <input type="text" placeholder="Tên đăng nhập" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Mật khẩu" />
-          <button>Đăng ký</button>
+          <input name="username" type="text" placeholder="Tên đăng nhập" />
+          <input name="email" type="email" placeholder="Email" />
+          <input name="pass" type="password" placeholder="Mật khẩu" />
+          <button type="submit">Đăng ký</button>
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action="#">
-          <a href="../html/newhome.html" class="back-to-home">
+        <form action="login" method="post">
+          <a href="views/newhome.jsp" class="back-to-home">
             <i class="fas fa-arrow-left"></i>
           </a>
 
@@ -53,10 +54,10 @@
             <a href="#" class="social"><i class="fa-brands fa-twitter"></i></a>
           </div>
           <span>Hoặc sử dụng tài khoản</span>
-          <input type="text" placeholder="Tên đăng nhập" />
-          <input type="password" placeholder="Mật khẩu" />
-          <a href="../html/forgot_pass.html">Bạn quên mật khẩu?</a>
-          <button>Đăng nhập</button>
+          <input name="user" type="text" placeholder="Tên đăng nhập" />
+          <input name="pass" type="password" placeholder="Mật khẩu" />
+          <a href="views/forgot_pass.jsp">Bạn quên mật khẩu?</a>
+          <button type="submit">Đăng nhập</button>
         </form>
       </div>
       <div class="overlay-container">
@@ -78,7 +79,7 @@
       </div>
     </div>
 
-    <script src="js/signin.js"></script>
-    <script src="js/module_signin_isSign.js"></script>
+    <script src="${pageContext.request.contextPath}/js/signin.js"></script>
+
   </body>
 </html>

@@ -46,13 +46,13 @@
                         </div>
                         
                         <div class="nav_item_shop">
-                            <a href="../html/PurchaseOrder.html" class="nav-item">
+                            <a href="views/PurchaseOrder.jsp" class="nav-item">
                                 <i class="fa-solid fa-truck-fast"></i> Đơn hàng
                             </a>
                             <a href="#" class="count">2</a>
                         </div>
                         <div class="nav_item_shop">
-                            <a href="../html/cart.html" class="nav-item">
+                            <a href="views/cart.jsp" class="nav-item">
                                 <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                             </a>
                             <a href="#" class="count">8</a>
@@ -69,20 +69,20 @@
                                 <ul class="submenu">
                                     <li><a href="allMenu.jsp"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
                                     </li>
-                                    <li><a href="../html/menu_com.html"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
+                                    <li><a href="views/menu_com.jsp"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
                                     </li>
-                                    <li><a href="../html/menu_bun.html"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
+                                    <li><a href="views/menu_bun.jsp"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
                                     </li>
-                                    <li><a href="../html/menu_pho.html"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
+                                    <li><a href="views/menu_pho.jsp"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
                                     </li>
-                                    <li><a href="../html/menu_nuoc.html"><i class="fa-solid fa-glass-water"></i>Nước</a>
+                                    <li><a href="views/menu_nuoc.jsp"><i class="fa-solid fa-glass-water"></i>Nước</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="menu-item"><a href="newhome.jsp">Trang chủ</a></li>
+                            <li class="menu-item"><a href="views/newhome.jsp">Trang chủ</a></li>
                             
-                            <li class="menu-item"><a href="about.jsp">Giới thiệu</a></li>
-                            <li class="menu-item"><a href="contact.jsp">Liên hệ</a></li>
+                            <li class="menu-item"><a href="views/about.jsp">Giới thiệu</a></li>
+                            <li class="menu-item"><a href="views/contact.jsp">Liên hệ</a></li>
                         </ul>
                     </div>
                     <div class="search">

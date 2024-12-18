@@ -9,7 +9,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "FoodController", value = "/FoodController")
+@WebServlet(name = "FoodController", value = "/allmenu")
 public class FoodController extends HttpServlet {
 
     private FoodDAO foodDao;
