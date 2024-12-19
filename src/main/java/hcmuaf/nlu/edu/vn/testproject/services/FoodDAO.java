@@ -8,13 +8,25 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FoodDAO {
 
+    static Map<Integer, Food> data = new HashMap<>();
+    static {
+        FoodDAO pdd = new FoodDAO();
+        pdd.getAllFood();
+    }
+
+    public List<Food> getAll(){
+        return new ArrayList<>(data.values());
+    }
+
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu
-    public List<Food> getAllFood() {
-        List<Food> foodList = new ArrayList<>();
+    public void getAllFood() {
+
         String query = "SELECT * FROM Food";
         Connection con = null;
         PreparedStatement ps = null;
@@ -28,7 +40,7 @@ public class FoodDAO {
                 System.out.println("Kết nối cơ sở dữ liệu thành công!");
             } else {
                 System.out.println("Kết nối cơ sở dữ liệu thất bại!");
-                return foodList; // Trả về danh sách rỗng nếu không kết nối được
+                 // Trả về danh sách rỗng nếu không kết nối được
             }
 
             // Chuẩn bị câu lệnh SQL
@@ -38,7 +50,8 @@ public class FoodDAO {
 
             // Duyệt qua kết quả trả về và tạo danh sách món ăn
             while (rs.next()) {
-                foodList.add(new Food(
+                data.put( rs.getInt("idFood"),
+                        new Food(
                         rs.getInt("idFood"),
                         rs.getString("foodName"),
                         rs.getInt("price"),
@@ -56,35 +69,16 @@ public class FoodDAO {
             closeResources(rs, ps, con);
         }
 
-        return foodList;
+
     }
 
     public  List<Food> searchByName (String textSearcg){
         List<Food> foodList = new ArrayList<>();
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        String query = "SELECT * FROM Food WHERE foodName LIKE ?";
-        try{
-            con = new DbContext().getConnection();
-            ps = con.prepareStatement(query);
-            ps.setString(1, "%"+textSearcg+ "%");
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                foodList.add(new Food(rs.getInt("idFood"),
-                        rs.getString("foodName"),
-                        rs.getInt("price"),
-                        rs.getString("img"),
-                        rs.getString("description")));
+        for (Food food : data.values()) {
+            if (food.getFoodName().toLowerCase().contains(textSearcg.toLowerCase())) {
+                foodList.add(food);
             }
-
-        } catch (RuntimeException | ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-
         }
-
-
-
         return foodList;
     }
 
@@ -99,17 +93,5 @@ public class FoodDAO {
         }
     }
 
-    // Phương thức main để kiểm tra
-    public static void main(String[] args) {
-        FoodDAO foodDao = new FoodDAO();
-        List<Food> foodList = foodDao.getAllFood();
 
-        if (foodList.isEmpty()) {
-            System.out.println("Không có món ăn nào!");
-        } else {
-            for (Food food : foodList) {
-                System.out.println(food);
-            }
-        }
-    }
 }

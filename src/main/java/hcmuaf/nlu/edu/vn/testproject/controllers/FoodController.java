@@ -26,7 +26,7 @@ public class FoodController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         // Lấy danh sách món ăn từ cơ sở dữ liệu thông qua FoodDAO
-        List<Food> foodList = foodDao.getAllFood();
+        List<Food> foodList = foodDao.getAll();
 
         // Kiểm tra danh sách món ăn
         System.out.println("Food list size: " + foodList.size());

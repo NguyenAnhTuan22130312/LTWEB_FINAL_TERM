@@ -8,15 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food T^3</title>
     <link href='Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
-    <link rel="stylesheet" href="css/newhome.css">
-    <link rel="stylesheet" href="css/module_home.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/newhome.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="js/module_dangnhap.js" defer></script>
+    <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
 </head>
 
 <body>
-    <script src="js/module_dangnhap.js"></script>
+    <script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
     <div id="header">
         <div class="containerheaderAll">
             <div class="containers">

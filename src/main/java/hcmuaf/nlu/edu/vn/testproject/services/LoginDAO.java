@@ -36,7 +36,8 @@ public class LoginDAO {
         return null;
     }
 
-
+    //Mã hóa MD5
+    //Chưa làm
     public void signUp(String userName, String password) {
         String query = "INSERT INTO Account (userName, pass, idRole) VALUES (?, ?, 2)";
         Connection con = null;
