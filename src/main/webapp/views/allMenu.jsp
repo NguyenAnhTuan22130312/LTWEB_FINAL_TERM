@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu các món cơm</title>
-    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
+    <link href="${pageContext.request.contextPath}/Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/allmenu.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_submenu_catelory.css" />
@@ -91,26 +91,13 @@
                         ><i class="fa-solid fa-bowl-rice"></i>Tất cả</a
                       >
                     </li>
-                    <li>
-                      <a href="views/menu_com.jsp"
-                        ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
-                      >
-                    </li>
-                    <li>
-                      <a href="views/menu_bun.jsp"
-                        ><i class="fa-solid fa-bowl-food"></i>Món bún</a
-                      >
-                    </li>
-                    <li>
-                      <a href="views/menu_pho.jsp"
-                        ><i class="fa-solid fa-bowl-food"></i>Món phở</a
-                      >
-                    </li>
-                    <li>
-                      <a href="views/menu_nuoc.jsp"
-                        ><i class="fa-solid fa-glass-water"></i>Nước</a
-                      >
-                    </li>
+                    <c:forEach var="category" items="${listC}">
+                      <li>
+                        <a href="views/allMenu.jsp"
+                        ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a
+                        >
+                      </li>
+                    </c:forEach>
                   </ul>
                 </li>
                 <li class="menu-item">
