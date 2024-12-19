@@ -217,14 +217,21 @@
 
 
 
+      <!-- Phân trang -->
       <div class="pagination">
-        <a href=""></a>
-        <a href="" class="active">1</a>
-        <a href="">2</a>
-        <a href="">3</a>
-        <a href="">4</a>
-        <a href="">></a>
+        <c:if test="${currentPage > 1}">
+          <a href="food-pagination?page=${currentPage - 1}"><</a>
+        </c:if>
+
+        <c:forEach begin="1" end="${totalPages}" var="i">
+          <a href="food-pagination?page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
+        </c:forEach>
+
+        <c:if test="${currentPage < totalPages}">
+          <a href="food-pagination?page=${currentPage + 1}">></a>
+        </c:if>
       </div>
+
     </div>
     <!-- Xử lý footer -->
     <div id="footer">

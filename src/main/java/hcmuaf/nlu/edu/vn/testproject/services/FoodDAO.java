@@ -93,5 +93,26 @@ public class FoodDAO {
         }
     }
 
+    public List<Food> getPaginatedFoods(int offset, int pageSize) {
+        List<Food> foodList = new ArrayList<>();
+        int start = offset;
+        int end = Math.min(offset + pageSize, data.size());
+
+        List<Integer> keys = new ArrayList<>(data.keySet());
+        keys.sort(Integer::compareTo); // Đảm bảo các khóa được sắp xếp tăng dần
+
+        for (int i = start; i < end; i++) {
+            foodList.add(data.get(keys.get(i)));
+        }
+        return foodList;
+    }
+
+    public int getTotalFoods() {
+        return data.size();
+    }
+
+
+
+
 
 }

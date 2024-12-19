@@ -92,8 +92,8 @@ public class LoginDAO {
     public static void main(String[] args) {
         LoginDAO loginDAO = new LoginDAO();
         try{
-            loginDAO.signUp("tuan2908", "123");
-            System.out.println("signUp thành công");
+           loginDAO.login("atuan1", "123");
+            System.out.println("dang nhap thành công");
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
