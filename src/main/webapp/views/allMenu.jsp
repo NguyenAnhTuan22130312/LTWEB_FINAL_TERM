@@ -113,14 +113,16 @@
               </ul>
             </div>
 
-            <form action="search" method="post">
+
               <div class="search">
+                <form action="search" method="post">
                 <input name="text" type="text" placeholder="Tìm kiếm món ăn" />
                 <button type="submit">
                   <i class="fa-solid fa-search"></i>
                 </button>
+                </form>
               </div>
-            </form>
+
           </div>
         </div>
       </div>
