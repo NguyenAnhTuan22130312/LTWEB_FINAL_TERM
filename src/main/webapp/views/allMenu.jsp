@@ -205,21 +205,23 @@
 
 
 
-
       <!-- Phân trang -->
       <div class="pagination">
         <c:if test="${currentPage > 1}">
-          <a href="food-pagination?page=${currentPage - 1}"><</a>
+          <a href="allmenu?page=${currentPage - 1}"><</a>
         </c:if>
+
 
         <c:forEach begin="1" end="${totalPages}" var="i">
-          <a href="food-pagination?page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
+          <a href="allmenu?page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
         </c:forEach>
 
+
         <c:if test="${currentPage < totalPages}">
-          <a href="food-pagination?page=${currentPage + 1}">></a>
+          <a href="allmenu?page=${currentPage + 1}">></a>
         </c:if>
       </div>
+
 
     </div>
     <!-- Xử lý footer -->
