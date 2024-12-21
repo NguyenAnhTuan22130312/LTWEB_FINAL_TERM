@@ -1,4 +1,4 @@
-package hcmuaf.nlu.edu.vn.testproject.services;
+package hcmuaf.nlu.edu.vn.testproject.dao;
 
 import hcmuaf.nlu.edu.vn.testproject.context.DbContext;
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
@@ -6,7 +6,6 @@ import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class LoginDAO {
     public Account login(String username, String password) {

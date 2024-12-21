@@ -93,7 +93,7 @@
                     </li>
                     <c:forEach var="category" items="${listC}">
                       <li>
-                        <a href="categories?idc=${category.idCategory}"
+                        <a href="views/allMenu.jsp"
                         ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a
                         >
                       </li>
@@ -113,16 +113,14 @@
               </ul>
             </div>
 
-
+            <form action="search" method="post">
               <div class="search">
-                <form action="search" method="post">
                 <input name="text" type="text" placeholder="Tìm kiếm món ăn" />
                 <button type="submit">
                   <i class="fa-solid fa-search"></i>
                 </button>
-                </form>
               </div>
-
+            </form>
           </div>
         </div>
       </div>
@@ -205,23 +203,21 @@
 
 
 
+
       <!-- Phân trang -->
       <div class="pagination">
         <c:if test="${currentPage > 1}">
-          <a href="allmenu?page=${currentPage - 1}"><</a>
+          <a href="food-pagination?page=${currentPage - 1}"><</a>
         </c:if>
-
 
         <c:forEach begin="1" end="${totalPages}" var="i">
-          <a href="allmenu?page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
+          <a href="food-pagination?page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
         </c:forEach>
 
-
         <c:if test="${currentPage < totalPages}">
-          <a href="allmenu?page=${currentPage + 1}">></a>
+          <a href="food-pagination?page=${currentPage + 1}">></a>
         </c:if>
       </div>
-
 
     </div>
     <!-- Xử lý footer -->

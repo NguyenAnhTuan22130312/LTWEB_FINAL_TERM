@@ -1,9 +1,345 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;D:/&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="da" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/da.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Bun/Bun-Bo-Hue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Bun/Bun-Hue-chay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Bun/Bun-cha-ghe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Bun/Bun-cha-ha-noi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Bun/Bun-ga-sa-te.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Bun/Bun-heo-quay-cha-gio-top-mo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Bun/Bun-mang-ga.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Bun/Bun-nem-thit-nuong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Bun/Bun-thit-luoc-rau-song-mam-nem.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Bun/Bun-thit-nuong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-ba-roi-rim-tom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-ca-chien-xa-ot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-canh-chua-ca-hu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-chien-bo-luc-lac.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-chien-dua-bo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-chien-duong-chau.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-chien-ga-xoi-mo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-chien-muc-trung-muoi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-chien-trung-op-la.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-dau-hu-kho-ca-ri.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-dau-hu-kho-suon-chay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-ga-kho-xa-ot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-ga-nau-Hai-Nam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-gio-heo-kho-cai-chua.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-kho-qua-cha-ca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-muc-xao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-suon-cong-mat-ong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-suon-non-rim-nuoc-dua.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-tam-dui-ga-chien.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-tam-heo-quay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-tam-suon-bi-cha.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-tam-suon-trung.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-tam-thit-nuong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-tam-xiu-mai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-thit-kho-Dai-Loan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-thit-kho-mam-ruoc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-thit-kho-tieu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-thit-kho-trung.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-thit-luoc-ca-phao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Com/Com-trung-cuon-thit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-bo-chin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-bo-tai-lan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-bo-tai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-bo-vien.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-chua-lang-son.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-cuon-chay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-cuon-chien-phong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-cuon-ngu-xa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-cuon-thit-heo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-cuon-tom-chua.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-ga.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-hai-san.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-heo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-xao-gion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-xao-hai-san.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-xao-kieu-Thai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-xao-rau-cai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/Pho-xot-vang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/pho-ga-tron.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/Pho/pho-xao-thit-bam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Nuoc-cam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Nuoc-chanh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Nuoc-dua-hau.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Nuoc-ep-buoi-ca-rot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Nuoc-ep-tao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Sinh-to-xoai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Sua-chua-viet-quat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Tra-bac-ha.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Tra-dao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Tra-hoa-nhai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Tra-sua-cookie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Tra-sua-kem-trung-chay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Tra-tran-chau-khoai-lang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/Tra_chanh_gia_tay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/chanh-muoi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/espresso.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/latte.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/matcha-latte.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/nuoc-ep-dua-cam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/Food/nuoc/sinh-to-dau-sua-chua.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/LOGO_V2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/home/pic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/home/pic2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/home/pic3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/home/pic4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/home/qc1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/home/qc123.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/home/qc2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/home/qc3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/logo/11eee4b7bd64359ac559565d5499dd1f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/logo/8dbd0fc142724d44ceeac980493bbf39.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/logo/8ed968cd1356c61727675e52fb62e52f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/logo/admin_logo_cus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/logo/admin_logo_food.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/logo/admin_logo_food2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/logo/admin_logo_money.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/logo/testLOGO.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/main_content/main-content-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/main_content/main-content-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/main_content/main_content_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/team/trung_han.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/team/tuan_22130311.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Images/team/tuan_22130312.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/Videos/[appsgolem.com][00-00-00][00-00-16]_Miami_s_Best_New_Chef_is_Mak.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/views/PurchaseOrder.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/views/UserInformation.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/views/discount.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/views/food_service.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/views/forgot_pass.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/views/newhome.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/views/order.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/views/signin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/da/views/statistical.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/dao/ReviewDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/FoodServiceListFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/context/DbContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/context/DbContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/models/Food.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/models/Food.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/CategoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/FoodDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/dao/FoodDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/dao/LoginDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NguyenAnhTuan22130311&quot;
   }
 }</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/NguyenAnhTuan22130312/LTWEB_FINAL_TERM.git",
+    "accountId": "9ff4ac81-a947-4da7-96ff-2cb31fe24a45"
+  }
+}]]></component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2qRVSt5ul6Vg0Pnvix8oRrxCeLz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.31.executor": "Run",
+    "git-widget-placeholder": "HanTrungCK",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "G:/Nam3HocKy1/BTLapTrinhWeb/NewGitProject/LTWEB_FINAL_TERM",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "fileTemplates",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Tomcat 10.1.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.31" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="da">
+          <settings>
+            <option name="CONTEXT_PATH" value="/da" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="679b2532-e0a7-4441-bfd2-98a73be7844d" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58584" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="da" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="" />
+      <created>1734625377476</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734625377476</updated>
+      <workItem from="1734625378675" duration="9140000" />
+      <workItem from="1734803897396" duration="2888000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
 </project>

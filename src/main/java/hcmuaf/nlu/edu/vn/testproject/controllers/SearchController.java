@@ -1,7 +1,7 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers;
 
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
-import hcmuaf.nlu.edu.vn.testproject.services.FoodDAO;
+import hcmuaf.nlu.edu.vn.testproject.dao.FoodDAO;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
