@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="testProject:war" />
+      <artifact name="da" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,12 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/LogoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/da.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/FoodServiceListFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/signin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/context/DbContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/context/DbContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/models/Food.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/models/Food.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/FoodDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/FoodDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,28 +78,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.LoginDAO.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.31.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/Nam3HocKy1/BTLapTrinhWeb/DoAnKCgit/LTWEB_FINAL_TERM&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.LoginDAO.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.31.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "G:/Nam3HocKy1/BTLapTrinhWeb/DoAnKCgit/LTWEB_FINAL_TERM",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "fileTemplates",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.31">
     <configuration name="LoginDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hcmuaf.nlu.edu.vn.testproject.daos.LoginDAO" />
@@ -110,14 +118,14 @@
     <configuration name="Tomcat 10.1.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.31" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="testProject:war">
+        <artifact name="da">
           <settings>
-            <option name="CONTEXT_PATH" value="/Project" />
+            <option name="CONTEXT_PATH" value="/da" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="43a7142f-1bce-4363-b2c2-63955d7f9712" />
+        <option name="BASE_DIRECTORY_NAME" value="b5771cab-2113-4081-9937-bd024ab1aa26" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -125,7 +133,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="49511" />
+        <option name="DEBUG_PORT" value="61038" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -190,10 +198,14 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="testProject:war" />
+          <artifact name="da" />
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.LoginDAO" />
+      <item itemvalue="Tomcat Server.Tomcat 10.1.31" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.LoginDAO" />
@@ -226,5 +238,20 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>
