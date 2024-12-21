@@ -8,9 +8,11 @@ import java.sql.*;
 import java.util.*;
 
 public class FoodDAO {
+    Connection con = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
 
     static Map<Integer, Food> data = new HashMap<>();
-    static Map<Integer, Category> category = new HashMap<>();
 
     static {
         FoodDAO pdd = new FoodDAO();
@@ -22,17 +24,10 @@ public class FoodDAO {
         return new ArrayList<>(data.values());
     }
 
-    public List<Category> getAllCategory() {
-        return new ArrayList<>(category.values());
-    }
-
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu
     public void getAllFood() {
 
         String query = "SELECT * FROM Food";
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
 
         try {
             // Tạo kết nối cơ sở dữ liệu
@@ -73,12 +68,10 @@ public class FoodDAO {
     }
 
     // Hàm lấy full category
-    public void getAllCategoryFood() {
+    public List<Category> getAllCategoryFood() {
 
+        List<Category> categoryList = new ArrayList<>();
         String query = "SELECT * FROM category";
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
 
         try {
             // Tạo kết nối cơ sở dữ liệu
@@ -98,11 +91,10 @@ public class FoodDAO {
 
             // Duyệt qua kết quả trả về và tạo danh sách món ăn
             while (rs.next()) {
-                category.put(rs.getInt("idCategory"),
-                        new Category(
-                                rs.getInt("idCategory"),
-                                rs.getString("nameCategory")
-                        ));
+                categoryList.add(new Category(
+                        rs.getInt("idCategory"),
+                        rs.getString("nameCategory")
+                ));
             }
 
         } catch (SQLException e) {
@@ -113,6 +105,52 @@ public class FoodDAO {
             // Đảm bảo rằng kết nối, câu lệnh và result set được đóng đúng cách
             closeResources(rs, ps, con);
         }
+        return categoryList;
+    }
+
+    // Hàm lấy các món ăn theo idCategory
+    public List<Food> getFoodByIdCategory(int idCategory) {
+
+        List<Food> listC = new ArrayList<>();
+        String query = "SELECT * FROM Food WHERE idCategory = ?";
+
+        try {
+            // Tạo kết nối cơ sở dữ liệu
+            con = new DbContext().getConnection();
+            // Kiểm tra kết nối
+            if (con != null) {
+                System.out.println("Kết nối cơ sở dữ liệu thành công!");
+            } else {
+                System.out.println("Kết nối cơ sở dữ liệu thất bại!");
+                // Trả về danh sách rỗng nếu không kết nối được
+            }
+
+            // Chuẩn bị câu lệnh SQL
+            ps = con.prepareStatement(query);
+            ps.setInt(1, idCategory);
+            // Thực thi câu lệnh
+            rs = ps.executeQuery();
+
+            // Duyệt qua kết quả trả về và tạo danh sách món ăn
+            while (rs.next()) {
+                listC.add(new Food(
+                        rs.getInt("idFood"),
+                        rs.getString("foodName"),
+                        rs.getInt("price"),
+                        rs.getString("img"),
+                        rs.getString("description")
+                ));
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Lỗi khi truy vấn dữ liệu: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Đảm bảo rằng kết nối, câu lệnh và result set được đóng đúng cách
+            closeResources(rs, ps, con);
+        }
+        return listC;
     }
 
     public List<Food> searchByName(String textSearch) {
@@ -153,6 +191,4 @@ public class FoodDAO {
     public int getTotalFoods() {
         return data.size();
     }
-
-
 }

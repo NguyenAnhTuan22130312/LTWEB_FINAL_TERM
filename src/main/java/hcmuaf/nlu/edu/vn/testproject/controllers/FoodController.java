@@ -49,7 +49,7 @@ public class FoodController extends HttpServlet {
 
         // Lấy danh sách món ăn đã phân trang và danh mục
         List<Food> foodList = foodDao.getPaginatedFoods(offset, pageSize); // Lấy món ăn theo phân trang
-        List<Category> categoryList = foodDao.getAllCategory(); // Lấy danh mục
+        List<Category> categoryList = foodDao.getAllCategoryFood(); // Lấy danh mục
 
 
         int totalFoods = foodDao.getTotalFoods(); // Tổng số món ăn

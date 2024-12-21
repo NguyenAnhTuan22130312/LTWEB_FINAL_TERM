@@ -93,7 +93,7 @@
                     </li>
                     <c:forEach var="category" items="${listC}">
                       <li>
-                        <a href="views/allMenu.jsp"
+                        <a href="categories?idc=${category.idCategory}"
                         ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a
                         >
                       </li>
