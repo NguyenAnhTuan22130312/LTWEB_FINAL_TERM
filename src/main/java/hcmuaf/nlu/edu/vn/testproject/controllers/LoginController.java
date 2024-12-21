@@ -26,12 +26,18 @@ public class LoginController extends HttpServlet {
         String username = request.getParameter("user");
         String password = request.getParameter("pass");
 
+
+
         LoginDAO dao = new LoginDAO();
         Account account = dao.login(username, password);
         if (account == null) {
+            // Nếu đăng nhập không thành công, quay lại trang đăng nhập
+            request.setAttribute("error", "Đăng nhập không thành công");
             request.getRequestDispatcher("views/signin.jsp").forward(request, response);
         }else{
-            response.sendRedirect("allmenu");
+            HttpSession session = request.getSession();
+            session.setAttribute("currentUser", account);
+            request.getRequestDispatcher("allmenu").forward(request, response);
         }
 
     }

@@ -40,21 +40,25 @@
               </div>
             </div>
             <div class="right">
-              <a href="views/signin.jsp" class="nav-item" id="login-link">
+              <a href="login" class="nav-item" id="login-link">
                 <i class="fa-solid fa-user"></i> Đăng Nhập
               </a>
               <div class="user-menu" id="user-menu" style="display: none">
                 <i class="fa-solid fa-user"></i>
                 <a href="#" class="user-name" id="user-name">
-                  Tên người dùng
+                  <c:choose>
+                    <c:when test="${not empty sessionScope.currentUser}">
+                      ${sessionScope.currentUser.userName}
+                    </c:when>
+                    <c:otherwise>
+                      Tên người dùng
+                    </c:otherwise>
+                  </c:choose>
                 </a>
                 <div class="submenu" id="submenu">
-                  <a
-                    href="views/admin.jsp"
-                    id="admin-link"
-                    style="display: none"
-                    >Quản trị</a
-                  >
+                  <c:if test="${sessionScope.currentUser.idRole == 1}">
+                    <a href="views/admin.jsp" id="admin-link">Quản trị</a>
+                  </c:if>
                   <a
                     href="UserInformation.jsp"
                     id="user-link"

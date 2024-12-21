@@ -9,7 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="" />
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/LogoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/signin.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Servlet" />
       </list>
     </option>
   </component>
@@ -34,7 +42,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/NguyenAnhTuan22130312/LTWEB_FINAL_TERM.git&quot;,
-    &quot;accountId&quot;: &quot;9ff4ac81-a947-4da7-96ff-2cb31fe24a45&quot;
+    &quot;accountId&quot;: &quot;711777fb-6a46-4549-961e-a2bf0967db8a&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -65,6 +73,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.LoginDAO.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat 10.1.31.executor&quot;: &quot;Run&quot;,
@@ -84,7 +93,20 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.31">
+    <configuration name="LoginDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hcmuaf.nlu.edu.vn.testproject.daos.LoginDAO" />
+      <module name="testProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hcmuaf.nlu.edu.vn.testproject.daos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 10.1.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.31" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -172,6 +194,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LoginDAO" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -191,7 +218,9 @@
       <updated>1734625377476</updated>
       <workItem from="1734625378675" duration="9140000" />
       <workItem from="1734704410804" duration="1847000" />
-      <workItem from="1734794978961" duration="356000" />
+      <workItem from="1734794978961" duration="853000" />
+      <workItem from="1734796248428" duration="4335000" />
+      <workItem from="1734804965306" duration="21000" />
     </task>
     <servers />
   </component>
