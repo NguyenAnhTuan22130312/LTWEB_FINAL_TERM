@@ -8,10 +8,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu các món cơm</title>
-    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="css/allmenu.css" />
-    <link rel="stylesheet" href="css/signinCssModule.css" />
-    <link rel="stylesheet" href="css/module_submenu_catelory.css" />
+    <link href="${pageContext.request.contextPath}/Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/allmenu.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_submenu_catelory.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -20,7 +20,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <script src="js/module_dangnhap.js" defer></script>
+    <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
   </head>
 
 
@@ -31,7 +31,7 @@
           <div class="containerss">
             <div class="left">
               <div class="logo">
-                <a href="newhome.jsp">
+                <a href="views/newhome.jsp">
                   <img
                     src="Images/LOGO_V2.png"
                     alt="Food store của Trung, Atuan, Atuan"
@@ -40,7 +40,7 @@
               </div>
             </div>
             <div class="right">
-              <a href="signin.jsp" class="nav-item" id="login-link">
+              <a href="views/signin.jsp" class="nav-item" id="login-link">
                 <i class="fa-solid fa-user"></i> Đăng Nhập
               </a>
               <div class="user-menu" id="user-menu" style="display: none">
@@ -50,7 +50,7 @@
                 </a>
                 <div class="submenu" id="submenu">
                   <a
-                    href="admin.jsp"
+                    href="views/admin.jsp"
                     id="admin-link"
                     style="display: none"
                     >Quản trị</a
@@ -65,13 +65,13 @@
                 </div>
               </div>
               <div class="nav_item_shop">
-                <a href="PurchaseOrder.jsp" class="nav-item">
+                <a href="views/PurchaseOrder.jsp" class="nav-item">
                   <i class="fa-solid fa-truck-fast"></i> Đơn hàng
                 </a>
                 <a href="#" class="count">2</a>
               </div>
               <div class="nav_item_shop">
-                <a href="cart.jsp" class="nav-item">
+                <a href="views/cart.jsp" class="nav-item">
                   <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                 </a>
                 <a href="#" class="count"> 8</a>
@@ -87,50 +87,40 @@
                   >
                   <ul class="submenu">
                     <li>
-                      <a href="allMenu.jsp"
+                      <a href="views/allMenu.jsp"
                         ><i class="fa-solid fa-bowl-rice"></i>Tất cả</a
                       >
                     </li>
-                    <li>
-                      <a href="../html/menu_com.html"
-                        ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
-                      >
-                    </li>
-                    <li>
-                      <a href="../html/menu_bun.html"
-                        ><i class="fa-solid fa-bowl-food"></i>Món bún</a
-                      >
-                    </li>
-                    <li>
-                      <a href="../html/menu_pho.html"
-                        ><i class="fa-solid fa-bowl-food"></i>Món phở</a
-                      >
-                    </li>
-                    <li>
-                      <a href="../html/menu_nuoc.html"
-                        ><i class="fa-solid fa-glass-water"></i>Nước</a
-                      >
-                    </li>
+                    <c:forEach var="category" items="${listC}">
+                      <li>
+                        <a href="views/allMenu.jsp"
+                        ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a
+                        >
+                      </li>
+                    </c:forEach>
                   </ul>
                 </li>
                 <li class="menu-item">
-                  <a href="../html/newhome.html">Trang chủ</a>
+                  <a href="views/newhome.jsp">Trang chủ</a>
                 </li>
                 
                 <li class="menu-item">
-                  <a href="../html/about.html">Giới thiệu</a>
+                  <a href="views/about.jsp">Giới thiệu</a>
                 </li>
                 <li class="menu-item">
-                  <a href="../html/contact.html">Liên hệ</a>
+                  <a href="views/contact.jsp">Liên hệ</a>
                 </li>
               </ul>
             </div>
-            <div class="search">
-              <input type="text" placeholder="Tìm kiếm món ăn" />
-              <button type="submit">
-                <i class="fa-solid fa-search"></i>
-              </button>
-            </div>
+
+            <form action="search" method="post">
+              <div class="search">
+                <input name="text" type="text" placeholder="Tìm kiếm món ăn" />
+                <button type="submit">
+                  <i class="fa-solid fa-search"></i>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -139,31 +129,31 @@
       <div class="intro">
         <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
         <div class="category-container">
-          <a href="allMenu.jsp"
+          <a href="views/allMenu.jsp"
             ><div class="category-item">Tất cả</div></a
           >
-          <a href="allMenu.jsp"
+          <a href="views/allMenu.jsp"
             ><div class="category-item">Món được ưa thích</div></a
           >
-          <a href="allMenu.jsp"
+          <a href="views/allMenu.jsp"
             ><div class="category-item">Món được đề xuất</div></a
           >
-          <a href="allMenu.jsp"
+          <a href="views/allMenu.jsp"
             ><div class="category-item">Món được quan tâm nhiều</div></a
           >
-          <a href="allMenu.jsp"
+          <a href="views/allMenu.jsp"
             ><div class="category-item">Món bán chạy</div></a
           >
-          <a href="menu_com.jsp"
+          <a href="views/menu_com.jsp"
             ><div class="category-item">Món cơm</div></a
           >
-          <a href="menu_bun.jsp"
+          <a href="views/menu_bun.jsp"
             ><div class="category-item">Món bún</div></a
           >
-          <a href="menu_pho.jsp"
+          <a href="views/menu_pho.jsp"
             ><div class="category-item">Món phở</div></a
           >
-          <a href="menu_nuoc.jsp"
+          <a href="views/menu_nuoc.jsp"
             ><div class="category-item">Nước</div></a
           >
         </div>
@@ -214,14 +204,21 @@
 
 
 
+      <!-- Phân trang -->
       <div class="pagination">
-        <a href=""></a>
-        <a href="" class="active">1</a>
-        <a href="">2</a>
-        <a href="">3</a>
-        <a href="">4</a>
-        <a href="">></a>
+        <c:if test="${currentPage > 1}">
+          <a href="food-pagination?page=${currentPage - 1}"><</a>
+        </c:if>
+
+        <c:forEach begin="1" end="${totalPages}" var="i">
+          <a href="food-pagination?page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
+        </c:forEach>
+
+        <c:if test="${currentPage < totalPages}">
+          <a href="food-pagination?page=${currentPage + 1}">></a>
+        </c:if>
       </div>
+
     </div>
     <!-- Xử lý footer -->
     <div id="footer">
@@ -258,6 +255,6 @@
         </div>
       </div>
     </div>
-    <script src="js/menu.js"></script>
+    <script src="${pageContext.request.contextPath}/js/menu.js"></script>
   </body>
 </html>

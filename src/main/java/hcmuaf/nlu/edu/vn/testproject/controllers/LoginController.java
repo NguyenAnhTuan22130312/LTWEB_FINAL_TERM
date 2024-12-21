@@ -1,7 +1,7 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers;
 
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
-import hcmuaf.nlu.edu.vn.testproject.services.LoginDAO;
+import hcmuaf.nlu.edu.vn.testproject.dao.LoginDAO;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;

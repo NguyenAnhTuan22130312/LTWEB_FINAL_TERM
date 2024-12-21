@@ -2,7 +2,7 @@ package hcmuaf.nlu.edu.vn.testproject.controllers;
 
 import hcmuaf.nlu.edu.vn.testproject.models.Category;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
-import hcmuaf.nlu.edu.vn.testproject.services.FoodDAO;
+import hcmuaf.nlu.edu.vn.testproject.dao.FoodDAO;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -45,7 +45,6 @@ public class FoodController extends HttpServlet {
 
         // Chuyển tiếp đến trang JSP để hiển thị kết quả
         request.getRequestDispatcher("views/allMenu.jsp").forward(request, response);
-        request.getRequestDispatcher( "views/allMenu.jsp").forward(request, response);
     }
 
     @Override

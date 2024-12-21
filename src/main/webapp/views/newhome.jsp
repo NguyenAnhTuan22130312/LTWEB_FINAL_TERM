@@ -119,1060 +119,131 @@
             <div class="tag">Món Bán Chạy</div>
         </div>
         <div id="content_section" class="content_section">
-
-            <!-- Cơm tấm sườn bì chả -->
-            <div class="card" onclick="showPopup('popup01')">
-                <img src="../Images/Food/Com/Com-tam-suon-bi-cha.png" alt="com tam suon bi cha" />
-                <div class="card_content">
-                    <h3>Cơm tấm sườn bì chả</h3>
-                    <p>25.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
+            <c:forEach var="food" items="${lst4Sold}">
+                <div class="card" onclick="showPopup('${food.idFood}')">
+                    <img src="${food.img}" alt="${food.foodName}" />
+                    <div class="card_content">
+                        <h3>${food.foodName}</h3>
+                        <p>${food.price}đ</p>
+                        <a
+                                class="btn"
+                                href="cart.jsp?foodId=${food.idFood}"
+                                onclick="event.stopPropagation()"
+                        >
+                            Thêm vào giỏ hàng
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <div id="popup01" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Com/Com-tam-suon-bi-cha.png" alt="com tam suon bi cha" />
-                    <h3>Cơm tấm sườn bì chả</h3>
-                    <p>Giá: 25.000đ</p>
-                    <span>
-                        Cơm tấm sườn bì chả là món ăn đặc trưng của ẩm thực miền Nam. Sườn
-                        nướng thơm ngon, bì giòn và chả lụa béo ngậy được kết hợp với cơm
-                        tấm dẻo, tạo nên một món ăn ngon, đậm đà và đầy đủ dinh dưỡng cho
-                        bữa ăn.
-                    </span>
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
+                <!-- Popup chi tiết món ăn -->
+                <div id="${food.idFood}" class="popup">
+                    <div class="popup-content">
+                        <img src="${food.img}" alt="${food.foodName}" />
+                        <h3>${food.foodName}</h3>
+                        <p>Giá: ${food.price}đ</p>
+                        <span>
+                                ${food.description}
+                        </span>
+                        <button
+                                class="button-cart"
+
+                                onclick="window.location.href='cart.jsp?foodId=${food.idFood}'"
+                        >
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div>
+                    <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>
                 </div>
-                <span class="close" onclick="closePopup('popup01')">&times;</span>
-            </div>
-
-            <div class="card" onclick="showPopup('popup02')">
-                <img src="../Images/Food/Com/Com-chien-ga-xoi-mo.png" alt="com chien ga xoi mo" />
-                <div class="card_content">
-                    <h3>Cơm gà xối mỡ</h3>
-                    <p>25.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
-                </div>
-            </div>
-
-            <div id="popup02" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Com/Com-chien-ga-xoi-mo.png" alt="com chien ga xoi mo" />
-                    <h3>Cơm gà xối mỡ</h3>
-                    <p>Giá: 25.000đ</p>
-                    <span>
-                        Cơm gà xối mỡ là món ăn truyền thống với thịt gà được chiên giòn
-                        rụm, kết hợp cùng cơm trắng dẻo thơm và các loại rau sống tươi
-                        mát. Món ăn đặc trưng với lớp da gà giòn tan, ăn kèm với cơm và
-                        nước sốt đậm đà.
-                    </span>
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
-                </div>
-                <span class="close" onclick="closePopup('popup02')">&times;</span>
-            </div>
-
-            <!-- bun bo hue-->
-            <div class="card" onclick="showPopup('popup03')">
-                <img src="../Images/Food/Bun/Bun-Bo-Hue.png" alt="com rang" />
-                <div class="card_content">
-                    <h3>Bún bò Huế</h3>
-                    <p>25.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
-                </div>
-            </div>
-
-            <div id="popup03" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Bun/Bun-Bo-Hue.png" alt="com rang" />
-                    <h3>Bún bò Huế</h3>
-                    <p>Giá: 25.000đ</p>
-                    <span>
-                        Bún bò Huế là một món ăn đặc trưng của miền Trung, nổi bật với hương vị đậm đà, cay nồng.
-                        Sợi bún mềm mại được kết hợp với nước dùng hầm từ xương bò và các loại gia vị như sả, ớt,
-                        tạo nên một món ăn vừa thơm ngon vừa đầy đủ chất dinh dưỡng. Thịt bò thái mỏng, giò heo
-                        và huyết bò làm tăng thêm sự phong phú, đặc biệt khi ăn kèm với rau sống tươi mát.<br />
-                    </span>
-                    
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
-                </div>
-                <span class="close" onclick="closePopup('popup03')">&times;</span>
-            </div>
-
-            <!-- pho bo-->
-            <div class="card" onclick="showPopup('popup04')">
-                <img src="../Images/Food/Pho/Pho-bo-tai-lan.png" alt="pho" />
-                <div class="card_content">
-                    <h3>Phở bò tái lăn</h3>
-                    <p>35.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
-                </div>
-            </div>
-
-            <div id="popup04" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Pho/Pho-bo-tai-lan.png" alt="pho" />
-                    <h3>Phở bò tái lăn</h3>
-                    <p>Giá: 35.000đ</p>
-                    <span>
-                        Phở bò tái lăn khác biệt nhờ thịt bò được xào nhanh qua lửa trước
-                        khi cho vào nước dùng. Cách chế biến này tạo nên độ mềm mại nhưng
-                        vẫn giữ được vị ngọt tự nhiên của thịt bò. Nước dùng nóng kết hợp
-                        với bánh phở trắng, hành lá, rau thơm làm tăng thêm sự hấp dẫn của
-                        món ăn. <br />
-                    </span>
-                    
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
-                </div>
-                <span class="close" onclick="closePopup('popup04')">&times;</span>
-            </div>
-
-        </div>
-        <div class="xemtatca">
-            <a href="../html/menu_com.html">Xem Tất Cả</a>
+            </c:forEach>
         </div>
     </div>
-
     <!-- Mon duoc quan tam-->
     <div id="container-monban">
         <div class="header-mon">
-
             <div class="tag">Món được quan tâm nhiều</div>
-
         </div>
         <div id="content_section" class="content_section">
-
-            <!-- Cơm mực trứng muối -->
-            <div class="card" onclick="showPopup('popup05')">
-                <img src="../Images/Food/Com/Com-chien-muc-trung-muoi.png" alt="com chien muc trung muoi" />
-                <div class="card_content">
-                    <h3>Cơm mực trứng muối</h3>
-                    <p>30.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
+            <c:forEach var="food" items="${lst4View}">
+                <div class="card" onclick="showPopup('${food.idFood}')">
+                    <img src="${food.img}" alt="${food.foodName}" />
+                    <div class="card_content">
+                        <h3>${food.foodName}</h3>
+                        <p>${food.price}đ</p>
+                        <a
+                                class="btn"
+                                href="cart.jsp?foodId=${food.idFood}"
+                                onclick="event.stopPropagation()"
+                        >
+                            Thêm vào giỏ hàng
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <div id="popup05" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Com/Com-chien-muc-trung-muoi.png" alt="com chien muc trung muoi" />
-                    <h3>Cơm mực trứng muối</h3>
-                    <p>Giá: 30.000đ</p>
-                    <span>
-                        Cơm mực trứng muối là món ăn thơm ngon với mực tươi, trứng muối
-                        béo ngậy, hòa quyện cùng cơm chiên mềm và gia vị đậm đà. Mực được
-                        chiên giòn, trứng muối tan chảy khi ăn, tạo nên một sự kết hợp độc
-                        đáo.
-                    </span>
-                    
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
+                <!-- Popup chi tiết món ăn -->
+                <div id="${food.idFood}" class="popup">
+                    <div class="popup-content">
+                        <img src="${food.img}" alt="${food.foodName}" />
+                        <h3>${food.foodName}</h3>
+                        <p>Giá: ${food.price}đ</p>
+                        <span>
+                                ${food.description}
+                        </span>
+                        <button
+                                class="button-cart"
+
+                                onclick="window.location.href='cart.jsp?foodId=${food.idFood}'"
+                        >
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div>
+                    <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>
                 </div>
-                <span class="close" onclick="closePopup('popup05')">&times;</span>
-            </div>
-
-            <!-- Cơm chiên trứng ốp la -->
-            <div class="card" onclick="showPopup('popup06')">
-                <img src="../Images/Food/Com/Com-chien-trung-op-la.png" alt="com chien trung op la" />
-                <div class="card_content">
-                    <h3>Cơm chiên trứng ốp la</h3>
-                    <p>30.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
-                </div>
-            </div>
-
-            <div id="popup06" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Com/Com-chien-trung-op-la.png" alt="com chien trung op la" />
-                    <h3>Cơm chiên trứng ốp la</h3>
-                    <p>Giá: 30.000đ</p>
-                    <span>
-                        Cơm chiên trứng ốp la là món ăn đơn giản nhưng cực kỳ ngon miệng,
-                        với cơm chiên thơm dẻo và một quả trứng ốp la vàng ươm, ăn kèm với
-                        thịt, rau củ và gia vị. Món ăn này rất phổ biến trong các bữa sáng
-                        hoặc bữa trưa nhanh.
-                    </span>
-                   
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
-                </div>
-                <span class="close" onclick="closePopup('popup06')">&times;</span>
-            </div>
-
-            <!-- Cơm chiên bò lúc lắc -->
-            <div class="card" onclick="showPopup('popup07')">
-                <img src="../Images/Food/Com/Com-chien-bo-luc-lac.png" alt="com chien bo luc lac" />
-                <div class="card_content">
-                    <h3>Cơm chiên bò lúc lắc</h3>
-                    <p>30.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
-                </div>
-            </div>
-
-            <div id="popup07" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Com/Com-chien-bo-luc-lac.png" alt="com chien bo luc lac" />
-                    <h3>Cơm chiên bò lúc lắc</h3>
-                    <p>Giá: 30.000đ</p>
-                    <span>
-                        Cơm chiên bò lúc lắc là món ăn nổi bật với những miếng thịt bò
-                        mềm, thấm đẫm gia vị, kết hợp với cơm chiên vàng ươm và rau củ
-                        giòn ngọt. Món ăn mang đậm hương vị đặc trưng của ẩm thực phương
-                        Tây nhưng lại có sự kết hợp tuyệt vời với gia vị Việt Nam, tạo nên
-                        sự hòa quyện tuyệt vời.
-                    </span>
-                   
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
-                </div>
-                <span class="close" onclick="closePopup('popup07')">&times;</span>
-            </div>
-
-
-            <!-- Cơm tấm thịt nướng -->
-            <div class="card" onclick="showPopup('popup08')">
-                <img src="../Images/Food/Com/Com-tam-thit-nuong.png" alt="com tam thit nuong" />
-                <div class="card_content">
-                    <h3>Cơm tấm thịt nướng</h3>
-                    <p>30.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
-                </div>
-            </div>
-
-            <div id="popup08" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Com/Com-tam-thit-nuong.png" alt="com tam thit nuong" />
-                    <h3>Cơm tấm thịt nướng</h3>
-                    <p>Giá: 30.000đ</p>
-                    <span>
-                        Cơm tấm thịt nướng là món ăn đậm đà hương vị, với thịt nướng vàng
-                        ươm, mềm, thấm đẫm gia vị. Khi ăn kèm với cơm tấm dẻo và nước mắm
-                        pha, món ăn này mang lại cảm giác thỏa mãn, đầy đủ cho một bữa ăn.
-                    </span>
-                   
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
-                </div>
-                <span class="close" onclick="closePopup('popup08')">&times;</span>
-            </div>
-
-
+            </c:forEach>
         </div>
-        <div class="xemtatca">
-            <a href="../html/menu_com.html">Xem Tất Cả</a>
-        </div>
+
     </div>
 
     <div id="container-monban">
         <div class="header-mon">
-
             <div class="tag">Món được đè xuất</div>
-
         </div>
         <div id="content_section" class="content_section">
-
-            <!-- Cơm tấm heo quay -->
-            <div class="card" onclick="showPopup('popup09')">
-                <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com rang" />
-                <div class="card_content">
-                    <h3>Cơm tấm heo quay</h3>
-                    <p>30.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
+            <c:forEach var="food" items="${lst4Propose}">
+                <div class="card" onclick="showPopup('${food.idFood}')">
+                    <img src="${food.img}" alt="${food.foodName}" />
+                    <div class="card_content">
+                        <h3>${food.foodName}</h3>
+                        <p>${food.price}đ</p>
+                        <a
+                                class="btn"
+                                href="cart.jsp?foodId=${food.idFood}"
+                                onclick="event.stopPropagation()"
+                        >
+                            Thêm vào giỏ hàng
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <div id="popup09" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Com/Com-tam-heo-quay.png" alt="com tam dui ga chien" />
-                    <h3>Cơm tấm heo quay</h3>
-                    <p>Giá: 30.000đ</p>
-                    <span>
-                        Cơm tấm heo quay là một món ăn đặc trưng của ẩm thực miền Nam, nổi
-                        bật với hương vị đậm đà, dễ ăn và rất được ưa chuộng. Món cơm này
-                        được làm từ những hạt gạo tấm mềm dẻo, được xới lên thơm lừng,
-                        thường được ăn kèm với miếng thịt heo quay vàng giòn, lớp da heo
-                        thơm lừng, giòn tan, còn phần thịt bên trong thì mềm, ngọt và đậm
-                        đà.
-                    </span>
-                   
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
+                <!-- Popup chi tiết món ăn -->
+                <div id="${food.idFood}" class="popup">
+                    <div class="popup-content">
+                        <img src="${food.img}" alt="${food.foodName}" />
+                        <h3>${food.foodName}</h3>
+                        <p>Giá: ${food.price}đ</p>
+                        <span>
+                                ${food.description}
+                        </span>
+                        <button
+                                class="button-cart"
+
+                                onclick="window.location.href='cart.jsp?foodId=${food.idFood}'"
+                        >
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div>
+                    <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>
                 </div>
-                <span class="close" onclick="closePopup('popup09')">&times;</span>
-            </div>
-
-
-            <div class="card" onclick="showPopup('popup10')">
-                <img src="../Images/Food/Com/Com-chien-ga-xoi-mo.png" alt="com chien ga xoi mo" />
-                <div class="card_content">
-                    <h3>Cơm gà xối mỡ</h3>
-                    <p>25.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
-                </div>
-            </div>
-
-            <div id="popup10" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Com/Com-chien-ga-xoi-mo.png" alt="com chien ga xoi mo" />
-                    <h3>Cơm gà xối mỡ</h3>
-                    <p>Giá: 25.000đ</p>
-                    <span>
-                        Cơm gà xối mỡ là món ăn truyền thống với thịt gà được chiên giòn
-                        rụm, kết hợp cùng cơm trắng dẻo thơm và các loại rau sống tươi
-                        mát. Món ăn đặc trưng với lớp da gà giòn tan, ăn kèm với cơm và
-                        nước sốt đậm đà.
-                    </span>
-                  
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
-                </div>
-                <span class="close" onclick="closePopup('popup10')">&times;</span>
-            </div>
-
-            <!-- bun nem nuong-->
-            <div class="card" onclick="showPopup('popup11')">
-                <img src="../Images/Food/Bun/Bun-nem-thit-nuong.png" alt="com chien trung op la" />
-                <div class="card_content">
-                    <h3>Bún nem thịt nướng</h3>
-                    <p>30.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
-                </div>
-            </div>
-
-            <div id="popup11" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Bun/Bun-nem-thit-nuong.png" alt="com chien trung op la" />
-                    <h3>Bún nem thịt nướng</h3>
-                    <p>Giá: 30.000đ</p>
-                    <span>
-                        Bún nem thịt nướng là sự kết hợp hoàn hảo giữa nem nướng thơm
-                        lừng và thịt heo nướng xém vàng, chín mềm. Món ăn được ăn kèm
-                        với bún tươi, rau sống và nước mắm chua ngọt, mang đến hương
-                        vị đậm đà khó quên.
-                    </span>
-                   
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
-                </div>
-                <span class="close" onclick="closePopup('popup11')">&times;</span>
-            </div>
-
-            <!-- bun mang ga-->
-            <div class="card" onclick="showPopup('popup12')">
-                <img src="../Images/Food/Bun/Bun-mang-ga.png" alt="bún măng gà" />
-                <div class="card_content">
-                    <h3>Bún măng gà</h3>
-                    <p>30.000đ</p>
-                    <a class="btn" href="../html/cart.html" onclick="event.stopPropagation()">
-                        Thêm vào giỏ hàng
-                      </a>
-                </div>
-            </div>
-
-            <div id="popup12" class="popup">
-                <div class="popup-content">
-                    <img src="../Images/Food/Bun/Bun-mang-ga.png" alt="bún măng gà" />
-                    <h3>Bún măng gà</h3>
-                    <p>Giá: 30.000đ</p>
-                    <span>
-                        Món bún măng gà hấp dẫn với thịt gà mềm, măng tươi giòn, hòa quyện
-                        trong nước dùng thanh ngọt, đậm đà. Được trang trí với hành phi và
-                        rau sống tươi ngon, tạo nên một bữa ăn vừa bổ dưỡng vừa thơm ngon.
-                    </span>
-                   
-                    <button class="button-cart" id="add-cart" onclick="window.location.href='../html/cart.html'">
-                        Thêm vào giỏ hàng
-                    </button>
-                    <div class="user-reviews">
-                        <h4>Đánh giá từ khách hàng</h4>
-                        
-                        <!-- Đánh giá 1 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Văn A</p>
-                                <p class="review-date">20/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span> <!-- 4 sao -->
-                          </div>
-                          <p class="review-text">Món này rất ngon, vị rất đặc biệt. Mình rất thích!</p>
-                        </div>
-                        
-                        <!-- Đánh giá 2 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                             <p class="user-name">Trần Thị B</p>
-                             <p class="review-date">18/11/2024</p>
-                            </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span> <!-- 5 sao -->
-                          </div>
-                          <p class="review-text">Mình rất hài lòng với món này.</p>
-                        </div>
-                        
-                        <!-- Đánh giá 3 -->
-                        <div class="review-item">
-                            <div class="info-review">
-                                <p class="user-name">Nguyễn Anh Tuấn</p>
-                                <p class="review-date">18/11/2024</p>
-                               </div>
-                          <div class="stars">
-                            <!-- Số sao đã chấm -->
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
-                            <span class="star">&#9734;</span> <!-- 3 sao -->
-                          </div>
-                          <p class="review-text">Món này khá ngon, rất hợp khẩu vị của mình, sẽ quay lại lần sau.</p>
-                        </div>
-                      </div>
-                </div>
-                <span class="close" onclick="closePopup('popup12')">&times;</span>
-            </div>
-
-        </div>
-        <div class="xemtatca">
-            <a href="../html/menu_com.html">Xem Tất Cả</a>
+            </c:forEach>
         </div>
     </div>
 
