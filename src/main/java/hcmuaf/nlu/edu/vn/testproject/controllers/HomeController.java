@@ -18,6 +18,7 @@ public class HomeController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         FoodServiceListFilter fslf = new FoodServiceListFilter();
+
         List<Food> lst4View = fslf.getTop4Views();
         request.setAttribute("lst4View", lst4View);
 
@@ -26,6 +27,9 @@ public class HomeController extends HttpServlet {
 
         List <Food> lst4Propose=fslf.getTop4Propose();
         request.setAttribute("lst4Propose", lst4Propose);
+
+        List <Food> lst4Rate=fslf.getTop4Rate();
+        request.setAttribute("lst4Rate", lst4Rate);
 
         request.getRequestDispatcher("views/newhome.jsp").forward(request, response);
     }

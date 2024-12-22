@@ -191,5 +191,10 @@ public class FoodDAO {
         List<Food> top4Propose = foodList.subList(0, 4);
         return top4Propose;
     }
+    public Food getById(int id) {
+        if(!data.containsKey(id)) return null;
+        return data.get(id);
+    }
+
 
 }

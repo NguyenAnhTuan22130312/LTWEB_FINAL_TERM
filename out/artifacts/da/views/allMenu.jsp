@@ -31,7 +31,7 @@
             <div class="containerss">
                 <div class="left">
                     <div class="logo">
-                        <a href="views/newhome.jsp">
+                        <a href="home">
                             <img
                                     src="Images/LOGO_V2.png"
                                     alt="Food store của Trung, Atuan, Atuan"
@@ -40,34 +40,29 @@
                     </div>
                 </div>
                 <div class="right">
-                    <a href="login" class="nav-item" id="login-link">
-                        <i class="fa-solid fa-user"></i> Đăng Nhập
-                    </a>
-                    <div class="user-menu" id="user-menu" style="display: none">
-                        <i class="fa-solid fa-user"></i>
-                        <a href="#" class="user-name" id="user-name">
-                            <c:choose>
-                                <c:when test="${not empty sessionScope.currentUser}">
-                                    ${sessionScope.currentUser.userName}
-                                </c:when>
-                                <c:otherwise>
-                                    Tên người dùng
-                                </c:otherwise>
-                            </c:choose>
+                    <c:if test="${sessionScope.currentUser == null}">
+                        <a href="login" class="nav-item" id="login-link">
+                            <i class="fa-solid fa-user"></i> Đăng Nhập
                         </a>
-                        <div class="submenu" id="submenu">
-                            <c:if test="${sessionScope.currentUser.idRole == 1}">
-                                <a href="views/admin.jsp" id="admin-link">Quản trị</a>
-                            </c:if>
-                            <a
-                                    href="UserInformation.jsp"
-                                    id="user-link"
-                                    style="display: none"
-                            >Thông tin</a
-                            >
-                            <a href="#" id="logout">Đăng xuất</a>
+                    </c:if>
+
+                    <c:if test="${sessionScope.currentUser != null}">
+                        <div class="user-menu" id="user-menu" >
+                            <i class="fa-solid fa-user"></i>
+                            <a href="#" class=" user-name" id="user-name">
+                                    ${sessionScope.currentUser.userName}
+                            </a>
+                            <div class="submenu" id="submenu">
+                                <c:if test="${sessionScope.currentUser.idRole == 1}">
+                                    <a href="views/admin.jsp" id="admin-link">Quản trị</a>
+                                </c:if>
+                                <c:if test="${sessionScope.currentUser.idRole == 2}">
+                                    <a href="views/UserInformation.jsp" id="user-link">Thông tin</a>
+                                </c:if>
+                                <a href="logout" id="logout">Đăng xuất</a>
+                            </div>
                         </div>
-                    </div>
+                    </c:if>
                     <div class="nav_item_shop">
                         <a href="views/PurchaseOrder.jsp" class="nav-item">
                             <i class="fa-solid fa-truck-fast"></i> Đơn hàng
@@ -75,10 +70,10 @@
                         <a href="#" class="count">2</a>
                     </div>
                     <div class="nav_item_shop">
-                        <a href="views/cart.jsp" class="nav-item">
+                        <a href="shoppingcart" class="nav-item">
                             <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                         </a>
-                        <a href="#" class="count"> 8</a>
+                        <a href="shoppingcart" class="count">8</a>
                     </div>
                 </div>
             </div>
@@ -86,12 +81,12 @@
                 <div class="menu">
                     <ul class="menu-list">
                         <li class="menu-item">
-                            <a href="#" class="tabbar">
+                            <a href="allmenu" class="tabbar">
                                 <i class="fa-solid fa-bars"></i>Thực đơn</a
                             >
                             <ul class="submenu">
                                 <li>
-                                    <a href="views/allMenu.jsp"
+                                    <a href="allmenu"
                                     ><i class="fa-solid fa-bowl-rice"></i>Tất cả</a
                                     >
                                 </li>
@@ -105,7 +100,7 @@
                             </ul>
                         </li>
                         <li class="menu-item">
-                            <a href="views/newhome.jsp">Trang chủ</a>
+                            <a href="home">Trang chủ</a>
                         </li>
 
                         <li class="menu-item">
