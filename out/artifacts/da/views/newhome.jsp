@@ -72,17 +72,17 @@
                         <ul class="menu-list">
 
                             <li class="menu-item">
-                                <a href="allmenu" class="tabbar"> <i class="fa-solid fa-bars"></i>Thực đơn</a>
+                                <a href="allmenu?option=tatca" class="tabbar"> <i class="fa-solid fa-bars"></i>Thực đơn</a>
                                 <ul class="submenu">
-                                    <li><a href="allmenu"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
+                                    <li><a href="allmenu?option=tatca"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
                                     </li>
-                                    <li><a href="views/menu_com.jsp"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
+                                    <li><a href="allmenu?option=1"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
                                     </li>
-                                    <li><a href="views/menu_bun.jsp"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
+                                    <li><a href="allmenu?option=2"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
                                     </li>
-                                    <li><a href="views/menu_pho.jsp"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
+                                    <li><a href="allmenu?option=3"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
                                     </li>
-                                    <li><a href="views/menu_nuoc.jsp"><i class="fa-solid fa-glass-water"></i>Nước</a>
+                                    <li><a href="allmenu?option=4"><i class="fa-solid fa-glass-water"></i>Nước</a>
                                     </li>
                                 </ul>
                             </li>
@@ -163,6 +163,9 @@
                 </div>
             </c:forEach>
         </div>
+        <div class="xemtatca">
+            <a href="allmenu?option=banchay">Xem Tất Cả</a>
+        </div>
     </div>
     <!-- Mon duoc quan tam-->
     <div id="container-monban">
@@ -207,7 +210,9 @@
                 </div>
             </c:forEach>
         </div>
-
+        <div class="xemtatca">
+            <a href="allmenu?option=quantam">Xem Tất Cả</a>
+        </div>
     </div>
 
     <div id="container-monban">
@@ -251,6 +256,9 @@
                     <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>
                 </div>
             </c:forEach>
+        </div>
+        <div class="xemtatca">
+            <a href="allmenu?option=dexuat">Xem Tất Cả</a>
         </div>
     </div>
 
@@ -297,7 +305,7 @@
             </c:forEach>
         </div>
         <div class="xemtatca">
-            <a href="../html/menu_com.html">Xem Tất Cả</a>
+            <a href="allmenu?option=danhgiacao">Xem Tất Cả</a>
         </div>
     </div>
 

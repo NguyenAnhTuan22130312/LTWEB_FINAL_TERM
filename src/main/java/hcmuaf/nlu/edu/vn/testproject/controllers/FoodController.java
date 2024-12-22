@@ -4,6 +4,7 @@ import hcmuaf.nlu.edu.vn.testproject.models.Category;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
 import hcmuaf.nlu.edu.vn.testproject.daos.FoodDAO;
 import hcmuaf.nlu.edu.vn.testproject.services.CategoryService;
+import hcmuaf.nlu.edu.vn.testproject.services.FoodServiceListFilter;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -25,7 +26,7 @@ public class FoodController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        FoodServiceListFilter foodServiceListFilter = new FoodServiceListFilter();
         // Lấy id danh mục, nếu không có thì mặc định là 0 (hiển thị tất cả)
         int id = 0;
         if (request.getParameter("idc") != null) {
@@ -43,15 +44,45 @@ public class FoodController extends HttpServlet {
         int offset = (page - 1) * pageSize;
 
         // Lấy danh sách món ăn theo phân trang
+//        List<Food> foodList;
+//        int totalFoods;
+//        String option= request.getParameter("option");
+//        if (id > 0) { // Nếu có id danh mục
+//            foodList = foodDao.getFoodsByCategory(id); // Lấy tất cả món trong danh mục
+//            totalFoods = foodList.size(); // Tổng số món trong danh mục
+//            foodList = foodList.subList(Math.min(offset, totalFoods), Math.min(offset + pageSize, totalFoods)); // Phân trang
+//        } else {
+//            foodList = foodDao.getPaginatedFoods(offset, pageSize); // Lấy tất cả món ăn
+//            totalFoods = foodDao.getTotalFoods(); // Tổng số món ăn
+//        }
         List<Food> foodList;
         int totalFoods;
-        if (id > 0) { // Nếu có id danh mục
-            foodList = foodDao.getFoodsByCategory(id); // Lấy tất cả món trong danh mục
-            totalFoods = foodList.size(); // Tổng số món trong danh mục
-            foodList = foodList.subList(Math.min(offset, totalFoods), Math.min(offset + pageSize, totalFoods)); // Phân trang
+
+// Lấy giá trị option từ request
+        String option = request.getParameter("option");
+
+// Nếu có option, ưu tiên lấy dữ liệu từ option
+        if (option != null && !option.isEmpty()) {
+            foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
+            totalFoods = foodList.size(); // Tổng số món theo option
+
+            // Áp dụng phân trang
+            foodList = foodList.subList(
+                    Math.min(offset, totalFoods),
+                    Math.min(offset + pageSize, totalFoods)
+            );
+        } else if (id > 0) {
+            // Nếu không có option nhưng có id danh mục
+            foodList = foodDao.getFoodsByCategory(id);
+            totalFoods = foodList.size();
+            foodList = foodList.subList(
+                    Math.min(offset, totalFoods),
+                    Math.min(offset + pageSize, totalFoods)
+            );
         } else {
-            foodList = foodDao.getPaginatedFoods(offset, pageSize); // Lấy tất cả món ăn
-            totalFoods = foodDao.getTotalFoods(); // Tổng số món ăn
+            // Không có option và id danh mục => lấy toàn bộ
+            foodList = foodDao.getPaginatedFoods(offset, pageSize);
+            totalFoods = foodDao.getTotalFoods();
         }
 
         // Tính tổng số trang

@@ -16,10 +16,6 @@ public class FoodDAO {
         pdd.getAllFood();
     }
 
-    public List<Food> getAll() {
-        return new ArrayList<>(data.values());
-    }
-
 
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu
     public void getAllFood() {
@@ -191,9 +187,58 @@ public class FoodDAO {
         List<Food> top4Propose = foodList.subList(0, 4);
         return top4Propose;
     }
+
     public Food getById(int id) {
-        if(!data.containsKey(id)) return null;
+        if (!data.containsKey(id)) return null;
         return data.get(id);
+    }
+
+
+    public List<Food> getAll() {
+        return new ArrayList<>(data.values());
+    }
+
+    public List<Food> getTopSold() {
+        List<Food> foodList = new ArrayList<>(data.values());
+        foodList.sort((f1, f2) -> Integer.compare(f2.getSold(), f1.getSold()));
+        return foodList;
+    }
+
+    public List<Food> getTopView() {
+        List<Food> foodList = new ArrayList<>(data.values());
+        foodList.sort((f1, f2) -> Integer.compare(f2.getViews(), f1.getViews()));
+        return foodList;
+    }
+
+    public List<Food> getTopPropose() {
+        List<Food> foodList = new ArrayList<>(data.values());
+        foodList.sort((f1, f2) -> f2.getCreatedAt().compareTo(f1.getCreatedAt()));
+        return foodList;
+    }
+
+    public List<Food> getComBunPhoNuoc(String category) {
+        List<Food> foodList = new ArrayList<>();
+        for (Food food : data.values()) {
+            switch (category) {
+                case "1":
+                    if (food.getIdCategory() == 1)
+                        foodList.add(food);
+                    break;
+                case "2":
+                    if (food.getIdCategory() == 2)
+                        foodList.add(food);
+                    break;
+                case "3":
+                    if (food.getIdCategory() == 3)
+                        foodList.add(food);
+                    break;
+                case "4":
+                    if (food.getIdCategory() == 4)
+                        foodList.add(food);
+                    break;
+            }
+        }
+        return foodList;
     }
 
 
