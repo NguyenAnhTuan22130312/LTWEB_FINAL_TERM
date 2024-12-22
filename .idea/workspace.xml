@@ -9,12 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="da fix xong trang new home va allmenu">
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix them teo trang home voi menu">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/ContactController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/about.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/contact.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/newhome.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/about.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/contact.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +30,7 @@
       <list>
         <option value="Class" />
         <option value="Servlet" />
+        <option value="servlet" />
       </list>
     </option>
   </component>
@@ -215,7 +220,7 @@
       <workItem from="1734804965306" duration="21000" />
       <workItem from="1734809321924" duration="2207000" />
       <workItem from="1734887135268" duration="1239000" />
-      <workItem from="1734895809052" duration="7910000" />
+      <workItem from="1734895809052" duration="8611000" />
     </task>
     <task id="LOCAL-00001" summary="update newhome, food">
       <option name="closed" value="true" />
@@ -241,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734903568528</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix them teo trang home voi menu">
+      <option name="closed" value="true" />
+      <created>1734905092052</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734905092052</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +276,8 @@
     <MESSAGE value="update newhome, food" />
     <MESSAGE value="update home" />
     <MESSAGE value="da fix xong trang new home va allmenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="da fix xong trang new home va allmenu" />
+    <MESSAGE value="fix them teo trang home voi menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix them teo trang home voi menu" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

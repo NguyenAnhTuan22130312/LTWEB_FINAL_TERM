@@ -89,7 +89,7 @@
                             <li class="menu-item"><a href="home">Trang chủ</a></li>
                             
                             <li class="menu-item"><a href="views/about.jsp">Giới thiệu</a></li>
-                            <li class="menu-item"><a href="views/contact.jsp">Liên hệ</a></li>
+                            <li class="menu-item"><a href="contact-controll">Liên hệ</a></li>
                         </ul>
                     </div>
                     <div class="search">

@@ -113,7 +113,7 @@
                             <a href="views/about.jsp">Giới thiệu</a>
                         </li>
                         <li class="menu-item">
-                            <a href="views/contact.jsp">Liên hệ</a>
+                            <a href="contact-controll">Liên hệ</a>
                         </li>
                     </ul>
                 </div>

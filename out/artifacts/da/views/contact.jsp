@@ -70,24 +70,24 @@
                     <div class="menu">
                         <ul class="menu-list">
                             <li class="menu-item">
-                                <a href="views/allMenu.jsp" class="tabbar"> <i class="fa-solid fa-bars"></i>Thực đơn</a>
+                                <a href="allmenu?option=tatca" class="tabbar"> <i class="fa-solid fa-bars"></i>Thực đơn</a>
                                 <ul class="submenu">
-                                    <li><a href="views/allMenu.jsp"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
+                                    <li><a href="allmenu?option=tatca"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
                                     </li>
-                                    <li><a href="views/menu_com.jsp"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
+                                    <li><a href="allmenu?option=1"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
                                     </li>
-                                    <li><a href="views/menu_bun.jsp"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
+                                    <li><a href="allmenu?option=2"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
                                     </li>
-                                    <li><a href="views/menu_pho.jsp"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
+                                    <li><a href="allmenu?option=3"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
                                     </li>
-                                    <li><a href="views/menu_nuoc.jsp"><i class="fa-solid fa-glass-water"></i>Nước</a>
+                                    <li><a href="allmenu?option=4"><i class="fa-solid fa-glass-water"></i>Nước</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="menu-item"><a href="views/newhome.jsp">Trang chủ</a></li>
+                            <li class="menu-item"><a href="home">Trang chủ</a></li>
                             
                             <li class="menu-item"><a href="views/about.jsp">Giới thiệu</a></li>
-                            <li class="menu-item"><a href="views/contact.jsp">Liên hệ</a></li>
+                            <li class="menu-item"><a href="contact-controll">Liên hệ</a></li>
                         </ul>
                     </div>
                     <div class="search">
