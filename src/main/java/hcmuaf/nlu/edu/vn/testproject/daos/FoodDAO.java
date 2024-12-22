@@ -10,21 +10,16 @@ import java.util.*;
 public class FoodDAO {
 
     static Map<Integer, Food> data = new HashMap<>();
-    static Map<Integer, Category> category = new HashMap<>();
 
     static {
         FoodDAO pdd = new FoodDAO();
         pdd.getAllFood();
-        pdd.getAllCategoryFood();
     }
 
     public List<Food> getAll() {
         return new ArrayList<>(data.values());
     }
 
-    public List<Category> getAllCategory() {
-        return new ArrayList<>(category.values());
-    }
 
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu
     public void getAllFood() {
@@ -80,10 +75,11 @@ public class FoodDAO {
         }
     }
 
-    // Hàm lấy full category
-    public void getAllCategoryFood() {
+    public List<Food> getFoodsByCategory(int idCategory) {
 
-        String query = "SELECT * FROM category";
+        String query = "SELECT * FROM food WHERE idCategory = ?";
+        List<Food> foodList = new ArrayList<>();
+
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -101,15 +97,27 @@ public class FoodDAO {
 
             // Chuẩn bị câu lệnh SQL
             ps = con.prepareStatement(query);
+            ps.setInt(1, idCategory);
             // Thực thi câu lệnh
             rs = ps.executeQuery();
 
             // Duyệt qua kết quả trả về và tạo danh sách món ăn
             while (rs.next()) {
-                category.put(rs.getInt("idCategory"),
-                        new Category(
+                foodList.add(
+                        new Food(
+                                rs.getInt("idFood"),
+                                rs.getString("foodName"),
+                                rs.getInt("price"),
+                                rs.getInt("discountPrice"),
+                                rs.getInt("quantity"),
+                                rs.getString("img"),
+                                rs.getString("description"),
                                 rs.getInt("idCategory"),
-                                rs.getString("nameCategory")
+                                rs.getInt("isDeleted"),
+                                rs.getInt("sold"),
+                                rs.getInt("views"),
+                                rs.getTimestamp("createdAt"),
+                                rs.getTimestamp("updatedAt")
                         ));
             }
 
@@ -121,6 +129,7 @@ public class FoodDAO {
             // Đảm bảo rằng kết nối, câu lệnh và result set được đóng đúng cách
             closeResources(rs, ps, con);
         }
+        return foodList;
     }
 
     public List<Food> searchByName(String textSearch) {
@@ -162,21 +171,23 @@ public class FoodDAO {
         return data.size();
     }
 
-    public List<Food> getTop4Sold(){
+    public List<Food> getTop4Sold() {
         List<Food> foodList = new ArrayList<>(data.values());
-        foodList.sort((f1,f2) -> Integer.compare(f2.getSold(), f1.getSold()));
+        foodList.sort((f1, f2) -> Integer.compare(f2.getSold(), f1.getSold()));
         List<Food> top4Sold = foodList.subList(0, 4);
         return top4Sold;
     }
-    public List<Food> getTop4View(){
+
+    public List<Food> getTop4View() {
         List<Food> foodList = new ArrayList<>(data.values());
-        foodList.sort((f1,f2) -> Integer.compare(f2.getViews(), f1.getViews()));
+        foodList.sort((f1, f2) -> Integer.compare(f2.getViews(), f1.getViews()));
         List<Food> top4View = foodList.subList(0, 4);
         return top4View;
     }
-    public List<Food> getTop4Propose(){
+
+    public List<Food> getTop4Propose() {
         List<Food> foodList = new ArrayList<>(data.values());
-        foodList.sort((f1,f2) -> f2.getCreatedAt().compareTo(f1.getCreatedAt()));
+        foodList.sort((f1, f2) -> f2.getCreatedAt().compareTo(f1.getCreatedAt()));
         List<Food> top4Propose = foodList.subList(0, 4);
         return top4Propose;
     }

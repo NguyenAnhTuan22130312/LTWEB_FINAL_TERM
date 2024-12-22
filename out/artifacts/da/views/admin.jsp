@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
     <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -21,52 +21,52 @@
         <h2>T^3 Restaurant</h2>
         <ul>
           <li>
-            <a class="active" href="Views/admin.jsp">
+            <a class="active" href="views/admin.jsp">
               <i class="fas fa-home"> </i>
               Trang tổng quan
             </a>
           </li>
           <li>
-            <a href="Views/food_service.jsp">
+            <a href="views/food_service.jsp">
               <i class="fas fa-utensils"> </i>
               Sản phẩm
             </a>
           </li>
             <li>
-                <a href="Views/banner.jsp">
+                <a href="views/banner.jsp">
                     <i class="fas fa-image">
                     </i>
                     Quản lý Banner
                 </a>
             </li>
           <li>
-            <a href="Views/customer_sevice.jsp">
+            <a href="views/customer_sevice.jsp">
               <i class="fas fa-users"> </i>
               Khách hàng
             </a>
           </li>
           <li>
-            <a href="Views/order.jsp">
+            <a href="views/order.jsp">
               <i class="fas fa-shopping-cart"> </i>
               Đơn hàng
             </a>
           </li>
           <li>
-            <a href="Views/statistical.jsp">
+            <a href="views/statistical.jsp">
               <i class="fas fa-chart-bar"> </i>
               Thống kê
             </a>
           </li>
 
           <li>
-            <a href="Views/discount.jsp">
+            <a href="views/discount.jsp">
               <i class="fas fa-chart-bar"> </i>
               Quản lý mã giảm giá
             </a>
           </li>
 
           <li>
-            <a id="logout" href="Views/newhome.jsp">
+            <a id="logout" href="views/newhome.jsp">
               <i class="fas fa-sign-out-alt"> </i>
               Đăng xuất
             </a>
@@ -139,7 +139,7 @@
 
       </div>
     </div>
-    <script src="js/module_dangnhap.js"></script>
-    <script src="js/admin.js"></script>
+    <script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
+    <script src="${pageContext.request.contextPath}/js/admin.js"></script>
   </body>
 </html>

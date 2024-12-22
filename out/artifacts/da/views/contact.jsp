@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food T^3</title>
-    <link href='../Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
+    <link href='Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
 
 
-    <link rel="stylesheet" href="../css/newhome.css">
-    <link rel="stylesheet" href="../css/menu.css">
-    <link rel="stylesheet" href="../css/contact.css">
-    <link rel="stylesheet" href="../css/signinCssModule.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/newhome.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/menu.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/contact.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="../js/module_dangnhap.js" defer></script>
@@ -26,13 +26,13 @@
                 <div class="containerss">
                     <div class="left">
                         <div class="logo">
-                            <a href="../html/newhome.html">
-                                <img src="../Images/LOGO_V2.png" alt="Food store của Trung, Atuan, Atuan">
+                            <a href="views/newhome.jsp">
+                                <img src="Images/LOGO_V2.png" alt="Food store của Trung, Atuan, Atuan">
                             </a>
                         </div>
                     </div>
                     <div class="right">
-                        <a href="../html/signin.html" class="nav-item" id="login-link">
+                        <a href="views/signin.jsp" class="nav-item" id="login-link">
                             <i class="fa-solid fa-user"></i> Đăng Nhập
                         </a>
                         <div class="user-menu" id="user-menu" style="display: none">
@@ -41,20 +41,20 @@
                                 Tên người dùng
                             </a>
                             <div class="submenu" id="submenu">
-                                <a href="../html/admin.html" id="admin-link" style="display: none">Quản trị</a>
-                                <a href="../html/UserInformation.html" id="user-link" style="display: none">Thông
+                                <a href="views/admin.jsp" id="admin-link" style="display: none">Quản trị</a>
+                                <a href="views/UserInformation.jsp" id="user-link" style="display: none">Thông
                                     tin</a>
                                 <a href="#" id="logout">Đăng xuất</a>
                             </div>
                         </div>
                         <div class="nav_item_shop">
-                            <a href="../html/PurchaseOrder.html" class="nav-item">
+                            <a href="views/PurchaseOrder.jsp" class="nav-item">
                                 <i class="fa-solid fa-truck-fast"></i> Đơn hàng
                             </a>
                             <a href="#" class="count">2</a>
                         </div>
                         <div class="nav_item_shop">
-                            <a href="../html/cart.html" class="nav-item">
+                            <a href="views/cart.jsp" class="nav-item">
                                 <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                             </a>
                             <a href="#" class="count">8</a>
@@ -65,24 +65,24 @@
                     <div class="menu">
                         <ul class="menu-list">
                             <li class="menu-item">
-                                <a href="../html/allMenu.html" class="tabbar"> <i class="fa-solid fa-bars"></i>Thực đơn</a>
+                                <a href="views/allMenu.jsp" class="tabbar"> <i class="fa-solid fa-bars"></i>Thực đơn</a>
                                 <ul class="submenu">
-                                    <li><a href="../html/allMenu.html"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
+                                    <li><a href="views/allMenu.jsp"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
                                     </li>
-                                    <li><a href="../html/menu_com.html"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
+                                    <li><a href="views/menu_com.jsp"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
                                     </li>
-                                    <li><a href="../html/menu_bun.html"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
+                                    <li><a href="views/menu_bun.jsp"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
                                     </li>
-                                    <li><a href="../html/menu_pho.html"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
+                                    <li><a href="views/menu_pho.jsp"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
                                     </li>
-                                    <li><a href="../html/menu_nuoc.html"><i class="fa-solid fa-glass-water"></i>Nước</a>
+                                    <li><a href="views/menu_nuoc.jsp"><i class="fa-solid fa-glass-water"></i>Nước</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="menu-item"><a href="../html/newhome.html">Trang chủ</a></li>
+                            <li class="menu-item"><a href="views/newhome.jsp">Trang chủ</a></li>
                             
-                            <li class="menu-item"><a href="../html/about.html">Giới thiệu</a></li>
-                            <li class="menu-item"><a href="../html/contact.html">Liên hệ</a></li>
+                            <li class="menu-item"><a href="views/about.jsp">Giới thiệu</a></li>
+                            <li class="menu-item"><a href="views/contact.jsp">Liên hệ</a></li>
                         </ul>
                     </div>
                     <div class="search">
@@ -145,19 +145,19 @@
             </div>
             <div class="content_section_bottom">
                 <div class="card_bottom">
-                    <img src="../Images/home/pic1.jpg" />
+                    <img src="Images/home/pic1.jpg" />
                     <div class="text">Nguyên liệu tươi mới</div>
                 </div>
                 <div class="card_bottom">
-                    <img src="../Images/home/pic2.jpg" />
+                    <img src="Images/home/pic2.jpg" />
                     <div class="text">Món ăn ngon miệng</div>
                 </div>
                 <div class="card_bottom">
-                    <img src="../Images/home/pic3.jpg" />
+                    <img src="Images/home/pic3.jpg" />
                     <div class="text">Đóng gói tiện lợi</div>
                 </div>
                 <div class="card_bottom">
-                    <img src="../Images/home/pic4.jpg" />
+                    <img src="Images/home/pic4.jpg" />
                     <div class="text">Giao hàng tận nơi</div>
                 </div>
     
@@ -191,7 +191,7 @@
             </div>
         </div>
     </div>
-    <script src="../js/home.js">
+    <script src="js/home.js">
 
     </script>
 </body>

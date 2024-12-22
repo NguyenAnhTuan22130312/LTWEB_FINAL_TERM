@@ -13,11 +13,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../css/cart.css" />
-    <link rel="stylesheet" href="../css/signinCssModule.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cart.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css" />
     <title>Giỏ hàng</title>
-    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <script src="../js/module_dangnhap.js" defer></script>
+    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
+    <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
   </head>
 
   <body>
@@ -27,16 +27,16 @@
           <div class="containerss">
             <div class="left">
               <div class="logo">
-                <a href="../html/newhome.html">
+                <a href="views/newhome.jsp">
                   <img
-                    src="../Images/LOGO_V2.png"
+                    src="Images/LOGO_V2.png"
                     alt="Food store của Trung, Atuan, Atuan"
                   />
                 </a>
               </div>
             </div>
             <div class="right">
-              <a href="../html/signin.html" class="nav-item" id="login-link">
+              <a href="views/signin.jsp" class="nav-item" id="login-link">
                 <i class="fa-solid fa-user"></i> Đăng Nhập
               </a>
               <div class="user-menu" id="user-menu" style="display: none">
@@ -46,13 +46,13 @@
                 </a>
                 <div class="submenu" id="submenu">
                   <a
-                    href="../html/admin.html"
+                    href="views/admin.jsp"
                     id="admin-link"
                     style="display: none"
                     >Quản trị</a
                   >
                   <a
-                    href="../html/UserInformation.html"
+                    href="views/UserInformation.jsp"
                     id="user-link"
                     style="display: none"
                     >Thông tin</a
@@ -61,13 +61,13 @@
                 </div>
               </div>
               <div class="nav_item_shop">
-                <a href="../html/PurchaseOrder.html" class="nav-item">
+                <a href="views/PurchaseOrder.jsp" class="nav-item">
                     <i class="fa-solid fa-truck-fast"></i> Đơn hàng
                 </a>
                 <a href="#" class="count">2</a>
             </div>
               <div class="nav_item_shop">
-                <a href="../html/cart.html" class="nav-item">
+                <a href="views/cart.jsp" class="nav-item">
                   <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                 </a>
                 <a href="#" class="count">8</a>
@@ -78,46 +78,46 @@
             <div class="menu">
               <ul class="menu-list">
                 <li class="menu-item">
-                  <a href="../html/allMenu.html" class="tabbar">
+                  <a href="views/allMenu.jsp" class="tabbar">
                     <i class="fa-solid fa-bars"></i>Thực đơn</a
                   >
                   <ul class="submenu">
                     <li>
-                      <a href="../html/allMenu.html"
+                      <a href="views/allMenu.jsp"
                         ><i class="fa-solid fa-bowl-rice"></i>Tất cả</a
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_com.html"
+                      <a href="views/menu_com.jsp"
                         ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_bun.html"
+                      <a href="views/menu_bun.jsp"
                         ><i class="fa-solid fa-bowl-food"></i>Món bún</a
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_pho.html"
+                      <a href="views/menu_pho.jsp"
                         ><i class="fa-solid fa-bowl-food"></i>Món phở</a
                       >
                     </li>
                     <li>
-                      <a href="../html/menu_nuoc.html"
+                      <a href="views/menu_nuoc.jsp"
                         ><i class="fa-solid fa-glass-water"></i>Nước</a
                       >
                     </li>
                   </ul>
                 </li>
                 <li class="menu-item">
-                  <a href="../html/newhome.html">Trang chủ</a>
+                  <a href="views/newhome.jsp">Trang chủ</a>
                 </li>
                 
                 <li class="menu-item">
-                  <a href="../html/about.html">Giới thiệu</a>
+                  <a href="views/about.jsp">Giới thiệu</a>
                 </li>
                 <li class="menu-item">
-                  <a href="../html/contact.html">Liên hệ</a>
+                  <a href="views/contact.jsp">Liên hệ</a>
                 </li>
               </ul>
             </div>
@@ -162,7 +162,7 @@
                 <td>Phở bò tái</td>
                 <td>
                   <img
-                    src="../Images/Food/Pho/Pho-bo-tai.png"
+                    src="Images/Food/Pho/Pho-bo-tai.png"
                     alt="pho"
                     class="product-img"
                   />
@@ -189,7 +189,7 @@
                 <td>Bún thịt nướng</td>
                 <td>
                   <img
-                    src="../Images/Food/Bun/Bun-thit-nuong.png"
+                    src="Images/Food/Bun/Bun-thit-nuong.png"
                     alt="bun"
                     class="product-img"
                   />
@@ -216,7 +216,7 @@
                 <td>Trà chanh giã tay</td>
                 <td>
                   <img
-                    src="../Images/Food/nuoc/Tra_chanh_gia_tay.png"
+                    src="Images/Food/nuoc/Tra_chanh_gia_tay.png"
                     alt="nuoc"
                     class="product-img"
                   />
@@ -238,7 +238,7 @@
           <div class="cart-buttons">
             <button
               class="continue-btn"
-              onclick="window.location.href='../html/newhome.jsp'"
+              onclick="window.location.href='views/newhome.jsp'"
             >
               ← Tiếp tục xem sản phẩm
             </button>
@@ -259,7 +259,7 @@
           </div>
           <button
             class="checkout-btn"
-            onclick="window.location.href='../html/check-out.html'"
+            onclick="window.location.href='views/check-out.jsp'"
           >
             Tiến hành thanh toán
           </button>
@@ -308,6 +308,6 @@
       </div>
     </div>
 
-    <script src="../js/cart.js"></script>
+    <script src="${pageContext.request.contextPath}/js/cart.js"></script>
   </body>
 </html>
