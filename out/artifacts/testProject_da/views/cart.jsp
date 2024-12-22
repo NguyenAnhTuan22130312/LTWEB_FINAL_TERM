@@ -5,132 +5,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
+    <title>Giỏ hàng</title>
+    <link href="${pageContext.request.contextPath}/Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cart.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css" />
-    <title>Giỏ hàng</title>
-    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
     <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
   </head>
 
   <body>
-    <div id="header">
-      <div class="containerheaderAll">
-        <div class="containers">
-          <div class="containerss">
-            <div class="left">
-              <div class="logo">
-                <a href="views/newhome.jsp">
-                  <img
-                    src="Images/LOGO_V2.png"
-                    alt="Food store của Trung, Atuan, Atuan"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="right">
-              <a href="views/signin.jsp" class="nav-item" id="login-link">
-                <i class="fa-solid fa-user"></i> Đăng Nhập
+  <div id="header">
+    <div class="containerheaderAll">
+      <div class="containers">
+        <div class="containerss">
+          <div class="left">
+            <div class="logo">
+              <a href="home">
+                <img
+                        src="${pageContext.request.contextPath}/Images/LOGO_V2.png"
+                        alt="Food store của Trung, Atuan, Atuan"
+                />
               </a>
-              <div class="user-menu" id="user-menu" style="display: none">
-                <i class="fa-solid fa-user"></i>
-                <a href="#" class="user-name" id="user-name">
-                  Tên người dùng
-                </a>
-                <div class="submenu" id="submenu">
-                  <a
-                    href="views/admin.jsp"
-                    id="admin-link"
-                    style="display: none"
-                    >Quản trị</a
-                  >
-                  <a
-                    href="views/UserInformation.jsp"
-                    id="user-link"
-                    style="display: none"
-                    >Thông tin</a
-                  >
-                  <a href="#" id="logout">Đăng xuất</a>
-                </div>
-              </div>
-              <div class="nav_item_shop">
-                <a href="views/PurchaseOrder.jsp" class="nav-item">
-                    <i class="fa-solid fa-truck-fast"></i> Đơn hàng
-                </a>
-                <a href="#" class="count">2</a>
-            </div>
-              <div class="nav_item_shop">
-                <a href="views/cart.jsp" class="nav-item">
-                  <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
-                </a>
-                <a href="#" class="count">8</a>
-              </div>
             </div>
           </div>
-          <div class="bottom">
-            <div class="menu">
-              <ul class="menu-list">
-                <li class="menu-item">
-                  <a href="views/allMenu.jsp" class="tabbar">
-                    <i class="fa-solid fa-bars"></i>Thực đơn</a
-                  >
-                  <ul class="submenu">
-                    <li>
-                      <a href="views/allMenu.jsp"
-                        ><i class="fa-solid fa-bowl-rice"></i>Tất cả</a
-                      >
-                    </li>
-                    <li>
-                      <a href="views/menu_com.jsp"
-                        ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
-                      >
-                    </li>
-                    <li>
-                      <a href="views/menu_bun.jsp"
-                        ><i class="fa-solid fa-bowl-food"></i>Món bún</a
-                      >
-                    </li>
-                    <li>
-                      <a href="views/menu_pho.jsp"
-                        ><i class="fa-solid fa-bowl-food"></i>Món phở</a
-                      >
-                    </li>
-                    <li>
-                      <a href="views/menu_nuoc.jsp"
-                        ><i class="fa-solid fa-glass-water"></i>Nước</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="menu-item">
-                  <a href="views/newhome.jsp">Trang chủ</a>
-                </li>
-                
-                <li class="menu-item">
-                  <a href="views/about.jsp">Giới thiệu</a>
-                </li>
-                <li class="menu-item">
-                  <a href="views/contact.jsp">Liên hệ</a>
-                </li>
-              </ul>
+          <div class="right">
+            <c:if test="${sessionScope.currentUser == null}">
+              <a href="login" class="nav-item" id="login-link">
+                <i class="fa-solid fa-user"></i> Đăng Nhập
+              </a>
+            </c:if>
+
+            <c:if test="${sessionScope.currentUser != null}">
+              <div class="user-menu" id="user-menu" >
+                <i class="fa-solid fa-user"></i>
+                <a href="#" class=" user-name" id="user-name">
+                    ${sessionScope.currentUser.userName}
+                </a>
+                <div class="submenu" id="submenu">
+                  <c:if test="${sessionScope.currentUser.idRole == 1}">
+                    <a href="views/admin.jsp" id="admin-link">Quản trị</a>
+                  </c:if>
+                  <c:if test="${sessionScope.currentUser.idRole == 2}">
+                    <a href="views/UserInformation.jsp" id="user-link">Thông tin</a>
+                  </c:if>
+                  <a href="logout" id="logout">Đăng xuất</a>
+                </div>
+              </div>
+            </c:if>
+            <div class="nav_item_shop">
+              <a href="views/PurchaseOrder.jsp" class="nav-item">
+                <i class="fa-solid fa-truck-fast"></i> Đơn hàng
+              </a>
+              <a href="#" class="count">2</a>
             </div>
-            <div class="search">
-              <input type="text" placeholder="Tìm kiếm món ăn" />
-              <button type="submit">
-                <i class="fa-solid fa-search"></i>
-              </button>
+            <div class="nav_item_shop">
+              <a href="shoppingcart" class="nav-item">
+                <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
+              </a>
+              <a href="shoppingcart" class="count">8</a>
             </div>
           </div>
         </div>
+        <div class="bottom">
+          <div class="menu">
+            <ul class="menu-list">
+              <li class="menu-item">
+                <a href="allmenu" class="tabbar">
+                  <i class="fa-solid fa-bars"></i>Thực đơn</a
+                >
+                <ul class="submenu">
+                  <li>
+                    <a href="allmenu"
+                    ><i class="fa-solid fa-bowl-rice"></i>Tất cả</a
+                    >
+                  </li>
+                  <c:forEach var="category" items="${listC}">
+                    <li>
+                      <a href="allmenu?idc=${category.idCategory}"
+                      ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a
+                      >
+                    </li>
+                  </c:forEach>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a href="home">Trang chủ</a>
+              </li>
+
+              <li class="menu-item">
+                <a href="views/about.jsp">Giới thiệu</a>
+              </li>
+              <li class="menu-item">
+                <a href="views/contact.jsp">Liên hệ</a>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="search">
+            <form action="search" method="post">
+              <input name="text" type="text" placeholder="Tìm kiếm món ăn"/>
+              <button type="submit">
+                <i class="fa-solid fa-search"></i>
+              </button>
+            </form>
+          </div>
+
+        </div>
       </div>
     </div>
+  </div>
 
     <div id="content_section">
       <div class="cart-container">
@@ -237,10 +222,8 @@
           </table>
           <div class="cart-buttons">
             <button
-              class="continue-btn"
-              onclick="window.location.href='views/newhome.jsp'"
-            >
-              ← Tiếp tục xem sản phẩm
+              class="continue-btn">
+              <a href="home">← Tiếp tục xem sản phẩm</a>
             </button>
           </div>
         </div>
