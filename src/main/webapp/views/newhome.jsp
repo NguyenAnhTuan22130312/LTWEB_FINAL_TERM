@@ -29,22 +29,29 @@
                         </div>
                     </div>
                     <div class="right">
-                        <a href="signin.jsp" class="nav-item" id="login-link">
-                            <i class="fa-solid fa-user"></i> Đăng Nhập
-                        </a>
-                        <div class="user-menu" id="user-menu" style="display: none;">
-                            <i class="fa-solid fa-user"></i>
-                            <a href="#" class=" user-name" id="user-name">
-                                Tên người dùng
+                        <c:if test="${sessionScope.currentUser == null}">
+                            <a href="login" class="nav-item" id="login-link">
+                                <i class="fa-solid fa-user"></i> Đăng Nhập
                             </a>
-                            <div class="submenu" id="submenu">
-                                <a href="admin.jsp" id="admin-link" style="display: none;">Quản trị</a>
-                                <a href="UserInformation.jsp" id="user-link" style="display: none;">Thông tin</a>
-                                <a href="#" id="logout">Đăng xuất</a>
+                        </c:if>
 
+                        <c:if test="${sessionScope.currentUser != null}">
+                            <div class="user-menu" id="user-menu" >
+                                <i class="fa-solid fa-user"></i>
+                                <a href="#" class=" user-name" id="user-name">
+                                        ${sessionScope.currentUser.userName}
+                                </a>
+                                <div class="submenu" id="submenu">
+                                    <c:if test="${sessionScope.currentUser.idRole == 1}">
+                                        <a href="views/admin.jsp" id="admin-link">Quản trị</a>
+                                    </c:if>
+                                    <c:if test="${sessionScope.currentUser.idRole == 2}">
+                                        <a href="views/UserInformation.jsp" id="user-link">Thông tin</a>
+                                    </c:if>
+                                    <a href="logout" id="logout">Đăng xuất</a>
+                                </div>
                             </div>
-                        </div>
-                        
+                        </c:if>
                         <div class="nav_item_shop">
                             <a href="views/PurchaseOrder.jsp" class="nav-item">
                                 <i class="fa-solid fa-truck-fast"></i> Đơn hàng

@@ -37,7 +37,7 @@ public class LoginController extends HttpServlet {
         }else{
             HttpSession session = request.getSession();
             session.setAttribute("currentUser", account);
-            request.getRequestDispatcher("allmenu").forward(request, response);
+            response.sendRedirect("home");
         }
 
     }
