@@ -9,19 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="update home">
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="da fix xong trang new home va allmenu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/FoodDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/FoodDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/services/FoodServiceListFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/services/FoodServiceListFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/newhome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/FoodDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/FoodDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/ReviewDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/ReviewDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/FoodServiceListFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/FoodServiceListFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/about.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/contact.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/about.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/contact.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +85,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/Nam3HocKy1/BTLapTrinhWeb/test2/LTWEB_FINAL_TERM",
+    "last_opened_file_path": "G:/Nam3HocKy1/BTLapTrinhWeb/lab5/lab4",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -222,7 +215,7 @@
       <workItem from="1734804965306" duration="21000" />
       <workItem from="1734809321924" duration="2207000" />
       <workItem from="1734887135268" duration="1239000" />
-      <workItem from="1734895809052" duration="6492000" />
+      <workItem from="1734895809052" duration="7910000" />
     </task>
     <task id="LOCAL-00001" summary="update newhome, food">
       <option name="closed" value="true" />
@@ -240,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734899532346</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="da fix xong trang new home va allmenu">
+      <option name="closed" value="true" />
+      <created>1734903568528</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734903568528</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +262,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="update newhome, food" />
     <MESSAGE value="update home" />
-    <option name="LAST_COMMIT_MESSAGE" value="update home" />
+    <MESSAGE value="da fix xong trang new home va allmenu" />
+    <option name="LAST_COMMIT_MESSAGE" value="da fix xong trang new home va allmenu" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

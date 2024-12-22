@@ -31,9 +31,10 @@
               <div class="logo">
                 <a href="views/newhome.jsp">
                   <img
-                    src="Images/LOGO_V2.png"
-                    alt="Food store của Trung, Atuan, Atuan"
+                          src="<c:url value='/Images/LOGO_V2.png' />"
+                          alt="Food store của Trung, Atuan, Atuan"
                   />
+
                 </a>
               </div>
             </div>
@@ -147,18 +148,20 @@
         <div class="right_content">
           <video autoplay muted loop>
             <source
-              src="Videos/[appsgolem.com][00-00-00][00-00-16]_Miami_s_Best_New_Chef_is_Mak.mp4"
-              type="video/mp4"
+                    src="<c:url value='/Videos/[appsgolem.com][00-00-00][00-00-16]_Miami_s_Best_New_Chef_is_Mak.mp4' />"
+                    type="video/mp4"
             />
+            Trình duyệt của bạn không hỗ trợ video.
           </video>
         </div>
+
       </div>
 
       <div class="allInfo">
         <div class="text2">Quản Lý Cửa Hàng</div>
         <div class="card-container">
           <div class="card-info">
-            <img src="Images/team/trung_han.jpg" alt="Hình ảnh cá nhân" />
+            <img src="<c:url value="/Images/team/trung_han.jpg" />" alt="Hình ảnh cá nhân" />
             <div class="info">
               <h3>Hán Hữu Trung</h3>
               <p>MSSV: 22130302</p>
@@ -168,7 +171,7 @@
 
           <div class="card-info">
             <img
-              src="Images/team/tuan_22130311.jpg"
+              src="<c:url value="/Images/team/tuan_22130311.jpg"/>"
               alt="Hình ảnh cá nhân"
             />
             <div class="info">
@@ -180,7 +183,7 @@
 
           <div class="card-info">
             <img
-              src="Images/team/tuan_22130312.jpg"
+              src="<c:url value="/Images/team/tuan_22130312.jpg"/> "
               alt="Hình ảnh cá nhân"
             />
             <div class="info">
@@ -202,19 +205,19 @@
       </div>
       <div class="content_section_bottom">
           <div class="card_bottom">
-              <img src="Images/home/pic1.jpg" />
+              <img src="<c:url value="/Images/home/pic1.jpg"/> " />
               <div class="text">Nguyên liệu tươi mới</div>
           </div>
           <div class="card_bottom">
-              <img src="Images/home/pic2.jpg" />
+              <img src="<c:url value="/Images/home/pic2.jpg"/>" />
               <div class="text">Món ăn ngon miệng</div>
           </div>
           <div class="card_bottom">
-              <img src="Images/home/pic3.jpg" />
+              <img src="<c:url value="/Images/home/pic3.jpg"/>" />
               <div class="text">Đóng gói tiện lợi</div>
           </div>
           <div class="card_bottom">
-              <img src="Images/home/pic4.jpg" />
+              <img src="<c:url value="/Images/home/pic4.jpg"/> "/>
               <div class="text">Giao hàng tận nơi</div>
           </div>
 

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food T^3</title>
-    <link href='Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
+    <link href="${pageContext.request.contextPath}/Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
 
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/newhome.css">
@@ -27,7 +27,12 @@
                     <div class="left">
                         <div class="logo">
                             <a href="views/newhome.jsp">
-                                <img src="Images/LOGO_V2.png" alt="Food store của Trung, Atuan, Atuan">
+                                <img
+                                        src="<c:url value='/Images/LOGO_V2.png' />"
+                                        alt="Food store của Trung, Atuan, Atuan"
+                                />
+
+
                             </a>
                         </div>
                     </div>
