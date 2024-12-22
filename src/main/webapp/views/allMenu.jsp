@@ -142,7 +142,7 @@
             >
             <a href="views/allMenu.jsp"
             >
-                <div class="category-item">Món được ưa thích</div>
+                <div class="category-item">Món được đánh giá cao</div>
             </a
             >
             <a href="views/allMenu.jsp"
@@ -160,7 +160,11 @@
                 <div class="category-item">Món bán chạy</div>
             </a
             >
-
+            <c:forEach var="category" items="${listC}">
+                <a href="allmenu?idc=${category.idCategory}">
+                    <div class="category-item">${category.nameCategory}</div>
+                </a>
+            </c:forEach>
         </div>
     </div>
 
