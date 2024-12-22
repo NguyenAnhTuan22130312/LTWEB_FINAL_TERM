@@ -1,0 +1,301 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food T^3</title>
+    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="css/module_header_footer.css" />
+    <link rel="stylesheet" href="css/module_informationuser.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <script src="js/module_dangnhap.js" defer></script>
+  </head>
+
+  <body>
+    <div id="header">
+      <div class="containerheaderAll">
+        <div class="containers">
+          <div class="containerss">
+            <div class="left">
+              <div class="logo">
+                <a href="../html/newhome.html">
+                  <img
+                    src="../Images/LOGO_V2.png"
+                    alt="Food store của Trung, Atuan, Atuan"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="right">
+              <a href="../html/signin.html" class="nav-item" id="login-link">
+                <i class="fa-solid fa-user"></i> Đăng Nhập
+              </a>
+              <div class="user-menu" id="user-menu" style="display: none">
+                <i class="fa-solid fa-user"></i>
+                <a href="#" class="user-name" id="user-name">
+                  Tên người dùng
+                </a>
+                <div class="submenu" id="submenu" style="display: none">
+                  <a
+                    href="../html/admin.html"
+                    id="admin-link"
+                    style="display: none"
+                    >Quản trị</a
+                  >
+                  <a
+                    href="../html/info.html"
+                    id="user-link"
+                    style="display: none"
+                    >Thông tin</a
+                  >
+                  <a href="#" id="logout">Đăng xuất</a>
+                </div>
+              </div>
+              <div class="nav_item_shop">
+                <a href="../html/PurchaseOrder.html" class="nav-item">
+                  <i class="fa-solid fa-truck-fast"></i> Đơn hàng
+                </a>
+                <a href="#" class="count">2</a>
+              </div>
+              <div class="nav_item_shop">
+                <a href="../html/cart.html" class="nav-item">
+                  <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
+                </a>
+                <a href="#" class="count">8</a>
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="menu">
+              <ul class="menu-list">
+                <li class="menu-item">
+                  <a href="../html/allMenu.html" class="tabbar">
+                    <i class="fa-solid fa-bars"></i>Thực đơn</a
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <a href="../html/allMenu.html"
+                        ><i class="fa-solid fa-bowl-rice"></i>Tất cả</a
+                      >
+                    </li>
+                    <li>
+                      <a href="../html/menu_com.html"
+                        ><i class="fa-solid fa-bowl-rice"></i>Món cơm</a
+                      >
+                    </li>
+                    <li>
+                      <a href="../html/menu_bun.html"
+                        ><i class="fa-solid fa-bowl-food"></i>Món bún</a
+                      >
+                    </li>
+                    <li>
+                      <a href="../html/menu_pho.html"
+                        ><i class="fa-solid fa-bowl-food"></i>Món phở</a
+                      >
+                    </li>
+                    <li>
+                      <a href="../html/menu_nuoc.html"
+                        ><i class="fa-solid fa-glass-water"></i>Nước</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <a href="../html/newhome.html">Trang chủ</a>
+                </li>
+                
+                <li class="menu-item">
+                  <a href="../html/about.html">Giới thiệu</a>
+                </li>
+                <li class="menu-item">
+                  <a href="../html/contact.html">Liên hệ</a>
+                </li>
+              </ul>
+            </div>
+            <div class="search">
+              <input type="text" placeholder="Tìm kiếm món ăn" />
+              <button type="submit">
+                <i class="fa-solid fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Xử lý content\  -->
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="usernamediv">Thông tin</div>
+        <div class="linename"></div>
+        <ul>
+          <li>
+            <a href="#" onclick="showContent('profile')">
+              <i class="fas fa-id-card"></i>
+              <div class="namemenu">Hồ Sơ</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="showContent('address')">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="namemenu">Địa Chỉ</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="showContent('password')">
+              <i class="fas fa-lock"></i>
+              <div class="namemenu">Đổi Mật Khẩu</div>
+            </a>
+          </li>
+          <li>
+            <a href="../html/PurchaseOrder.html">
+              <i class="fas fa-shopping-cart"></i>
+              <div class="namemenu">Đơn Mua</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="showContent('voucher')">
+              <i class="fas fa-ticket-alt"></i>
+              <div class="namemenu">Kho Voucher</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Content -->
+      <div class="content">
+        <!-- Hồ Sơ -->
+        <div id="profile" class="content-section">
+          <h2>Hồ Sơ Của Tôi</h2>
+          <div class="linehead"></div>
+          <form>
+            <div class="form-group">
+              <label> Tên đăng nhập </label>
+              <input id="username" disabled type="text" value="hant1234" />
+            </div>
+            <div class="form-group">
+              <label> Tên </label>
+              <input id="name" disabled type="text" value="Han Trung" />
+            </div>
+            <div class="form-group">
+              <label> Email </label>
+              <input id="email" disabled type="email" value="ng************@gmail.com" />
+            </div>
+            <div class="form-group">
+              <label> Số điện thoại </label>
+              <input id="phone" disabled type="text" value="********72" />
+            </div>
+            <div class="form-group">
+              <label> Ngày sinh </label>
+              <input id="birthdate" disabled type="date" value="2000-01-01" />
+            </div>
+            <div class="form-group">
+              <label> Giới tính </label>
+              <div class="gender-picker">
+                <label>
+                  <input type="radio" name="gender" value="male" checked />
+                  Nam
+                </label>
+                <label>
+                  <input type="radio" name="gender" value="female" />
+                  Nữ
+                </label>
+                <label>
+                  <input type="radio" name="gender" value="other" />
+                  Khác
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <button id="edit-save-btn" type="button">Sửa</button>
+  
+            </div>
+          </form>
+        </div>
+        <!-- Địa Chỉ -->
+        <div id="address" class="content-section hidden">
+          <h2>Địa Chỉ Của Tôi</h2>
+          <div class="linehead"></div>
+          <form>
+              <div class="form-group">
+                  <label for="inplocate">Địa chỉ nhận hàng</label>
+                  <textarea id="inplocate" disabled class="inplocate">123 Đường ABC, Quận X</textarea>
+                  <button id="edit-save-textarea-btn" type="button">Sửa</button>
+                </div>
+                
+          </form>
+        </div>
+        <!-- Đổi Mật Khẩu -->
+        <div id="password" class="content-section hidden">
+          <h2>Đổi Mật Khẩu</h2>
+          <div class="linehead"></div>
+          <form>
+            <div class="form-group">
+              <label> Mật khẩu mới </label>
+              <input type="password" placeholder="Nhập mật khẩu mới" />
+            </div>
+            <div class="form-group">
+              <label> Xác nhận mật khẩu </label>
+              <input type="password" placeholder="Nhập lại mật khẩu mới" />
+            </div>
+            <div class="form-group">
+              <button class="save-btn" type="submit">Lưu</button>
+            </div>
+          </form>
+        </div>
+        <!-- Kho Voucher -->
+        <div id="voucher" class="content-section hidden">
+          <h2>Kho Voucher</h2>
+          <div class="linehead"></div>
+          <p>Không có voucher nào!</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="footer-container">
+        <div class="footer-info">
+          <div class="left">
+            <p>
+              <strong>Địa chỉ:</strong> Khu phố 6, Phường Linh Trung, TP. Thủ
+              Đức,
+            </p>
+            <p style="text-indent: 60px">Tp. Hồ Chí Minh.</p>
+            <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
+          </div>
+          <div class="right">
+            <p><strong>Hotline:</strong> 033 *** 1234</p>
+            <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
+            <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
+            <div class="social-icons">
+              <a href="#" target="_blank"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-social">
+          <div class="1">© 2024 Food T^3</div>
+          <div class="mid">
+            <a href="#">Chính sách hoạt động</a> |
+            <a href="#">Chính sách bảo mật thông tin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/module_dangnhap_UserInfor.js"></script>
+    <script src="js/UserInformation.js"></script>
+    
+  </body>
+</html>

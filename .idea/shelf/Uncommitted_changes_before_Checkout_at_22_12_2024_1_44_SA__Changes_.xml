@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_22_12_2024_1_44_SA_[Changes]" date="1734806686609" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_12_2024_1_44_SA_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 22/12/2024 1:44 SA [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/models/Food.class" />
+    <option name="AFTER_PATH" value="out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/models/Food.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_12_2024_1_44_SA_[Changes]/Food.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/context/DbContext.class" />
+    <option name="AFTER_PATH" value="out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/context/DbContext.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_12_2024_1_44_SA_[Changes]/DbContext.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" />
+    <option name="AFTER_PATH" value="out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_12_2024_1_44_SA_[Changes]/FoodController.class" />
+  </binary>
+</changelist>
