@@ -74,7 +74,7 @@
                             <li class="menu-item">
                                 <a href="allMenu.jsp" class="tabbar"> <i class="fa-solid fa-bars"></i>Thực đơn</a>
                                 <ul class="submenu">
-                                    <li><a href="allMenu.jsp"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
+                                    <li><a href="allmenu"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
                                     </li>
                                     <li><a href="views/menu_com.jsp"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
                                     </li>
