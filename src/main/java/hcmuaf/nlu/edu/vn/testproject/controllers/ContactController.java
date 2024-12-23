@@ -20,6 +20,10 @@ public class ContactController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        //khi nào chạy được session thì xóa command
+//        HttpSession session = request.getSession();
+//        Account account = (Account) session.getAttribute("account");
+//        Int id = account.getIdAcc();
         int id= 1;
         String name = request.getParameter("name");
         String email = request.getParameter("email");
