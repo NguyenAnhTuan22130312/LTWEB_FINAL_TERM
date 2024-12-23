@@ -115,7 +115,7 @@
                 <li class="menu-item">
                   <a href="home">Trang chủ</a>
                 </li>
-                
+
                 <li class="menu-item">
                   <a href="views/about.jsp">Giới thiệu</a>
                 </li>
@@ -201,7 +201,7 @@
       <div class="header-mon">
 
           <div class="tag">Hãy đến với chúng tôi vì chúng tôi có</div>
-          
+
       </div>
       <div class="content_section_bottom">
           <div class="card_bottom">

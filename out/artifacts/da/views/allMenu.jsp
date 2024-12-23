@@ -96,13 +96,13 @@
                                 <li><a href="allmenu?option=4"><i class="fa-solid fa-glass-water"></i>Nước</a>
                                 </li>
 
-<%--                                <c:forEach var="category" items="${listC}">--%>
-<%--                                    <li>--%>
-<%--                                        <a href="allmenu?idc=${category.idCategory}"--%>
-<%--                                        ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a--%>
-<%--                                        >--%>
-<%--                                    </li>--%>
-<%--                                </c:forEach>--%>
+                                <%--                                <c:forEach var="category" items="${listC}">--%>
+                                <%--                                    <li>--%>
+                                <%--                                        <a href="allmenu?idc=${category.idCategory}"--%>
+                                <%--                                        ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a--%>
+                                <%--                                        >--%>
+                                <%--                                    </li>--%>
+                                <%--                                </c:forEach>--%>
                             </ul>
                         </li>
                         <li class="menu-item">
@@ -120,8 +120,8 @@
 
 
                 <div class="search">
-                    <form action="search" method="post">
-                        <input name="text" type="text" placeholder="Tìm kiếm món ăn"/>
+                    <form action="search" method="get">
+                        <input value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
                         <button type="submit">
                             <i class="fa-solid fa-search"></i>
                         </button>
@@ -181,11 +181,11 @@
                 <div class="category-item">Nước uống</div>
             </a
             >
-<%--            <c:forEach var="category" items="${listC}">--%>
-<%--                <a href="allmenu?idc=${category.idCategory}">--%>
-<%--                    <div class="category-item">${category.nameCategory}</div>--%>
-<%--                </a>--%>
-<%--            </c:forEach>--%>
+            <%--            <c:forEach var="category" items="${listC}">--%>
+            <%--                <a href="allmenu?idc=${category.idCategory}">--%>
+            <%--                    <div class="category-item">${category.nameCategory}</div>--%>
+            <%--                </a>--%>
+            <%--            </c:forEach>--%>
         </div>
     </div>
 

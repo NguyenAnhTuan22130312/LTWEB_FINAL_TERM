@@ -58,10 +58,10 @@ public class FoodController extends HttpServlet {
         List<Food> foodList;
         int totalFoods;
 
-// Lấy giá trị option từ request
+        // Lấy giá trị option từ request
         String option = request.getParameter("option");
 
-// Nếu có option, ưu tiên lấy dữ liệu từ option
+        // Nếu có option, ưu tiên lấy dữ liệu từ option
         if (option != null && !option.isEmpty()) {
             foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
             totalFoods = foodList.size(); // Tổng số món theo option
