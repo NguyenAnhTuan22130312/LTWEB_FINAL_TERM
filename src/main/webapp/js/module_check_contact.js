@@ -60,3 +60,24 @@ document.querySelectorAll(".input-field").forEach(field => {
         field.placeholder = `Nhập ${field.getAttribute("name")}.`;
     });
 });
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Ngăn không cho form submit theo cách mặc định
+
+    const formData = new FormData(this);
+
+    fetch("/contactControll", {
+        method: "POST",
+        body: formData,
+    })
+        .then(response => response.text())
+        .then(data => {
+            // Hiển thị thông báo trả về từ server
+            document.getElementById("responseMessage").innerHTML = `<div class="alert alert-success">Gửi liên hệ thành công!</div>`;
+            this.reset(); // Xóa nội dung form sau khi gửi thành công
+        })
+        .catch(error => {
+            console.error("Lỗi:", error);
+            document.getElementById("responseMessage").innerHTML = `<div class="alert alert-danger">Gửi liên hệ thất bại, vui lòng thử lại!</div>`;
+        });
+});
+

@@ -117,7 +117,7 @@
         <div class="form-section">
             <h2>Liên hệ với chúng tôi</h2>
 
-            <form action="contact-controll" method="post">
+            <form method="post" action="contact-controll" >
             <div class="form-group">
                 <label for="name">Họ và Tên *</label>
                 <input

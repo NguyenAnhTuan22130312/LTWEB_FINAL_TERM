@@ -117,7 +117,7 @@
         <div class="form-section">
             <h2>Liên hệ với chúng tôi</h2>
 
-            <form action="contact-controll" method="post">
+            <form method="post" action="contact-controll" >
             <div class="form-group">
                 <label for="name">Họ và Tên *</label>
                 <input
@@ -139,11 +139,11 @@
                 />
             </div>
             <div class="form-group">
-                <label for="subject">Tiêu đề *</label>
+                <label for="title">Tiêu đề *</label>
                 <input
                         type="text"
-                        id="subject"
-                        name="subject"
+                        id="title"
+                        name="title"
                         placeholder="Nhập chủ đề."
                         class="input-field"
                 />
