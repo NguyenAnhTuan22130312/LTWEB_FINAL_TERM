@@ -6,7 +6,7 @@ document.querySelector(".submit-btn").addEventListener("click", function (e) {
     // Kiểm tra các trường nhập liệu
     const nameField = document.getElementById("name");
     if (!nameField.value.trim()) {
-        nameField.placeholder = "Họ và Tên không được để trống.";
+        nameField.placeholder = "Họ và Tên không được để trống."; // Thay đổi placeholder khi có lỗi
         nameField.classList.add("error");
         isValid = false;
     } else {
@@ -15,25 +15,25 @@ document.querySelector(".submit-btn").addEventListener("click", function (e) {
 
     const emailField = document.getElementById("email");
     if (!emailField.value.trim() || !validateEmail(emailField.value)) {
-        emailField.placeholder = "Vui lòng nhập email hợp lệ.";
+        emailField.placeholder = "Vui lòng nhập email hợp lệ."; // Thay đổi placeholder khi có lỗi
         emailField.classList.add("error");
         isValid = false;
     } else {
         emailField.classList.remove("error");
     }
 
-    const subjectField = document.getElementById("subject");
-    if (!subjectField.value.trim()) {
-        subjectField.placeholder = "Tiêu đề không được để trống.";
-        subjectField.classList.add("error");
+    const titleField = document.getElementById("title");
+    if (!titleField.value.trim()) {
+        titleField.placeholder = "Tiêu đề không được để trống."; // Thay đổi placeholder khi có lỗi
+        titleField.classList.add("error");
         isValid = false;
     } else {
-        subjectField.classList.remove("error");
+        titleField.classList.remove("error");
     }
 
     const messageField = document.getElementById("message");
     if (!messageField.value.trim()) {
-        messageField.placeholder = "Nội dung không được để trống.";
+        messageField.placeholder = "Nội dung không được để trống."; // Thay đổi placeholder khi có lỗi
         messageField.classList.add("error");
         isValid = false;
     } else {
@@ -42,8 +42,8 @@ document.querySelector(".submit-btn").addEventListener("click", function (e) {
 
     // Gửi form nếu hợp lệ
     if (isValid) {
-        alert("cảm ơn vì đã liên hệ với chúng tôi");
-        // document.querySelector("form").submit(); // Gửi form
+        alert("Cảm ơn vì đã liên hệ với chúng tôi!");
+        document.querySelector("form").submit(); // Gửi form (nếu cần)
     }
 });
 
@@ -57,27 +57,6 @@ function validateEmail(email) {
 document.querySelectorAll(".input-field").forEach(field => {
     field.addEventListener("input", function () {
         field.classList.remove("error");
-        field.placeholder = `Nhập ${field.getAttribute("name")}.`;
+        field.placeholder = `Nhập ${field.getAttribute("name")}.`; // Reset placeholder về mặc định
     });
 });
-document.getElementById("contactForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Ngăn không cho form submit theo cách mặc định
-
-    const formData = new FormData(this);
-
-    fetch("/contactControll", {
-        method: "POST",
-        body: formData,
-    })
-        .then(response => response.text())
-        .then(data => {
-            // Hiển thị thông báo trả về từ server
-            document.getElementById("responseMessage").innerHTML = `<div class="alert alert-success">Gửi liên hệ thành công!</div>`;
-            this.reset(); // Xóa nội dung form sau khi gửi thành công
-        })
-        .catch(error => {
-            console.error("Lỗi:", error);
-            document.getElementById("responseMessage").innerHTML = `<div class="alert alert-danger">Gửi liên hệ thất bại, vui lòng thử lại!</div>`;
-        });
-});
-

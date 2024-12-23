@@ -42,7 +42,7 @@ public class LoginDAO {
     public static void main(String[] args) {
         LoginDAO loginDAO = new LoginDAO();
         try {
-            Account account = loginDAO.login("anhtuan", "12345678");
+            Account account = loginDAO.login("trung", "12345678");
             if (account != null) {
                 System.out.println("Đăng nhập thành công!");
             } else {

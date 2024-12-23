@@ -105,7 +105,7 @@
         <div id="popup" class="popup hidden">
             <div class="popup_content">
           <span class="close_btn">
-            <i class="fa-solid fa-xmark"></i> 
+            <i class="fa-solid fa-xmark"></i>
           </span>
                 <h2>THÊM MÓN MỚI</h2>
                 <form id="new_item_form">

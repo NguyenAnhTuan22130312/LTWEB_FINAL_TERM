@@ -73,7 +73,15 @@
                         <a href="shoppingcart" class="nav-item">
                             <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                         </a>
-                        <a href="shoppingcart" class="count">8</a>
+                        <a href="shoppingcart" class="count">
+                            <%
+                                Integer cartCount = (Integer) session.getAttribute("cartCount");
+                                if (cartCount == null) {
+                                    cartCount = 0;
+                                }
+                            %>
+                            <%= cartCount %>
+                        </a>
                     </div>
                 </div>
             </div>

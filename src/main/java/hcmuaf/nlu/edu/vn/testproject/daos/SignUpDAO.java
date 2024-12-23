@@ -12,7 +12,7 @@ public class SignUpDAO {
 
 
     public static void signUp(String userName, String password, String email) {
-        String query = "INSERT INTO account (userName, pass, idRole,email) VALUES (?, ?, 2,?)";
+        String query = "INSERT INTO account (userName, pass, idRole) VALUES (?, ?, 2,?)";
         String queryAccDetail = "INSERT INTO accdetail (idAcc, fullName, phoneNumber, email, address, gender, birthDate, createdAt, UpdatedAt) VALUES (LAST_INSERT_ID(),NULL,NULL,?,NULL,NULL,NULL,NOW(), NOW() )";
         Connection con = null;
         PreparedStatement ps = null;

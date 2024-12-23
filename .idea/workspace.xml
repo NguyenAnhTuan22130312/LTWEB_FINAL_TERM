@@ -2,17 +2,35 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="testProject:da" />
+      <artifact name="da" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix link">
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/testProject_da.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/da.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/SignUpDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/SignUpDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/ContactController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/ContactController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/ShoppingCartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/SignUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/LoginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/LoginDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/ShoppingCart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/models/CartItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/js/module_check_contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/js/module_check_contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/contact.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/food_service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/food_service.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/signin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/ContactController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/LoginDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/SignUpDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/SignUpDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/ContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/ContactService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/module_check_contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/module_check_contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/contact.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +96,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ContactController.executor": "Run",
     "Application.ContactDao.executor": "Run",
+    "Application.ContactService.executor": "Run",
     "Application.LoginDAO.executor": "Run",
     "Application.MD5.executor": "Run",
     "Application.SignUpDAO.executor": "Run",
@@ -108,57 +128,18 @@
       <recent name="hcmuaf.nlu.edu.vn.testproject.daos" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.31">
-    <configuration name="LoginDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hcmuaf.nlu.edu.vn.testproject.daos.LoginDAO" />
-      <module name="testProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hcmuaf.nlu.edu.vn.testproject.daos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MD5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hcmuaf.nlu.edu.vn.testproject.libs.MD5" />
-      <module name="testProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hcmuaf.nlu.edu.vn.testproject.libs.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SignUpDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hcmuaf.nlu.edu.vn.testproject.daos.SignUpDAO" />
-      <module name="testProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hcmuaf.nlu.edu.vn.testproject.daos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Tomcat 10.1.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.31" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="testProject:da">
+        <artifact name="da">
           <settings>
-            <option name="CONTEXT_PATH" value="/testProject_da" />
+            <option name="CONTEXT_PATH" value="/da" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="6b339562-66f2-447c-8a41-ecb91eec732b" />
+        <option name="BASE_DIRECTORY_NAME" value="d6992c45-0e0f-4846-9f33-92e46302d987" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -166,7 +147,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="59846" />
+        <option name="DEBUG_PORT" value="57223" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -231,23 +212,10 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="testProject:da" />
+          <artifact name="da" />
         </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.LoginDAO" />
-      <item itemvalue="Application.MD5" />
-      <item itemvalue="Application.SignUpDAO" />
-      <item itemvalue="Tomcat Server.Tomcat 10.1.31" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.LoginDAO" />
-        <item itemvalue="Application.SignUpDAO" />
-        <item itemvalue="Application.MD5" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

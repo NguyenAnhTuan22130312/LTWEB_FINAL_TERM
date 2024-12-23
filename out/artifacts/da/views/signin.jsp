@@ -25,7 +25,7 @@
     <div class="container" id="container">
       <div class="form-container sign-up-container">
         <form action="signup" method="post">
-          <a href="views/newhome.jsp" class="back-to-home">
+          <a href="${pageContext.request.contextPath}/allmenu" class="back-to-home">
             <i class="fas fa-arrow-left"></i>
           </a>
           <h1>Tạo tài khoản</h1>
@@ -40,6 +40,9 @@
           <input name="pass" type="password" placeholder="Mật khẩu" />
           <button type="submit">Đăng ký</button>
         </form>
+        <c:if test="${not empty errorMessage}">
+          <p style="color: red;">${errorMessage}</p>
+        </c:if>
       </div>
       <div class="form-container sign-in-container">
         <form action="login" method="post">

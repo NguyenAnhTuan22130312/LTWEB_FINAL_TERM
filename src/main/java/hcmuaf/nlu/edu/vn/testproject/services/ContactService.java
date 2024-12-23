@@ -7,4 +7,5 @@ public class ContactService {
     public boolean sendContactSV(int id, String name, String email,String title,String message){
         return contactDao.sendContact(id, name, email, title, message);
     }
+
 }
