@@ -10,22 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix link">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/SignUpDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/libs/MD5.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/AddToCartController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/ShoppingCartController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/SignUpController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/LoginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/LoginDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/ShoppingCart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/models/CartItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/views/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/views/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/views/signin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/LoginDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/signin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/SignUpDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/SignUpDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/SignUpDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/SignUpDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
