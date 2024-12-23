@@ -17,6 +17,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="../js/module_dangnhap.js" defer></script>
+    <style>
+        .input-field::placeholder {
+            color: #ccc; /* Màu placeholder mặc định */
+        }
+
+        .input-field.error::placeholder {
+            color: red; /* Màu placeholder khi có lỗi */
+        }
+
+    </style>
 </head>
 
 <body>
@@ -106,33 +116,49 @@
     <div class="container">
         <div class="form-section">
             <h2>Liên hệ với chúng tôi</h2>
+
+            <form action="contact-controll" method="post">
             <div class="form-group">
-                <div>
-                    <label for="name">Họ và Tên *</label>
-                    <input type="text" id="name" placeholder="Nhập tên của bạn.">
-                </div>
-               
+                <label for="name">Họ và Tên *</label>
+                <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Nhập tên của bạn."
+                        class="input-field"
+                />
             </div>
             <div class="form-group">
-                <div>
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" placeholder="Nhập địa chỉ email của bạn.">
-                </div>
-            </div> 
-            <div class="form-group">
-                
-                <div>
-                    <label for="subject">Tiêu đề *</label>
-                    <input type="text" id="subject" placeholder="Nhập chủ đề.">
-                </div>
+                <label for="email">Email *</label>
+                <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Nhập địa chỉ email của bạn."
+                        class="input-field"
+                />
             </div>
             <div class="form-group">
-                <div class="full-width">
-                    <label for="message">Nội dung *</label>
-                    <textarea id="message" placeholder="Nhập yêu cầu của bạn."></textarea>
-                </div>
+                <label for="subject">Tiêu đề *</label>
+                <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Nhập chủ đề."
+                        class="input-field"
+                />
             </div>
-            <button class="submit-btn">Gửi <i class="fas fa-arrow-right"></i></button>
+            <div class="form-group">
+                <label for="message">Nội dung *</label>
+                <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Nhập yêu cầu của bạn."
+                        class="input-field"
+                ></textarea>
+            </div>
+            <button class="submit-btn">Gửi</button>
+            </form>
         </div>
         <div class="containerright">
             <iframe
@@ -199,6 +225,7 @@
     <script src="js/home.js">
 
     </script>
+    <script src="js/module_check_contact.js"></script>
 </body>
 
 </html>
