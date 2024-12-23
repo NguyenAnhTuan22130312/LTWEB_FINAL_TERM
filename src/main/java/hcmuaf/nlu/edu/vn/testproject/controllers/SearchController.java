@@ -28,6 +28,7 @@ public class SearchController extends HttpServlet {
         FoodDAO dao = new FoodDAO();
         List<Food> foodList = dao.searchByName(textSearch);
         request.setAttribute("list", foodList);
+        request.setAttribute("txtS", textSearch);
         request.getRequestDispatcher("views/allMenu.jsp").forward(request, response);
 
     }
