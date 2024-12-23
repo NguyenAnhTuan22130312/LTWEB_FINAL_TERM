@@ -1,13 +1,17 @@
 <%@ page import="hcmuaf.nlu.edu.vn.testproject.models.Food" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="hcmuaf.nlu.edu.vn.testproject.daos.ShoppingCart" %>
+<%@ page import="hcmuaf.nlu.edu.vn.testproject.models.CartItem" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
-  List<Food> cart = (List<Food>) session.getAttribute("cart");
+  ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
   if (cart == null) {
-    cart = new ArrayList<>();
+    cart = new ShoppingCart();
   }
+  // Lấy danh sách các món ăn từ giỏ hàng
+  List<CartItem> foodList = cart.getItems();
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,7 +153,7 @@
             <tbody id="cart-items-container" class="cart-body">
             <%
               int total = 0;
-              for (Food item : cart) {
+              for (Food item : foodList) {
                 int quantity = 1;  // Mặc định số lượng là 1 (có thể thay đổi sau)
                 int totalPrice = item.getPrice() * quantity;  // Tính giá trị của món ăn
                 total += totalPrice;  // Cập nhật tổng số tiền

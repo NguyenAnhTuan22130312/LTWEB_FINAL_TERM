@@ -1,5 +1,7 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers;
 
+import hcmuaf.nlu.edu.vn.testproject.daos.SignUpDAO;
+import hcmuaf.nlu.edu.vn.testproject.libs.MD5;
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.daos.LoginDAO;
 import jakarta.servlet.*;
@@ -24,15 +26,20 @@ public class SignUpController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String username = request.getParameter("username");
+        String email = request.getParameter("email");
         String password = request.getParameter("pass");
 
-        //thực hiện sign up
-        LoginDAO loginDAO = new LoginDAO();
-        Account account = loginDAO.checkUserExist(username);
+        if (username == null || password == null || email == null || username.trim().isEmpty() || password.trim().isEmpty() || email.trim().isEmpty()) {
+            request.setAttribute("errorMessage", "Vui lòng nhập đầy đủ thông tin");
+            request.getRequestDispatcher("views/signin.jsp").forward(request, response);
+            return;
+        }
+
+        Account account = SignUpDAO.checkUserExist(username);
         //nếu như chưa có tên người dùng nào
         if (account == null) {
-            loginDAO.signUp(username, password);
-            response.sendRedirect("allmenu");
+            SignUpDAO.signUp(username, password, email);
+            response.sendRedirect("login");
 
         }else {
             request.setAttribute("errorMessage", "Tên người dùng đã tồn tại.");

@@ -1,5 +1,6 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers;
 
+import hcmuaf.nlu.edu.vn.testproject.libs.MD5;
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.daos.LoginDAO;
 import jakarta.servlet.*;
@@ -26,7 +27,11 @@ public class LoginController extends HttpServlet {
         String username = request.getParameter("user");
         String password = request.getParameter("pass");
 
-
+        if (username == null || password == null || username.trim().isEmpty() || password.trim().isEmpty()) {
+            request.setAttribute("error", "Tên người dùng và mật khẩu không được để trống");
+            request.getRequestDispatcher("views/signin.jsp").forward(request, response);
+            return;
+        }
 
         LoginDAO dao = new LoginDAO();
         Account account = dao.login(username, password);
