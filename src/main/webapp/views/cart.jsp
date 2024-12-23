@@ -1,5 +1,18 @@
+<%@ page import="hcmuaf.nlu.edu.vn.testproject.models.Food" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="hcmuaf.nlu.edu.vn.testproject.daos.ShoppingCart" %>
+<%@ page import="hcmuaf.nlu.edu.vn.testproject.models.CartItem" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+  ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+  if (cart == null) {
+    cart = new ShoppingCart();
+  }
+  // Lấy danh sách các món ăn từ giỏ hàng
+  List<CartItem> foodList = cart.getItems();
+%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -138,87 +151,33 @@
               </tr>
             </thead>
             <tbody id="cart-items-container" class="cart-body">
-              <tr>
-                <td>
-                  <button class="delete-btn">
-                    <i class="fa-regular fa-trash-can"></i>
-                  </button>
-                </td>
-                <td>Phở bò tái</td>
-                <td>
-                  <img
-                    src="Images/Food/Pho/Pho-bo-tai.png"
-                    alt="pho"
-                    class="product-img"
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    value="1"
-                    min="1"
-                    class="quantity-input"
-                  />
-                </td>
-                <td>35.000₫</td>
-                <td>35.000₫</td>
-                <td></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <button class="delete-btn">
-                    <i class="fa-regular fa-trash-can"></i>
-                  </button>
-                </td>
-                <td>Bún thịt nướng</td>
-                <td>
-                  <img
-                    src="Images/Food/Bun/Bun-thit-nuong.png"
-                    alt="bun"
-                    class="product-img"
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    value="3"
-                    min="1"
-                    class="quantity-input"
-                  />
-                </td>
-                <td>25.000₫</td>
-                <td>75.000₫</td>
-                <td></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <button class="delete-btn">
-                    <i class="fa-regular fa-trash-can"></i>
-                  </button>
-                </td>
-                <td>Trà chanh giã tay</td>
-                <td>
-                  <img
-                    src="Images/Food/nuoc/Tra_chanh_gia_tay.png"
-                    alt="nuoc"
-                    class="product-img"
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    value="4"
-                    min="1"
-                    class="quantity-input"
-                  />
-                </td>
-                <td>80.000₫</td>
-                <td>80.000₫</td>
-                <td></td>
-              </tr>
+            <%
+              int total = 0;
+              for (Food item : foodList) {
+                int quantity = 1;  // Mặc định số lượng là 1 (có thể thay đổi sau)
+                int totalPrice = item.getPrice() * quantity;  // Tính giá trị của món ăn
+                total += totalPrice;  // Cập nhật tổng số tiền
+            %>
+            <tr>
+              <td>
+                <button class="delete-btn">
+                  <i class="fa-regular fa-trash-can"></i>
+                </button>
+              </td>
+              <td><%= item.getFoodName() %></td>
+              <td>
+                <img src="<%= item.getImg() %>" alt="<%= item.getFoodName() %>" class="product-img" />
+              </td>
+              <td>
+                <input type="number" value="<%= quantity %>" min="1" class="quantity-input" />
+              </td>
+              <td><%= item.getPrice() %>₫</td>
+              <td><%= totalPrice %>₫</td>
+              <td></td>
+            </tr>
+            <% } %>
             </tbody>
+
           </table>
           <div class="cart-buttons">
             <button

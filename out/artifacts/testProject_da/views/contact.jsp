@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food T^3</title>
-    <link href='Images/LOGO_V2.png' rel='icon' type='image/x-icon' />
+    <link href="${pageContext.request.contextPath}/Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
 
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/newhome.css">
@@ -17,6 +17,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="../js/module_dangnhap.js" defer></script>
+    <style>
+        .input-field::placeholder {
+            color: #ccc; /* Màu placeholder mặc định */
+        }
+
+        .input-field.error::placeholder {
+            color: red; /* Màu placeholder khi có lỗi */
+        }
+
+    </style>
 </head>
 
 <body>
@@ -27,7 +37,12 @@
                     <div class="left">
                         <div class="logo">
                             <a href="views/newhome.jsp">
-                                <img src="Images/LOGO_V2.png" alt="Food store của Trung, Atuan, Atuan">
+                                <img
+                                        src="<c:url value='/Images/LOGO_V2.png' />"
+                                        alt="Food store của Trung, Atuan, Atuan"
+                                />
+
+
                             </a>
                         </div>
                     </div>
@@ -65,24 +80,24 @@
                     <div class="menu">
                         <ul class="menu-list">
                             <li class="menu-item">
-                                <a href="views/allMenu.jsp" class="tabbar"> <i class="fa-solid fa-bars"></i>Thực đơn</a>
+                                <a href="allmenu?option=tatca" class="tabbar"> <i class="fa-solid fa-bars"></i>Thực đơn</a>
                                 <ul class="submenu">
-                                    <li><a href="views/allMenu.jsp"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
+                                    <li><a href="allmenu?option=tatca"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
                                     </li>
-                                    <li><a href="views/menu_com.jsp"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
+                                    <li><a href="allmenu?option=1"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
                                     </li>
-                                    <li><a href="views/menu_bun.jsp"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
+                                    <li><a href="allmenu?option=2"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
                                     </li>
-                                    <li><a href="views/menu_pho.jsp"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
+                                    <li><a href="allmenu?option=3"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
                                     </li>
-                                    <li><a href="views/menu_nuoc.jsp"><i class="fa-solid fa-glass-water"></i>Nước</a>
+                                    <li><a href="allmenu?option=4"><i class="fa-solid fa-glass-water"></i>Nước</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="menu-item"><a href="views/newhome.jsp">Trang chủ</a></li>
+                            <li class="menu-item"><a href="home">Trang chủ</a></li>
                             
                             <li class="menu-item"><a href="views/about.jsp">Giới thiệu</a></li>
-                            <li class="menu-item"><a href="views/contact.jsp">Liên hệ</a></li>
+                            <li class="menu-item"><a href="contact-controll">Liên hệ</a></li>
                         </ul>
                     </div>
                     <div class="search">
@@ -101,33 +116,49 @@
     <div class="container">
         <div class="form-section">
             <h2>Liên hệ với chúng tôi</h2>
+
+            <form method="post" action="contact-controll" >
             <div class="form-group">
-                <div>
-                    <label for="name">Họ và Tên *</label>
-                    <input type="text" id="name" placeholder="Nhập tên của bạn.">
-                </div>
-               
+                <label for="name">Họ và Tên *</label>
+                <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Nhập tên của bạn."
+                        class="input-field"
+                />
             </div>
             <div class="form-group">
-                <div>
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" placeholder="Nhập địa chỉ email của bạn.">
-                </div>
-            </div> 
-            <div class="form-group">
-                
-                <div>
-                    <label for="subject">Tiêu đề *</label>
-                    <input type="text" id="subject" placeholder="Nhập chủ đề.">
-                </div>
+                <label for="email">Email *</label>
+                <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Nhập địa chỉ email của bạn."
+                        class="input-field"
+                />
             </div>
             <div class="form-group">
-                <div class="full-width">
-                    <label for="message">Nội dung *</label>
-                    <textarea id="message" placeholder="Nhập yêu cầu của bạn."></textarea>
-                </div>
+                <label for="title">Tiêu đề *</label>
+                <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="Nhập chủ đề."
+                        class="input-field"
+                />
             </div>
-            <button class="submit-btn">Gửi <i class="fas fa-arrow-right"></i></button>
+            <div class="form-group">
+                <label for="message">Nội dung *</label>
+                <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Nhập yêu cầu của bạn."
+                        class="input-field"
+                ></textarea>
+            </div>
+            <button class="submit-btn">Gửi</button>
+            </form>
         </div>
         <div class="containerright">
             <iframe
@@ -194,6 +225,7 @@
     <script src="js/home.js">
 
     </script>
+    <script src="js/module_check_contact.js"></script>
 </body>
 
 </html>

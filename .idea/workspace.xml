@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="da" />
+      <artifact name="testProject:da" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,19 +10,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix link">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AddToCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/da.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/SearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/about.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/forgot_pass.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/forgot_pass.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/about.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/SearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/FoodDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/FoodDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/models/ReviewFood.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/models/ReviewFood.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/services/FoodServiceListFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/services/FoodServiceListFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/views/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/views/about.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/views/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/views/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/views/allMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/views/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/views/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/views/contact.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/views/food_service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/views/food_service.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/views/forgot_pass.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/views/forgot_pass.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject_da/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject_da/views/newhome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/ShoppingCart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/forgot_pass.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/forgot_pass.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,11 +39,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Servlet" />
         <option value="servlet" />
         <option value="JavaScript File" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="Servlet" />
       </list>
     </option>
   </component>
@@ -120,14 +127,14 @@
     <configuration name="Tomcat 10.1.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.31" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="da">
+        <artifact name="testProject:da">
           <settings>
-            <option name="CONTEXT_PATH" value="/da" />
+            <option name="CONTEXT_PATH" value="/testProject_da" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="36238979-e05b-4595-a0ef-12534c314afb" />
+        <option name="BASE_DIRECTORY_NAME" value="6b339562-66f2-447c-8a41-ecb91eec732b" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -135,7 +142,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="58483" />
+        <option name="DEBUG_PORT" value="59846" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -200,7 +207,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="da" />
+          <artifact name="testProject:da" />
         </option>
       </method>
     </configuration>

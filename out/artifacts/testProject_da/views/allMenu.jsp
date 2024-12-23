@@ -47,7 +47,7 @@
                     </c:if>
 
                     <c:if test="${sessionScope.currentUser != null}">
-                        <div class="user-menu" id="user-menu" >
+                        <div class="user-menu" id="user-menu">
                             <i class="fa-solid fa-user"></i>
                             <a href="#" class=" user-name" id="user-name">
                                     ${sessionScope.currentUser.userName}
@@ -73,7 +73,15 @@
                         <a href="shoppingcart" class="nav-item">
                             <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                         </a>
-                        <a href="shoppingcart" class="count">8</a>
+                        <a href="shoppingcart" class="count">
+                            <%
+                                Integer cartCount = (Integer) session.getAttribute("cartCount");
+                                if (cartCount == null) {
+                                    cartCount = 0;
+                                }
+                            %>
+                            <%= cartCount %>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -85,18 +93,24 @@
                                 <i class="fa-solid fa-bars"></i>Thực đơn</a
                             >
                             <ul class="submenu">
-                                <li>
-                                    <a href="allmenu"
-                                    ><i class="fa-solid fa-bowl-rice"></i>Tất cả</a
-                                    >
+                                <li><a href="allmenu?option=tatca"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
                                 </li>
-                                <c:forEach var="category" items="${listC}">
-                                    <li>
-                                        <a href="allmenu?idc=${category.idCategory}"
-                                        ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a
-                                        >
-                                    </li>
-                                </c:forEach>
+                                <li><a href="allmenu?option=1"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
+                                </li>
+                                <li><a href="allmenu?option=2"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
+                                </li>
+                                <li><a href="allmenu?option=3"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
+                                </li>
+                                <li><a href="allmenu?option=4"><i class="fa-solid fa-glass-water"></i>Nước</a>
+                                </li>
+
+                                <%--                                <c:forEach var="category" items="${listC}">--%>
+                                <%--                                    <li>--%>
+                                <%--                                        <a href="allmenu?idc=${category.idCategory}"--%>
+                                <%--                                        ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a--%>
+                                <%--                                        >--%>
+                                <%--                                    </li>--%>
+                                <%--                                </c:forEach>--%>
                             </ul>
                         </li>
                         <li class="menu-item">
@@ -107,15 +121,15 @@
                             <a href="views/about.jsp">Giới thiệu</a>
                         </li>
                         <li class="menu-item">
-                            <a href="views/contact.jsp">Liên hệ</a>
+                            <a href="contact-controll">Liên hệ</a>
                         </li>
                     </ul>
                 </div>
 
 
                 <div class="search">
-                    <form action="search" method="post">
-                        <input name="text" type="text" placeholder="Tìm kiếm món ăn"/>
+                    <form action="search" method="get">
+                        <input value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
                         <button type="submit">
                             <i class="fa-solid fa-search"></i>
                         </button>
@@ -130,36 +144,56 @@
     <div class="intro">
         <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
         <div class="category-container">
-            <a href="views/allMenu.jsp"
+            <a href="allmenu?option=tatca"
             >
                 <div class="category-item">Tất cả</div>
             </a
             >
-            <a href="views/allMenu.jsp"
+            <a href="allmenu?option=danhgiacao"
             >
                 <div class="category-item">Món được đánh giá cao</div>
             </a
             >
-            <a href="views/allMenu.jsp"
+            <a href="allmenu?option=dexuat"
             >
                 <div class="category-item">Món được đề xuất</div>
             </a
             >
-            <a href="views/allMenu.jsp"
+            <a href="allmenu?option=quantam"
             >
                 <div class="category-item">Món được quan tâm nhiều</div>
             </a
             >
-            <a href="views/allMenu.jsp"
+            <a href="allmenu?option=banchay"
             >
                 <div class="category-item">Món bán chạy</div>
             </a
             >
-            <c:forEach var="category" items="${listC}">
-                <a href="allmenu?idc=${category.idCategory}">
-                    <div class="category-item">${category.nameCategory}</div>
-                </a>
-            </c:forEach>
+            <a href="allmenu?option=1"
+            >
+                <div class="category-item">Món cơm</div>
+            </a
+            >
+            <a href="allmenu?option=2"
+            >
+                <div class="category-item">Món bún</div>
+            </a
+            >
+            <a href="allmenu?option=3"
+            >
+                <div class="category-item">Món phở</div>
+            </a
+            >
+            <a href="allmenu?option=4"
+            >
+                <div class="category-item">Nước uống</div>
+            </a
+            >
+            <%--            <c:forEach var="category" items="${listC}">--%>
+            <%--                <a href="allmenu?idc=${category.idCategory}">--%>
+            <%--                    <div class="category-item">${category.nameCategory}</div>--%>
+            <%--                </a>--%>
+            <%--            </c:forEach>--%>
         </div>
     </div>
 
