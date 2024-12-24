@@ -117,7 +117,7 @@
         <div class="form-section">
             <h2>Liên hệ với chúng tôi</h2>
 
-            <form action="${pageContext.request.contextPath}/contactcontroll" method="post">
+            <form action="${pageContext.request.contextPath}/contactcontrolle" method="post">
 
             <div class="form-group">
                 <label for="name">Họ và Tên *</label>

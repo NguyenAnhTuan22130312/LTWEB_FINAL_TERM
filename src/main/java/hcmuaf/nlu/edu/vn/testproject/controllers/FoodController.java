@@ -59,9 +59,6 @@ public class FoodController extends HttpServlet {
             );
 
         } else {
-            // Không có option và id danh mục => lấy toàn bộ
-//            foodList = foodDao.getPaginatedFoods(offset, pageSize);
-//            totalFoods = foodDao.getTotalFoods();
             HttpSession session = request.getSession();
             String optionss= session.getAttribute("option").toString();
             foodList = foodServiceListFilter.getOption(optionss); // Lấy danh sách dựa trên option
