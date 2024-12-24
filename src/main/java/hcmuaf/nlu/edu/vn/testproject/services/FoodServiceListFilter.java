@@ -61,7 +61,7 @@ public class FoodServiceListFilter {
                 break;
 
             default:
-                lsFood = foodDAO.getComBunPhoNuoc(option);
+                lsFood  = foodDAO.getFoodsByCategory(Integer.parseInt(option));
         }
         return lsFood;
     }

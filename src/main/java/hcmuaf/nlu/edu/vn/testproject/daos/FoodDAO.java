@@ -216,30 +216,6 @@ public class FoodDAO {
         return foodList;
     }
 
-    public List<Food> getComBunPhoNuoc(String category) {
-        List<Food> foodList = new ArrayList<>();
-        for (Food food : data.values()) {
-            switch (category) {
-                case "1":
-                    if (food.getIdCategory() == 1)
-                        foodList.add(food);
-                    break;
-                case "2":
-                    if (food.getIdCategory() == 2)
-                        foodList.add(food);
-                    break;
-                case "3":
-                    if (food.getIdCategory() == 3)
-                        foodList.add(food);
-                    break;
-                case "4":
-                    if (food.getIdCategory() == 4)
-                        foodList.add(food);
-                    break;
-            }
-        }
-        return foodList;
-    }
 
 
 }
