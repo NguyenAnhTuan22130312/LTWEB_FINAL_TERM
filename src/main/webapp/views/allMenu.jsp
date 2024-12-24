@@ -26,8 +26,6 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
-<<<<<<< HEAD
-=======
                     <c:if test="${sessionScope.currentUser != null}">
                         <div class="user-menu" id="user-menu">
                             <i class="fa-solid fa-user"></i>
@@ -114,7 +112,6 @@
         </div>
     </div>
 </div>
->>>>>>> 5f5196b7c8bac0bf541c351ad92e28541a34c8d5
 <div id="container">
     <div class="intro">
         <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
@@ -183,15 +180,15 @@
 
     <div class="pagination">
         <c:if test="${currentPage > 1}">
-            <a href="allmenu?idc=${param.idc}&page=${currentPage - 1}"><</a>
+            <a href="allmenu?option=${option}&page=${currentPage - 1}"><</a>
         </c:if>
 
         <c:forEach begin="1" end="${totalPages}" var="i">
-            <a href="allmenu?idc=${param.idc}&page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
+            <a href="allmenu?option=${option}&page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
         </c:forEach>
 
         <c:if test="${currentPage < totalPages}">
-            <a href="?idc=${param.idc}&page=${currentPage + 1}">></a>
+            <a href="?option=${option}&page=${currentPage + 1}">></a>
         </c:if>
     </div>
 

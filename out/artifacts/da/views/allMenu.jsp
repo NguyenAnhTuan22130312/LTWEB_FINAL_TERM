@@ -97,7 +97,9 @@
                                 </li>
                                 <c:forEach var="category" items="${listC}">
                                     <li>
-                                        <a href="allmenu?option=${category.idCategory}"><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a>
+                                        <a href="allmenu?option=${category.idCategory}"
+                                        ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a
+                                        >
                                     </li>
                                 </c:forEach>
                             </ul>
@@ -133,27 +135,56 @@
     <div class="intro">
         <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
         <div class="category-container">
-            <a href="allmenu?option=tatca">
+            <a href="allmenu?option=tatca"
+            >
                 <div class="category-item">Tất cả</div>
-            </a>
-            <a href="allmenu?option=danhgiacao">
+            </a
+            >
+            <a href="allmenu?option=danhgiacao"
+            >
                 <div class="category-item">Món được đánh giá cao</div>
-            </a>
-            <a href="allmenu?option=dexuat">
+            </a
+            >
+            <a href="allmenu?option=dexuat"
+            >
                 <div class="category-item">Món được đề xuất</div>
-            </a>
-            <a href="allmenu?option=quantam">
+            </a
+            >
+            <a href="allmenu?option=quantam"
+            >
                 <div class="category-item">Món được quan tâm nhiều</div>
-            </a>
-            <a href="allmenu?option=banchay">
+            </a
+            >
+            <a href="allmenu?option=banchay"
+            >
                 <div class="category-item">Món bán chạy</div>
-            </a>
-
-            <c:forEach var="category" items="${listC}">
-                <a href="allmenu?option=${category.idCategory}">
-                    <div class="category-item">${category.nameCategory}</div>
-                </a>
-            </c:forEach>
+            </a
+            >
+            <a href="allmenu?option=1"
+            >
+                <div class="category-item">Món cơm</div>
+            </a
+            >
+            <a href="allmenu?option=2"
+            >
+                <div class="category-item">Món bún</div>
+            </a
+            >
+            <a href="allmenu?option=3"
+            >
+                <div class="category-item">Món phở</div>
+            </a
+            >
+            <a href="allmenu?option=4"
+            >
+                <div class="category-item">Nước uống</div>
+            </a
+            >
+            <%--            <c:forEach var="category" items="${listC}">--%>
+            <%--                <a href="allmenu?idc=${category.idCategory}">--%>
+            <%--                    <div class="category-item">${category.nameCategory}</div>--%>
+            <%--                </a>--%>
+            <%--            </c:forEach>--%>
         </div>
     </div>
 

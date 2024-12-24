@@ -15,13 +15,7 @@ import java.util.List;
 @WebServlet(name = "FoodController", value = "/allmenu")
 public class FoodController extends HttpServlet {
 
-    private FoodDAO foodDao;
 
-    @Override
-    public void init() throws ServletException {
-        // Khởi tạo đối tượng FoodDAO khi servlet được khởi tạo
-        foodDao = new FoodDAO();
-    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
