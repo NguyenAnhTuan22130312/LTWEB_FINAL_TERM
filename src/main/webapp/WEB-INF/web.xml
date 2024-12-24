@@ -8,9 +8,4 @@
         <welcome-file>home
         </welcome-file>
     </welcome-file-list>
-
-    <mime-mapping>
-        <extension>mp4</extension>
-        <mime-type>video/mp4</mime-type>
-    </mime-mapping>
 </web-app>
