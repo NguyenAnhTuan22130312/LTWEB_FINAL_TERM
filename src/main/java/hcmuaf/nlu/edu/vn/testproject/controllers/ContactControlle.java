@@ -7,7 +7,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "ContactController", value = "/contactcontrolle")
+@WebServlet(name = "ContactControlle", value = "/contactcontrolle")
 public class ContactControlle extends HttpServlet {
 
     @Override

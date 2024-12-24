@@ -22,9 +22,9 @@
 
 <div id="container">
     <div class="w3-content w3-display-container">
-        <img class="mySlides" src="Images/home/qc1.jpg" style="width:100%">
-        <img class="mySlides" src="Images/home/qc2.jpg" style="width:100%">
-        <img class="mySlides" src="Images/home/qc3.jpg" style="width:100%">
+        <c:forEach var="banner" items="banners">
+            <img class="mySlides" src="${banner.url}" style="width:100%">
+        </c:forEach>
     </div>
 
     <button class="w3-button w3-black left" onclick="plusDivs(-1)">&#10094;</button>
