@@ -47,6 +47,8 @@ public class FoodController extends HttpServlet {
 
         // Nếu có option, ưu tiên lấy dữ liệu từ option
         if (option != null && !option.isEmpty()) {
+            HttpSession session = request.getSession();
+            session.setAttribute("option", option);
             foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
             totalFoods = foodList.size(); // Tổng số món theo option
 
@@ -58,8 +60,18 @@ public class FoodController extends HttpServlet {
 
         } else {
             // Không có option và id danh mục => lấy toàn bộ
-            foodList = foodDao.getPaginatedFoods(offset, pageSize);
-            totalFoods = foodDao.getTotalFoods();
+//            foodList = foodDao.getPaginatedFoods(offset, pageSize);
+//            totalFoods = foodDao.getTotalFoods();
+            HttpSession session = request.getSession();
+            String optionss= session.getAttribute("option").toString();
+            foodList = foodServiceListFilter.getOption(optionss); // Lấy danh sách dựa trên option
+            totalFoods = foodList.size(); // Tổng số món theo option
+
+            // Áp dụng phân trang
+            foodList = foodList.subList(
+                    Math.min(offset, totalFoods),
+                    Math.min(offset + pageSize, totalFoods)
+            );
         }
 
         // Tính tổng số trang

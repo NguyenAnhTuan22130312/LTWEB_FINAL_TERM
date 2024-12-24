@@ -97,7 +97,7 @@
                                 </li>
                                 <c:forEach var="category" items="${listC}">
                                     <li>
-                                        <a href="allmenu?idc=${category.idCategory}"
+                                        <a href="allmenu?option=${category.idCategory}"
                                         ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a
                                         >
                                     </li>

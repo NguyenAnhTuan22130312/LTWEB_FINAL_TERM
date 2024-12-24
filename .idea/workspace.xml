@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix menu, do an theo category">
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="toi uu foodcontroller, da fix duoc phan trang">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/FoodDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/daos/FoodDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
@@ -308,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735015529230</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="toi uu foodcontroller, da fix duoc phan trang">
+      <option name="closed" value="true" />
+      <created>1735034677874</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1735034677874</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +342,8 @@
     <MESSAGE value="fix duoc contact rui" />
     <MESSAGE value="chinh de khi sua duoc sesion" />
     <MESSAGE value="fix menu, do an theo category" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix menu, do an theo category" />
+    <MESSAGE value="toi uu foodcontroller, da fix duoc phan trang" />
+    <option name="LAST_COMMIT_MESSAGE" value="toi uu foodcontroller, da fix duoc phan trang" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
