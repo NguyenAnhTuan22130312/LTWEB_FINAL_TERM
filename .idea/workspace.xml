@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="da" />
+      <artifact name="testProject:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,16 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix thanh cong menu">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/testProject_da.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/da.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AboutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/contact.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/newhome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/ContactControlle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/module_dangnhap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/module_dangnhap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/PurchaseOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/PurchaseOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/UserInformation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/UserInformation.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/about.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/contact.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" afterDir="false" />
     </list>
@@ -32,9 +33,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Class" />
         <option value="Servlet" />
+        <option value="Jsp File" />
         <option value="servlet" />
       </list>
     </option>
@@ -124,14 +125,14 @@
     <configuration name="Tomcat 10.1.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.31" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="da">
+        <artifact name="testProject:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/da" />
+            <option name="CONTEXT_PATH" value="/testProject" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="01323802-e180-49d2-a9c2-b6e35d1d42c2" />
+        <option name="BASE_DIRECTORY_NAME" value="28a21a61-2303-4e53-b9b0-1e31a8b7bd89" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -139,7 +140,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56663" />
+        <option name="DEBUG_PORT" value="50830" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -204,7 +205,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="da" />
+          <artifact name="testProject:war" />
         </option>
       </method>
     </configuration>
