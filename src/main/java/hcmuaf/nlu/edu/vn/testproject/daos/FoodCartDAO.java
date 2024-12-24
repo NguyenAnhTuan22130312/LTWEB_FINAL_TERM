@@ -1,0 +1,91 @@
+package hcmuaf.nlu.edu.vn.testproject.daos;
+
+import hcmuaf.nlu.edu.vn.testproject.context.DbContext;
+import hcmuaf.nlu.edu.vn.testproject.libs.MD5;
+import hcmuaf.nlu.edu.vn.testproject.models.Account;
+import hcmuaf.nlu.edu.vn.testproject.models.Food;
+import hcmuaf.nlu.edu.vn.testproject.services.FoodService;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class FoodCartDAO implements FoodService {
+
+//    String query = "SELECT * FROM Account WHERE userName = ? AND pass = ?";
+//    Connection con = null;
+//    PreparedStatement ps = null;
+//    ResultSet rs = null;
+//    String hashedPassword = MD5.getMD5(password);
+//        try{
+//        con = new DbContext().getConnection();
+//        ps = con.prepareStatement(query);
+//        ps.setString(1, username);
+//        ps.setString(2, hashedPassword);
+//        rs = ps.executeQuery();
+//        while(rs.next()) {
+//            return new Account(
+//                    rs.getInt("idAcc"),
+//                    rs.getInt("idRole"),
+//                    rs.getString("pass"),
+//                    rs.getString("userName")
+//            );
+//        }
+//    }catch (Exception e){
+//        e.printStackTrace();
+//    }
+//
+//
+//        return null;
+
+    @Override
+    public Food getFoodByID(int id) {
+        String query = "SELECT * FROM food WHERE idFood = ?";
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Food food = null;
+        try{
+            con= new DbContext().getConnection();
+            ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                food = new Food();
+                food.setIdFood(rs.getInt("idFood"));
+                food.setFoodName(rs.getString("foodName"));
+                food.setPrice(rs.getInt("price"));
+                food.setImg(rs.getString("img"));
+                food.setDescription(rs.getString("description"));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return food;
+    }
+    public static void main(String[] args) {
+        // Tạo đối tượng FoodCartDAO
+        FoodCartDAO foodCartDAO = new FoodCartDAO();
+
+        // Gọi phương thức getFoodByID với idFood = 1 (ví dụ)
+        int foodID = 1; // Thay đổi id nếu cần
+        Food food = foodCartDAO.getFoodByID(foodID);
+
+        // Kiểm tra kết quả và in ra thông tin món ăn
+        if (food != null) {
+            System.out.println("Món ăn tìm thấy:");
+            System.out.println("ID: " + food.getIdFood());
+            System.out.println("Tên: " + food.getFoodName());
+            System.out.println("Giá: " + food.getPrice() + "đ");
+            System.out.println("Hình ảnh: " + food.getImg());
+            System.out.println("Mô tả: " + food.getDescription());
+        } else {
+            System.out.println("Không tìm thấy món ăn với ID: " + foodID);
+        }
+    }
+}

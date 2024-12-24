@@ -117,7 +117,8 @@
         <div class="form-section">
             <h2>Liên hệ với chúng tôi</h2>
 
-            <form method="post" action="contact-controll" >
+            <form action="${pageContext.request.contextPath}/contactcontroll" method="post">
+
             <div class="form-group">
                 <label for="name">Họ và Tên *</label>
                 <input
@@ -223,9 +224,8 @@
         </div>
     </div>
     <script src="js/home.js">
-
     </script>
-    <script src="js/module_check_contact.js"></script>
+    <script src="<c:url value="/js/module_check_contact.js" />"></script>
 </body>
 
 </html>

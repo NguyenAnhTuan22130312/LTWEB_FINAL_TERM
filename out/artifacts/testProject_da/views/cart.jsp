@@ -1,18 +1,12 @@
 <%@ page import="hcmuaf.nlu.edu.vn.testproject.models.Food" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="hcmuaf.nlu.edu.vn.testproject.daos.ShoppingCart" %>
-<%@ page import="hcmuaf.nlu.edu.vn.testproject.models.CartItem" %>
+<%@ page import="hcmuaf.nlu.edu.vn.testproject.daos.FoodCartDAO" %>
+<%@ page import="hcmuaf.nlu.edu.vn.testproject.models.Item" %>
+<%@ page import="hcmuaf.nlu.edu.vn.testproject.models.Order" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%
-  ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-  if (cart == null) {
-    cart = new ShoppingCart();
-  }
-  // Lấy danh sách các món ăn từ giỏ hàng
-  List<CartItem> foodList = cart.getItems();
-%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -133,6 +127,7 @@
     <div id="content_section">
       <div class="cart-container">
         <div class="cart-left">
+          <c:if test="${not empty sessionScope.order}">
           <table class="cart-table">
             <thead>
               <tr>
@@ -151,34 +146,40 @@
               </tr>
             </thead>
             <tbody id="cart-items-container" class="cart-body">
-            <%
-              int total = 0;
-              for (Food item : foodList) {
-                int quantity = 1;  // Mặc định số lượng là 1 (có thể thay đổi sau)
-                int totalPrice = item.getPrice() * quantity;  // Tính giá trị của món ăn
-                total += totalPrice;  // Cập nhật tổng số tiền
-            %>
+            <c:forEach items="${sessionScope.order.items}" var="item">
             <tr>
               <td>
                 <button class="delete-btn">
                   <i class="fa-regular fa-trash-can"></i>
                 </button>
               </td>
-              <td><%= item.getFoodName() %></td>
+              <td>${item.food.foodName}</td>
               <td>
-                <img src="<%= item.getImg() %>" alt="<%= item.getFoodName() %>" class="product-img" />
+                <img src="${item.food.img}" alt="${item.food.foodName}" class="product-img" />
               </td>
               <td>
-                <input type="number" value="<%= quantity %>" min="1" class="quantity-input" />
+                <input
+                        type="number"
+                        value="${item.quantity}"
+                        min="1"
+                        class="quantity-input"
+                        onchange="updateQuantity('${item.food.idFood}', this.value)"
+                />
               </td>
-              <td><%= item.getPrice() %>₫</td>
-              <td><%= totalPrice %>₫</td>
+              <td>${item.food.price}₫</td>
+              <td>${item.quantity * item.food.price}₫</td>
               <td></td>
             </tr>
-            <% } %>
+            </c:forEach>
             </tbody>
 
           </table>
+          </c:if>
+
+          <c:if test="${empty sessionScope.order}">
+            <p>Giỏ hàng của bạn hiện tại đang trống!</p>
+          </c:if>
+
           <div class="cart-buttons">
             <button
               class="continue-btn">

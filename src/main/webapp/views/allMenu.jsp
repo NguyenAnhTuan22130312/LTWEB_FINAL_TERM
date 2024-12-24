@@ -196,11 +196,8 @@
                 <div class="card_content">
                     <h3>${food.foodName}</h3>
                     <p>${food.price}đ</p>
-                    <a
-                            class="btn"
-                            href="cart.jsp?foodId=${food.idFood}"
-                            onclick="event.stopPropagation()"
-                    >
+                    <c:url value="addtoCart?foodID=${food.idFood}" var="addtoCart"/>
+                    <a class="btn" href="${addtoCart}">
                         Thêm vào giỏ hàng
                     </a>
                 </div>
