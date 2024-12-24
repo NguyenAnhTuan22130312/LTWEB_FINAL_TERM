@@ -9,6 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix thanh cong menu">
       <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AboutController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/views/footer.jsp" afterDir="false" />
@@ -23,6 +24,14 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/contact.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" afterDir="false" />
+=======
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix contact">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/da/views/allMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
+>>>>>>> 5f5196b7c8bac0bf541c351ad92e28541a34c8d5
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +244,7 @@
       <workItem from="1734887135268" duration="1239000" />
       <workItem from="1734895809052" duration="8966000" />
       <workItem from="1734927841486" duration="7987000" />
-      <workItem from="1735055320504" duration="1277000" />
+      <workItem from="1735055320504" duration="3449000" />
     </task>
     <task id="LOCAL-00001" summary="update newhome, food">
       <option name="closed" value="true" />
@@ -325,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735034677874</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix contact">
+      <option name="closed" value="true" />
+      <created>1735056645230</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1735056645230</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +370,8 @@
     <MESSAGE value="chinh de khi sua duoc sesion" />
     <MESSAGE value="fix menu, do an theo category" />
     <MESSAGE value="toi uu foodcontroller, da fix duoc phan trang" />
-    <option name="LAST_COMMIT_MESSAGE" value="toi uu foodcontroller, da fix duoc phan trang" />
+    <MESSAGE value="fix contact" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix contact" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

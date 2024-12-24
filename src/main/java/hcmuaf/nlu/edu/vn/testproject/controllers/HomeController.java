@@ -17,6 +17,7 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
         FoodServiceListFilter fslf = new FoodServiceListFilter();
 
         List<Food> lst4View = fslf.getTop4Views();
