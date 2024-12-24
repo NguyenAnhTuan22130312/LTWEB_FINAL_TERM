@@ -95,22 +95,13 @@
                             <ul class="submenu">
                                 <li><a href="allmenu?option=tatca"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
                                 </li>
-                                <li><a href="allmenu?option=1"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
-                                </li>
-                                <li><a href="allmenu?option=2"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
-                                </li>
-                                <li><a href="allmenu?option=3"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
-                                </li>
-                                <li><a href="allmenu?option=4"><i class="fa-solid fa-glass-water"></i>Nước</a>
-                                </li>
-
-                                <%--                                <c:forEach var="category" items="${listC}">--%>
-                                <%--                                    <li>--%>
-                                <%--                                        <a href="allmenu?idc=${category.idCategory}"--%>
-                                <%--                                        ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a--%>
-                                <%--                                        >--%>
-                                <%--                                    </li>--%>
-                                <%--                                </c:forEach>--%>
+                                <c:forEach var="category" items="${listC}">
+                                    <li>
+                                        <a href="allmenu?idc=${category.idCategory}"
+                                        ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a
+                                        >
+                                    </li>
+                                </c:forEach>
                             </ul>
                         </li>
                         <li class="menu-item">

@@ -26,12 +26,8 @@ public class FoodController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
         FoodServiceListFilter foodServiceListFilter = new FoodServiceListFilter();
-        // Lấy id danh mục, nếu không có thì mặc định là 0 (hiển thị tất cả)
-        int id = 0;
-        if (request.getParameter("idc") != null) {
-            id = Integer.parseInt(request.getParameter("idc"));
-        }
 
         // Lấy số trang, nếu không có thì mặc định là trang 1
         int page = 1;
@@ -43,18 +39,6 @@ public class FoodController extends HttpServlet {
         int pageSize = 10; // Kích thước trang
         int offset = (page - 1) * pageSize;
 
-        // Lấy danh sách món ăn theo phân trang
-//        List<Food> foodList;
-//        int totalFoods;
-//        String option= request.getParameter("option");
-//        if (id > 0) { // Nếu có id danh mục
-//            foodList = foodDao.getFoodsByCategory(id); // Lấy tất cả món trong danh mục
-//            totalFoods = foodList.size(); // Tổng số món trong danh mục
-//            foodList = foodList.subList(Math.min(offset, totalFoods), Math.min(offset + pageSize, totalFoods)); // Phân trang
-//        } else {
-//            foodList = foodDao.getPaginatedFoods(offset, pageSize); // Lấy tất cả món ăn
-//            totalFoods = foodDao.getTotalFoods(); // Tổng số món ăn
-//        }
         List<Food> foodList;
         int totalFoods;
 
@@ -71,14 +55,7 @@ public class FoodController extends HttpServlet {
                     Math.min(offset, totalFoods),
                     Math.min(offset + pageSize, totalFoods)
             );
-        } else if (id > 0) {
-            // Nếu không có option nhưng có id danh mục
-            foodList = foodDao.getFoodsByCategory(id);
-            totalFoods = foodList.size();
-            foodList = foodList.subList(
-                    Math.min(offset, totalFoods),
-                    Math.min(offset + pageSize, totalFoods)
-            );
+
         } else {
             // Không có option và id danh mục => lấy toàn bộ
             foodList = foodDao.getPaginatedFoods(offset, pageSize);
