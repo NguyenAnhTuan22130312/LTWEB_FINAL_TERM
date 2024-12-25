@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "HomeController", value = "/home")
@@ -23,6 +24,12 @@ public class HomeController extends HttpServlet {
         BannerService bannerService = new BannerService();
         List<Banner> banners = bannerService.getBanners();
         request.setAttribute("bans", banners);
+        List<Integer> countDot= new ArrayList<>();
+        for(int i=0; i<banners.size(); i++){
+            countDot.add(i);
+        }
+        request.setAttribute("countDot", countDot);
+
 
         FoodServiceListFilter fslf = new FoodServiceListFilter();
 

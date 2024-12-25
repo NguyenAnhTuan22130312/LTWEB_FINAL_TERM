@@ -14,22 +14,22 @@ public class SearchController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+//        processRequest(request, response);
         String textSearch = request.getParameter("text");
         FoodDAO dao = new FoodDAO();
         List<Food> foodList = dao.searchByName(textSearch);
         request.setAttribute("list", foodList);
         request.setAttribute("txtS", textSearch);
-        request.getRequestDispatcher("views/allMenu.jsp").forward(request, response);
+    }
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 
     }
 }
