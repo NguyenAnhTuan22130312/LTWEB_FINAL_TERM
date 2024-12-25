@@ -26,21 +26,15 @@ public class FoodController extends HttpServlet {
         if (request.getParameter("page") != null) {
             page = Integer.parseInt(request.getParameter("page"));
         }
-
         // Tính toán offset
         int pageSize = 10; // Kích thước trang
         int offset = (page - 1) * pageSize;
-
         List<Food> foodList;
         int totalFoods;
 
         // Lấy giá trị option từ request
         String option = request.getParameter("option");
 
-        // Nếu có option, ưu tiên lấy dữ liệu từ option
-        if (option != null && !option.isEmpty()) {
-//            HttpSession session = request.getSession();
-//            session.setAttribute("option", option);
             foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
             totalFoods = foodList.size(); // Tổng số món theo option
 
@@ -50,18 +44,6 @@ public class FoodController extends HttpServlet {
                     Math.min(offset + pageSize, totalFoods)
             );
 
-        } else {
-//            HttpSession session = request.getSession();
-//            String optionss= session.getAttribute("option").toString();
-            foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
-            totalFoods = foodList.size(); // Tổng số món theo option
-
-            // Áp dụng phân trang
-            foodList = foodList.subList(
-                    Math.min(offset, totalFoods),
-                    Math.min(offset + pageSize, totalFoods)
-            );
-        }
 
         // Tính tổng số trang
         int totalPages = (int) Math.ceil((double) totalFoods / pageSize);
