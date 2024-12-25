@@ -55,8 +55,8 @@ public class SignUpDAO {
 
 
 
-    public static Account checkUserExist(String username) {
-        String query = "SELECT * FROM Account WHERE userName = ?";
+    public static Account checkUserExist(String username, String email) {
+        String query = "SELECT * FROM Account WHERE userName = ? OR email = ?";
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -64,6 +64,7 @@ public class SignUpDAO {
             con = new DbContext().getConnection();
             ps = con.prepareStatement(query);
             ps.setString(1, username);
+            ps.setString(2, email);
 
             rs = ps.executeQuery();
             while(rs.next()) {
@@ -71,7 +72,8 @@ public class SignUpDAO {
                         rs.getInt("idAcc"),
                         rs.getInt("idRole"),
                         rs.getString("pass"),
-                        rs.getString("userName")
+                        rs.getString("userName"),
+                        rs.getString("email")
                 );
             }
         }catch (Exception e){

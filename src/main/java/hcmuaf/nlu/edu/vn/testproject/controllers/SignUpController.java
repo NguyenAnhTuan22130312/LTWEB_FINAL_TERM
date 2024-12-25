@@ -35,14 +35,22 @@ public class SignUpController extends HttpServlet {
             return;
         }
 
-        Account account = SignUpDAO.checkUserExist(username);
+        Account account = SignUpDAO.checkUserExist(username,email);
         //nếu như chưa có tên người dùng nào
         if (account == null) {
             SignUpDAO.signUp(username, password, email);
             response.sendRedirect("login");
 
         }else {
-            request.setAttribute("errorMessage", "Tên người dùng đã tồn tại.");
+            String errorMessage;
+            if (account.getUserName().equals(username)) {
+                errorMessage = "Tên người dùng đã tồn tại.";
+            } else {
+                errorMessage = "Email đã được sử dụng.";
+            }
+
+            request.setAttribute("errorMessage", errorMessage);
+            System.out.println("Error Message: " + request.getAttribute("errorMessage"));
             request.getRequestDispatcher("views/signin.jsp").forward(request, response);
         }
 

@@ -26,7 +26,8 @@ public class LoginDAO {
                         rs.getInt("idAcc"),
                         rs.getInt("idRole"),
                         rs.getString("pass"),
-                        rs.getString("userName")
+                        rs.getString("userName"),
+                        rs.getString("email")
                 );
             }
         } catch (Exception e) {
