@@ -15,13 +15,13 @@ public class LoginDAO {
         PreparedStatement ps = null;
         ResultSet rs = null;
         String hashedPassword = MD5.getMD5(password);
-        try{
+        try {
             con = new DbContext().getConnection();
             ps = con.prepareStatement(query);
             ps.setString(1, username);
             ps.setString(2, hashedPassword);
             rs = ps.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 return new Account(
                         rs.getInt("idAcc"),
                         rs.getInt("idRole"),
@@ -29,14 +29,11 @@ public class LoginDAO {
                         rs.getString("userName")
                 );
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
-
         return null;
     }
-
 
 
     public static void main(String[] args) {
@@ -52,7 +49,6 @@ public class LoginDAO {
             System.out.println(e.getMessage());
         }
     }
-
 
 
 }

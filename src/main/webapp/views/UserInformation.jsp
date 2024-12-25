@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Food T^3</title>
-    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/module_header_footer.css"/>
-    <link rel="stylesheet" href="css/module_informationuser.css"/>
+    <title>Thông tin khách hàng</title>
+    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_header_footer.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_informationuser.css"/>
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -21,7 +21,6 @@
 </head>
 
 <body>
-<script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
 <jsp:include page="header.jsp"></jsp:include>
 
 <!-- Xử lý content\  -->
@@ -155,8 +154,8 @@
 
 <jsp:include page="footer.jsp"></jsp:include>
 
-<script src="js/module_dangnhap_UserInfor.js"></script>
-<script src="js/UserInformation.js"></script>
+<script src="${pageContext.request.contextPath}/js/module_dangnhap_UserInfor.js"></script>
+<script src="${pageContext.request.contextPath}/js/UserInformation.js"></script>
 
 </body>
 </html>

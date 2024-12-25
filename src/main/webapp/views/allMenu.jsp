@@ -26,92 +26,6 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
-                    <c:if test="${sessionScope.currentUser != null}">
-                        <div class="user-menu" id="user-menu">
-                            <i class="fa-solid fa-user"></i>
-                            <a href="#" class=" user-name" id="user-name">
-                                    ${sessionScope.currentUser.userName}
-                            </a>
-                            <div class="submenu" id="submenu">
-                                <c:if test="${sessionScope.currentUser.idRole == 1}">
-                                    <a href="views/admin.jsp" id="admin-link">Quản trị</a>
-                                </c:if>
-                                <c:if test="${sessionScope.currentUser.idRole == 2}">
-                                    <a href="views/UserInformation.jsp" id="user-link">Thông tin</a>
-                                </c:if>
-                                <a href="logout" id="logout">Đăng xuất</a>
-                            </div>
-                        </div>
-                    </c:if>
-                    <div class="nav_item_shop">
-                        <a href="views/PurchaseOrder.jsp" class="nav-item">
-                            <i class="fa-solid fa-truck-fast"></i> Đơn hàng
-                        </a>
-                        <a href="#" class="count">2</a>
-                    </div>
-                    <div class="nav_item_shop">
-                        <a href="shoppingcart" class="nav-item">
-                            <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
-                        </a>
-                        <a href="shoppingcart" class="count">
-                            <%
-                                Integer cartCount = (Integer) session.getAttribute("cartCount");
-                                if (cartCount == null) {
-                                    cartCount = 0;
-                                }
-                            %>
-                            <%= cartCount %>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <div class="menu">
-                    <ul class="menu-list">
-                        <li class="menu-item">
-                            <a href="allmenu" class="tabbar">
-                                <i class="fa-solid fa-bars"></i>Thực đơn</a
-                            >
-                            <ul class="submenu">
-                                <li><a href="allmenu?option=tatca"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
-                                </li>
-                                <li><a href="allmenu?option=1"><i class="fa-solid fa-bowl-rice"></i>Món cơm</a>
-                                </li>
-                                <li><a href="allmenu?option=2"><i class="fa-solid fa-bowl-food"></i>Món bún</a>
-                                </li>
-                                <li><a href="allmenu?option=3"><i class="fa-solid fa-bowl-food"></i>Món phở</a>
-                                </li>
-                                <li><a href="allmenu?option=4"><i class="fa-solid fa-glass-water"></i>Nước</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="home">Trang chủ</a>
-                        </li>
-
-                        <li class="menu-item">
-                            <a href="views/about.jsp">Giới thiệu</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="contact-controll">Liên hệ</a>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <div class="search">
-                    <form action="search" method="get">
-                        <input value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
-                        <button type="submit">
-                            <i class="fa-solid fa-search"></i>
-                        </button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
 <div id="container">
     <div class="intro">
         <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
@@ -180,15 +94,15 @@
 
     <div class="pagination">
         <c:if test="${currentPage > 1}">
-            <a href="allmenu&page=${currentPage - 1}"><</a>
+            <a href="allmenu?idc=${param.idc}&page=${currentPage - 1}"><</a>
         </c:if>
 
         <c:forEach begin="1" end="${totalPages}" var="i">
-            <a href="allmenu&page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
+            <a href="allmenu?idc=${param.idc}&page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
         </c:forEach>
 
         <c:if test="${currentPage < totalPages}">
-            <a href="allmenu&page=${currentPage + 1}">></a>
+            <a href="?idc=${param.idc}&page=${currentPage + 1}">></a>
         </c:if>
     </div>
 
