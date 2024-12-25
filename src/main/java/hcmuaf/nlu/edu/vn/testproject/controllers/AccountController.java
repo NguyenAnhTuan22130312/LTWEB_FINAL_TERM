@@ -15,6 +15,7 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.getRequestDispatcher("views/UserInformation.jsp").forward(request, response);
 //        HttpSession session = request.getSession();
 //        Integer userId = (Integer) session.getAttribute("userId");
 //
@@ -27,7 +28,6 @@ public class AccountController extends HttpServlet {
 //
 //        if (user != null) {
 //            request.setAttribute("user", user);
-        request.getRequestDispatcher("views/UserInformation.jsp").forward(request, response);
 //        } else {
 //            response.sendRedirect("login");
 //        }
