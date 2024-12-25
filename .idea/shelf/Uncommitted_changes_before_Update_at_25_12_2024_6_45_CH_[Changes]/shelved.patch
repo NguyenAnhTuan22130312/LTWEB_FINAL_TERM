@@ -1,0 +1,235 @@
+Index: src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AddToCartController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package hcmuaf.nlu.edu.vn.testproject.controllers; import hcmuaf.nlu.edu.vn.testproject.daos.FoodCartDAO;\r\nimport hcmuaf.nlu.edu.vn.testproject.models.Food;\r\nimport hcmuaf.nlu.edu.vn.testproject.models.Item;\r\nimport hcmuaf.nlu.edu.vn.testproject.models.Order;\r\nimport hcmuaf.nlu.edu.vn.testproject.services.FoodService;\r\nimport jakarta.servlet.*;\r\nimport jakarta.servlet.http.*;\r\nimport jakarta.servlet.annotation.*;\r\nimport java.io.IOException;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\n@WebServlet(name = \"AddToCartController\", value = \"/addtoCart\")\r\npublic class AddToCartController extends HttpServlet {\r\n    private FoodService foodService;\r\n\r\n    @Override\r\n    public void init() throws ServletException {\r\n        foodService = new FoodCartDAO();\r\n        super.init();\r\n    }\r\n\r\n    @Override\r\n    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n        int quantity = 1;\r\n        int id;\r\n        String removeFoodID = request.getParameter(\"removeFoodID\");\r\n        String removeAll = request.getParameter(\"removeAll\");\r\n\r\n        if (removeAll != null) {\r\n            // Xóa tất cả món ăn khỏi giỏ\r\n            HttpSession session = request.getSession();\r\n            Order order = (Order) session.getAttribute(\"order\");\r\n\r\n            if (order != null) {\r\n                order.setItems(new ArrayList<Item>());\r\n                session.setAttribute(\"order\", order);\r\n            }\r\n            response.sendRedirect(\"cart\");\r\n        } else if (removeFoodID != null) {\r\n            // Xóa món ăn cụ thể khỏi giỏ\r\n            int foodIDToRemove = Integer.parseInt(removeFoodID);\r\n            HttpSession session = request.getSession();\r\n            Order order = (Order) session.getAttribute(\"order\");\r\n\r\n            if (order != null) {\r\n                List<Item> list = order.getItems();\r\n                list.removeIf(item -> item.getFood().getIdFood() == foodIDToRemove);\r\n                order.setItems(list);\r\n                session.setAttribute(\"order\", order);\r\n            }\r\n            response.sendRedirect(\"cart\");\r\n        } else if (request.getParameter(\"foodID\") != null) {\r\n            // Xử lý thêm món ăn vào giỏ hàng\r\n            id = Integer.parseInt(request.getParameter(\"foodID\"));\r\n            Food food = foodService.getFoodByID(id);\r\n            if (food != null) {\r\n                if (request.getParameter(\"quantity\") != null) {\r\n                    quantity = Integer.parseInt(request.getParameter(\"quantity\"));\r\n                }\r\n                HttpSession session = request.getSession();\r\n                if (session.getAttribute(\"order\") == null) {\r\n                    Order order = new Order();\r\n                    List<Item> list = new ArrayList<Item>();\r\n                    Item item = new Item();\r\n                    item.setQuantity(quantity);\r\n                    item.setFood(food);\r\n                    item.setPrice(food.getPrice());\r\n                    list.add(item);\r\n                    order.setItems(list);\r\n                    session.setAttribute(\"order\", order);\r\n                } else {\r\n                    Order order = (Order) session.getAttribute(\"order\");\r\n                    List<Item> list = order.getItems();\r\n                    boolean found = false;\r\n                    for (Item item : list) {\r\n                        if (item.getFood().getIdFood() == food.getIdFood()) {\r\n                            item.setQuantity(item.getQuantity() + quantity);\r\n                            found = true;\r\n                        }\r\n                    }\r\n                    if (!found) {\r\n                        Item item = new Item();\r\n                        item.setQuantity(quantity);\r\n                        item.setFood(food);\r\n                        item.setPrice(food.getPrice());\r\n                        list.add(item);\r\n                    }\r\n                    session.setAttribute(\"order\", order);\r\n                }\r\n            }\r\n            response.sendRedirect(\"cart\");\r\n        } else {\r\n            response.sendRedirect(\"home\");\r\n        }\r\n    }\r\n@Override\r\n    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AddToCartController.java b/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AddToCartController.java
+--- a/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AddToCartController.java	(revision ad85be509ec6b1df70c5a421da785212e57bbd6e)
++++ b/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AddToCartController.java	(date 1735127074135)
+@@ -26,6 +26,8 @@
+         int id;
+         String removeFoodID = request.getParameter("removeFoodID");
+         String removeAll = request.getParameter("removeAll");
++        String increment = request.getParameter("increment");
++        String decrement = request.getParameter("decrement");
+ 
+         if (removeAll != null) {
+             // Xóa tất cả món ăn khỏi giỏ
+@@ -50,6 +52,44 @@
+                 session.setAttribute("order", order);
+             }
+             response.sendRedirect("cart");
++
++        }else if(increment != null) {
++            int foodIdToIncrement = Integer.parseInt(increment);
++            HttpSession session = request.getSession();
++            Order order = (Order) session.getAttribute("order");
++            if (order != null) {
++                List<Item> list = order.getItems();
++                for (Item item : list) {
++                    if (item.getFood().getIdFood() == foodIdToIncrement) {
++                        item.setQuantity(item.getQuantity() + 1);
++                    }
++                }
++                session.setAttribute("order", order);
++            }
++            response.sendRedirect("cart");
++        }else if(decrement != null) {
++            int foodIdDecrement = Integer.parseInt(decrement);
++            HttpSession session = request.getSession();
++            Order order = (Order) session.getAttribute("order");
++            if (order != null) {
++                List<Item> list = order.getItems();
++                for (Item item : list) {
++                    if (item.getFood().getIdFood() == foodIdDecrement) {
++                        if (item.getQuantity() > 1) {
++                            item.setQuantity(item.getQuantity() - 1);
++                        } else {
++                            list.remove(item);
++                        }
++                        break;
++                    }
++                }
++                order.setItems(list);
++                session.setAttribute("order", order);
++            }
++            response.sendRedirect("cart");
++
++
++
+         } else if (request.getParameter("foodID") != null) {
+             // Xử lý thêm món ăn vào giỏ hàng
+             id = Integer.parseInt(request.getParameter("foodID"));
+Index: src/main/java/hcmuaf/nlu/edu/vn/testproject/services/BannerService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package hcmuaf.nlu.edu.vn.testproject.services;\r\n\r\nimport hcmuaf.nlu.edu.vn.testproject.daos.BannerDao;\r\nimport hcmuaf.nlu.edu.vn.testproject.models.Banner;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class BannerService {\r\n    public List<Banner> getBanners() {\r\n        BannerDao dao = new BannerDao();\r\n        List<Banner> banners = dao.getBanners();\r\n        return banners;\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        BannerService bannerService = new BannerService();\r\n        List<Banner> banners = bannerService.getBanners();\r\n        for (Banner banner : banners) {\r\n            System.out.println(banner);\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/BannerService.java b/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/BannerService.java
+--- a/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/BannerService.java	(revision ad85be509ec6b1df70c5a421da785212e57bbd6e)
++++ b/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/BannerService.java	(date 1735127137816)
+@@ -13,11 +13,4 @@
+         return banners;
+     }
+ 
+-    public static void main(String[] args) {
+-        BannerService bannerService = new BannerService();
+-        List<Banner> banners = bannerService.getBanners();
+-        for (Banner banner : banners) {
+-            System.out.println(banner);
+-        }
+-    }
+ }
+Index: src/main/webapp/views/cart.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page import=\"hcmuaf.nlu.edu.vn.testproject.models.Food\" %>\r\n<%@ page import=\"java.util.List\" %>\r\n<%@ page import=\"java.util.ArrayList\" %>\r\n<%@ page import=\"hcmuaf.nlu.edu.vn.testproject.daos.FoodCartDAO\" %>\r\n<%@ page import=\"hcmuaf.nlu.edu.vn.testproject.models.Item\" %>\r\n<%@ page import=\"hcmuaf.nlu.edu.vn.testproject.models.Order\" %>\r\n<%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\" %>\r\n<%@ taglib uri=\"http://java.sun.com/jsp/jstl/core\" prefix=\"c\" %>\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\"/>\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\r\n    <title>Giỏ hàng</title>\r\n    <link href=\"${pageContext.request.contextPath}/Images/LOGO_V2.png\" rel=\"icon\" type=\"image/x-icon\"/>\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\"/>\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css\"/>\r\n    <link rel=\"stylesheet\" href=\"${pageContext.request.contextPath}/css/cart.css\"/>\r\n    <link rel=\"stylesheet\" href=\"${pageContext.request.contextPath}/css/signinCssModule.css\"/>\r\n    <script src=\"${pageContext.request.contextPath}/js/module_dangnhap.js\" defer></script>\r\n</head>\r\n\r\n<body>\r\n<script src=\"${pageContext.request.contextPath}/js/module_dangnhap.js\"></script>\r\n<jsp:include page=\"header.jsp\"></jsp:include>\r\n\r\n<div id=\"content_section\">\r\n    <div class=\"cart-container\">\r\n        <div class=\"cart-left\">\r\n            <c:if test=\"${not empty sessionScope.order}\">\r\n                <table class=\"cart-table\">\r\n                    <thead>\r\n                    <tr>\r\n                        <th></th>\r\n                        <th>Tên sản phẩm</th>\r\n                        <th>Hình ảnh</th>\r\n                        <th>Số lượng</th>\r\n                        <th>Giá</th>\r\n                        <th>Thành tiền</th>\r\n                        <th>\r\n                            <a href=\"${pageContext.request.contextPath}/addtoCart?removeAll=true\">\r\n                                <i class=\"fa-regular fa-trash-can\"></i>\r\n                            </a>\r\n                        </th>\r\n                    </tr>\r\n                    </thead>\r\n                    <tbody id=\"cart-items-container\" class=\"cart-body\">\r\n                    <c:forEach items=\"${sessionScope.order.items}\" var=\"item\">\r\n                        <tr>\r\n                            <td>\r\n                                <button class=\"delete-btn\">\r\n                                    <a href=\"${pageContext.request.contextPath}/addtoCart?removeFoodID=${item.food.idFood}\" class=\"delete-btn\">\r\n                                        <i class=\"fa-regular fa-trash-can\"></i>\r\n                                    </a>\r\n                                </button>\r\n                            </td>\r\n                            <td>${item.food.foodName}</td>\r\n                            <td>\r\n                                <img src=\"${item.food.img}\" alt=\"${item.food.foodName}\" class=\"product-img\"/>\r\n                            </td>\r\n                            <td>\r\n                                <input\r\n                                        type=\"number\"\r\n                                        value=\"${item.quantity}\"\r\n                                        min=\"1\"\r\n                                        class=\"quantity-input\"\r\n                                        onchange=\"updateQuantity('${item.food.idFood}', this.value)\"\r\n                                />\r\n                            </td>\r\n                            <td>${item.food.price}₫</td>\r\n                            <td>${item.quantity * item.food.price}₫</td>\r\n                            <td></td>\r\n                        </tr>\r\n                    </c:forEach>\r\n                    </tbody>\r\n\r\n                </table>\r\n            </c:if>\r\n\r\n            <c:if test=\"${empty sessionScope.order}\">\r\n                <p>Giỏ hàng của bạn hiện tại đang trống!</p>\r\n            </c:if>\r\n\r\n            <div class=\"cart-buttons\">\r\n                <button\r\n                        class=\"continue-btn\">\r\n                    <a href=\"home\">← Tiếp tục xem sản phẩm</a>\r\n                </button>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"cart-right\">\r\n            <h2>Tổng Sản Phẩm</h2>\r\n            <div class=\"cart-summary\">\r\n                <div class=\"summary-item\">\r\n                    <span>Tạm tính:</span>\r\n                    <span id=\"subtotal\">190.000&nbsp;đ</span>\r\n                </div>\r\n            </div>\r\n            <div class=\"summary-item total\">\r\n                <span>Tổng cộng:</span>\r\n                <span id=\"total\">190.000&nbsp;đ</span>\r\n            </div>\r\n            <button\r\n                    class=\"checkout-btn\"\r\n                    onclick=\"window.location.href='views/check-out.jsp'\"\r\n            >\r\n                Tiến hành thanh toán\r\n            </button>\r\n\r\n            <div class=\"voucher\">\r\n                <label for=\"voucher\">Phiếu ưu đãi</label>\r\n                <input type=\"text\" id=\"voucher\" placeholder=\"Mã ưu đãi\"/>\r\n                <button class=\"apply-btn\" onclick=\"applyVoucher()\">Áp dụng</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<jsp:include page=\"footer.jsp\"></jsp:include>\r\n\r\n<script src=\"${pageContext.request.contextPath}/js/cart.js\"></script>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/views/cart.jsp b/src/main/webapp/views/cart.jsp
+--- a/src/main/webapp/views/cart.jsp	(revision ad85be509ec6b1df70c5a421da785212e57bbd6e)
++++ b/src/main/webapp/views/cart.jsp	(date 1735127074136)
+@@ -20,7 +20,14 @@
+     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css"/>
+     <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
+ </head>
+-
++<style>
++    .congtrubutton{
++        display: flex;
++        justify-content: center;
++        align-items: center;
++        gap: 10px;
++    }
++</style>
+ <body>
+ <script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
+ <jsp:include page="header.jsp"></jsp:include>
+@@ -60,13 +67,15 @@
+                                 <img src="${item.food.img}" alt="${item.food.foodName}" class="product-img"/>
+                             </td>
+                             <td>
+-                                <input
+-                                        type="number"
+-                                        value="${item.quantity}"
+-                                        min="1"
+-                                        class="quantity-input"
+-                                        onchange="updateQuantity('${item.food.idFood}', this.value)"
+-                                />
++                                <div class="congtrubutton">
++                                    <a href="${pageContext.request.contextPath}/addtoCart?decrement=${item.food.idFood}">
++                                        <button>-</button>
++                                    </a>
++                                    <span>${item.quantity}</span>
++                                    <a href="${pageContext.request.contextPath}/addtoCart?increment=${item.food.idFood}">
++                                        <button>+</button>
++                                    </a>
++                                </div>
+                             </td>
+                             <td>${item.food.price}₫</td>
+                             <td>${item.quantity * item.food.price}₫</td>
+@@ -95,12 +104,15 @@
+             <div class="cart-summary">
+                 <div class="summary-item">
+                     <span>Tạm tính:</span>
+-                    <span id="subtotal">190.000&nbsp;đ</span>
++                    <c:forEach var="item" items="${sessionScope.order.items}">
++                        <c:set var="subtotal" value="${subtotal + item.quantity * item.food.price}" />
++                    </c:forEach>
++                    ${subtotal}₫
+                 </div>
+             </div>
+             <div class="summary-item total">
+                 <span>Tổng cộng:</span>
+-                <span id="total">190.000&nbsp;đ</span>
++                <span id="total"> ${subtotal}₫</span>
+             </div>
+             <button
+                     class="checkout-btn"
+Index: out/artifacts/testProject_da/views/cart.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page import=\"hcmuaf.nlu.edu.vn.testproject.models.Food\" %>\r\n<%@ page import=\"java.util.List\" %>\r\n<%@ page import=\"java.util.ArrayList\" %>\r\n<%@ page import=\"hcmuaf.nlu.edu.vn.testproject.daos.FoodCartDAO\" %>\r\n<%@ page import=\"hcmuaf.nlu.edu.vn.testproject.models.Item\" %>\r\n<%@ page import=\"hcmuaf.nlu.edu.vn.testproject.models.Order\" %>\r\n<%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\" %>\r\n<%@ taglib uri=\"http://java.sun.com/jsp/jstl/core\" prefix=\"c\" %>\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\"/>\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\r\n    <title>Giỏ hàng</title>\r\n    <link href=\"${pageContext.request.contextPath}/Images/LOGO_V2.png\" rel=\"icon\" type=\"image/x-icon\"/>\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\"/>\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css\"/>\r\n    <link rel=\"stylesheet\" href=\"${pageContext.request.contextPath}/css/cart.css\"/>\r\n    <link rel=\"stylesheet\" href=\"${pageContext.request.contextPath}/css/signinCssModule.css\"/>\r\n    <script src=\"${pageContext.request.contextPath}/js/module_dangnhap.js\" defer></script>\r\n</head>\r\n\r\n<body>\r\n<script src=\"${pageContext.request.contextPath}/js/module_dangnhap.js\"></script>\r\n<jsp:include page=\"header.jsp\"></jsp:include>\r\n\r\n<div id=\"content_section\">\r\n    <div class=\"cart-container\">\r\n        <div class=\"cart-left\">\r\n            <c:if test=\"${not empty sessionScope.order}\">\r\n                <table class=\"cart-table\">\r\n                    <thead>\r\n                    <tr>\r\n                        <th></th>\r\n                        <th>Tên sản phẩm</th>\r\n                        <th>Hình ảnh</th>\r\n                        <th>Số lượng</th>\r\n                        <th>Giá</th>\r\n                        <th>Thành tiền</th>\r\n                        <th>\r\n                            <a href=\"${pageContext.request.contextPath}/addtoCart?removeAll=true\">\r\n                                <i class=\"fa-regular fa-trash-can\"></i>\r\n                            </a>\r\n                        </th>\r\n                    </tr>\r\n                    </thead>\r\n                    <tbody id=\"cart-items-container\" class=\"cart-body\">\r\n                    <c:forEach items=\"${sessionScope.order.items}\" var=\"item\">\r\n                        <tr>\r\n                            <td>\r\n                                <button class=\"delete-btn\">\r\n                                    <a href=\"${pageContext.request.contextPath}/addtoCart?removeFoodID=${item.food.idFood}\" class=\"delete-btn\">\r\n                                        <i class=\"fa-regular fa-trash-can\"></i>\r\n                                    </a>\r\n                                </button>\r\n                            </td>\r\n                            <td>${item.food.foodName}</td>\r\n                            <td>\r\n                                <img src=\"${item.food.img}\" alt=\"${item.food.foodName}\" class=\"product-img\"/>\r\n                            </td>\r\n                            <td>\r\n                                <input\r\n                                        type=\"number\"\r\n                                        value=\"${item.quantity}\"\r\n                                        min=\"1\"\r\n                                        class=\"quantity-input\"\r\n                                        onchange=\"updateQuantity('${item.food.idFood}', this.value)\"\r\n                                />\r\n                            </td>\r\n                            <td>${item.food.price}₫</td>\r\n                            <td>${item.quantity * item.food.price}₫</td>\r\n                            <td></td>\r\n                        </tr>\r\n                    </c:forEach>\r\n                    </tbody>\r\n\r\n                </table>\r\n            </c:if>\r\n\r\n            <c:if test=\"${empty sessionScope.order}\">\r\n                <p>Giỏ hàng của bạn hiện tại đang trống!</p>\r\n            </c:if>\r\n\r\n            <div class=\"cart-buttons\">\r\n                <button\r\n                        class=\"continue-btn\">\r\n                    <a href=\"home\">← Tiếp tục xem sản phẩm</a>\r\n                </button>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"cart-right\">\r\n            <h2>Tổng Sản Phẩm</h2>\r\n            <div class=\"cart-summary\">\r\n                <div class=\"summary-item\">\r\n                    <span>Tạm tính:</span>\r\n                    <span id=\"subtotal\">190.000&nbsp;đ</span>\r\n                </div>\r\n            </div>\r\n            <div class=\"summary-item total\">\r\n                <span>Tổng cộng:</span>\r\n                <span id=\"total\">190.000&nbsp;đ</span>\r\n            </div>\r\n            <button\r\n                    class=\"checkout-btn\"\r\n                    onclick=\"window.location.href='views/check-out.jsp'\"\r\n            >\r\n                Tiến hành thanh toán\r\n            </button>\r\n\r\n            <div class=\"voucher\">\r\n                <label for=\"voucher\">Phiếu ưu đãi</label>\r\n                <input type=\"text\" id=\"voucher\" placeholder=\"Mã ưu đãi\"/>\r\n                <button class=\"apply-btn\" onclick=\"applyVoucher()\">Áp dụng</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<jsp:include page=\"footer.jsp\"></jsp:include>\r\n\r\n<script src=\"${pageContext.request.contextPath}/js/cart.js\"></script>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/testProject_da/views/cart.jsp b/out/artifacts/testProject_da/views/cart.jsp
+--- a/out/artifacts/testProject_da/views/cart.jsp	(revision ad85be509ec6b1df70c5a421da785212e57bbd6e)
++++ b/out/artifacts/testProject_da/views/cart.jsp	(date 1735127074135)
+@@ -20,7 +20,14 @@
+     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css"/>
+     <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
+ </head>
+-
++<style>
++    .congtrubutton{
++        display: flex;
++        justify-content: center;
++        align-items: center;
++        gap: 10px;
++    }
++</style>
+ <body>
+ <script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
+ <jsp:include page="header.jsp"></jsp:include>
+@@ -60,13 +67,15 @@
+                                 <img src="${item.food.img}" alt="${item.food.foodName}" class="product-img"/>
+                             </td>
+                             <td>
+-                                <input
+-                                        type="number"
+-                                        value="${item.quantity}"
+-                                        min="1"
+-                                        class="quantity-input"
+-                                        onchange="updateQuantity('${item.food.idFood}', this.value)"
+-                                />
++                                <div class="congtrubutton">
++                                    <a href="${pageContext.request.contextPath}/addtoCart?decrement=${item.food.idFood}">
++                                        <button>-</button>
++                                    </a>
++                                    <span>${item.quantity}</span>
++                                    <a href="${pageContext.request.contextPath}/addtoCart?increment=${item.food.idFood}">
++                                        <button>+</button>
++                                    </a>
++                                </div>
+                             </td>
+                             <td>${item.food.price}₫</td>
+                             <td>${item.quantity * item.food.price}₫</td>
+@@ -95,12 +104,15 @@
+             <div class="cart-summary">
+                 <div class="summary-item">
+                     <span>Tạm tính:</span>
+-                    <span id="subtotal">190.000&nbsp;đ</span>
++                    <c:forEach var="item" items="${sessionScope.order.items}">
++                        <c:set var="subtotal" value="${subtotal + item.quantity * item.food.price}" />
++                    </c:forEach>
++                    ${subtotal}₫
+                 </div>
+             </div>
+             <div class="summary-item total">
+                 <span>Tổng cộng:</span>
+-                <span id="total">190.000&nbsp;đ</span>
++                <span id="total"> ${subtotal}₫</span>
+             </div>
+             <button
+                     class="checkout-btn"
+Index: out/artifacts/testProject_da/css/cart.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body,\r\nhtml {\r\n    margin: 0;\r\n    padding: 0px;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    height: 100%;\r\n}\r\n\r\n#header {\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n    height: 140px;\r\n    background-color: #ffffff;\r\n    border-bottom: 2px solid #e6e6e6;\r\n}\r\n\r\n#header .containerheaderAll {\r\n    max-width: 1200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n#header .containers {\r\n    max-width: 1200px;\r\n    max-height: 140px;\r\n}\r\n\r\n#header .containerss {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    width: 100%;\r\n    max-width: 1200px;\r\n    max-height: 95px;\r\n}\r\n\r\n#header .containerss .left {\r\n    width: 50%;\r\n}\r\n\r\n#header .containerss img {\r\n    width: 310px;\r\n    height: 100px;\r\n}\r\n\r\n#header .containerss .right {\r\n    width: 50%;\r\n    display: flex;\r\n    justify-content: end;\r\n    gap: 40px;\r\n    margin-right: 30px;\r\n}\r\n\r\n#header .containerss .right .nav_item_shop {\r\n    position: relative;\r\n}\r\n\r\n#header .containerss .right .count {\r\n    position: absolute;\r\n    margin: 5px;\r\n    background-color: #ffe600;\r\n    width: 28px;\r\n    height: 28px;\r\n    text-align: center;\r\n    border-radius: 50%;\r\n    top: -2px;\r\n    line-height: 28px;\r\n}\r\n\r\n#header .containerss .right .fa-solid {\r\n    color: #b5292f;\r\n    margin: 10px;\r\n}\r\n\r\n#header .containerss .right a {\r\n    color: rgb(2, 2, 2);\r\n    text-decoration: none;\r\n    font-weight: 550;\r\n}\r\n\r\n#header .bottom {\r\n    width: 100%;\r\n    height: 45px;\r\n    display: flex;\r\n    z-index: 1000;\r\n}\r\n\r\n#header .bottom .menu {\r\n    width: 50%;\r\n    height: 45px;\r\n    z-index: 1000;\r\n}\r\n\r\n#header .bottom .menu .menu-item .tabbar .fa-solid {\r\n    margin-left: 20px;\r\n    color: #b5292f;\r\n    margin-right: 10px;\r\n}\r\n\r\n#header .bottom .menu .menu-list {\r\n    padding: 0px;\r\n}\r\n\r\n#header .bottom .menu a {\r\n    text-decoration: none;\r\n    color: rgb(39, 39, 39);\r\n}\r\n\r\n#header .bottom .menu ul {\r\n    height: 100%;\r\n}\r\n\r\n#header .bottom .menu ul > li {\r\n    list-style-type: none;\r\n    width: max-content;\r\n    float: left;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    padding-right: 40px;\r\n}\r\n\r\n#header .bottom .menu ul > li > a:hover {\r\n    color: #b5292f;\r\n}\r\n\r\n#header .bottom .menu .menu-item {\r\n    position: relative;\r\n    height: 100%;\r\n}\r\n\r\n#header .bottom .menu ul .submenu {\r\n    position: absolute;\r\n    height: 150px;\r\n    width: auto;\r\n    border: 1px solid rgba(0, 0, 0, 0.2);\r\n\r\n    border-top: none;\r\n    top: 29px;\r\n    left: 20px;\r\n    display: none;\r\n    background-color: white;\r\n    color: black;\r\n    border-radius: 0;\r\n}\r\n\r\n#header .menu ul > li:hover .submenu {\r\n    display: block;\r\n    border-radius: 0 0 10px 10px;\r\n    padding-top: 10px;\r\n}\r\n\r\n#header .menu ul.submenu > li {\r\n    float: none;\r\n    width: 80px;\r\n    height: 30px;\r\n}\r\n\r\n#header .menu .submenu a {\r\n    position: relative;\r\n}\r\n\r\n#header .menu .submenu i {\r\n    position: absolute;\r\n    left: -25px;\r\n    width: auto;\r\n    height: auto;\r\n}\r\n\r\n#header .bottom .search {\r\n    width: 50%;\r\n    height: 35px;\r\n    display: flex;\r\n    justify-content: end;\r\n    position: relative;\r\n}\r\n\r\n#header .bottom .search input {\r\n    width: 300px;\r\n    padding: 10px;\r\n    border: 1px solid #918f8f;\r\n    border-radius: 20px;\r\n    margin-right: 20px;\r\n    font-weight: 600;\r\n    background: #f9f9f9;\r\n    color: #222222;\r\n    margin: 0;\r\n}\r\n\r\n#header .bottom .search button {\r\n    position: absolute;\r\n    width: 25px;\r\n    height: 25px;\r\n    border: 1px solid #b5292f;\r\n    border-radius: 50%;\r\n    background-color: #b5292f;\r\n    color: white;\r\n    right: 10px;\r\n    top: 5px;\r\n}\r\n\r\n/* Xử lý footer */\r\n#footer {\r\n    width: 100%;\r\n    height: max-content;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: #b5292f;\r\n    border-top: 2px solid #e6e6e6;\r\n\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    box-sizing: border-box;\r\n}\r\n\r\n#footer .footer-info {\r\n    width: 100%;\r\n    width: 800px;\r\n    height: 50%;\r\n    display: flex;\r\n}\r\n\r\n#footer .footer-info .left {\r\n    width: 70%;\r\n    color: white;\r\n}\r\n\r\n#footer .footer-info .right {\r\n    width: 30%;\r\n    color: white;\r\n}\r\n\r\n#footer .footer-info .right i {\r\n    color: white;\r\n    font-size: 20px;\r\n    margin: 5px;\r\n}\r\n\r\n#footer .footer-social {\r\n    display: flex;\r\n    gap: 10px;\r\n    color: #e6e6e6;\r\n    margin-top: 20px;\r\n}\r\n\r\n#footer .footer-social a {\r\n    color: white;\r\n    text-decoration: none;\r\n}\r\n\r\n#footer .footer-social .mid {\r\n    margin-left: 100px;\r\n}\r\n\r\n/* Xử lý content */\r\n#content_section {\r\n    font-family: \"popins\", sans-serif;\r\n    min-height: 700px;\r\n    padding: 20px 0;\r\n    background-color: #f2f2f2;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    color: #333;\r\n}\r\n\r\n#content_section .cart-container {\r\n    width: 1200px;\r\n    margin: 0 auto;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    gap: 20px;\r\n}\r\n\r\n.cart-left {\r\n    width: 100%;\r\n    min-height: 700px;\r\n    background-color: #f9f9f9;\r\n    border-radius: 5px;\r\n}\r\n\r\n.cart-table {\r\n    height: 300px;\r\n    margin-top: 15px;\r\n    width: 100%;\r\n    border-collapse: collapse;\r\n}\r\n\r\n.cart-table th {\r\n    font-size: 14px;\r\n    padding: 10px;\r\n    text-align: center;\r\n}\r\n\r\n.cart-table td {\r\n    font-size: 14px;\r\n    padding: 10px 0;\r\n    text-align: center;\r\n    border-bottom: 1px solid #ddd;\r\n}\r\n\r\n.cart-table tr {\r\n    display: table; /* Đảm bảo các hàng vẫn hiển thị như bảng */\r\n    table-layout: fixed; /* Đảm bảo chiều rộng các ô không bị thay đổi */\r\n    width: 100%; /* Chiều rộng toàn bảng */\r\n}\r\n\r\n.cart-table img {\r\n    width: 50px;\r\n    height: 50px;\r\n}\r\n\r\n.cart-body {\r\n    display: block; /* Chuyển đổi thành block để có thể cuộn */\r\n    max-height: 300px;\r\n    overflow-y: auto;\r\n}\r\n\r\n#cart-items-container::-webkit-scrollbar {\r\n    width: 8px;\r\n}\r\n\r\n#cart-items-container::-webkit-scrollbar-track {\r\n    background: #f1f1f1;\r\n}\r\n\r\n#cart-items-container::-webkit-scrollbar-thumb {\r\n    background: #888;\r\n}\r\n\r\n#cart-items-container::-webkit-scrollbar-thumb:hover {\r\n    background: #555;\r\n}\r\n\r\n.product-img {\r\n    width: 50px;\r\n    height: 50px;\r\n}\r\n\r\n.quantity-input {\r\n    width: 50px;\r\n    text-align: center;\r\n}\r\n\r\n.quantity .qty-btn {\r\n    padding: 0 2px;\r\n    border: 1px solid #333333;\r\n}\r\n\r\n.cart-buttons {\r\n    margin-top: 20px;\r\n}\r\n\r\n.select-product {\r\n    margin-right: 10px;\r\n    transform: scale(1.5);\r\n    cursor: pointer;\r\n}\r\n\r\n.continue-btn {\r\n    margin-left: 38%;\r\n    background-color: white; /* Màu chủ đạo */\r\n    border: 2px solid #b5292f; /* Viền màu đỏ */\r\n    color: #b5292f;\r\n    padding: 10px 15px;\r\n    font-size: 14px;\r\n    cursor: pointer;\r\n    border-radius: 5px;\r\n    transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng khi hover và nhấn */\r\n}\r\n\r\n.continue-btn a {\r\n    color: #222222;\r\n    text-decoration: none;\r\n}\r\n\r\n/* Hiệu ứng khi di chuột vào button */\r\n.continue-btn:hover {\r\n    background-color: #b5292f;\r\n    color: white;\r\n    font-weight: 500; /* Màu sáng hơn khi di chuột */\r\n}\r\n\r\n.fa-trash-can {\r\n    color: #b5292f;\r\n    cursor: pointer;\r\n    font-size: 18px;\r\n    transition: color 0.3s ease, transform 0.2s;\r\n}\r\n\r\n.fa-trash-can:hover {\r\n    color: #b5292f;\r\n    transform: scale(1.2);\r\n}\r\n\r\n.fa-trash-can:active {\r\n    color: #b5292f;\r\n    transform: scale(1.1);\r\n}\r\n\r\n.cart-right h2 {\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.cart-summary {\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.summary-item {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.total {\r\n    font-weight: bold;\r\n    font-size: 18px;\r\n}\r\n\r\n.checkout-btn {\r\n    background-color: #b5292f;\r\n    color: white;\r\n    width: 100%;\r\n    padding: 15px;\r\n    border: none;\r\n    font-size: 16px;\r\n    cursor: pointer;\r\n    border-radius: 5px;\r\n    transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng khi hover và nhấn */\r\n}\r\n\r\n.voucher {\r\n    margin-top: 20px;\r\n}\r\n\r\n.voucher label {\r\n    display: block;\r\n    margin-bottom: 10px;\r\n    font-size: 14px;\r\n}\r\n\r\n.voucher input {\r\n    width: calc(100% - 90px);\r\n    padding: 10px;\r\n    margin-right: 10px;\r\n    border: 1px solid #ddd;\r\n    border-radius: 5px;\r\n}\r\n\r\n.apply-btn {\r\n    background-color: #b5292f;\r\n    border: none;\r\n    color: white;\r\n    padding: 10px;\r\n    cursor: pointer;\r\n    border-radius: 5px;\r\n    margin-top: 15px;\r\n    transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng khi hover và nhấn */\r\n}\r\n\r\n/* Cart delete button */\r\n.delete-btn {\r\n    color: white;\r\n    border: none;\r\n    padding: 5px 10px;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n    font-size: 14px;\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/testProject_da/css/cart.css b/out/artifacts/testProject_da/css/cart.css
+--- a/out/artifacts/testProject_da/css/cart.css	(revision ad85be509ec6b1df70c5a421da785212e57bbd6e)
++++ b/out/artifacts/testProject_da/css/cart.css	(date 1735127074134)
+@@ -467,3 +467,4 @@
+ }
+ 
+ 
++
