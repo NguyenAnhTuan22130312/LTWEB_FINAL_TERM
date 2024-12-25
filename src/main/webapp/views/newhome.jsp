@@ -69,9 +69,7 @@
                     </span>
                     <button
                             class="button-cart"
-
-                            onclick="window.location.href='cart.jsp?foodId=${food.idFood}'"
-                    >
+                            onclick="window.location.href='cart.jsp?foodId=${food.idFood}'">
                         Thêm vào giỏ hàng
                     </button>
                 </div>
