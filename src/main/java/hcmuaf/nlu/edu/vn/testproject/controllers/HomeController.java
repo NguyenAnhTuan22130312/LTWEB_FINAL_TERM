@@ -22,7 +22,7 @@ public class HomeController extends HttpServlet {
 
         BannerService bannerService = new BannerService();
         List<Banner> banners = bannerService.getBanners();
-        request.setAttribute("banners", banners);
+        request.setAttribute("bans", banners);
 
         FoodServiceListFilter fslf = new FoodServiceListFilter();
 

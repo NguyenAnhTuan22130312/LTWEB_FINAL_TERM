@@ -7,8 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BannerService {
-    static BannerDao instance = new BannerDao();
     public List<Banner> getBanners() {
-        return  instance.getBanners();
+        BannerDao dao = new BannerDao();
+        List<Banner> banners = dao.getBanners();
+        return banners;
+    }
+
+    public static void main(String[] args) {
+        BannerService bannerService = new BannerService();
+        List<Banner> banners = bannerService.getBanners();
+        for (Banner banner : banners) {
+            System.out.println(banner);
+        }
     }
 }

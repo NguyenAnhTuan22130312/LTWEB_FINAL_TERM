@@ -14,24 +14,17 @@ import java.util.List;
 import java.util.Map;
 
 public class BannerDao {
-    static List<Banner> banners;
-    static {
-        BannerDao bannerDao = new BannerDao();
-        bannerDao.getAllBanner();
-    }
+    private List<Banner> banners;
 
-    public static List<Banner> getBanners() {
-        return banners;
+    public BannerDao() {
+        this.banners = new ArrayList<>();
+        banners = getAllBanner();
     }
 
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu
-    public void getAllBanner() {
-
-//        String query = "WITH RankedReviews AS (" +
-//                "  SELECT ac.userName,rv.idAcc,rv.idReview,rv.idFood,rv.rating,rv.commentu,rv.createdAt,ROW_NUMBER() OVER (PARTITION BY rv.idFood ORDER BY rv.createdAt DESC) AS rnk " +
-//                "FROM review rv JOIN account ac ON rv.idAcc = ac.idAcc )" +
-//                "SELECT userName, idAcc, idReview, idFood, rating,commentu,createdAt FROM RankedReviews WHERE rnk <= 10;";
-        String query="select * from banner";
+    public List<Banner> getAllBanner() {
+        List<Banner> banners = new ArrayList<>();
+        String query = "select * from banner";
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -54,9 +47,11 @@ public class BannerDao {
 
             // Duyệt qua kết quả trả về và tạo danh sách món ăn
             while (rs.next()) {
-                new Banner(rs.getInt("idBanner"),
-                        rs.getString("url"),
-                        rs.getDate("createdAt")
+                banners.add(
+                        new Banner(rs.getInt("idBanner"),
+                                rs.getString("url"),
+                                rs.getDate("createdAt")
+                        )
                 );
             }
 
@@ -68,6 +63,7 @@ public class BannerDao {
             // Đảm bảo rằng kết nối, câu lệnh và result set được đóng đúng cách
             closeResources(rs, ps, con);
         }
+        return banners;
     }
 
     // Phương thức đóng các tài nguyên
@@ -79,5 +75,9 @@ public class BannerDao {
         } catch (SQLException e) {
             System.err.println("Lỗi khi đóng tài nguyên: " + e.getMessage());
         }
+    }
+
+    public List<Banner> getBanners() {
+        return banners;
     }
 }
