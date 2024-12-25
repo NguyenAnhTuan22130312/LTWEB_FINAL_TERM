@@ -9,12 +9,13 @@ import java.util.*;
 
 public class FoodDAO {
 
-    static Map<Integer, Food> data = new HashMap<>();
+    private Map<Integer, Food> data;
 
-    static {
-        FoodDAO pdd = new FoodDAO();
-        pdd.getAllFood();
+    public FoodDAO() {
+        this.data = new HashMap<>();
+        getAllFood();
     }
+
 
 
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu

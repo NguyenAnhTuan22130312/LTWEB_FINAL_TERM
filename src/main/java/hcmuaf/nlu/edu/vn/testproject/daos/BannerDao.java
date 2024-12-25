@@ -18,12 +18,12 @@ public class BannerDao {
 
     public BannerDao() {
         this.banners = new ArrayList<>();
-        banners = getAllBanner();
+         getAllBanner();
     }
 
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu
-    public List<Banner> getAllBanner() {
-        List<Banner> banners = new ArrayList<>();
+    public void  getAllBanner() {
+
         String query = "select * from banner";
         Connection con = null;
         PreparedStatement ps = null;
@@ -63,7 +63,7 @@ public class BannerDao {
             // Đảm bảo rằng kết nối, câu lệnh và result set được đóng đúng cách
             closeResources(rs, ps, con);
         }
-        return banners;
+
     }
 
     // Phương thức đóng các tài nguyên

@@ -15,12 +15,12 @@ import java.util.stream.Collectors;
 
 public class ReviewDAO {
 
-    static Map<Integer, ReviewFood> dataReviewFood = new HashMap<>();
+    private Map<Integer, ReviewFood> dataReviewFood = new HashMap<>();
 
 
-    static {
-        ReviewDAO rvd = new ReviewDAO();
-        rvd.getAllReview();
+    public ReviewDAO() {
+        this.dataReviewFood = new HashMap<>();
+        getAllReview();
     }
 
     public List<ReviewFood> getAll() {
