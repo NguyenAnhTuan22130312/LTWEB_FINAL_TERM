@@ -68,11 +68,11 @@
                             </td>
                             <td>
                                 <div class="congtrubutton">
-                                    <a href="">
+                                    <a href="${pageContext.request.contextPath}/addtoCart?decrement=${item.food.idFood}">
                                         <button>-</button>
                                     </a>
                                     <span>${item.quantity}</span>
-                                    <a href="">
+                                    <a href="${pageContext.request.contextPath}/addtoCart?increment=${item.food.idFood}">
                                         <button>+</button>
                                     </a>
                                 </div>

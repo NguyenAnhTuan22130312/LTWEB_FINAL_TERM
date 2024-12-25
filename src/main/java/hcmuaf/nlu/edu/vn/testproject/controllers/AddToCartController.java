@@ -26,6 +26,8 @@ public class AddToCartController extends HttpServlet {
         int id;
         String removeFoodID = request.getParameter("removeFoodID");
         String removeAll = request.getParameter("removeAll");
+        String increment = request.getParameter("increment");
+        String decrement = request.getParameter("decrement");
 
         if (removeAll != null) {
             // Xóa tất cả món ăn khỏi giỏ
@@ -50,6 +52,44 @@ public class AddToCartController extends HttpServlet {
                 session.setAttribute("order", order);
             }
             response.sendRedirect("cart");
+
+        }else if(increment != null) {
+            int foodIdToIncrement = Integer.parseInt(increment);
+            HttpSession session = request.getSession();
+            Order order = (Order) session.getAttribute("order");
+            if (order != null) {
+                List<Item> list = order.getItems();
+                for (Item item : list) {
+                    if (item.getFood().getIdFood() == foodIdToIncrement) {
+                        item.setQuantity(item.getQuantity() + 1);
+                    }
+                }
+                session.setAttribute("order", order);
+            }
+            response.sendRedirect("cart");
+        }else if(decrement != null) {
+            int foodIdDecrement = Integer.parseInt(decrement);
+            HttpSession session = request.getSession();
+            Order order = (Order) session.getAttribute("order");
+            if (order != null) {
+                List<Item> list = order.getItems();
+                for (Item item : list) {
+                    if (item.getFood().getIdFood() == foodIdDecrement) {
+                        if (item.getQuantity() > 1) {
+                            item.setQuantity(item.getQuantity() - 1);
+                        } else {
+                            list.remove(item);
+                        }
+                        break;
+                    }
+                }
+                order.setItems(list);
+                session.setAttribute("order", order);
+            }
+            response.sendRedirect("cart");
+
+
+
         } else if (request.getParameter("foodID") != null) {
             // Xử lý thêm món ăn vào giỏ hàng
             id = Integer.parseInt(request.getParameter("foodID"));
