@@ -104,12 +104,15 @@
             <div class="cart-summary">
                 <div class="summary-item">
                     <span>Tạm tính:</span>
-                    <span id="subtotal">190.000&nbsp;đ</span>
+                    <c:forEach var="item" items="${sessionScope.order.items}">
+                        <c:set var="subtotal" value="${subtotal + item.quantity * item.food.price}" />
+                    </c:forEach>
+                    ${subtotal}₫
                 </div>
             </div>
             <div class="summary-item total">
                 <span>Tổng cộng:</span>
-                <span id="total">190.000&nbsp;đ</span>
+                <span id="total"> ${subtotal}₫</span>
             </div>
             <button
                     class="checkout-btn"
