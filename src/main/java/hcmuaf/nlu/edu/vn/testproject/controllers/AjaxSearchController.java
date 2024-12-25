@@ -57,6 +57,7 @@ public class AjaxSearchController extends HttpServlet {
                     "                <span class=\"close\" onclick=\"closePopup('"+food.getIdFood()+"')\">&times;</span>\n" +
                     "            </div>");
         }
+
     }
 
     @Override
