@@ -39,10 +39,9 @@
                         <th>Giá</th>
                         <th>Thành tiền</th>
                         <th>
-                            <i
-                                    class="fa-regular fa-trash-can"
-                                    onclick="removeSelectedProducts()"
-                            ></i>
+                            <a href="${pageContext.request.contextPath}/addtoCart?removeAll=true">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </a>
                         </th>
                     </tr>
                     </thead>
@@ -51,7 +50,9 @@
                         <tr>
                             <td>
                                 <button class="delete-btn">
-                                    <i class="fa-regular fa-trash-can"></i>
+                                    <a href="${pageContext.request.contextPath}/addtoCart?removeFoodID=${item.food.idFood}" class="delete-btn">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </a>
                                 </button>
                             </td>
                             <td>${item.food.foodName}</td>

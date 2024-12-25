@@ -24,7 +24,34 @@ public class AddToCartController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int quantity = 1;
         int id;
-        if (request.getParameter("foodID") != null) {
+        String removeFoodID = request.getParameter("removeFoodID");
+        String removeAll = request.getParameter("removeAll");
+
+        if (removeAll != null) {
+            // Xóa tất cả món ăn khỏi giỏ
+            HttpSession session = request.getSession();
+            Order order = (Order) session.getAttribute("order");
+
+            if (order != null) {
+                order.setItems(new ArrayList<Item>());
+                session.setAttribute("order", order);
+            }
+            response.sendRedirect("cart");
+        } else if (removeFoodID != null) {
+            // Xóa món ăn cụ thể khỏi giỏ
+            int foodIDToRemove = Integer.parseInt(removeFoodID);
+            HttpSession session = request.getSession();
+            Order order = (Order) session.getAttribute("order");
+
+            if (order != null) {
+                List<Item> list = order.getItems();
+                list.removeIf(item -> item.getFood().getIdFood() == foodIDToRemove);
+                order.setItems(list);
+                session.setAttribute("order", order);
+            }
+            response.sendRedirect("cart");
+        } else if (request.getParameter("foodID") != null) {
+            // Xử lý thêm món ăn vào giỏ hàng
             id = Integer.parseInt(request.getParameter("foodID"));
             Food food = foodService.getFoodByID(id);
             if (food != null) {
@@ -42,7 +69,7 @@ public class AddToCartController extends HttpServlet {
                     list.add(item);
                     order.setItems(list);
                     session.setAttribute("order", order);
-                }else{
+                } else {
                     Order order = (Order) session.getAttribute("order");
                     List<Item> list = order.getItems();
                     boolean found = false;
@@ -52,19 +79,19 @@ public class AddToCartController extends HttpServlet {
                             found = true;
                         }
                     }
-                        if (found == false) {
+                    if (!found) {
                         Item item = new Item();
                         item.setQuantity(quantity);
                         item.setFood(food);
                         item.setPrice(food.getPrice());
                         list.add(item);
                     }
-                        session.setAttribute("order", order);
+                    session.setAttribute("order", order);
                 }
             }
             response.sendRedirect("cart");
         } else {
-            response.sendRedirect( "home");
+            response.sendRedirect("home");
         }
     }
 @Override
