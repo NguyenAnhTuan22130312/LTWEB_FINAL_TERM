@@ -1,6 +1,8 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers;
 
+import hcmuaf.nlu.edu.vn.testproject.models.Banner;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
+import hcmuaf.nlu.edu.vn.testproject.services.BannerService;
 import hcmuaf.nlu.edu.vn.testproject.services.FoodServiceListFilter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,6 +19,10 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
+        BannerService bannerService = new BannerService();
+        List<Banner> banners = bannerService.getBanners();
+        request.setAttribute("banners", banners);
 
         FoodServiceListFilter fslf = new FoodServiceListFilter();
 
