@@ -23,34 +23,168 @@
     <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
 </head>
 
-<body>
-<jsp:include page="header.jsp"></jsp:include>
 
+<body>
+<div id="header">
+    <div class="containerheaderAll">
+        <div class="containers">
+            <div class="containerss">
+                <div class="left">
+                    <div class="logo">
+                        <a href="home">
+                            <img
+                                    src="Images/LOGO_V2.png"
+                                    alt="Food store của Trung, Atuan, Atuan"
+                            />
+                        </a>
+                    </div>
+                </div>
+                <div class="right">
+                    <c:if test="${sessionScope.currentUser == null}">
+                        <a href="login" class="nav-item" id="login-link">
+                            <i class="fa-solid fa-user"></i> Đăng Nhập
+                        </a>
+                    </c:if>
+
+                    <c:if test="${sessionScope.currentUser != null}">
+                        <div class="user-menu" id="user-menu">
+                            <i class="fa-solid fa-user"></i>
+                            <a href="#" class=" user-name" id="user-name">
+                                    ${sessionScope.currentUser.userName}
+                            </a>
+                            <div class="submenu" id="submenu">
+                                <c:if test="${sessionScope.currentUser.idRole == 1}">
+                                    <a href="views/admin.jsp" id="admin-link">Quản trị</a>
+                                </c:if>
+                                <c:if test="${sessionScope.currentUser.idRole == 2}">
+                                    <a href="views/UserInformation.jsp" id="user-link">Thông tin</a>
+                                </c:if>
+                                <a href="logout" id="logout">Đăng xuất</a>
+                            </div>
+                        </div>
+                    </c:if>
+                    <div class="nav_item_shop">
+                        <a href="views/PurchaseOrder.jsp" class="nav-item">
+                            <i class="fa-solid fa-truck-fast"></i> Đơn hàng
+                        </a>
+                        <a href="#" class="count">2</a>
+                    </div>
+                    <div class="nav_item_shop">
+                        <a href="shoppingcart" class="nav-item">
+                            <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
+                        </a>
+                        <a href="shoppingcart" class="count">
+                            <%
+                                Integer cartCount = (Integer) session.getAttribute("cartCount");
+                                if (cartCount == null) {
+                                    cartCount = 0;
+                                }
+                            %>
+                            <%= cartCount %>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="menu">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="allmenu" class="tabbar">
+                                <i class="fa-solid fa-bars"></i>Thực đơn</a
+                            >
+                            <ul class="submenu">
+                                <li><a href="allmenu?option=tatca"><i class="fa-solid fa-bowl-rice"></i>Tất cả</a>
+                                </li>
+                                <c:forEach var="category" items="${listC}">
+                                    <li>
+                                        <a href="allmenu?option=${category.idCategory}"
+                                        ><i class="fa-solid fa-bowl-rice"></i>${category.nameCategory}</a
+                                        >
+                                    </li>
+                                </c:forEach>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="home">Trang chủ</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="views/about.jsp">Giới thiệu</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="contact-controll">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="search">
+                    <form action="search" method="get">
+                        <input value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
+                        <button type="submit">
+                            <i class="fa-solid fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 <div id="container">
     <div class="intro">
         <h2>Khám Phá Thực Đơn Của Chúng Tôi</h2>
         <div class="category-container">
-            <a href="allmenu?option=tatca">
+            <a href="allmenu?option=tatca"
+            >
                 <div class="category-item">Tất cả</div>
-            </a>
-            <a href="allmenu?option=danhgiacao">
+            </a
+            >
+            <a href="allmenu?option=danhgiacao"
+            >
                 <div class="category-item">Món được đánh giá cao</div>
-            </a>
-            <a href="allmenu?option=dexuat">
+            </a
+            >
+            <a href="allmenu?option=dexuat"
+            >
                 <div class="category-item">Món được đề xuất</div>
-            </a>
-            <a href="allmenu?option=quantam">
+            </a
+            >
+            <a href="allmenu?option=quantam"
+            >
                 <div class="category-item">Món được quan tâm nhiều</div>
-            </a>
-            <a href="allmenu?option=banchay">
+            </a
+            >
+            <a href="allmenu?option=banchay"
+            >
                 <div class="category-item">Món bán chạy</div>
-            </a>
-
-            <c:forEach var="category" items="${listC}">
-                <a href="allmenu?option=${category.idCategory}">
-                    <div class="category-item">${category.nameCategory}</div>
-                </a>
-            </c:forEach>
+            </a
+            >
+            <a href="allmenu?option=1"
+            >
+                <div class="category-item">Món cơm</div>
+            </a
+            >
+            <a href="allmenu?option=2"
+            >
+                <div class="category-item">Món bún</div>
+            </a
+            >
+            <a href="allmenu?option=3"
+            >
+                <div class="category-item">Món phở</div>
+            </a
+            >
+            <a href="allmenu?option=4"
+            >
+                <div class="category-item">Nước uống</div>
+            </a
+            >
+            <%--            <c:forEach var="category" items="${listC}">--%>
+            <%--                <a href="allmenu?idc=${category.idCategory}">--%>
+            <%--                    <div class="category-item">${category.nameCategory}</div>--%>
+            <%--                </a>--%>
+            <%--            </c:forEach>--%>
         </div>
     </div>
 
@@ -109,8 +243,40 @@
 
 </div>
 <!-- Xử lý footer -->
-<jsp:include page="footer.jsp"></jsp:include>
-
+<div id="footer">
+    <div class="footer-container">
+        <div class="footer-info">
+            <div class="left">
+                <p>
+                    <strong>Địa chỉ:</strong> Khu phố 6, Phường Linh Trung, TP. Thủ
+                    Đức,
+                </p>
+                <p style="text-indent: 60px">Tp. Hồ Chí Minh.</p>
+                <p><strong>Giờ mở cửa:</strong> 9h00 - 19h00, hàng ngày</p>
+            </div>
+            <div class="right">
+                <p><strong>Hotline:</strong> 033 *** 1234</p>
+                <p><strong>Phản ánh chất lượng:</strong> 033***1234</p>
+                <p><strong>Email:</strong> pdaotao@hcmuaf.edu.vn</p>
+                <div class="social-icons">
+                    <a href="#" target="_blank"
+                    ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                    <a href="#" target="_blank"
+                    ><i class="fa-brands fa-instagram"></i
+                    ></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-social">
+            <div class="1">© 2024 Food T^3</div>
+            <div class="mid">
+                <a href="#">Chính sách hoạt động</a> |
+                <a href="#">Chính sách bảo mật thông tin</a>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="${pageContext.request.contextPath}/js/menu.js"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@
                                     <a href="views/admin.jsp" id="admin-link">Quản trị</a>
                                 </c:if>
                                 <c:if test="${sessionScope.currentUser.idRole == 2}">
-                                    <a href="user" id="user-link">Thông tin</a>
+                                    <a href="views/UserInformation.jsp" id="user-link">Thông tin</a>
                                 </c:if>
                                 <a href="logout" id="logout">Đăng xuất</a>
                             </div>
@@ -42,7 +42,7 @@
                         <a href="#" class="count">2</a>
                     </div>
                     <div class="nav_item_shop">
-                        <a href="cart" class="nav-item">
+                        <a href="shoppingcart" class="nav-item">
                             <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                         </a>
                         <a href="shoppingcart" class="count">8</a>
@@ -72,16 +72,14 @@
                         <li class="menu-item"><a href="home">Trang chủ</a></li>
 
                         <li class="menu-item"><a href="about">Giới thiệu</a></li>
-                        <li class="menu-item"><a href="contactcontrolle">Liên hệ</a></li>
+                        <li class="menu-item"><a href="views/contact.jsp">Liên hệ</a></li>
                     </ul>
                 </div>
                 <div class="search">
-                    <form action="search" method="get">
-                        <input value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
-                        <button type="submit">
-                            <i class="fa-solid fa-search"></i>
-                        </button>
-                    </form>
+                    <input type="text" placeholder="Tìm kiếm món ăn">
+                    <button type="submit">
+                        <i class="fa-solid fa-search"></i>
+                    </button>
                 </div>
             </div>
         </div>
