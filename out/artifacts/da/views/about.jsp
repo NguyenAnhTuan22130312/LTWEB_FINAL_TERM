@@ -37,10 +37,10 @@
         </div>
         <div class="right_content">
             <video autoplay muted loop>
-                <source
-                        src="<c:url value='/Videos/[appsgolem.com][00-00-00][00-00-16]_Miami_s_Best_New_Chef_is_Mak.mp4' />"
+
+                <source src="${pageContext.request.contextPath}/Videos/%5Bappsgolem.com%5D%5B00-00-00%5D%5B00-00-16%5D_Miami_s_Best_New_Chef_is_Mak.mp4">
                         type="video/mp4"
-                />
+
                 Trình duyệt của bạn không hỗ trợ video.
             </video>
         </div>
@@ -50,7 +50,7 @@
         <div class="text2">Quản Lý Cửa Hàng</div>
         <div class="card-container">
             <div class="card-info">
-                <img src="<c:url value="/Images/team/trung_han.jpg" />" alt="Hình ảnh cá nhân"/>
+                <img src="${pageContext.request.contextPath}/Images/team/trung_han.jpg"" alt="Hình ảnh cá nhân"/>
                 <div class="info">
                     <h3>Hán Hữu Trung</h3>
                     <p>MSSV: 22130302</p>

@@ -41,8 +41,8 @@ public class FoodController extends HttpServlet {
 
         // Nếu có option, ưu tiên lấy dữ liệu từ option
         if (option != null && !option.isEmpty()) {
-            HttpSession session = request.getSession();
-            session.setAttribute("option", option);
+//            HttpSession session = request.getSession();
+//            session.setAttribute("option", option);
             foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
             totalFoods = foodList.size(); // Tổng số món theo option
 
@@ -53,9 +53,9 @@ public class FoodController extends HttpServlet {
             );
 
         } else {
-            HttpSession session = request.getSession();
-            String optionss= session.getAttribute("option").toString();
-            foodList = foodServiceListFilter.getOption(optionss); // Lấy danh sách dựa trên option
+//            HttpSession session = request.getSession();
+//            String optionss= session.getAttribute("option").toString();
+            foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
             totalFoods = foodList.size(); // Tổng số món theo option
 
             // Áp dụng phân trang

@@ -40,9 +40,14 @@
           <input name="pass" type="password" placeholder="Mật khẩu" />
           <button type="submit">Đăng ký</button>
         </form>
+        <c:set var="errorMessage" value="Test error message" />
         <c:if test="${not empty errorMessage}">
-          <p style="color: red;">${errorMessage}</p>
+          <div style="color: red; margin-top: 10px; font-weight: bold;">
+              ${errorMessage}
+          </div>
         </c:if>
+
+
       </div>
       <div class="form-container sign-in-container">
         <form action="login" method="post">

@@ -25,18 +25,15 @@
         <c:forEach var ="bann" items="${bans}" >
             <img class="mySlides" src="${bann.url}" style="width:100%">
         </c:forEach>
-
-
     </div>
 
     <button class="w3-button w3-black left" onclick="plusDivs(-1)">&#10094;</button>
     <button class="w3-button w3-black right" onclick="plusDivs(1)">&#10095;</button>
 
     <div class="dot-container">
-        <span class="dot" onclick="currentSlide(0)"></span>
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-
+        <c:forEach var ="cd" items="${countDot}" >
+            <span class="dot" onclick="currentSlide(${cd})"></span>
+        </c:forEach>
     </div>
 </div>
 <div id="container-monban">
