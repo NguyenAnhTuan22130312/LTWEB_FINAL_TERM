@@ -22,9 +22,9 @@
 
 <div id="container">
     <div class="w3-content w3-display-container">
-        <c:forEach var="banner" items="banners">
-            <img class="mySlides" src="${banner.url}" style="width:100%">
-        </c:forEach>
+<%--        <c:forEach var="banner" items="banners">--%>
+<%--            <img class="mySlides" src="${banner.url}" style="width:100%">--%>
+<%--        </c:forEach>--%>
     </div>
 
     <button class="w3-button w3-black left" onclick="plusDivs(-1)">&#10094;</button>
@@ -41,7 +41,7 @@
     <div class="header-mon">
         <div class="tag">Món Bán Chạy</div>
     </div>
-    <div id="content_section" class="content_section">
+    <div id="content_section lst4Sold" class="content_section">
         <c:forEach var="food" items="${lst4Sold}">
             <div class="card" onclick="showPopup('${food.idFood}')">
                 <img src="${food.img}" alt="${food.foodName}"/>
@@ -86,7 +86,7 @@
     <div class="header-mon">
         <div class="tag">Món được quan tâm nhiều</div>
     </div>
-    <div id="content_section" class="content_section">
+    <div id="content_section lst4View" class="content_section">
         <c:forEach var="food" items="${lst4View}">
             <div class="card" onclick="showPopup('${food.idFood}')">
                 <img src="${food.img}" alt="${food.foodName}"/>
@@ -133,7 +133,7 @@
     <div class="header-mon">
         <div class="tag">Món được đè xuất</div>
     </div>
-    <div id="content_section" class="content_section">
+    <div id="content_section lst4Propose" class="content_section">
         <c:forEach var="food" items="${lst4Propose}">
             <div class="card" onclick="showPopup('${food.idFood}')">
                 <img src="${food.img}" alt="${food.foodName}"/>
