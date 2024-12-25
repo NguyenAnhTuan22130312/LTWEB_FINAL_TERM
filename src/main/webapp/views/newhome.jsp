@@ -23,7 +23,7 @@
 <div id="container">
     <div class="w3-content w3-display-container">
         <c:forEach var ="bann" items="${bans}" >
-            <img class="mySlides" src="${bann.url}" style="width:100%">
+            <img class="mySlides" src="${pageContext.request.contextPath}/${bann.url}" style="width:100%">
         </c:forEach>
     </div>
 
