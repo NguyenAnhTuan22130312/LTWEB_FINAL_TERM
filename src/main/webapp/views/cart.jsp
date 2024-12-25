@@ -20,10 +20,18 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css"/>
     <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
 </head>
-
+<style>
+    .congtrubutton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+</style>
 <body>
 <script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
 <jsp:include page="header.jsp"></jsp:include>
+
 
 <div id="content_section">
     <div class="cart-container">
@@ -60,13 +68,15 @@
                                 <img src="${item.food.img}" alt="${item.food.foodName}" class="product-img"/>
                             </td>
                             <td>
-                                <input
-                                        type="number"
-                                        value="${item.quantity}"
-                                        min="1"
-                                        class="quantity-input"
-                                        onchange="updateQuantity('${item.food.idFood}', this.value)"
-                                />
+                                <div class="congtrubutton">
+                                    <a href="${pageContext.request.contextPath}/addtoCart?decrement=${item.food.idFood}">
+                                        <button>-</button>
+                                    </a>
+                                    <span>${item.quantity}</span>
+                                    <a href="${pageContext.request.contextPath}/addtoCart?increment=${item.food.idFood}">
+                                        <button>+</button>
+                                    </a>
+                                </div>
                             </td>
                             <td>${item.food.price}₫</td>
                             <td>${item.quantity * item.food.price}₫</td>
@@ -75,12 +85,15 @@
                     </c:forEach>
                     </tbody>
 
+
                 </table>
             </c:if>
+
 
             <c:if test="${empty sessionScope.order}">
                 <p>Giỏ hàng của bạn hiện tại đang trống!</p>
             </c:if>
+
 
             <div class="cart-buttons">
                 <button
@@ -90,17 +103,21 @@
             </div>
         </div>
 
+
         <div class="cart-right">
             <h2>Tổng Sản Phẩm</h2>
             <div class="cart-summary">
                 <div class="summary-item">
                     <span>Tạm tính:</span>
-                    <span id="subtotal">190.000&nbsp;đ</span>
+                    <c:forEach var="item" items="${sessionScope.order.items}">
+                        <c:set var="subtotal" value="${subtotal + item.quantity * item.food.price}" />
+                    </c:forEach>
+                    ${subtotal}₫
                 </div>
             </div>
             <div class="summary-item total">
                 <span>Tổng cộng:</span>
-                <span id="total">190.000&nbsp;đ</span>
+                <span id="total"> ${subtotal}₫</span>
             </div>
             <button
                     class="checkout-btn"
@@ -108,6 +125,7 @@
             >
                 Tiến hành thanh toán
             </button>
+
 
             <div class="voucher">
                 <label for="voucher">Phiếu ưu đãi</label>
@@ -118,7 +136,9 @@
     </div>
 </div>
 
+
 <jsp:include page="footer.jsp"></jsp:include>
+
 
 <script src="${pageContext.request.contextPath}/js/cart.js"></script>
 </body>

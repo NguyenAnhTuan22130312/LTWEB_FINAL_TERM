@@ -78,12 +78,11 @@
                     <span>
                             ${food.description}
                     </span>
-                    <button
-                            class="button-cart"
+                    <button class="button-cart">
 
-                            onclick="window.location.href='cart.jsp?foodId=${food.idFood}'"
-                    >
-                        Thêm vào giỏ hàng
+                        <a href="${addtoCart}">
+                            Thêm vào giỏ hàng
+                        </a>
                     </button>
                 </div>
                 <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>
