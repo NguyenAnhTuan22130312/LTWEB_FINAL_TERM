@@ -25,7 +25,7 @@
     <div class="container" id="container">
       <div class="form-container sign-up-container">
         <form action="signup" method="post">
-          <a href="${pageContext.request.contextPath}/allmenu" class="back-to-home">
+          <a href="home" class="back-to-home">
             <i class="fas fa-arrow-left"></i>
           </a>
           <h1>Tạo tài khoản</h1>
