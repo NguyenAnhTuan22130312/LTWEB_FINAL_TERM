@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix duoc banner" />
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix duoc banner">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,6 +93,7 @@
     "Application.FoodCartDAO.executor": "Run",
     "Application.LoginDAO.executor": "Run",
     "Application.MD5.executor": "Run",
+    "Application.Order.executor": "Run",
     "Application.SignUpDAO.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -116,7 +122,20 @@
       <recent name="hcmuaf.nlu.edu.vn.testproject.daos" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.31">
+    <configuration name="Order" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hcmuaf.nlu.edu.vn.testproject.models.Order" />
+      <module name="testProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hcmuaf.nlu.edu.vn.testproject.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 10.1.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.31" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -204,6 +223,15 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Order" />
+      <item itemvalue="Tomcat Server.Tomcat 10.1.31" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Order" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -241,7 +269,7 @@
       <workItem from="1735103005363" duration="784000" />
       <workItem from="1735109589576" duration="12384000" />
       <workItem from="1735137908404" duration="53000" />
-      <workItem from="1735138083850" duration="997000" />
+      <workItem from="1735138083850" duration="3452000" />
     </task>
     <task id="LOCAL-00001" summary="update newhome, food">
       <option name="closed" value="true" />

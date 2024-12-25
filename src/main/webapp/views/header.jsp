@@ -45,7 +45,14 @@
                         <a href="cart" class="nav-item">
                             <i class="fa-solid fa-basket-shopping"></i> Giỏ hàng
                         </a>
-                        <a href="shoppingcart" class="count">8</a>
+                        <a href="cart" class="count">
+                            <c:if test="${not empty sessionScope.totalItems}">
+                                ${sessionScope.totalItems}
+                            </c:if>
+                            <c:if test="${empty sessionScope.totalItems}">
+                                0
+                            </c:if>
+                        </a>
                     </div>
                 </div>
 
