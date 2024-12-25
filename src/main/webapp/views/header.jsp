@@ -83,8 +83,12 @@
                     </ul>
                 </div>
                 <div class="search">
-                    <form action="search" method="get">
-                        <input value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
+                    <form action="AjaxSearchController" method="get">
+<%--                        <input value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>--%>
+<%--                        <button type="submit">--%>
+<%--                            <i class="fa-solid fa-search"></i>--%>
+<%--                        </button>--%>
+                        <input oninput="searchByName(this)" value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
                         <button type="submit">
                             <i class="fa-solid fa-search"></i>
                         </button>

@@ -111,5 +111,7 @@
 <jsp:include page="footer.jsp"></jsp:include>
 
 <script src="${pageContext.request.contextPath}/js/menu.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/module_search_ajax.js"></script>
 </body>
 </html>

@@ -42,6 +42,7 @@ public class AddToCartController extends HttpServlet {
             if (order != null) {
                 order.setItems(new ArrayList<Item>());
                 session.setAttribute("order", order);
+
             }
             response.sendRedirect("cart");
         } else if (removeFoodID != null) {
@@ -94,11 +95,6 @@ public class AddToCartController extends HttpServlet {
                 session.setAttribute("order", order);
             }
             response.sendRedirect("cart");
-
-
-
-
-
 
         } else if (request.getParameter("foodID") != null) {
             // Xử lý thêm món ăn vào giỏ hàng
