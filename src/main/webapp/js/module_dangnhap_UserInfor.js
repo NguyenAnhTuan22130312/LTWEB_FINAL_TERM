@@ -17,15 +17,4 @@ function checkLoginStatus() {
         userNameText.textContent = loggedInUser.password;
 }
 
-
 checkLoginStatus();
-
-window.addEventListener("DOMContentLoaded", () => {
-    const userData = JSON.parse(localStorage.getItem("loggedInUser"));
-    
-    if (userData) {
-        document.getElementById("username").value = userData.username;
-        document.getElementById("email").value = userData.email;
-        document.getElementById("password").value = userData.password;
-    }
-});

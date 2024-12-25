@@ -46,7 +46,7 @@
       </div>
       <div class="form-container sign-in-container">
         <form action="login" method="post">
-          <a href="${pageContext.request.contextPath}/allmenu" class="back-to-home">
+          <a href="${pageContext.request.contextPath}/home" class="back-to-home">
             <i class="fas fa-arrow-left"></i>
           </a>
 
