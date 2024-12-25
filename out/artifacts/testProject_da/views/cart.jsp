@@ -20,7 +20,14 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css"/>
     <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
 </head>
-
+<style>
+    .congtrubutton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+</style>
 <body>
 <script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
 <jsp:include page="header.jsp"></jsp:include>
@@ -60,13 +67,15 @@
                                 <img src="${item.food.img}" alt="${item.food.foodName}" class="product-img"/>
                             </td>
                             <td>
-                                <input
-                                        type="number"
-                                        value="${item.quantity}"
-                                        min="1"
-                                        class="quantity-input"
-                                        onchange="updateQuantity('${item.food.idFood}', this.value)"
-                                />
+                                <div class="congtrubutton">
+                                    <a href="">
+                                        <button>-</button>
+                                    </a>
+                                    <span>${item.quantity}</span>
+                                    <a href="">
+                                        <button>+</button>
+                                    </a>
+                                </div>
                             </td>
                             <td>${item.food.price}₫</td>
                             <td>${item.quantity * item.food.price}₫</td>
