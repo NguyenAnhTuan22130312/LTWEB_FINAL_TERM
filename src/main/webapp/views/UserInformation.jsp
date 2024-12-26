@@ -16,8 +16,10 @@
     <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
 </head>
 
+
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+
 
 <!-- Xử lý content\  -->
 <div class="container">
@@ -45,7 +47,7 @@
                 </a>
             </li>
             <li>
-                <a href="../html/PurchaseOrder.html">
+                <a href="order">
                     <i class="fas fa-shopping-cart"></i>
                     <div class="namemenu">Đơn Mua</div>
                 </a>
@@ -67,23 +69,23 @@
             <form>
                 <div class="form-group">
                     <label> Tên đăng nhập </label>
-                    <input id="username" disabled type="text" value="hant1234"/>
+                    <input id="username"  type="text" value="hant1234"/>
                 </div>
                 <div class="form-group">
                     <label> Tên </label>
-                    <input id="name" disabled type="text" value="Han Trung"/>
+                    <input id="name"  type="text" value="Han Trung"/>
                 </div>
                 <div class="form-group">
                     <label> Email </label>
-                    <input id="email" disabled type="email" value="ng************@gmail.com"/>
+                    <input id="email"  type="email" value="ng************@gmail.com"/>
                 </div>
                 <div class="form-group">
                     <label> Số điện thoại </label>
-                    <input id="phone" disabled type="text" value="********72"/>
+                    <input id="phone"  type="text" value="********72"/>
                 </div>
                 <div class="form-group">
                     <label> Ngày sinh </label>
-                    <input id="birthdate" disabled type="date" value="2000-01-01"/>
+                    <input id="birthdate"  type="date" value="2000-01-01"/>
                 </div>
                 <div class="form-group">
                     <label> Giới tính </label>
@@ -103,7 +105,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button id="edit-save-btn" type="button">Sửa</button>
+                    <button id="edit-save-btn" type="button">Lưu</button>
+
 
                 </div>
             </form>
@@ -115,9 +118,10 @@
             <form>
                 <div class="form-group">
                     <label for="inplocate">Địa chỉ nhận hàng</label>
-                    <textarea id="inplocate" disabled class="inplocate">123 Đường ABC, Quận X</textarea>
-                    <button id="edit-save-textarea-btn" type="button">Sửa</button>
+                    <textarea id="inplocate"  class="inplocate">123 Đường ABC, Quận X</textarea>
+                    <button id="edit-save-textarea-btn" type="button">Lưu</button>
                 </div>
+
 
             </form>
         </div>
@@ -148,10 +152,10 @@
     </div>
 </div>
 
-<jsp:include page="footer.jsp"></jsp:include>
 
-<script src="${pageContext.request.contextPath}/js/module_dangnhap_UserInfor.js"></script>
+<jsp:include page="footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/js/UserInformation.js"></script>
+
 
 </body>
 </html>
