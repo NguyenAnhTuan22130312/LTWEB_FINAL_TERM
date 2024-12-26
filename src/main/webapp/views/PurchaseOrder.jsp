@@ -6,10 +6,10 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Đang vận chuyển</title>
-    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/module_header_footer.css"/>
-    <link rel="stylesheet" href="css/signinCssModule.css"/>
-    <link rel="stylesheet" href="css/module_container_PurchaseOrder.css"/>
+    <link href="${pageContext.request.contextPath}/Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_header_footer.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_container_PurchaseOrder.css"/>
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -19,7 +19,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
 
-    <script src="js/module_dangnhap.js" defer></script>
+    <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
 </head>
 
 <body>
@@ -365,9 +365,9 @@
 <!-- Xử lý footer -->
 <jsp:include page="footer.jsp"></jsp:include>
 
-<script src="js/home.js"></script>
-<script src="js/transport.js"></script>
-<script src="js/details.js"></script>
-<script src="js/module_popup_purchase.js"></script>
+<script src="${pageContext.request.contextPath}/js/home.js"></script>
+<script src="${pageContext.request.contextPath}/js/transport.js"></script>
+<script src="${pageContext.request.contextPath}/js/details.js"></script>
+<script src="${pageContext.request.contextPath}/js/module_popup_purchase.js"></script>
 </body>
 </html>

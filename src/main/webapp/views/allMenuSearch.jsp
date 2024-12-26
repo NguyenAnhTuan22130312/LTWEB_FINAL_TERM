@@ -60,10 +60,10 @@
                         </div>
                     </c:if>
                     <div class="nav_item_shop">
-                        <a href="views/PurchaseOrder.jsp" class="nav-item">
+                        <a href="order" class="nav-item">
                             <i class="fa-solid fa-truck-fast"></i> Đơn hàng
                         </a>
-                        <a href="#" class="count">2</a>
+                        <a href="order" class="count">2</a>
                     </div>
                     <div class="nav_item_shop">
                         <a href="cart" class="nav-item">

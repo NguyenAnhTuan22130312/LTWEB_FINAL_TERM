@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thanh toán</title>
-    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
+    <link href="${pageContext.request.contextPath}/Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/check-out.css" />
     <link
       rel="stylesheet"
