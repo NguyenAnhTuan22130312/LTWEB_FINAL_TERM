@@ -10,6 +10,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "FoodController", value = "/allmenu")
@@ -29,11 +30,12 @@ public class FoodController extends HttpServlet {
         // Tính toán offset
         int pageSize = 10; // Kích thước trang
         int offset = (page - 1) * pageSize;
-        List<Food> foodList;
-        int totalFoods;
+        List<Food> foodList= new ArrayList<>();
+        int totalFoods=0;
 
         // Lấy giá trị option từ request
         String option = request.getParameter("option");
+        if (option != null) {
 
             foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
             totalFoods = foodList.size(); // Tổng số món theo option
@@ -43,7 +45,9 @@ public class FoodController extends HttpServlet {
                     Math.min(offset, totalFoods),
                     Math.min(offset + pageSize, totalFoods)
             );
-
+        }else{
+            response.sendRedirect(request.getContextPath() + "/search");
+        }
 
         // Tính tổng số trang
         int totalPages = (int) Math.ceil((double) totalFoods / pageSize);

@@ -28,7 +28,7 @@ public class AjaxSearchController extends HttpServlet {
             out.println("<h2 style=\"max-width: 1200px; text-align: center;\"> Không có món ăn phù hợp</h2>");
         else {
             for (Food food : foodList) {
-                System.out.println(food.getImg());
+
                 out.println("<div class=\"card\" onclick=\"showPopup('" + food.getIdFood() + "')\">\n" +
                         "                <img src=\"" + food.getImg() + "\" alt=\"" + food.getFoodName() + "\"/>\n" +
                         "                <div class=\"card_content\">\n" +

@@ -10,6 +10,8 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "SearchController", value = "/search")
@@ -20,10 +22,11 @@ public class SearchController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String textSearch = request.getParameter("text");
         FoodDAO dao = new FoodDAO();
-        List<Food> foodList = dao.searchByName(textSearch);
+        String option = request.getParameter("option");
+        List<Food> foodList= new ArrayList<>();
+        if(option==null)
+        foodList = dao.searchByName(textSearch);
 
-
-        FoodServiceListFilter foodServiceListFilter = new FoodServiceListFilter();
 
         // Lấy số trang, nếu không có thì mặc định là trang 1
         int page = 1;
@@ -53,13 +56,16 @@ public class SearchController extends HttpServlet {
         List<Category> categoryList = cs.getCategories();
 
         // Đặt thuộc tính cho JSP
-
+        request.setAttribute("option", option);
         request.setAttribute("list", foodList);
         request.setAttribute("listC", categoryList);
         request.setAttribute("currentPage", page);
         request.setAttribute("totalPages", totalPages);
 
-        request.getRequestDispatcher("views/allMenu.jsp").forward(request, response);
+        PrintWriter out = response.getWriter();
+        if(foodList.isEmpty()) out.println("<h2 style=\"max-width: 1200px; text-align: center;\"> Không có món ăn phù hợp</h2>");
+
+        request.getRequestDispatcher("views/allMenuSearch.jsp").forward(request, response);
     }
 
     @Override
