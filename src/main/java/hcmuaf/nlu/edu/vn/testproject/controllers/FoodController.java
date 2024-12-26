@@ -64,7 +64,6 @@ public class FoodController extends HttpServlet {
 
         // Forward đến trang JSP
         request.getRequestDispatcher("/views/allMenu.jsp").forward(request, response);
-
     }
 
 
