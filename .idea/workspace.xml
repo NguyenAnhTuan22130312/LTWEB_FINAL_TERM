@@ -11,12 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="dang loi contact">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject/WEB-INF/classes/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject/views/allMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/testProject/views/allMenuSearch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/testProject/views/allMenuSearch.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodControllerAjax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodControllerAjax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/test_module_load_ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/test_module_load_ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/AccountDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/AccDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/AccDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/AccountService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

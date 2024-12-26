@@ -4,7 +4,6 @@ public class AccDetail {
     private int idAcc;
     private String fullName;
     private String phoneNumber;
-    private String email;
     private String address;
     private int gender; // 0: nam, 1:nữ, 2:khác
     private String birthDate;
@@ -12,11 +11,10 @@ public class AccDetail {
     public AccDetail() {
     }
 
-    public AccDetail(int idAcc, String fullName, String phoneNumber, String email, String address, int gender, String birthDate) {
+    public AccDetail(int idAcc, String fullName, String phoneNumber, String address, int gender, String birthDate) {
         this.idAcc = idAcc;
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
-        this.email = email;
         this.address = address;
         this.gender = gender;
         this.birthDate = birthDate;
@@ -44,14 +42,6 @@ public class AccDetail {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getAddress() {
