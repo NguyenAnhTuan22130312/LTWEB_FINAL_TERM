@@ -11,6 +11,7 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="right">
                     <c:if test="${sessionScope.currentUser == null}">
                         <a href="login" class="nav-item" id="login-link">
@@ -83,12 +84,8 @@
                     </ul>
                 </div>
                 <div class="search">
-                    <form action="AjaxSearchController" method="get">
-<%--                        <input value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>--%>
-<%--                        <button type="submit">--%>
-<%--                            <i class="fa-solid fa-search"></i>--%>
-<%--                        </button>--%>
-                        <input oninput="searchByName(this)" value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
+                    <form action="search" method="get">
+                        <input value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
                         <button type="submit">
                             <i class="fa-solid fa-search"></i>
                         </button>

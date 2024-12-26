@@ -31,5 +31,6 @@ public class ContactControlle extends HttpServlet {
         ContactService cs = new ContactService();
         cs.sendContactSV(id, name, email, title, message);
         request.getRequestDispatcher("views/contact.jsp").forward(request, response);
+
     }
 }
