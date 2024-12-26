@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "FoodControllerAjax", value = "/allmenuajax")
+@WebServlet(name = "FoodControllerAjax", value = "/menuajax")
 public class FoodControllerAjax extends HttpServlet {
 
     @Override

@@ -1,8 +1,7 @@
 function loadSP(option, page) {
-
     // Tiếp tục thực hiện AJAX
     $.ajax({
-        url: "allmenuajax",
+        url: "menuajax",
         type: "get",
         data: {
             option: option,
