@@ -36,7 +36,7 @@
 <div id="content_section">
     <div class="cart-container">
         <div class="cart-left">
-            <c:if test="${not empty sessionScope.order}">
+
                 <table class="cart-table">
                     <thead>
                     <tr>
@@ -87,12 +87,10 @@
 
 
                 </table>
-            </c:if>
 
 
-            <c:if test="${empty sessionScope.order}">
-                <p>Giỏ hàng của bạn hiện tại đang trống!</p>
-            </c:if>
+
+
 
 
             <div class="cart-buttons">

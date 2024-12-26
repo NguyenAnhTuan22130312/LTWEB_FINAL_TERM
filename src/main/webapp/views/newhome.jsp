@@ -144,11 +144,8 @@
                 <div class="card_content">
                     <h3>${food.foodName}</h3>
                     <p>${food.price}đ</p>
-                    <a
-                            class="btn"
-                            href="cart.jsp?foodId=${food.idFood}"
-                            onclick="event.stopPropagation()"
-                    >
+                    <c:url value="addtoCart?foodID=${food.idFood}" var="addtoCart"/>
+                    <a class="btn" href="${addtoCart}">
                         Thêm vào giỏ hàng
                     </a>
                 </div>
@@ -163,10 +160,11 @@
                     <span>
                             ${food.description}
                     </span>
-                    <button
-                            class="button-cart"
-                            onclick="window.location.href='cart.jsp?foodId=${food.idFood}'">
-                        Thêm vào giỏ hàng
+                    <button class="button-cart">
+
+                        <a href="${addtoCart}">
+                            Thêm vào giỏ hàng
+                        </a>
                     </button>
                 </div>
                 <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>
@@ -189,11 +187,8 @@
                 <div class="card_content">
                     <h3>${food.foodName}</h3>
                     <p>${food.price}đ</p>
-                    <a
-                            class="btn"
-                            href="cart.jsp?foodId=${food.idFood}"
-                            onclick="event.stopPropagation()"
-                    >
+                    <c:url value="addtoCart?foodID=${food.idFood}" var="addtoCart"/>
+                    <a class="btn" href="${addtoCart}">
                         Thêm vào giỏ hàng
                     </a>
                 </div>
@@ -208,12 +203,11 @@
                     <span>
                             ${food.description}
                     </span>
-                    <button
-                            class="button-cart"
+                    <button class="button-cart">
 
-                            onclick="window.location.href='cart.jsp?foodId=${food.idFood}'"
-                    >
-                        Thêm vào giỏ hàng
+                        <a href="${addtoCart}">
+                            Thêm vào giỏ hàng
+                        </a>
                     </button>
                 </div>
                 <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>
@@ -236,11 +230,8 @@
                 <div class="card_content">
                     <h3>${food.foodName}</h3>
                     <p>${food.price}đ</p>
-                    <a
-                            class="btn"
-                            href="cart.jsp?foodId=${food.idFood}"
-                            onclick="event.stopPropagation()"
-                    >
+                    <c:url value="addtoCart?foodID=${food.idFood}" var="addtoCart"/>
+                    <a class="btn" href="${addtoCart}">
                         Thêm vào giỏ hàng
                     </a>
                 </div>
@@ -255,12 +246,11 @@
                     <span>
                             ${food.description}
                     </span>
-                    <button
-                            class="button-cart"
+                    <button class="button-cart">
 
-                            onclick="window.location.href='cart.jsp?foodId=${food.idFood}'"
-                    >
-                        Thêm vào giỏ hàng
+                        <a href="${addtoCart}">
+                            Thêm vào giỏ hàng
+                        </a>
                     </button>
                 </div>
                 <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>
@@ -283,11 +273,8 @@
                 <div class="card_content">
                     <h3>${food.foodName}</h3>
                     <p>${food.price}đ</p>
-                    <a
-                            class="btn"
-                            href="cart.jsp?foodId=${food.idFood}"
-                            onclick="event.stopPropagation()"
-                    >
+                    <c:url value="addtoCart?foodID=${food.idFood}" var="addtoCart"/>
+                    <a class="btn" href="${addtoCart}">
                         Thêm vào giỏ hàng
                     </a>
                 </div>
@@ -302,12 +289,11 @@
                     <span>
                             ${food.description}
                     </span>
-                    <button
-                            class="button-cart"
+                    <button class="button-cart">
 
-                            onclick="window.location.href='cart.jsp?foodId=${food.idFood}'"
-                    >
-                        Thêm vào giỏ hàng
+                        <a href="${addtoCart}">
+                            Thêm vào giỏ hàng
+                        </a>
                     </button>
                 </div>
                 <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>

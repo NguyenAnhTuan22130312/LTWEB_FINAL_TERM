@@ -13,10 +13,8 @@ public class SignUpDAO {
 
     public static void signUp(String userName, String password, String email) {
         String query = "INSERT INTO account (userName, pass, idRole,email) VALUES (?, ?, 2,?)";
-        String queryAccDetail = "INSERT INTO accdetail (idAcc, fullName, phoneNumber, email, address, gender, birthDate, createdAt, UpdatedAt) VALUES (LAST_INSERT_ID(),NULL,NULL,?,NULL,NULL,NULL,NOW(), NOW() )";
         Connection con = null;
         PreparedStatement ps = null;
-        PreparedStatement psCtAcc = null;
         ResultSet rs = null;
         String hashedPassword = MD5.getMD5(password);
 
@@ -33,14 +31,7 @@ public class SignUpDAO {
             rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 int id = rs.getInt(1);
-                psCtAcc = con.prepareStatement(queryAccDetail);
-                psCtAcc.setString(1, email);  // Đưa email vào bảng accDetail
-                psCtAcc.executeUpdate();
             }
-
-
-
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {
