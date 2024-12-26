@@ -10,14 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="dang loi contact">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/testProject.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/testProject.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodControllerAjax.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/test_module_load_ajax.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/PurchaseOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/PurchaseOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/FoodController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenuSearch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenuSearch.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/check-out.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/check-out.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,10 +30,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="servlet" />
-        <option value="JavaScript File" />
         <option value="Jsp File" />
         <option value="Servlet" />
+        <option value="JavaScript File" />
+        <option value="servlet" />
       </list>
     </option>
   </component>

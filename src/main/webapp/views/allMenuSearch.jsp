@@ -108,10 +108,6 @@
                 </div>
                 <div class="search">
                     <form action="AjaxSearchController" method="get">
-                        <%--                        <input value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>--%>
-                        <%--                        <button type="submit">--%>
-                        <%--                            <i class="fa-solid fa-search"></i>--%>
-                        <%--                        </button>--%>
                         <input oninput="searchByName(this)" value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
                         <button id="deadbuton" type="submit">
                             <i class="fa-solid fa-search"></i>
@@ -189,7 +185,7 @@
                 <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>
             </div>
         </c:forEach>
-        <div class="pagination">
+        <div class="pagination" style="width:1200px;margin:0px auto; padding-left:35px ;  text-align:center;">
             <c:if test="${currentPage > 1}">
                 <a href="search?text=${param.text}&page=${currentPage - 1}"><</a>
             </c:if>

@@ -106,10 +106,6 @@
                         <button type="submit">
                             <i class="fa-solid fa-search"></i>
                         </button>
-<%--                        <input oninput="searchByName(this)" value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>--%>
-<%--                        <button type="submit">--%>
-<%--                            <i class="fa-solid fa-search"></i>--%>
-<%--                        </button>--%>
                     </form>
                 </div>
             </div>

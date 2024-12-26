@@ -62,6 +62,7 @@ public class FoodController extends HttpServlet {
         request.setAttribute("currentPage", page);
         request.setAttribute("totalPages", totalPages);
 
+
         // Forward đến trang JSP
         request.getRequestDispatcher("/views/allMenu.jsp").forward(request, response);
 
