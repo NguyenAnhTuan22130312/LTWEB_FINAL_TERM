@@ -50,7 +50,7 @@
                             </a>
                             <div class="submenu" id="submenu">
                                 <c:if test="${sessionScope.currentUser.idRole == 1}">
-                                    <a href="views/admin.jsp" id="admin-link">Quản trị</a>
+                                    <a href="admin" id="admin-link">Quản trị</a>
                                 </c:if>
                                 <c:if test="${sessionScope.currentUser.idRole == 2}">
                                     <a href="user" id="user-link">Thông tin</a>
@@ -108,7 +108,8 @@
                 </div>
                 <div class="search">
                     <form action="AjaxSearchController" method="get">
-                        <input oninput="searchByName(this)" value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
+                        <input oninput="searchByName(this)" value="${txtS}" name="text" type="text"
+                               placeholder="Tìm kiếm món ăn"/>
                         <button id="deadbuton" type="submit">
                             <i class="fa-solid fa-search"></i>
                         </button>
@@ -169,7 +170,7 @@
                     <h3>${food.foodName}</h3>
                     <p>Giá: ${food.price}đ</p>
                     <span>
-                            ${food.description}
+                            ${food.description} <br>
                     </span>
                     <button class="button-cart">
 
@@ -212,12 +213,11 @@
     </div>
 
 
-
 </div>
 <!-- Xử lý footer -->
 <jsp:include page="footer.jsp"></jsp:include>
 <script>
-    document.getElementById("deadbuton").addEventListener("click", function(event) {
+    document.getElementById("deadbuton").addEventListener("click", function (event) {
         event.preventDefault();
     });
 </script>

@@ -21,7 +21,7 @@
         <h2>T^3 Restaurant</h2>
         <ul>
             <li>
-                <a class="active" href="views/admin.jsp">
+                <a class="active" href="admin">
                     <i class="fas fa-home"> </i>
                     Trang tổng quan
                 </a>
@@ -97,7 +97,7 @@
                             src="${pageContext.request.contextPath}/Images/logo/admin_logo_food2.jpg"
 
                     />
-                    <div class="number">80</div>
+                    <div class="number">${totalFoods}</div>
                     <h3>Sản phẩm</h3>
                 </div>
                 <div class="card">
@@ -116,27 +116,16 @@
         <div class="best-sellers">
             <h2>Món ăn bán chạy nhất</h2>
             <div class="best-seller-cards">
-                <div class="best-seller-card">
-                    <img src="${pageContext.request.contextPath}/Images/food/Com/Com-chien-duong-chau.png"
-                         alt="Phở bò"/>
-                    <h3>Cơm chiên dương châu</h3>
-                    <p>Đã bán: 7 suất</p>
-                </div>
-                <div class="best-seller-card">
-                    <img src="${pageContext.request.contextPath}/Images/Food/Com/Com-chien-ga-xoi-mo.png"
-                         alt="Bánh mì thịt"/>
-                    <h3>Cơm gà xối mỡ</h3>
-                    <p>Đã bán: 2 suất</p>
-                </div>
-                <div class="best-seller-card">
-                    <img src="${pageContext.request.contextPath}/Images/food/Pho/Pho-bo-tai.png" alt="Bún chả"/>
-                    <h3>Phở bò tái</h3>
-                    <p>Đã bán: 1 suất</p>
-                </div>
+                <c:forEach var="food" items="${lst4Sold}">
+                    <div class="best-seller-card">
+                        <img src="${food.img}"
+                             alt="${food.foodName}"/>
+                        <h3>${food.foodName}</h3>
+                        <p>Đã bán: 7 suất</p>
+                    </div>
+                </c:forEach>
             </div>
         </div>
-
-
     </div>
 </div>
 <script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
