@@ -189,22 +189,23 @@
                 <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>
             </div>
         </c:forEach>
+        <div class="pagination">
+            <c:if test="${currentPage > 1}">
+                <a href="search?text=${param.text}&page=${currentPage - 1}"><</a>
+            </c:if>
+
+            <c:forEach begin="1" end="${totalPages}" var="i">
+                <a href="search?text=${param.text}&page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
+            </c:forEach>
+
+            <c:if test="${currentPage < totalPages}">
+                <a href="search?text=${param.text}&page=${currentPage + 1}">></a>
+            </c:if>
+        </div>
     </div>
 
 
-    <div class="pagination">
-        <c:if test="${currentPage > 1}">
-            <a href="search?text=${param.text}&page=${currentPage - 1}"><</a>
-        </c:if>
 
-        <c:forEach begin="1" end="${totalPages}" var="i">
-            <a href="search?text=${param.text}&page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>
-        </c:forEach>
-
-        <c:if test="${currentPage < totalPages}">
-            <a href="search?text=${param.text}&page=${currentPage + 1}">></a>
-        </c:if>
-    </div>
 
 
 </div>

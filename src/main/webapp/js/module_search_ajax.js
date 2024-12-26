@@ -9,6 +9,7 @@ function searchByName(param){
         success: function (data){
             var row = document.getElementById("content_section");
             row.innerHTML = data;
+
         }
     })
 }
