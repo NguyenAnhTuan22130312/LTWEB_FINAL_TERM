@@ -66,46 +66,46 @@
         <div id="profile" class="content-section">
             <h2>Hồ Sơ Của Tôi</h2>
             <div class="linehead"></div>
-            <form>
+            <form action="AccDetail" method="post">
                 <div class="form-group">
                     <label> Tên đăng nhập </label>
-                    <input id="username"  type="text" value="hant1234"/>
+                    <input id="username"  type="text" value="${accDetail.username}"/>
                 </div>
                 <div class="form-group">
                     <label> Tên </label>
-                    <input id="name"  type="text" value="Han Trung"/>
+                    <input id="name"  type="text" value="${accDetail.fullName}"/>
                 </div>
                 <div class="form-group">
                     <label> Email </label>
-                    <input id="email"  type="email" value="ng************@gmail.com"/>
+                    <input id="email"  type="email" value="${accDetail.email}"/>
                 </div>
                 <div class="form-group">
                     <label> Số điện thoại </label>
-                    <input id="phone"  type="text" value="********72"/>
+                    <input id="phone"  type="text" value="${accDetail.phoneNumber}"/>
                 </div>
                 <div class="form-group">
                     <label> Ngày sinh </label>
-                    <input id="birthdate"  type="date" value="2000-01-01"/>
+                    <input id="birthdate"  type="date" value="${accDetail.birthDate}"/>
                 </div>
                 <div class="form-group">
                     <label> Giới tính </label>
                     <div class="gender-picker">
                         <label>
-                            <input type="radio" name="gender" value="male" checked/>
+                            <input type="radio" name="gender" value="0" ${accDetail.gender == 0 ? 'checked' : ''} />
                             Nam
                         </label>
                         <label>
-                            <input type="radio" name="gender" value="female"/>
+                            <input type="radio" name="gender" value="1" ${accDetail.gender == 1 ? 'checked' : ''} />
                             Nữ
                         </label>
                         <label>
-                            <input type="radio" name="gender" value="other"/>
+                            <input type="radio" name="gender" value="2" ${accDetail.gender == 2 ? 'checked' : ''} />
                             Khác
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button id="edit-save-btn" type="button">Lưu</button>
+                    <button id="edit-save-btn" type="submit">Lưu</button>
 
 
                 </div>
