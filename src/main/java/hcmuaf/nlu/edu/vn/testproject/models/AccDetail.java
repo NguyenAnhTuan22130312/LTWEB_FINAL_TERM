@@ -67,4 +67,16 @@ public class AccDetail {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
+
+    @Override
+    public String toString() {
+        return "AccDetail{" +
+                "idAcc=" + idAcc +
+                ", fullName='" + fullName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", gender=" + gender +
+                ", birthDate='" + birthDate + '\'' +
+                '}';
+    }
 }

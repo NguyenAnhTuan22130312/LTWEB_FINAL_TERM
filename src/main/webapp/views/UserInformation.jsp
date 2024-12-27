@@ -6,7 +6,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Thông tin khách hàng</title>
-    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
+    <link href="${pageContext.request.contextPath}/Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_header_footer.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_informationuser.css"/>
     <link
@@ -69,39 +69,34 @@
             <form action="AccDetail" method="post">
                 <div class="form-group">
                     <label> Tên đăng nhập </label>
-                    <input id="username"  type="text" value="${accDetail.username}"/>
+                    <input id="username" name="userName"  type="text" value="${account.userName}" readonly/>
                 </div>
                 <div class="form-group">
                     <label> Tên </label>
-                    <input id="name"  type="text" value="${accDetail.fullName}"/>
+                    <input id="name" name="fullName" type="text" value="${accDetail.fullName}"/>
                 </div>
                 <div class="form-group">
                     <label> Email </label>
-                    <input id="email"  type="email" value="${accDetail.email}"/>
+                    <input id="email" name="email" type="email" value="${account.email}" readonly/>
                 </div>
                 <div class="form-group">
                     <label> Số điện thoại </label>
-                    <input id="phone"  type="text" value="${accDetail.phoneNumber}"/>
+                    <input id="phone" name="phoneNumber"  type="text" value="${accDetail.phoneNumber}"/>
                 </div>
                 <div class="form-group">
                     <label> Ngày sinh </label>
-                    <input id="birthdate"  type="date" value="${accDetail.birthDate}"/>
+                    <input id="birthdate" name="birthDate" type="date" value="${accDetail.birthDate}"/>
                 </div>
                 <div class="form-group">
                     <label> Giới tính </label>
                     <div class="gender-picker">
-                        <label>
-                            <input type="radio" name="gender" value="0" ${accDetail.gender == 0 ? 'checked' : ''} />
-                            Nam
-                        </label>
-                        <label>
-                            <input type="radio" name="gender" value="1" ${accDetail.gender == 1 ? 'checked' : ''} />
-                            Nữ
-                        </label>
-                        <label>
-                            <input type="radio" name="gender" value="2" ${accDetail.gender == 2 ? 'checked' : ''} />
-                            Khác
-                        </label>
+                        <label>Giới tính:</label>
+                        <input type="radio" id="male" name="gender" value="0" ${accDetail.gender == 0 ? "checked" : ""}>
+                        <label for="male">Nam</label>
+                        <input type="radio" id="female" name="gender" value="1" ${accDetail.gender == 1 ? "checked" : ""}>
+                        <label for="female">Nữ</label>
+                        <input type="radio" id="other" name="gender" value="2" ${accDetail.gender == 2 ? "checked" : ""}>
+                        <label for="other">Khác</label>
                     </div>
                 </div>
                 <div class="form-group">

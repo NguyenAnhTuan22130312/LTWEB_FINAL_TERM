@@ -15,7 +15,8 @@ public class Account {
         this.email = email;
     }
 
-
+    public Account() {
+    }
 
     public Account(int idAcc, int idRole, String pass, String userName, Object o, String email) {
     }
