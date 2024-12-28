@@ -44,7 +44,7 @@
                             </a>
                             <div class="submenu" id="submenu">
                                 <c:if test="${sessionScope.currentUser.idRole == 1}">
-                                    <a href="views/admin.jsp" id="admin-link">Quản trị</a>
+                                    <a href="admin" id="admin-link">Quản trị</a>
                                 </c:if>
                                 <c:if test="${sessionScope.currentUser.idRole == 2}">
                                     <a href="user?idAcc=${sessionScope.currentUser.idAcc}" id="user-link">Thông tin</a>

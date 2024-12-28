@@ -183,22 +183,22 @@
             </div>
         </c:forEach>
     </div>
-<%--    <div class="pagination" style="width:1200px;margin:0px auto; padding-left:35px ;  text-align:center;">--%>
-<%--        <c:if test="${currentPage > 1}">--%>
-<%--            <a onclick="" href="allmenu?option=${param.option}&page=${currentPage - 1}"><</a>--%>
-<%--        </c:if>--%>
+    <%--    <div class="pagination" style="width:1200px;margin:0px auto; padding-left:35px ;  text-align:center;">--%>
+    <%--        <c:if test="${currentPage > 1}">--%>
+    <%--            <a onclick="" href="allmenu?option=${param.option}&page=${currentPage - 1}"><</a>--%>
+    <%--        </c:if>--%>
 
-<%--        <c:forEach begin="1" end="${totalPages}" var="i">--%>
-<%--            <a href="allmenu?option=${param.option}&page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>--%>
-<%--        </c:forEach>--%>
+    <%--        <c:forEach begin="1" end="${totalPages}" var="i">--%>
+    <%--            <a href="allmenu?option=${param.option}&page=${i}" class="${currentPage == i ? 'active' : ''}">${i}</a>--%>
+    <%--        </c:forEach>--%>
 
-<%--        <c:if test="${currentPage < totalPages}">--%>
-<%--            <a href="allmenu?option=${param.option}&page=${currentPage + 1}">></a>--%>
-<%--        </c:if>--%>
-<%--    </div>--%>
+    <%--        <c:if test="${currentPage < totalPages}">--%>
+    <%--            <a href="allmenu?option=${param.option}&page=${currentPage + 1}">></a>--%>
+    <%--        </c:if>--%>
+    <%--    </div>--%>
     <div class="pagination" style="width:1200px;margin:0px auto; padding-left:35px; text-align:center;">
         <c:if test="${currentPage > 1}">
-            <button onclick="loadSP('${param.option}', ${currentPage - 1})"> < </button>
+            <button onclick="loadSP('${param.option}', ${currentPage - 1})"> <</button>
         </c:if>
 
         <c:forEach begin="1" end="${totalPages}" var="i">
@@ -206,7 +206,7 @@
         </c:forEach>
 
         <c:if test="${currentPage < totalPages}">
-            <button onclick="loadSP('${param.option}', ${currentPage + 1})"> > </button>
+            <button onclick="loadSP('${param.option}', ${currentPage + 1})"> ></button>
         </c:if>
     </div>
 

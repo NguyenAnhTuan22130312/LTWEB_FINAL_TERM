@@ -20,7 +20,7 @@
         <h2>T^3 Restaurant</h2>
         <ul>
           <li>
-            <a class="active" href="views/admin.jsp">
+            <a class="active" href="admin">
               <i class="fas fa-home"> </i>
               Trang tổng quan
             </a>
