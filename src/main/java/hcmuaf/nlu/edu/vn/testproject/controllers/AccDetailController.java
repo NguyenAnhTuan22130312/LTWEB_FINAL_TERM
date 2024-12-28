@@ -38,7 +38,48 @@ public class AccDetailController extends HttpServlet {
             response.sendRedirect("views/signin.jsp");  // Nếu không có session, chuyển hướng đến trang đăng nhập
         }
     }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Lấy thông tin từ form
+        String fullName = request.getParameter("fullName");
+        String phoneNumber = request.getParameter("phoneNumber");
+        String birthDate = request.getParameter("birthDate");
+        String gender = request.getParameter("gender");
+        String address = request.getParameter("address");
+
+        // Lấy đối tượng Account từ session
+        Account account = (Account) request.getSession().getAttribute("currentUser");  // Sử dụng "currentUser"
+
+        if (account != null) {
+            // Kiểm tra nếu AccDetail chưa được khởi tạo, tạo mới nếu cần
+            AccDetail accDetail = account.getAccDetail();
+            if (accDetail == null) {
+                accDetail = new AccDetail(); // Tạo đối tượng AccDetail mới nếu nó null
+            }
+
+            // Cập nhật thông tin người dùng
+            accDetail.setFullName(fullName);
+            accDetail.setPhoneNumber(phoneNumber);
+            accDetail.setAddress(address);
+            accDetail.setBirthDate(birthDate);
+            accDetail.setGender(Integer.parseInt(gender));
+
+            // Cập nhật thông tin vào cơ sở dữ liệu
+            AccdetailDAO accdetailDAO = new AccdetailDAO();
+            accdetailDAO.updateAccdetail(account.getIdAcc(), fullName, address, phoneNumber, birthDate, Integer.parseInt(gender));
+
+            // Cập nhật lại thông tin trong session
+            account.setAccDetail(accDetail);  // Cập nhật lại thông tin AccDetail trong Account
+            request.getSession().setAttribute("currentUser", account);  // Lưu lại thông tin tài khoản với AccDetail đã cập nhật
+
+            // Chuyển hướng đến trang thông tin người dùng sau khi cập nhật
+            response.sendRedirect("user");
+        } else {
+            response.getWriter().write("Không tìm thấy tài khoản trong session.");
+        }
     }
+}
 
 
 

@@ -6,6 +6,10 @@ public class Account {
     private String pass;
     private String userName;
     private String email;
+    private AccDetail accDetail;
+
+    public Account() {
+    }
 
     public Account(int idAcc, int idRole, String pass, String userName, String email) {
         this.idAcc = idAcc;
@@ -13,12 +17,19 @@ public class Account {
         this.pass = pass;
         this.userName = userName;
         this.email = email;
+        this.accDetail = accDetail;
     }
 
-    public Account() {
-    }
-
-    public Account(int idAcc, int idRole, String pass, String userName, Object o, String email) {
+    @Override
+    public String toString() {
+        return "Account{" +
+                "idAcc=" + idAcc +
+                ", idRole=" + idRole +
+                ", pass='" + pass + '\'' +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", accDetail=" + accDetail +
+                '}';
     }
 
     public int getIdAcc() {
@@ -61,14 +72,11 @@ public class Account {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "Account{" +
-                "idAcc=" + idAcc +
-                ", idRole=" + idRole +
-                ", pass='" + pass + '\'' +
-                ", userName='" + userName + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public void setAccDetail(AccDetail accDetail) {
+        this.accDetail = accDetail;
+    }
+
+    public AccDetail getAccDetail() {
+        return this.accDetail;
     }
 }

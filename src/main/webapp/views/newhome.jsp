@@ -47,7 +47,7 @@
                                     <a href="views/admin.jsp" id="admin-link">Quản trị</a>
                                 </c:if>
                                 <c:if test="${sessionScope.currentUser.idRole == 2}">
-                                    <a href="user?idAcc=16" id="user-link">Thông tin</a>
+                                    <a href="user?idAcc=${sessionScope.currentUser.idAcc}" id="user-link">Thông tin</a>
                                 </c:if>
                                 <a href="logout" id="logout">Đăng xuất</a>
                             </div>
