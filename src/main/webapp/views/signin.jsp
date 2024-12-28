@@ -64,7 +64,7 @@
           <span>Hoặc sử dụng tài khoản</span>
           <input name="user" type="text" placeholder="Tên đăng nhập" />
           <input name="pass" type="password" placeholder="Mật khẩu" />
-          <a href="views/forgot_pass.jsp">Bạn quên mật khẩu?</a>
+          <a href="forgotpass">Bạn quên mật khẩu?</a>
           <button type="submit">Đăng nhập</button>
         </form>
       </div>

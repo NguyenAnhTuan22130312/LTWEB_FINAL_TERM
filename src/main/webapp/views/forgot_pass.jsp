@@ -21,7 +21,7 @@
             <span>Nhập email của bạn để nhận lại mật khẩu</span>
             <input type="email" placeholder="Email"/>
             <button>Gửi yêu cầu</button>
-            <a href="../html/signin.html">Trở về trang đăng nhập</a>
+            <a href="login">Trở về trang đăng nhập</a>
         </div>
     </div>
 </div>
