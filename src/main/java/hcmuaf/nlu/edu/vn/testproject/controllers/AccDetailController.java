@@ -74,7 +74,7 @@ public class AccDetailController extends HttpServlet {
             request.getSession().setAttribute("currentUser", account);  // Lưu lại thông tin tài khoản với AccDetail đã cập nhật
 
             // Chuyển hướng đến trang thông tin người dùng sau khi cập nhật
-            response.sendRedirect("user");
+            response.sendRedirect("AccDetail");
         } else {
             response.getWriter().write("Không tìm thấy tài khoản trong session.");
         }
