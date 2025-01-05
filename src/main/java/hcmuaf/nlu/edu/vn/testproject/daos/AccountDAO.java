@@ -36,30 +36,46 @@ public class AccountDAO {
         return null;
     }
 
-    public void updatePassword(int userId, String newPassword) {
-        String query = "UPDATE account SET pass = ? WHERE idAcc = ?";
-        try (Connection conn = new DbContext().getConnection();
-             PreparedStatement ps = conn.prepareStatement(query)) {
-            ps.setString(1, newPassword);
-            ps.setInt(2, userId);
-            ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    public Account getUserById(int userId) {
+        String query = "select * from account where idAcc = ?";
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
 
-    public static int getUserIdByToken(String token) {
-        String query = "SELECT userId FROM password_reset_tokens WHERE token = ? AND createdAt >= NOW() - INTERVAL 1 DAY";
-        try (Connection conn = new DbContext().getConnection();
-             PreparedStatement ps = conn.prepareStatement(query)) {
-            ps.setString(1, token);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                return rs.getInt("userId");
+        try {
+            conn = new DbContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Account(
+                        rs.getInt("idAcc"),
+                        rs.getInt("idRole"),
+                        rs.getString("pass"),
+                        rs.getString("userName"),
+                        rs.getString("email")
+                );
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return -1;
+        return null;
+    }
+
+    public void updatePassword(String email, String password) {
+        String query = "update account set pass = ? where email = ?";
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try {
+            conn = new DbContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, password);
+            ps.setString(2, email);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

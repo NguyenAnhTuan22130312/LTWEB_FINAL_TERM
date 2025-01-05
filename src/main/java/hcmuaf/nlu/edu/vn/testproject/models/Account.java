@@ -17,7 +17,6 @@ public class Account {
         this.pass = pass;
         this.userName = userName;
         this.email = email;
-        this.accDetail = accDetail;
     }
 
     @Override

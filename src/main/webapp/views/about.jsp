@@ -39,7 +39,7 @@
             <video autoplay muted loop>
 
                 <source src="${pageContext.request.contextPath}/Videos/%5Bappsgolem.com%5D%5B00-00-00%5D%5B00-00-16%5D_Miami_s_Best_New_Chef_is_Mak.mp4">
-                        type="video/mp4"
+                type="video/mp4"
 
                 Trình duyệt của bạn không hỗ trợ video.
             </video>
