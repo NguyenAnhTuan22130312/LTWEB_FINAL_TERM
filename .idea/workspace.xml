@@ -9,27 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="dang loi contact">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/TokenForgetDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/PasswordResetToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/ResetService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/reset_pass.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_12_2024_1_44_SA_[Changes]/DbContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_12_2024_1_44_SA_[Changes]/Food.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_12_2024_1_44_SA_[Changes]/FoodController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_12_2024_1_44_SA_[Changes]/shelved.patch" beforeDir="false" />
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_12_2024_1_44_SA__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AccDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/AccDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/ForgotPassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/ForgotPassController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/ResetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/ResetPasswordController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/AccountDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/ResetPassService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/forgot_pass.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/forgot_pass.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/about.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/forgot_pass.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/forgot_pass.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/reset_pass.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/reset_pass.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,42 +83,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AccdetailDAO.executor": "Run",
-    "Application.BannerDao.executor": "Run",
-    "Application.BannerService.executor": "Run",
-    "Application.ContactController.executor": "Run",
-    "Application.ContactDao.executor": "Run",
-    "Application.ContactService.executor": "Run",
-    "Application.DbContext.executor": "Run",
-    "Application.FoodCartDAO.executor": "Run",
-    "Application.LoginDAO.executor": "Run",
-    "Application.MD5.executor": "Run",
-    "Application.Order.executor": "Run",
-    "Application.SignUpDAO.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 10.1.31.executor": "Run",
-    "Tomcat Server.da.executor": "Run",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/tuan/Desktop/CUOIKY_LAPTRINH_WEB/LTWEB_FINAL_TERM",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "fileTemplates",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AccdetailDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BannerDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BannerService.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ContactController.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ContactDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ContactService.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DbContext.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FoodCartDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MD5.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Order.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SignUpDAO.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.31.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.da.executor&quot;: &quot;Run&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tuan/Desktop/CUOIKY_LAPTRINH_WEB/LTWEB_FINAL_TERM&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="hcmuaf.nlu.edu.vn.testproject.daos" />
@@ -152,7 +135,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="6c6bcf98-6e1a-492f-9ba5-f9b75a298464" />
+        <option name="BASE_DIRECTORY_NAME" value="643c9dab-bb24-4fe5-80b8-4b829d4a5d6f" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -160,7 +143,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="61863" />
+        <option name="DEBUG_PORT" value="64085" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -233,8 +216,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -270,6 +253,7 @@
       <workItem from="1735303080614" duration="8972000" />
       <workItem from="1735338368983" duration="6613000" />
       <workItem from="1735396518345" duration="2633000" />
+      <workItem from="1736144229406" duration="831000" />
     </task>
     <task id="LOCAL-00001" summary="update newhome, food">
       <option name="closed" value="true" />

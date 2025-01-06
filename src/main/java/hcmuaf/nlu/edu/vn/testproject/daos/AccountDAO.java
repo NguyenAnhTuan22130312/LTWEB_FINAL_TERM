@@ -1,12 +1,12 @@
 package hcmuaf.nlu.edu.vn.testproject.daos;
 
 import hcmuaf.nlu.edu.vn.testproject.context.DbContext;
+import hcmuaf.nlu.edu.vn.testproject.libs.MD5;
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class AccountDAO {
     // Check email tồn tại hay ko
@@ -66,11 +66,11 @@ public class AccountDAO {
         String query = "update account set pass = ? where email = ?";
         Connection conn = null;
         PreparedStatement ps = null;
-
+        String hashedPassword = MD5.getMD5(password);
         try {
             conn = new DbContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, password);
+            ps.setString(1, hashedPassword);
             ps.setString(2, email);
             ps.executeUpdate();
 
