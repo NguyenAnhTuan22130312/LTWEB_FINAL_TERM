@@ -20,33 +20,33 @@
                 </a>
             </li>
             <li>
-                <a href="../html/banner.html">
+                <a href="banner">
                     <i class="fas fa-image">
                     </i>
                     Quản lý Banner
                 </a>
             </li>
             <li>
-                <a href="../html/customer_sevice.html">
+                <a href="customersevice">
                     <i class="fas fa-users"> </i>
                     Khách hàng
                 </a>
             </li>
             <li>
-                <a href="../html/order.html">
+                <a href="ordermanagement">
                     <i class="fas fa-shopping-cart"> </i>
                     Đơn hàng
                 </a>
             </li>
             <li>
-                <a href="../html/statistical.html">
+                <a href="statistical">
                     <i class="fas fa-chart-bar"> </i>
                     Thống kê
                 </a>
             </li>
 
             <li>
-                <a href="../html/discount.html">
+                <a href="discount">
                     <i class="fas fa-chart-bar"> </i>
                     Quản lý mã giảm giá
                 </a>
@@ -57,7 +57,6 @@
                     <i class="fas fa-sign-out-alt"> </i>
                     Đăng xuất
                 </a>
-
             </li>
         </ul>
     </div>

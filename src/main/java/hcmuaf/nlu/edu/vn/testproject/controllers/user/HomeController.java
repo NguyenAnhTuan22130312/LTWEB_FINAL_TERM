@@ -20,7 +20,6 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
         BannerService bannerService = new BannerService();
         List<Banner> banners = bannerService.getBanners();
         request.setAttribute("bans", banners);

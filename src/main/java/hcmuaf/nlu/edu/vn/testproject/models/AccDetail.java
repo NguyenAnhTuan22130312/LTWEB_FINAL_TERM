@@ -7,6 +7,7 @@ public class AccDetail {
     private String address;
     private int gender; // 0: nam, 1:nữ, 2:khác
     private String birthDate;
+    private String email;
 
     public AccDetail() {
     }
@@ -18,6 +19,16 @@ public class AccDetail {
         this.address = address;
         this.gender = gender;
         this.birthDate = birthDate;
+    }
+
+    public AccDetail(int idAcc, String fullName, String phoneNumber, String address, int gender, String birthDate, String email) {
+        this.idAcc = idAcc;
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.gender = gender;
+        this.birthDate = birthDate;
+        this.email = email;
     }
 
     public int getIdAcc() {
@@ -67,6 +78,15 @@ public class AccDetail {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
     @Override
     public String toString() {

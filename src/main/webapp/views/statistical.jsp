@@ -1,201 +1,141 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Thống kê</title>
-    <link href="../Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="../css/statistical.css" />
-    
+    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/statistical.css"/>
+
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <script src="../js/module_dangnhap.js" defer></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="sidebar">
-        <img alt="admin" src="../Images/LOGO_V2.png" />
-        <h2>T^3 Restaurant</h2>
-        <ul>
-          <li>
-            <a class="active" href="../html/admin.html">
-              <i class="fas fa-home"> </i>
-              Trang tổng quan
-            </a>
-          </li>
-          <li>
-            <a href="../html/food_service.html">
-              <i class="fas fa-utensils"> </i>
-              Sản phẩm
-            </a>
-          </li>
-            <li>
-                <a href="../html/banner.html">
-                    <i class="fas fa-image">
-                    </i>
-                    Quản lý Banner
-                </a>
-            </li>
-          <li>
-            <a href="../html/customer_sevice.html">
-              <i class="fas fa-users"> </i>
-              Khách hàng
-            </a>
-          </li>
-          <li>
-            <a href="../html/order.html">
-              <i class="fas fa-shopping-cart"> </i>
-              Đơn hàng
-            </a>
-          </li>
-          <li>
-            <a href="../html/statistical.html">
-              <i class="fas fa-chart-bar"> </i>
-              Thống kê
-            </a>
-          </li>
+</head>
+<body>
+<jsp:include page="leftAdmin.jsp"></jsp:include>
 
-          <li>
-            <a href="../html/discount.html">
-              <i class="fas fa-chart-bar"> </i>
-              Quản lý mã giảm giá
-            </a>
-          </li>
-
-          <li>
-            <a id="logout" href="../html/newhome.html">
-              <i class="fas fa-sign-out-alt"> </i>
-              Đăng xuất
-            </a>
-            
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <div class="header">
-          <select>
+<div class="content">
+    <div class="header">
+        <select>
             <option>Tất cả</option>
-          </select>
-          <input placeholder="Tìm kiếm tên món..." type="text" />
-          <input
-            onblur="(this.type='text')"
-            onfocus="(this.type='date')"
-            placeholder="Từ"
-            type="text"
-          />
-          <input
-            onblur="(this.type='text')"
-            onfocus="(this.type='date')"
-            placeholder="Đến"
-            type="text"
-          />
-          <div class="icons">
+        </select>
+        <input placeholder="Tìm kiếm tên món..." type="text"/>
+        <input
+                onblur="(this.type='text')"
+                onfocus="(this.type='date')"
+                placeholder="Từ"
+                type="text"
+        />
+        <input
+                onblur="(this.type='text')"
+                onfocus="(this.type='date')"
+                placeholder="Đến"
+                type="text"
+        />
+        <div class="icons">
             <i class="fas fa-sort-amount-down"> </i>
             <i class="fas fa-sort-amount-up"> </i>
             <i class="fas fa-sync-alt"> </i>
-          </div>
         </div>
-        <div class="summary">
-          <div class="card">
+    </div>
+    <div class="summary">
+        <div class="card">
             <i class="fas fa-utensils"> </i>
             <div class="text">
-              <p>Sản phẩm được bán ra</p>
-              <p class="number">3</p>
+                <p>Sản phẩm được bán ra</p>
+                <p class="number">3</p>
             </div>
-          </div>
-          <div class="card">
+        </div>
+        <div class="card">
             <i class="fas fa-file-alt"> </i>
             <div class="text">
-              <p>Số lượng bán ra</p>
-              <p class="number">7</p>
+                <p>Số lượng bán ra</p>
+                <p class="number">7</p>
             </div>
-          </div>
-          <div class="card">
+        </div>
+        <div class="card">
             <i class="fas fa-dollar-sign"> </i>
             <div class="text">
-              <p>Doanh thu</p>
-              <p class="number">330.000 đ</p>
+                <p>Doanh thu</p>
+                <p class="number">330.000 đ</p>
             </div>
-          </div>
         </div>
+    </div>
 
-        <table>
-          <thead>
-            <tr>
-              <th>STT</th>
-              <th>TÊN MÓN</th>
-              <th>SỐ LƯỢNG BÁN</th>
-              <th>DOANH THU</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td class="product_name">
+    <table>
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>TÊN MÓN</th>
+            <th>SỐ LƯỢNG BÁN</th>
+            <th>DOANH THU</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td class="product_name">
                 <img
-                  alt="Đậu hũ xào nấm chay"
-                  height="50"
-                  src="../Images/Food/Com/Com-chien-duong-chau.png"
+                        alt="Đậu hũ xào nấm chay"
+                        height="50"
+                        src="../Images/Food/Com/Com-chien-duong-chau.png"
                 />
                 Cơm chiên dương châu
-              </td>
-              <td>7</td>
-              <td>210.000 đ</td>
-              <td>
+            </td>
+            <td>7</td>
+            <td>210.000 đ</td>
+            <td>
                 <button class="details-button">
-                  <i class="fas fa-eye"> </i>
-                  CHI TIẾT
+                    <i class="fas fa-eye"> </i>
+                    CHI TIẾT
                 </button>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td class="product_name">
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td class="product_name">
                 <img
-                  alt="Miến xào rau củ chay"
-                  height="50"
-                  src="../Images/Food/Com/Com-chien-ga-xoi-mo.png"
+                        alt="Miến xào rau củ chay"
+                        height="50"
+                        src="../Images/Food/Com/Com-chien-ga-xoi-mo.png"
                 />
                 Cơm gà xối mỡ
-              </td>
-              <td>3</td>
-              <td>90.000 đ</td>
-              <td>
+            </td>
+            <td>3</td>
+            <td>90.000 đ</td>
+            <td>
                 <button class="details-button">
-                  <i class="fas fa-eye"> </i>
-                  CHI TIẾT
+                    <i class="fas fa-eye"> </i>
+                    CHI TIẾT
                 </button>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td class="product_name">
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td class="product_name">
                 <img
-                  alt="Phở bò tái"
-                  height="50"
-                  src="../Images/Food/Pho/Pho-bo-tai.png"
-                  width="50"
+                        alt="Phở bò tái"
+                        height="50"
+                        src="../Images/Food/Pho/Pho-bo-tai.png"
+                        width="50"
                 />
                 Phở bò tái
-              </td>
-              <td>1</td>
-              <td>30.000 đ</td>
-              <td>
+            </td>
+            <td>1</td>
+            <td>30.000 đ</td>
+            <td>
                 <button class="details-button">
-                  <i class="fas fa-eye"> </i>
-                  CHI TIẾT
+                    <i class="fas fa-eye"> </i>
+                    CHI TIẾT
                 </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <script src="../js/module_dangnhap.js"></script>
-  </body>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
 </html>
