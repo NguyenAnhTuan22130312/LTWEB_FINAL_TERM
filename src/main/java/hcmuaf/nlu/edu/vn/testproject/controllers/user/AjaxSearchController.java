@@ -1,4 +1,4 @@
-package hcmuaf.nlu.edu.vn.testproject.controllers;
+package hcmuaf.nlu.edu.vn.testproject.controllers.user;
 
 import hcmuaf.nlu.edu.vn.testproject.daos.FoodDAO;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;

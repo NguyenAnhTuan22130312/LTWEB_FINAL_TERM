@@ -1,91 +1,54 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-  const itemsPerPage = 5; // Số món trên mỗi trang
-
-  const menuItems = document.querySelectorAll('.menu-item');
-  const pageNumbers = document.querySelectorAll('.page-number');
-  const prevButton = document.querySelector('.prev');
-  const nextButton = document.querySelector('.next');
-  
-  let currentPage = 1;
-
-  function showPage(page) {
-    // Ẩn tất cả các món ăn
-    menuItems.forEach((item, index) => {
-      item.style.display = 'none';
-      if (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) {
-
-        item.style.display = '';
-
-      }
-    });
-
-    // Cập nhật các link phân trang
-    pageNumbers.forEach((pageNumber) => {
-      pageNumber.classList.remove('active');
-    });
-    const activePage = document.querySelector(`.page-number[data-page="${page}"]`);
-    if (activePage) {
-      activePage.classList.add('active');
-    }
-  }
-
-  // Xử lý sự kiện nhấp vào link phân trang
-  pageNumbers.forEach((pageNumber) => {
-    pageNumber.addEventListener('click', function (e) {
-      currentPage = parseInt(e.target.getAttribute('data-page'));
-      showPage(currentPage);
-    });
-  });
-
-  // Xử lý nút "trước"
-  prevButton.addEventListener('click', function () {
-    if (currentPage > 1) {
-      currentPage--;
-      showPage(currentPage);
-    }
-  });
-
-  // Xử lý nút "sau"
-  nextButton.addEventListener('click', function () {
-    if (currentPage < pageNumbers.length) {
-      currentPage++;
-      showPage(currentPage);
-    }
-  });
-
-  // Hiển thị trang đầu tiên
-  showPage(currentPage);
-});
-
-
-// Xử lý popup thêm món ăn
-
-const popup = document.getElementById("popup");
+// Lấy các popup và button
+const addPopup = document.getElementById("add_popup");
+const updatePopup = document.getElementById("update_popup");
 const addButton = document.querySelector(".add_item_btn");
-const closeButton =  document.querySelector(".close_btn");
+const updateButtons = document.querySelectorAll(".update_item_btn");
+const deleteButtons = document.querySelectorAll(".delete_item_btn");
+const closeButtons = document.querySelectorAll(".close_btn");
 
-addButton.addEventListener("click", () => {
-  popup.classList.remove("hidden");
+// Đợi DOM load đầy đủ mới gán sự kiện
+document.addEventListener("DOMContentLoaded", () => {
+    // Hiển thị popup thêm món
+    addButton.addEventListener("click", () => {
+        addPopup.classList.remove("hidden");
+    });
+
+    // Hiển thị popup cập nhật món
+    updateButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            updatePopup.classList.remove("hidden");
+        });
+    });
+
+    // Đóng popup
+    closeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            button.closest(".popup").classList.add("hidden");
+        });
+    });
+
+    // Đóng popup khi click ra ngoài
+    [addPopup, updatePopup].forEach(popup => {
+        popup.addEventListener("click", (event) => {
+            if (event.target === popup) {
+                popup.classList.add("hidden");
+            }
+        });
+    });
+
+    // Xử lý form thêm mới món
+    const newItemForm = document.getElementById("new_item_form");
+    newItemForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Món mới đã được lưu!");
+        addPopup.classList.add("hidden");
+    });
+
+    // Xử lý form cập nhật món
+    const updateItemForm = document.getElementById("update_item_form");
+    updateItemForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Đã cập nhật thông tin món!");
+        updatePopup.classList.add("hidden");
+    });
 });
-
-closeButton.addEventListener("click", () =>{
-  popup.classList.add("hidden");
-});
-
-popup.addEventListener("click", (event) => {
-  if (event.target === popup) {
-    popup.classList.add("hidden");
-  }
-});
-
-document.getElementById("new_item_form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  
-
-  alert("Món mới đã được lưu!");
-  popup.classList.add("hidden");
-});
-
-
-

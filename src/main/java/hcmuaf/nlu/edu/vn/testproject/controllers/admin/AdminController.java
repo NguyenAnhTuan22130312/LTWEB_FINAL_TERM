@@ -1,4 +1,4 @@
-package hcmuaf.nlu.edu.vn.testproject.controllers;
+package hcmuaf.nlu.edu.vn.testproject.controllers.admin;
 
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
@@ -8,7 +8,6 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "AdminController", value = "/admin")

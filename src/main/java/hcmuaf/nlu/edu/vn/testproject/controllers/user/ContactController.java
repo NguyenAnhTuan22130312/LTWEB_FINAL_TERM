@@ -1,4 +1,4 @@
-package hcmuaf.nlu.edu.vn.testproject.controllers;
+package hcmuaf.nlu.edu.vn.testproject.controllers.user;
 
 import hcmuaf.nlu.edu.vn.testproject.services.ContactService;
 import jakarta.servlet.*;
@@ -8,7 +8,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(name = "ContactControlle", value = "/contactcontrolle")
-public class ContactControlle extends HttpServlet {
+public class ContactController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

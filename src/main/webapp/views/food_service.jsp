@@ -38,7 +38,8 @@
         </button>
     </div>
 
-    <div id="popup" class="popup hidden">
+    <%-- Thêm món mới --%>
+    <div id="add_popup" class="popup hidden">
         <div class="popup_content">
           <span class="close_btn">
             <i class="fa-solid fa-xmark"></i>
@@ -69,6 +70,38 @@
         </div>
     </div>
 
+    <%-- Cập nhật thông tin món --%>
+    <div id="update_popup" class="popup hidden">
+        <div class="popup_content">
+          <span class="close_btn">
+            <i class="fa-solid fa-xmark"></i>
+          </span>
+            <h2>CẬP NHẬT MÓN</h2>
+            <form id="update_item_form">
+                <label for="item_name">Tên Món:</label>
+                <input type="text" id="items_name" placeholder="Nhập tên món ăn..." required>
+
+                <label for="item_category">Loại Món:</label>
+                <select id="items_category">
+                    <c:forEach var="category" items="${listC}">
+                        <option value="${category.idCategory}">${category.nameCategory}</option>
+                    </c:forEach>
+                </select>
+
+                <label for="item_price"> Giá:</label>
+                <input type="text" id="items_price" placeholder="Nhập giá của món ăn:" required>
+
+                <label for="item_details">Chi tiết món ăn:</label>
+                <input type="text" id="items_details" placeholder="Nhập chi tiết món ăn:" required>
+
+                <label for="item_image">Hình ảnh:</label>
+                <input type="file" id="items_image">
+
+                <button type="submit">Lưu</button>
+            </form>
+        </div>
+    </div>
+
     <div class="menu_container">
         <c:forEach var="food" items="${list}">
             <div class="menu-item">
@@ -81,27 +114,29 @@
                             ${food.description}
                     </p>
                     <button>
-                        món cơm
+                        <c:forEach var="category" items="${listC}">
+                            <c:if test="${category.idCategory == food.idCategory}">
+                                ${category.nameCategory}
+                            </c:if>
+                        </c:forEach>
                     </button>
                 </div>
                 <div class="price">
                         ${food.price}
                 </div>
                 <div class="actions">
-                    <button>
+                    <button class="update_item_btn">
                         <i class="fas fa-edit">
                         </i>
                     </button>
-                    <button>
+                    <button class="delete_item_btn">
                         <i class="fas fa-trash">
                         </i>
                     </button>
                 </div>
             </div>
         </c:forEach>
-
     </div>
-
     <div class="pagi" style="width:1200px;margin:0px auto; padding-left:35px; text-align:center;">
         <c:if test="${currentPage > 1}">
             <a onclick="" href="foodservice?option=${param.option}&page=${currentPage - 1}"><</a>

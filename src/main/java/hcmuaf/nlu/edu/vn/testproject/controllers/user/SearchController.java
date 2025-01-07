@@ -1,10 +1,9 @@
-package hcmuaf.nlu.edu.vn.testproject.controllers;
+package hcmuaf.nlu.edu.vn.testproject.controllers.user;
 
 import hcmuaf.nlu.edu.vn.testproject.models.Category;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
 import hcmuaf.nlu.edu.vn.testproject.daos.FoodDAO;
 import hcmuaf.nlu.edu.vn.testproject.services.CategoryService;
-import hcmuaf.nlu.edu.vn.testproject.services.FoodServiceListFilter;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;

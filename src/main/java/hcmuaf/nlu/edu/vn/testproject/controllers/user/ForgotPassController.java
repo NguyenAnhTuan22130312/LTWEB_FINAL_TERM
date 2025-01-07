@@ -1,4 +1,4 @@
-package hcmuaf.nlu.edu.vn.testproject.controllers;
+package hcmuaf.nlu.edu.vn.testproject.controllers.user;
 
 import hcmuaf.nlu.edu.vn.testproject.daos.AccountDAO;
 import hcmuaf.nlu.edu.vn.testproject.daos.TokenForgetDAO;
@@ -10,7 +10,6 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 
 @WebServlet(name = "ForgotPassController", value = "/forgotpass")
 public class ForgotPassController extends HttpServlet {

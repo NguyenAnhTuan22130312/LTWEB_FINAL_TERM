@@ -1,9 +1,7 @@
-package hcmuaf.nlu.edu.vn.testproject.controllers;
+package hcmuaf.nlu.edu.vn.testproject.controllers.user;
 
 import hcmuaf.nlu.edu.vn.testproject.daos.SignUpDAO;
-import hcmuaf.nlu.edu.vn.testproject.libs.MD5;
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
-import hcmuaf.nlu.edu.vn.testproject.daos.LoginDAO;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;

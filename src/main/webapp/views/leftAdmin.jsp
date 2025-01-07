@@ -53,7 +53,7 @@
             </li>
 
             <li>
-                <a id="logout" href="../html/newhome.html">
+                <a id="logout" href="logout">
                     <i class="fas fa-sign-out-alt"> </i>
                     Đăng xuất
                 </a>

@@ -1,4 +1,4 @@
-package hcmuaf.nlu.edu.vn.testproject.controllers;
+package hcmuaf.nlu.edu.vn.testproject.controllers.user;
 
 import hcmuaf.nlu.edu.vn.testproject.models.Banner;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
@@ -24,25 +24,24 @@ public class HomeController extends HttpServlet {
         BannerService bannerService = new BannerService();
         List<Banner> banners = bannerService.getBanners();
         request.setAttribute("bans", banners);
-        List<Integer> countDot= new ArrayList<>();
-        for(int i=0; i<banners.size(); i++){
+        List<Integer> countDot = new ArrayList<>();
+        for (int i = 0; i < banners.size(); i++) {
             countDot.add(i);
         }
         request.setAttribute("countDot", countDot);
-
 
         FoodServiceListFilter fslf = new FoodServiceListFilter();
 
         List<Food> lst4View = fslf.getTop4Views();
         request.setAttribute("lst4View", lst4View);
 
-        List<Food> lst4Sold= fslf.getTop4Sold();
+        List<Food> lst4Sold = fslf.getTop4Sold();
         request.setAttribute("lst4Sold", lst4Sold);
 
-        List <Food> lst4Propose=fslf.getTop4Propose();
+        List<Food> lst4Propose = fslf.getTop4Propose();
         request.setAttribute("lst4Propose", lst4Propose);
 
-        List <Food> lst4Rate=fslf.getTop4Rate();
+        List<Food> lst4Rate = fslf.getTop4Rate();
         request.setAttribute("lst4Rate", lst4Rate);
 
         request.getRequestDispatcher("views/newhome.jsp").forward(request, response);
