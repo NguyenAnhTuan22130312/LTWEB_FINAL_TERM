@@ -2,6 +2,7 @@ package hcmuaf.nlu.edu.vn.testproject.controllers.user;
 
 
 import hcmuaf.nlu.edu.vn.testproject.daos.FoodCartDAO;
+import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.models.Item;
 import hcmuaf.nlu.edu.vn.testproject.models.Order;
 import hcmuaf.nlu.edu.vn.testproject.services.FoodService;
@@ -32,26 +33,50 @@ public class CheckoutController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Order order = (Order) session.getAttribute("order");
 
+        // Kiểm tra xem người dùng đã đăng nhập chưa (kiểm tra session attribute "currentUser")
+        Account currentUser = (Account) session.getAttribute("currentUser");
 
-        if (order == null || order.getItems().isEmpty()) {
-            response.sendRedirect("cart"); // Nếu giỏ hàng trống, chuyển về giỏ hàng
+        if (currentUser == null) {
+
+            response.sendRedirect("login");
         } else {
-            // Truyền giỏ hàng và tổng tiền tới trang thanh toán
-            int totalAmount = 0;
-            for (Item item : order.getItems()) {
-                totalAmount += item.getQuantity() * item.getFood().getPrice();
+            // Nếu người dùng đã đăng nhập, tiếp tục với việc thanh toán
+            Order order = (Order) session.getAttribute("order");
+
+            if (order == null || order.getItems().isEmpty()) {
+                response.sendRedirect("cart"); // Nếu giỏ hàng trống, chuyển về giỏ hàng
+            } else {
+                // Tính toán tổng tiền và truyền dữ liệu đến trang thanh toán
+                int totalAmount = 0;
+                for (Item item : order.getItems()) {
+                    totalAmount += item.getQuantity() * item.getFood().getPrice();
+                }
+                request.setAttribute("order", order);
+                request.setAttribute("totalAmount", totalAmount);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("views/check-out.jsp");
+                dispatcher.forward(request, response);
             }
-            request.setAttribute("order", order);
-            request.setAttribute("totalAmount", totalAmount);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("views/check-out.jsp");
-            dispatcher.forward(request, response);
         }
     }
 
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Lấy session
+        HttpSession session = request.getSession();
+
+        // Kiểm tra xem giỏ hàng có tồn tại trong session không
+        Order order = (Order) session.getAttribute("order");
+        if (order != null) {
+            // Nếu có, xóa giỏ hàng
+            session.removeAttribute("order");
+            System.out.println("Giỏ hàng đã bị xóa.");
+        } else {
+            System.out.println("Giỏ hàng không tồn tại trong session.");
+        }
+
+        // Chuyển hướng về trang home
+        response.sendRedirect("home");
     }
 }

@@ -8,35 +8,18 @@
     <title>Thanh toán</title>
     <link href="${pageContext.request.contextPath}/Images/LOGO_V2.png" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/check-out.css" />
-    <link
-      rel="stylesheet"
-      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
-    />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"/>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"/>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"/>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"/>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"/>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"/>
+    <style>
+    a{
+      text-decoration: none;
+      color: white;
+    }
+    </style>
   </head>
   <body>
     <div class="checkout-page">
@@ -228,17 +211,10 @@
                   <div class="content-group chk-ship" id="vidientu-group">
                     <div class="checkout-type-order">
                       <button
-                        class="type-wallet-btn active"
-                        id="google-pay-icon"
-                      >
+                        class="type-wallet-btn active" id="google-pay-icon">
                         <i class="fa-brands fa-google-pay"></i>
                       </button>
-                      <button class="type-wallet-btn" id="apple-pay-icon">
-                        <i class="fa-brands fa-apple-pay"></i>
-                      </button>
-                      <button class="type-wallet-btn" id="amazon-pay-icon">
-                        <i class="fa-brands fa-amazon-pay"></i>
-                      </button>
+
                       <button class="type-wallet-btn" id="paypal-icon">
                         <i class="fa-brands fa-paypal"></i>
                       </button>
@@ -268,6 +244,7 @@
                       type="text"
                       placeholder="Tên người nhận"
                       class="form-control"
+                      required
                     />
                     <span class="form-message"></span>
                   </div>
@@ -278,6 +255,7 @@
                       type="text"
                       placeholder="Số điện thoại nhận hàng"
                       class="form-control"
+                      required
                     />
                     <span class="form-message"></span>
                   </div>
@@ -288,6 +266,7 @@
                       type="text"
                       placeholder="Địa chỉ nhận hàng"
                       class="form-control chk-ship"
+                      required
                     />
                     <span class="form-message"></span>
                   </div>
@@ -362,10 +341,17 @@
           Đặt hàng thành công! <br />
           Đơn hàng của bạn đang được xử lý
         </p>
-        <button onclick="closeModal()">Đóng</button>
+        <form action="checkout" method="POST">
+          <button>
+            <a href="home">Đóng</a>
+          </button>
+        </form>
       </div>
     </div>
 
     <script src="${pageContext.request.contextPath}/js/check-out.js"></script>
+    <script>
+
+    </script>
   </body>
 </html>

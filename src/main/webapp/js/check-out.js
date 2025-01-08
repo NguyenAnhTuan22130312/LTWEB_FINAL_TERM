@@ -140,24 +140,7 @@ paypal.addEventListener("click", () => {
   });
 });
 
-//Xu ly tong tien
-const giaotannoiBtn = document.getElementById("giaotannoi");
-const tudenlayBtn = document.getElementById("tudenlay");
-const tongtiengiao = document.getElementById("tongtiengiao");
-const tongtientudenlay = document.getElementById("tongtientudenlay");
 
-tongtiengiao.style.display = "block";
-tongtientudenlay.style.display = "none";
-
-giaotannoiBtn.addEventListener("click", function () {
-  tongtiengiao.style.display = "block";
-  tongtientudenlay.style.display = "none";
-});
-
-tudenlayBtn.addEventListener("click", function () {
-  tongtientudenlay.style.display = "block";
-  tongtiengiao.style.display = "none";
-});
 
 //Xu ly thong bao
 function showOrderSuccess() {
@@ -166,9 +149,3 @@ function showOrderSuccess() {
   setTimeout(closeModal, 5000); // Đóng modal sau 3 giây  }
 }
 
-function closeModal() {
-  const modal = document.getElementById("order-success-modal");
-  modal.style.display = "none";
-  console.log("Modal closed");
-  window.location.href = "../html/PurchaseOrder.jsp";
-}
