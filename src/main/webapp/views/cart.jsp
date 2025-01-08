@@ -27,6 +27,9 @@
         align-items: center;
         gap: 10px;
     }
+    a{
+        color: white;
+    }
 </style>
 <body>
 <script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
@@ -118,10 +121,8 @@
                 <span id="total"> ${subtotal}₫</span>
             </div>
             <button
-                    class="checkout-btn"
-                    onclick="window.location.href='views/check-out.jsp'"
-            >
-                Tiến hành thanh toán
+                    class="checkout-btn">
+                    <a href="checkout" style="text-decoration: none">Tiến hành thanh toán</a>
             </button>
 
 

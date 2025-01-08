@@ -42,8 +42,10 @@
     <div class="checkout-page">
       <div class="checkout-header">
         <div class="checkout-return">
-          <button onclick="window.location.href='views/cart.jsp'">
-            <i class="fa-regular fa-chevron-left"></i>
+          <button>
+            <a href="cart" style="text-decoration: none">
+              <i class="fa-regular fa-chevron-left"></i>
+            </a>
           </button>
         </div>
         <h2 class="checkout-title">Thanh toán</h2>
@@ -297,34 +299,25 @@
         <div class="checkout-col-right">
           <p class="checkout-content-label">Đơn hàng</p>
           <div class="bill-total" id="list-order-checkout">
-            <div class="food-total">
-              <div class="count">1x</div>
-              <div class="info-food">
-                <div class="name-food">Phở bò tái</div>
+            <c:forEach var="item" items="${order.items}">
+              <div class="food-total">
+                <div class="count">${item.quantity}</div>
+                <div class="info-food">
+                  <div class="name-food">${item.food.foodName}</div>
+                </div>
               </div>
-            </div>
-            <div class="food-total">
-              <div class="count">3x</div>
-              <div class="info-food">
-                <div class="name-food">Bún thịt nướng</div>
-              </div>
-            </div>
-            <div class="food-total">
-              <div class="count">4x</div>
-              <div class="info-food">
-                <div class="name-food">Trà chanh giã tay</div>
-              </div>
-            </div>
+            </c:forEach>
+
           </div>
           <div class="bill-payment">
             <div class="total-bill-order">
               <div class="priceFlx">
                 <div class="text">
                   " Tiền hàng"
-                  <span class="count">3 món</span>
+                  <span class="count">${order.items.size()} món</span>
                 </div>
                 <div class="price-detail">
-                  <span id="checkout-cart-total">190.000&nbsp;đ</span>
+                  <span id="checkout-cart-total">${totalAmount} đ</span>
                 </div>
               </div>
               <div class="priceFlx chk-ship">
@@ -344,12 +337,13 @@
             <div class="text">Tổng tiền</div>
             <div class="price-bill" id="tongtiengiao">
               <div class="price-final" id="checkout-cart-price-final">
-                220.000&nbsp;đ
+                ${totalAmount + 30000}&nbsp;đ
+
               </div>
             </div>
             <div class="price-bill" id="tongtientudenlay">
               <div class="price-final" id="checkout-cart-price-final">
-                190.000&nbsp;đ
+                ${totalAmount}&nbsp;đ
               </div>
             </div>
           </div>

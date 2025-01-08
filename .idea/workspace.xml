@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="testProject" />
+      <artifact name="testProject:da" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="dang loi contact">
       <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/CheckoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/testProject.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/testProject.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/testProject.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/testProject_da.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/check-out.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/check-out.jsp" afterDir="false" />
@@ -85,42 +85,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AccdetailDAO.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BannerDao.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BannerService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ContactController.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ContactDao.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ContactService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DbContext.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FoodCartDAO.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginDAO.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MD5.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Order.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SignUpDAO.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.31.executor&quot;: &quot;Run&quot;,
-    &quot;Tomcat Server.da.executor&quot;: &quot;Run&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/tuan/Desktop/CUOIKY_LAPTRINH_WEB/LTWEB_FINAL_TERM&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AccdetailDAO.executor": "Run",
+    "Application.BannerDao.executor": "Run",
+    "Application.BannerService.executor": "Run",
+    "Application.ContactController.executor": "Run",
+    "Application.ContactDao.executor": "Run",
+    "Application.ContactService.executor": "Run",
+    "Application.DbContext.executor": "Run",
+    "Application.FoodCartDAO.executor": "Run",
+    "Application.LoginDAO.executor": "Run",
+    "Application.MD5.executor": "Run",
+    "Application.Order.executor": "Run",
+    "Application.SignUpDAO.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.31.executor": "Run",
+    "Tomcat Server.da.executor": "Run",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/tuan/Desktop/CUOIKY_LAPTRINH_WEB/LTWEB_FINAL_TERM",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15039062",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "fileTemplates",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="hcmuaf.nlu.edu.vn.testproject.daos" />
@@ -130,14 +130,14 @@
     <configuration name="Tomcat 10.1.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.31" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="testProject">
+        <artifact name="testProject:da">
           <settings>
-            <option name="CONTEXT_PATH" value="/testProject" />
+            <option name="CONTEXT_PATH" value="/testProject_da" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="7614c1fa-e49f-482f-9399-c7a416601a12" />
+        <option name="BASE_DIRECTORY_NAME" value="0b6e2652-9d78-40be-8ee7-6d7995a06562" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -145,7 +145,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56837" />
+        <option name="DEBUG_PORT" value="57567" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -210,7 +210,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="testProject" />
+          <artifact name="testProject:da" />
         </option>
       </method>
     </configuration>
