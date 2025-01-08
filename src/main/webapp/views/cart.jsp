@@ -117,11 +117,8 @@
                 <span>Tổng cộng:</span>
                 <span id="total"> ${subtotal}₫</span>
             </div>
-            <button
-                    class="checkout-btn"
-                    onclick="window.location.href='views/check-out.jsp'"
-            >
-                Tiến hành thanh toán
+            <button class="checkout-btn">
+                <a href="checkout">Tiến hành thanh toán</a>
             </button>
 
 
