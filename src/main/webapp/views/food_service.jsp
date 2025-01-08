@@ -66,7 +66,8 @@
                 <input type="text" id="item_price" name="price" placeholder="Nhập giá của món ăn:" required>
 
                 <label for="item_details">Chi tiết món ăn:</label>
-                <input type="text" id="item_details" name="description" placeholder="Nhập chi tiết món ăn:" required>
+                <textarea id="item_details" name="description" placeholder="Nhập chi tiết món ăn:"
+                          required></textarea>
 
                 <label for="item_image">Hình ảnh:</label>
                 <input type="file" id="item_image" name="img">
