@@ -52,3 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
         updatePopup.classList.add("hidden");
     });
 });
+
+document.querySelectorAll('.delete_item_btn').forEach(button => {
+    button.addEventListener('click', function (event) {
+        if (!confirm("Bạn có chắc chắn muốn xóa món này không?")) {
+            event.preventDefault();
+        }
+    });
+});
+

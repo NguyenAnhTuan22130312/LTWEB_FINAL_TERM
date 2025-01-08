@@ -13,32 +13,6 @@ import java.sql.SQLException;
 
 public class FoodCartDAO implements FoodService {
 
-//    String query = "SELECT * FROM Account WHERE userName = ? AND pass = ?";
-//    Connection con = null;
-//    PreparedStatement ps = null;
-//    ResultSet rs = null;
-//    String hashedPassword = MD5.getMD5(password);
-//        try{
-//        con = new DbContext().getConnection();
-//        ps = con.prepareStatement(query);
-//        ps.setString(1, username);
-//        ps.setString(2, hashedPassword);
-//        rs = ps.executeQuery();
-//        while(rs.next()) {
-//            return new Account(
-//                    rs.getInt("idAcc"),
-//                    rs.getInt("idRole"),
-//                    rs.getString("pass"),
-//                    rs.getString("userName")
-//            );
-//        }
-//    }catch (Exception e){
-//        e.printStackTrace();
-//    }
-//
-//
-//        return null;
-
     @Override
     public Food getFoodByID(int id) {
         String query = "SELECT * FROM food WHERE idFood = ?";

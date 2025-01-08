@@ -1,5 +1,6 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers.admin;
 
+import hcmuaf.nlu.edu.vn.testproject.daos.FoodDAO;
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.models.Category;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
@@ -15,6 +16,9 @@ import java.util.List;
 
 @WebServlet(name = "ManageFoodController", value = "/foodservice")
 public class ManageFoodController extends HttpServlet {
+    FoodDAO foodDAO = new FoodDAO();
+    CategoryService cs = new CategoryService();
+    FoodServiceListFilter foodServiceListFilter = new FoodServiceListFilter();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,69 +32,78 @@ public class ManageFoodController extends HttpServlet {
             return;
         }
 
-        FoodServiceListFilter foodServiceListFilter = new FoodServiceListFilter();
-        try {
-            // Lấy số trang, nếu không có thì mặc định là trang 1
-            int page = 1;
-            if (request.getParameter("page") != null) {
-                page = Integer.parseInt(request.getParameter("page"));
-            }
+        String txtSearch = request.getParameter("text");  // Lấy từ khóa tìm kiếm từ form
 
-            // Tính toán offset
-            int pageSize = 10; // Kích thước trang
-            int offset = (page - 1) * pageSize;
-            List<Food> foodList = new ArrayList<>();
-            int totalFoods = 0;
+        // Lấy số trang, nếu không có thì mặc định là trang 1
+        int page = 1;
+        if (request.getParameter("page") != null) {
+            page = Integer.parseInt(request.getParameter("page"));
+        }
 
-            // Lấy giá trị option từ request
-            String option = request.getParameter("option");
-            if (option == null || option.isEmpty()) {
-                option = "tatca"; // Mặc định là "Tất cả"
-            }
+        // Tính toán offset
+        int pageSize = 10; // Kích thước trang
+        int offset = (page - 1) * pageSize;
+        List<Food> foodList = new ArrayList<>();
+        int totalFoods = 0;
 
-            // Lấy danh sách món ăn dựa trên danh mục được chọn
+        // Lấy giá trị option từ request
+        String option = request.getParameter("option");
+        if (option == null || option.isEmpty()) {
+            option = "tatca"; // Mặc định là "Tất cả"
+        }
+
+        // Nếu có từ khóa tìm kiếm
+        if (txtSearch != null && !txtSearch.isEmpty()) {
+            // Tìm kiếm theo tên món ăn
+            foodList = foodDAO.searchByName(txtSearch);
+        } else {
+            // Nếu không có tìm kiếm, lấy danh sách món ăn theo danh mục
             if ("tatca".equals(option)) {
                 foodList = foodServiceListFilter.getOption("tatca"); // Lấy tất cả món ăn
             } else {
-                foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên danh mục
+                foodList = foodServiceListFilter.getOption(option); // Lấy món ăn theo danh mục
             }
-            totalFoods = foodList.size();
-
-            // Áp dụng phân trang
-            if (offset < totalFoods) {
-                foodList = foodList.subList(
-                        Math.min(offset, totalFoods),
-                        Math.min(offset + pageSize, totalFoods)
-                );
-            } else {
-                foodList = new ArrayList<>(); // Trả về danh sách rỗng nếu offset vượt tổng số món
-            }
-
-            // Tính tổng số trang
-            int totalPages = (int) Math.ceil((double) totalFoods / pageSize);
-
-            // Lấy danh sách danh mục
-            CategoryService cs = new CategoryService();
-            List<Category> categoryList = cs.getCategories();
-
-            // Đặt thuộc tính cho JSP
-            request.setAttribute("list", foodList);
-            request.setAttribute("listC", categoryList);
-            request.setAttribute("currentPage", page);
-            request.setAttribute("totalPages", totalPages);
-            request.setAttribute("currentCategory", option); // Truyền danh mục hiện tại
-
-            // Chuyển tiếp đến JSP
-            request.getRequestDispatcher("/views/food_service.jsp").forward(request, response);
-        } catch (Exception e) {
-            e.printStackTrace();
-            request.setAttribute("errorMessage", "Có lỗi xảy ra trong quá trình xử lý.");
-            request.getRequestDispatcher("views/food_service.jsp").forward(request, response);
         }
+
+        totalFoods = foodList.size();
+
+        // Áp dụng phân trang
+        if (offset < totalFoods) {
+            foodList = foodList.subList(
+                    Math.min(offset, totalFoods),
+                    Math.min(offset + pageSize, totalFoods)
+            );
+        } else {
+            foodList = new ArrayList<>(); // Trả về danh sách rỗng nếu offset vượt tổng số món
+        }
+
+        // Tính tổng số trang
+        int totalPages = (int) Math.ceil((double) totalFoods / pageSize);
+
+        // Lấy danh sách danh mục
+        List<Category> categoryList = cs.getCategories();
+
+        // Đặt thuộc tính cho JSP
+        request.setAttribute("list", foodList);
+        request.setAttribute("listC", categoryList);
+        request.setAttribute("currentPage", page);
+        request.setAttribute("totalPages", totalPages);
+        request.setAttribute("currentCategory", option); // Truyền danh mục hiện tại
+        request.setAttribute("search", txtSearch);
+
+        // Chuyển tiếp đến JSP
+        request.getRequestDispatcher("views/food_service.jsp").forward(request, response);
     }
 
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+
+        if ("delete".equals(action)) {
+            int idFood = Integer.parseInt(request.getParameter("idFood"));
+            foodServiceListFilter.deleteFood(idFood);
+            doGet(request, response);
+        }
     }
 }

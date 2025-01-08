@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FoodServiceListFilter {
-    private FoodDAO foodDAO ;
-    private ReviewDAO reviewDAO ;
+    private FoodDAO foodDAO;
+    private ReviewDAO reviewDAO;
 
     public FoodServiceListFilter() {
         this.reviewDAO = new ReviewDAO();
@@ -51,7 +51,7 @@ public class FoodServiceListFilter {
                 lsFood = foodDAO.getAll();
                 break;
             case "danhgiacao":
-                lsFood= getTopRate();
+                lsFood = getTopRate();
                 break;
             case "dexuat":
                 lsFood = foodDAO.getTopPropose();
@@ -63,9 +63,12 @@ public class FoodServiceListFilter {
                 lsFood = foodDAO.getTopSold();
                 break;
             default:
-                lsFood  = foodDAO.getFoodsByCategory(Integer.parseInt(option));
+                lsFood = foodDAO.getFoodsByCategory(Integer.parseInt(option));
         }
         return lsFood;
     }
 
+    public void deleteFood(int idFood) {
+        foodDAO.deleteFood(idFood);
+    }
 }

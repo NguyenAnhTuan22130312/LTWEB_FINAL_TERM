@@ -17,11 +17,10 @@ public class FoodDAO {
     }
 
 
-
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu
     public void getAllFood() {
 
-        String query = "SELECT * FROM Food";
+        String query = "SELECT * FROM Food Where isDeleted = 0";
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -41,6 +40,8 @@ public class FoodDAO {
             ps = con.prepareStatement(query);
             // Thực thi câu lệnh
             rs = ps.executeQuery();
+
+            data.clear(); // Xóa dữ liệu cũ để tải lại từ cơ sở dữ liệu
 
             // Duyệt qua kết quả trả về và tạo danh sách món ăn
             while (rs.next()) {
@@ -217,6 +218,21 @@ public class FoodDAO {
         return foodList;
     }
 
+    public void deleteFood(int idFood) {
+        String query = "DELETE FROM food WHERE idFood = ?";
+        Connection conn = null;
+        PreparedStatement ps = null;
 
+        try {
+            conn = new DbContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, idFood);
+            ps.executeUpdate();
 
+        } catch (SQLException e) {
+            System.err.println("Lỗi khi truy vấn dữ liệu: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

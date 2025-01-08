@@ -31,7 +31,12 @@
             </c:forEach>
         </select>
 
-        <input placeholder="Tìm kiếm tên món..." type="text"/>
+        <form action="foodservice" method="get">
+            <input value="${search}" name="text" type="text" placeholder="Tìm kiếm theo món..."/>
+            <button type="submit">
+                <i class="fa-solid fa-search"></i>
+            </button>
+        </form>
 
         <button class="add_item_btn">
             + Thêm món mới
@@ -78,15 +83,16 @@
           </span>
             <h2>CẬP NHẬT MÓN</h2>
             <form id="update_item_form">
-                <label for="item_name">Tên Món:</label>
+                <label for="items_name">Tên Món:</label>
                 <input type="text" id="items_name" placeholder="Nhập tên món ăn..." required>
 
-                <label for="item_category">Loại Món:</label>
+                <label for="items_category">Loại Món:</label>
                 <select id="items_category">
                     <c:forEach var="category" items="${listC}">
                         <option value="${category.idCategory}">${category.nameCategory}</option>
                     </c:forEach>
                 </select>
+
 
                 <label for="item_price"> Giá:</label>
                 <input type="text" id="items_price" placeholder="Nhập giá của món ăn:" required>
@@ -129,10 +135,14 @@
                         <i class="fas fa-edit">
                         </i>
                     </button>
-                    <button class="delete_item_btn">
-                        <i class="fas fa-trash">
-                        </i>
-                    </button>
+                    <form action="crudfood" method="post" style="display: inline">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="idFood" value="${food.idFood}">
+                        <button type="submit" class="delete_item_btn">
+                            <i class="fas fa-trash">
+                            </i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </c:forEach>
@@ -154,9 +164,5 @@
 </div>
 
 <script src="${pageContext.request.contextPath}/js/food_service.js"></script>
-<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>--%>
-<%--<script src="${pageContext.request.contextPath}/js/module_search_ajax.js"></script>--%>
-<%--<script src="${pageContext.request.contextPath}/js/test_module_load_ajax.js"></script>--%>
-
 </body>
 </html>
