@@ -70,5 +70,11 @@ public class FoodServiceListFilter {
 
     public void deleteFood(int idFood) {
         foodDAO.deleteFood(idFood);
+        foodDAO.getAllFood();
+    }
+
+    public void addFood(Food food) {
+        foodDAO.addFood(food);
+        foodDAO.getAllFood();
     }
 }

@@ -20,7 +20,7 @@ public class FoodDAO {
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu
     public void getAllFood() {
 
-        String query = "SELECT * FROM Food Where isDeleted = 0";
+        String query = "SELECT * FROM Food";
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -40,8 +40,6 @@ public class FoodDAO {
             ps = con.prepareStatement(query);
             // Thực thi câu lệnh
             rs = ps.executeQuery();
-
-            data.clear(); // Xóa dữ liệu cũ để tải lại từ cơ sở dữ liệu
 
             // Duyệt qua kết quả trả về và tạo danh sách món ăn
             while (rs.next()) {
@@ -218,6 +216,7 @@ public class FoodDAO {
         return foodList;
     }
 
+    // Phương thức xóa món ăn
     public void deleteFood(int idFood) {
         String query = "DELETE FROM food WHERE idFood = ?";
         Connection conn = null;
@@ -229,10 +228,45 @@ public class FoodDAO {
             ps.setInt(1, idFood);
             ps.executeUpdate();
 
+            data.remove(idFood); // Xóa món ăn khỏi danh sách trong bộ nhớ
         } catch (SQLException e) {
             System.err.println("Lỗi khi truy vấn dữ liệu: " + e.getMessage());
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    // phương thức thêm món ăn
+    public void addFood(Food food) {
+        String query = "INSERT INTO food (foodName, price, discountPrice, quantity, img, description, idCategory, isDeleted, sold, views, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try {
+            conn = new DbContext().getConnection();
+            ps = conn.prepareStatement(query);
+
+            ps.setString(1, food.getFoodName());
+            ps.setInt(2, food.getPrice());
+            ps.setInt(3, food.getDiscountPrice());
+            ps.setInt(4, food.getQuantity());
+            ps.setString(5, food.getImg());
+            ps.setString(6, food.getDescription());
+            ps.setInt(7, food.getIdCategory());
+            ps.setInt(8, food.getIsDeleted());
+            ps.setInt(9, food.getSold());
+            ps.setInt(10, food.getViews());
+            ps.setTimestamp(11, new Timestamp(System.currentTimeMillis()));
+            ps.setTimestamp(12, new Timestamp(System.currentTimeMillis()));
+
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            System.err.println("Lỗi khi thêm dữ liệu: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } finally {
+            closeResources(null, ps, conn);
         }
     }
 }

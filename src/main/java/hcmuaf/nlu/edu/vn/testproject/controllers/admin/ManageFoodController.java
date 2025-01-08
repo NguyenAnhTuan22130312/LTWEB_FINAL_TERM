@@ -103,7 +103,18 @@ public class ManageFoodController extends HttpServlet {
         if ("delete".equals(action)) {
             int idFood = Integer.parseInt(request.getParameter("idFood"));
             foodServiceListFilter.deleteFood(idFood);
-            doGet(request, response);
+            response.sendRedirect("foodservice");
+        } else if ("add".equals(action)) {
+            String name = request.getParameter("foodName");
+            int category = Integer.parseInt(request.getParameter("idCategory"));
+            int price = Integer.parseInt(request.getParameter("price"));
+            String description = request.getParameter("description");
+            String img = request.getParameter("img");
+
+            Food newFood = new Food(0, name, price, 0, 0, img, description, category, 0, 0, 0, null, null);
+            foodServiceListFilter.addFood(newFood);
+            response.sendRedirect("foodservice");
+
         }
     }
 }

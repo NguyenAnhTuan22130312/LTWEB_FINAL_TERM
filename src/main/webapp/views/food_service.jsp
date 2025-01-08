@@ -50,25 +50,26 @@
             <i class="fa-solid fa-xmark"></i>
           </span>
             <h2>THÊM MÓN MỚI</h2>
-            <form id="new_item_form">
+            <form id="new_item_form" action="foodservice" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="add">
                 <label for="item_name">Tên Món:</label>
-                <input type="text" id="item_name" placeholder="Nhập tên món ăn..." required>
+                <input type="text" id="item_name" name="foodName" placeholder="Nhập tên món ăn..." required>
 
                 <label for="item_category">Loại Món:</label>
-                <select id="item_category">
+                <select id="item_category" name="idCategory">
                     <c:forEach var="category" items="${listC}">
                         <option value="${category.idCategory}">${category.nameCategory}</option>
                     </c:forEach>
                 </select>
 
                 <label for="item_price"> Giá:</label>
-                <input type="text" id="item_price" placeholder="Nhập giá của món ăn:" required>
+                <input type="text" id="item_price" name="price" placeholder="Nhập giá của món ăn:" required>
 
                 <label for="item_details">Chi tiết món ăn:</label>
-                <input type="text" id="item_details" placeholder="Nhập chi tiết món ăn:" required>
+                <input type="text" id="item_details" name="description" placeholder="Nhập chi tiết món ăn:" required>
 
                 <label for="item_image">Hình ảnh:</label>
-                <input type="file" id="item_image">
+                <input type="file" id="item_image" name="img">
 
                 <button type="submit">Lưu</button>
             </form>
@@ -135,7 +136,7 @@
                         <i class="fas fa-edit">
                         </i>
                     </button>
-                    <form action="crudfood" method="post" style="display: inline">
+                    <form action="foodservice" method="post" style="display: inline">
                         <input type="hidden" name="action" value="delete">
                         <input type="hidden" name="idFood" value="${food.idFood}">
                         <button type="submit" class="delete_item_btn">
