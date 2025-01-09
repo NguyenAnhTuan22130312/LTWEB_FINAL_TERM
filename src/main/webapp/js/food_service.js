@@ -35,29 +35,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
-    // Xử lý form thêm mới món
-    const newItemForm = document.getElementById("new_item_form");
-    newItemForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        alert("Món mới đã được lưu!");
-        addPopup.classList.add("hidden");
-    });
-
-    // Xử lý form cập nhật món
-    const updateItemForm = document.getElementById("update_item_form");
-    updateItemForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        alert("Đã cập nhật thông tin món!");
-        updatePopup.classList.add("hidden");
-    });
-});
-
-document.querySelectorAll('.delete_item_btn').forEach(button => {
-    button.addEventListener('click', function (event) {
-        if (!confirm("Bạn có chắc chắn muốn xóa món này không?")) {
-            event.preventDefault();
-        }
-    });
 });
 
