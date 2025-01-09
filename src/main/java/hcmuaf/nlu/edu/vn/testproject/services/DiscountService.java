@@ -12,4 +12,5 @@ public class DiscountService {
         List<Discount> discounts = dao.getAllDiscounts();
         return discounts;
     }
+
 }

@@ -63,7 +63,6 @@ public class BannerDao {
             // Đảm bảo rằng kết nối, câu lệnh và result set được đóng đúng cách
             closeResources(rs, ps, con);
         }
-
     }
 
     public void addBanner(Banner banner) {

@@ -16,7 +16,6 @@ public class DiscountController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         List<Discount> discounts = discountService.getAllDiscounts();
         request.setAttribute("discounts", discounts);
         request.getRequestDispatcher("views/discount.jsp").forward(request, response);

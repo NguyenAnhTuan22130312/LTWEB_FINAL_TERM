@@ -72,4 +72,5 @@ public class DiscountDAO {
             System.err.println("Lỗi khi truy vấn dữ liệu: " + e.getMessage());
         }
     }
+
 }

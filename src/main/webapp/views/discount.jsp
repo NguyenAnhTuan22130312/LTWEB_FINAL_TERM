@@ -15,7 +15,6 @@
     />
 </head>
 <body>
-
 <jsp:include page="leftAdmin.jsp"></jsp:include>
 
 <div class="content">
