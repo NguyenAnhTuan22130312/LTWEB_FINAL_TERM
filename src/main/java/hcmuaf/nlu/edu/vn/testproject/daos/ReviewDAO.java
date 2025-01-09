@@ -34,7 +34,7 @@ public class ReviewDAO {
 //                "  SELECT ac.userName,rv.idAcc,rv.idReview,rv.idFood,rv.rating,rv.commentu,rv.createdAt,ROW_NUMBER() OVER (PARTITION BY rv.idFood ORDER BY rv.createdAt DESC) AS rnk " +
 //                "FROM review rv JOIN account ac ON rv.idAcc = ac.idAcc )" +
 //                "SELECT userName, idAcc, idReview, idFood, rating,commentu,createdAt FROM RankedReviews WHERE rnk <= 10;";
-        String query="SELECT  userName,rv.idAcc,idReview, idFood,rating,commentu,createdAt from review rv join Account ac on rv.idAcc=ac.idAcc ";
+        String query="SELECT  userName,rv.idAcc,idReview, idFood,rating,createdAt from review rv join Account ac on rv.idAcc=ac.idAcc ";
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -63,7 +63,6 @@ public class ReviewDAO {
                         rs.getInt("idFood"),
                         rs.getInt("rating"),
                         rs.getInt("idAcc"),
-                        rs.getString("commentu"),
                         rs.getDate("createdAt")
                 ) );
             }

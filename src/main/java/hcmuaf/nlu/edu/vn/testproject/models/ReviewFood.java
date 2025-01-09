@@ -8,16 +8,14 @@ public class ReviewFood {
     private int idFood;
     private int rating;
     private int idAcc;
-    private String comment;
     private Date date;
 
-    public ReviewFood(String userName, int idReview, int idFood, int rating, int idAcc, String comment, Date date) {
+    public ReviewFood(String userName, int idReview, int idFood, int rating, int idAcc, Date date) {
         this.userName = userName;
         this.idReview = idReview;
         this.idFood = idFood;
         this.rating = rating;
         this.idAcc = idAcc;
-        this.comment = comment;
         this.date = date;
     }
 
@@ -29,7 +27,6 @@ public class ReviewFood {
                 ", idFood=" + idFood +
                 ", rating=" + rating +
                 ", idAcc=" + idAcc +
-                ", commentu='" + comment + '\'' +
                 ", date=" + date +
                 '}';
     }
@@ -74,13 +71,6 @@ public class ReviewFood {
         this.idAcc = idAcc;
     }
 
-    public String getCommentu() {
-        return comment;
-    }
-
-    public void setCommentu(String commentu) {
-        this.comment = commentu;
-    }
 
     public Date getDate() {
         return date;
