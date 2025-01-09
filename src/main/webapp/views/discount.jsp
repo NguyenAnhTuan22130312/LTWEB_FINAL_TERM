@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,33 +36,15 @@
             </thead>
             <tbody>
             <tr>
-                <td>001</td>
-                <td>MUAMOTTANGMOT</td>
-                <td>20%</td>
-                <td>BLACK FRIDAY</td>
-                <td>BLACK FRIDAY mua ngay kẻo hết</td>
-                <td>29/11/2024</td>
-                <td>10/12/2024</td>
-            </tr>
-
-            <tr>
-                <td>002</td>
-                <td>NOELCANGBUNG</td>
-                <td>15%</td>
-                <td>Khuyến Mãi Noel</td>
-                <td>Nhân dịp Noel hãy dẫn người yêu bạn đi ăn ngay nào</td>
-                <td>15/12/2024</td>
-                <td>25/12/2024</td>
-            </tr>
-
-            <tr>
-                <td>003</td>
-                <td>KHAITRUONGCUAHANG</td>
-                <td>20%</td>
-                <td>Khuyến Mãi Đặc Biệt</td>
-                <td>Khuyến mãi nhân dịp cửa hàng khai trương</td>
-                <td>10/10/2024</td>
-                <td>15/10/2024</td>
+                <c:forEach var="discount" items="${discounts}" varStatus="status">
+                    <td><fmt:formatNumber value="${status.index + 1}" pattern="000"/></td>
+                    <td>${discount.codeName}</td>
+                    <td><fmt:formatNumber value="${discount.discountRate * 100}" pattern="0.##"/>%</td>
+                    <td>${discount.title}</td>
+                    <td>${discount.description}</td>
+                    <td>${discount.startDate}</td>
+                    <td>${discount.endDate}</td>
+                </c:forEach>
             </tr>
 
             </tbody>
@@ -69,6 +52,7 @@
         <button class="add-banner"><i class="fas fa-plus"></i> Thêm Mã Giảm Giá Mới</button>
     </div>
 
+    <%-- Thêm mã giảm giá --%>
     <div id="popup" class="popup hidden">
         <div class="popup_content">
           <span class="close_btn">
@@ -102,8 +86,6 @@
     </div>
 
 </div>
-
-<script src="js/admin_popup.js"></script>
 
 </body>
 </html>
