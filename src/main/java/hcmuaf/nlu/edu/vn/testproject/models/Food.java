@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class Food {
     private int idFood;
     private String foodName;
-    private int price; // Giá có thể null
+    private int price;
     private int discountPrice;
     private int quantity;
     private String img;
@@ -17,7 +17,7 @@ public class Food {
     private Timestamp createdAt;
     private Timestamp updatedAt;
 
-    public Food(){
+    public Food() {
 
     }
 
@@ -37,126 +37,107 @@ public class Food {
         this.updatedAt = updatedAt;
     }
 
-    public int getIdFood() {
+    public Integer getIdFood() {
         return idFood;
+    }
+
+    public void setIdFood(Integer idFood) {
+        this.idFood = idFood;
     }
 
     public String getFoodName() {
         return foodName;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public int getDiscountPrice() {
-        return discountPrice;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getIdCategory() {
-        return idCategory;
-    }
-
-    public int getIsDeleted() {
-        return isDeleted;
-    }
-
-    public int getSold() {
-        return sold;
-    }
-
-    public int getViews() {
-        return views;
-    }
-
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
-
-    public Timestamp getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setIdFood(int idFood) {
-        this.idFood = idFood;
-    }
-
     public void setFoodName(String foodName) {
         this.foodName = foodName;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
     public void setPrice(int price) {
         this.price = price;
     }
 
-    public void setDiscountPrice(int discountPrice) {
+    public Integer getDiscountPrice() {
+        return discountPrice;
+    }
+
+    public void setDiscountPrice(Integer discountPrice) {
         this.discountPrice = discountPrice;
     }
 
-    public void setQuantity(int quantity) {
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public String getImg() {
+        return img;
     }
 
     public void setImg(String img) {
         this.img = img;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getIdCategory() {
+        return idCategory;
     }
 
     public void setIdCategory(int idCategory) {
         this.idCategory = idCategory;
     }
 
-    public void setIsDeleted(int isDeleted) {
+    public Integer getIsDeleted() {
+        return isDeleted;
+    }
+
+    public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
     }
 
-    public void setSold(int sold) {
+    public Integer getSold() {
+        return sold;
+    }
+
+    public void setSold(Integer sold) {
         this.sold = sold;
     }
 
-    public void setViews(int views) {
+    public Integer getViews() {
+        return views;
+    }
+
+    public void setViews(Integer views) {
         this.views = views;
+    }
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
 
-    public void setUpdatedAt(Timestamp updatedAt) {
-        this.updatedAt = updatedAt;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    @Override
-    public String toString() {
-        return "Food{" +
-                "idFood=" + idFood +
-                ", foodName='" + foodName + '\'' +
-                ", price=" + price +
-                ", discountPrice=" + discountPrice +
-                ", quantity=" + quantity +
-                ", img='" + img + '\'' +
-                ", description='" + description + '\'' +
-                ", idCategory=" + idCategory +
-                ", isDeleted=" + isDeleted +
-                ", sold=" + sold +
-                ", views=" + views +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

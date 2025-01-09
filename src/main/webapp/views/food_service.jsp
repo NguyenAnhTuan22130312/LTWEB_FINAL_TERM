@@ -63,14 +63,14 @@
                 </select>
 
                 <label for="item_price"> Giá:</label>
-                <input type="text" id="item_price" name="price" placeholder="Nhập giá của món ăn:" required>
+                <input type="number" id="item_price" name="price" placeholder="Nhập giá của món ăn:" required>
 
                 <label for="item_details">Chi tiết món ăn:</label>
-                <textarea id="item_details" name="description" placeholder="Nhập chi tiết món ăn:"
-                          required></textarea>
+                <input id="item_details" name="description" placeholder="Nhập chi tiết món ăn:"
+                       required>
 
                 <label for="item_image">Hình ảnh:</label>
-                <input type="file" id="item_image" name="img">
+                <input type="file" id="item_image" name="img" required>
 
                 <button type="submit">Lưu</button>
             </form>

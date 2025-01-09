@@ -237,8 +237,9 @@ public class FoodDAO {
     }
 
     // phương thức thêm món ăn
-    public void addFood(Food food) {
-        String query = "INSERT INTO food (foodName, price, discountPrice, quantity, img, description, idCategory, isDeleted, sold, views, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public boolean addFood(Food food) {
+        String query = "INSERT INTO food (idCategory, foodName, price, discountPrice, img, description, quantity, sold, createdAt, updatedAt, isDeleted, views) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Connection conn = null;
         PreparedStatement ps = null;
 
@@ -246,27 +247,26 @@ public class FoodDAO {
             conn = new DbContext().getConnection();
             ps = conn.prepareStatement(query);
 
-            ps.setString(1, food.getFoodName());
-            ps.setInt(2, food.getPrice());
-            ps.setInt(3, food.getDiscountPrice());
-            ps.setInt(4, food.getQuantity());
+            ps.setInt(1, food.getIdCategory());
+            ps.setString(2, food.getFoodName());
+            ps.setInt(3, food.getPrice());
+            ps.setObject(4, food.getDiscountPrice()); // NULL nếu không có
             ps.setString(5, food.getImg());
             ps.setString(6, food.getDescription());
-            ps.setInt(7, food.getIdCategory());
-            ps.setInt(8, food.getIsDeleted());
-            ps.setInt(9, food.getSold());
-            ps.setInt(10, food.getViews());
-            ps.setTimestamp(11, new Timestamp(System.currentTimeMillis()));
-            ps.setTimestamp(12, new Timestamp(System.currentTimeMillis()));
+            ps.setObject(7, food.getQuantity());
+            ps.setInt(8, food.getSold());
+            ps.setTimestamp(9, food.getCreatedAt());
+            ps.setObject(10, food.getUpdatedAt());
+            ps.setInt(11, food.getIsDeleted());
+            ps.setInt(12, food.getViews());
 
-            ps.executeUpdate();
-
+            int rowInserted = ps.executeUpdate();
+            return rowInserted > 0;
         } catch (SQLException e) {
-            System.err.println("Lỗi khi thêm dữ liệu: " + e.getMessage());
+            e.printStackTrace();
+            return false;
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
-        } finally {
-            closeResources(null, ps, conn);
         }
     }
 }
