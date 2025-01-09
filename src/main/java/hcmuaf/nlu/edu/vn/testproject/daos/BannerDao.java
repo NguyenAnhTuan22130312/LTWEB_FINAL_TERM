@@ -18,11 +18,11 @@ public class BannerDao {
 
     public BannerDao() {
         this.banners = new ArrayList<>();
-         getAllBanner();
+        getAllBanner();
     }
 
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu
-    public void  getAllBanner() {
+    public void getAllBanner() {
 
         String query = "select * from banner";
         Connection con = null;
@@ -66,6 +66,63 @@ public class BannerDao {
 
     }
 
+    public void addBanner(Banner banner) {
+        String query = "INSERT INTO banner (url, createdAt) VALUES (?, ?)";
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try {
+            // Tạo kết nối cơ sở dữ liệu
+            conn = new DbContext().getConnection();
+            // Kiểm tra kết nối
+            if (conn != null) {
+                System.out.println("Kết nối cơ sở dữ liệu thành công!");
+            } else {
+                System.out.println("Kết nối cơ sở dữ liệu thất bại!");
+                // Trả về danh sách rỗng nếu không kết nối được
+            }
+
+            // Chuẩn bị câu lệnh SQL
+            ps = conn.prepareStatement(query);
+            ps.setString(1, banner.getUrl());
+            ps.setDate(2, new java.sql.Date(banner.getDate().getTime()));
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            System.err.println("Lỗi khi truy vấn dữ liệu: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void deleteBaner(int id) {
+        String query = "DELETE FROM banner WHERE idBanner = ?";
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try {
+            // Tạo kết nối cơ sở dữ liệu
+            conn = new DbContext().getConnection();
+            // Kiểm tra kết nối
+            if (conn != null) {
+                System.out.println("Kết nối cơ sở dữ liệu thành công!");
+            } else {
+                System.out.println("Kết nối cơ sở dữ liệu thất bại!");
+                // Trả về danh sách rỗng nếu không kết nối được
+            }
+
+            // Chuẩn bị câu lệnh SQL
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            System.err.println("Lỗi khi truy vấn dữ liệu: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     // Phương thức đóng các tài nguyên
     private void closeResources(ResultSet rs, PreparedStatement ps, Connection con) {
         try {
@@ -73,7 +130,7 @@ public class BannerDao {
             if (ps != null) ps.close();
             if (con != null) con.close();
         } catch (SQLException e) {
-            System.err.println("Lỗi khi đóng tài nguyên: " + e.getMessage());
+            System.err.println("Lỗi khi truy vấn dữ liệu: " + e.getMessage());
         }
     }
 

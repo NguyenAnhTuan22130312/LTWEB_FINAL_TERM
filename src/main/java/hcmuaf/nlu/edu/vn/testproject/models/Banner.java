@@ -36,13 +36,4 @@ public class Banner {
     public void setDate(Date date) {
         this.date = date;
     }
-
-    @Override
-    public String toString() {
-        return "Banner{" +
-                "id=" + id +
-                ", url='" + url + '\'' +
-                ", date=" + date +
-                '}';
-    }
 }

@@ -30,7 +30,7 @@
 </head>
 
 <body>
-<script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
+
 <jsp:include page="header.jsp"></jsp:include>
 
 <!-- Xử lý content\  -->
