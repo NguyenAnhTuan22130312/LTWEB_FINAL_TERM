@@ -17,7 +17,8 @@ public class AccdetailDAO {
     public List<AccDetail> getAllAccDetail() {
 
         List<AccDetail> listAcc = new ArrayList<AccDetail>();
-        String query = "SELECT accdetail.*, account.email FROM accdetail RIGHT JOIN account ON accdetail.idAcc = account.idAcc";
+        String query = "SELECT accdetail.*, account.email" +
+                " FROM accdetail RIGHT JOIN account ON accdetail.idAcc = account.idAcc WHERE account.idRole = 2";
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -112,8 +113,25 @@ public class AccdetailDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
+
+    // Phương thức tìm kiếm theo tên
+    public List<AccDetail> searchAcc(String textSearch) {
+        List<AccDetail> listAcc = new ArrayList<>();
+
+        // Duyệt qua danh sách các AccDetail
+        for (AccDetail accDetail : getAllAccDetail()) {
+            // Kiểm tra nếu bất kỳ thuộc tính nào của AccDetail trong textSearch (không phân biệt chữ hoa/thường)
+            if ((accDetail.getEmail() != null && accDetail.getEmail().toLowerCase().contains(textSearch.toLowerCase())) ||
+                    (accDetail.getFullName() != null && accDetail.getFullName().toLowerCase().contains(textSearch.toLowerCase())) ||
+                    (accDetail.getAddress() != null && accDetail.getAddress().toLowerCase().contains(textSearch.toLowerCase())) ||
+                    (accDetail.getPhoneNumber() != null && accDetail.getPhoneNumber().toLowerCase().contains(textSearch.toLowerCase()))) {
+                listAcc.add(accDetail);
+            }
+        }
+        return listAcc;
+    }
+
 
     // Phương thức đóng các tài nguyên
     private void closeResources(ResultSet rs, PreparedStatement ps, Connection conn) {

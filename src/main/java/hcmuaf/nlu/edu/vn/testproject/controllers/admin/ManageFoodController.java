@@ -145,7 +145,6 @@ public class ManageFoodController extends HttpServlet {
             } else {
                 response.sendRedirect("foodservice?status=error");
             }
-
         }
     }
 }

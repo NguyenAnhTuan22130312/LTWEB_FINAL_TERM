@@ -19,62 +19,24 @@
 
 <div class="content">
     <div class="header">
-        <select>
-            <option>Tất cả</option>
-        </select>
-        <input placeholder="Tìm kiếm khách hàng..." type="text"/>
-        <input placeholder="mm/dd/yyyy" type="text"/>
-        <input placeholder="mm/dd/yyyy" type="text"/>
-
-        <button class="add_cus_btn">
-            <i class="fas fa-plus"> </i>
-            Thêm khách hàng
-        </button>
+        <form action="customersevice" method="get">
+            <input value="${search}" name="text" type="text" placeholder="Tìm kiếm khách hàng..."/>
+            <button type="submit">
+                <i class="fa-solid fa-search"></i>
+            </button>
+        </form>
     </div>
 
     <div id="popup" class="popup hidden">
-        <div class="popup_content">
-            <span class="close_btn">
+        <div class="popup_content"
+             style="padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.2); background: #fff; max-width: 500px; margin: auto;">
+            <span class="close_btn" style="float: right; cursor: pointer; font-size: 20px;">
               <i class="fa-solid fa-xmark"></i>
             </span>
-            <h2>THÊM KHÁCH HÀNG</h2>
-            <form id="new_cus_form">
-                <label for="cus_name">Tên Khách Hàng:</label>
-                <input type="text" id="cus_name" placeholder="Nhập tên khách hàng..." required>
-
-                <label for="cus_gender">Giới tính:</label>
-                <div id="cus_gender" class="gender-options">
-                    <label>
-                        <input type="radio" name="gender" value="male" required>
-                        Nam
-                    </label>
-                    <label>
-                        <input type="radio" name="gender" value="female" required>
-                        Nữ
-                    </label>
-                </div>
-
-                <label for="cus_dob">Ngày sinh:</label>
-                <input type="date" id="cus_dob" required>
-
-                <label for="cus_address">Địa chỉ:</label>
-                <input type="text" id="cus_address" placeholder="Nhập địa chỉ khách hàng..." required>
-
-                <label for="cus_phone">Số Điện thoại:</label>
-                <input type="text" id="cus_phone" placeholder="Nhập số điện thoại..." required>
-
-                <label for="cus_email">Email:</label>
-                <input type="email" id="cus_email" placeholder="Nhập email khách hàng..." required>
-
-
-                <button type="submit">
-                    Thêm Khách Hàng Mới
-                </button>
-
-            </form>
+            <h2 style="text-align: center;">CHI TIẾT KHÁCH HÀNG</h2>
+            <div id="popup_details"></div>
         </div>
     </div>
-
 
     <table>
         <thead>
@@ -83,33 +45,38 @@
 
             <th>HỌ VÀ TÊN</th>
 
-            <th>GIỚI TÍNH</th>
-
-            <th>NGÀY SINH</th>
-
-            <th>ĐỊA CHỈ</th>
-
-            <th>LIÊN HỆ</th>
+            <th>SỐ ĐIỆN THOẠI</th>
 
             <th>EMAIL</th>
+
+            <th></th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="listAcc" items="${listAcc}">
+        <c:forEach var="listAcc" items="${listAcc}" varStatus="status">
             <tr>
-                <td>${listAcc.idAcc}</td>
-                <td>${listAcc.fullName}</td>
-                <td>${listAcc.gender}</td>
-                <td>${listAcc.birthDate}</td>
-                <td>${listAcc.address}</td>
-                <td>${listAcc.address}</td>
-                <td>${listAcc.email != null ? listAcc.email : 'Không có email'}</td>
+                <td>${status.index + 1}</td>
+                <td>${listAcc.fullName != null ? listAcc.fullName : '<span style="color: red;">Chưa cập nhật Họ và Tên</span>'}</td>
+
+                <td>${listAcc.phoneNumber != null ? listAcc.phoneNumber : '<span style="color: red;">Chưa cập nhật SĐT</span>'}</td>
+
+                <td>${listAcc.email != null ? listAcc.email : '<span style="color: red;">chưa cập nhật email</span>'}</td>
+
+                <td>
+                    <button class="detail_btn"
+                            data-account='{"fullName":"${listAcc.fullName}","gender":
+                            "${listAcc.gender}","birthDate":"${listAcc.birthDate}","address":
+                            "${listAcc.address}","phoneNumber":"${listAcc.phoneNumber}","email":"${listAcc.email}"}'>
+                        <i class="fas fa-eye"></i>
+                        CHI TIẾT
+                    </button>
+                </td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
 </div>
-</div>
+
 <script src="${pageContext.request.contextPath}/js/cus_service.js"></script>
 </body>
 </html>
