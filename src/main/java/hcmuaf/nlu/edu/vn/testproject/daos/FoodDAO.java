@@ -269,4 +269,11 @@ public class FoodDAO {
             throw new RuntimeException(e);
         }
     }
+
+    public static void main(String[] args) {
+        FoodDAO foodDAO = new FoodDAO();
+        foodDAO.deleteFood(81);
+
+
+    }
 }

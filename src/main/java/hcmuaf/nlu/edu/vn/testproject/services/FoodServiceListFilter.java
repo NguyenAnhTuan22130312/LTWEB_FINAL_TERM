@@ -74,8 +74,8 @@ public class FoodServiceListFilter {
     }
 
     public boolean addFood(Food food) {
-        foodDAO.addFood(food);
+        boolean isAdded = foodDAO.addFood(food);
         foodDAO.getAllFood();
-        return false;
+        return isAdded;
     }
 }

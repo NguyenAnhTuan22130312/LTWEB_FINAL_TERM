@@ -51,7 +51,7 @@
           </span>
             <h2>THÊM MÓN MỚI</h2>
             <form id="new_item_form" action="foodservice" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="add">
+                <input type="hidden" name="action" value="add">
                 <label for="item_name">Tên Món:</label>
                 <input type="text" id="item_name" name="foodName" placeholder="Nhập tên món ăn..." required>
 
@@ -86,7 +86,7 @@
             <h2>CẬP NHẬT MÓN</h2>
             <form id="update_item_form">
                 <label for="items_name">Tên Món:</label>
-                <input type="text" id="items_name" placeholder="Nhập tên món ăn..." required>
+                <input type="text" id="items_name" placeholder="Nhập tên món ăn...">
 
                 <label for="items_category">Loại Món:</label>
                 <select id="items_category">
@@ -97,10 +97,10 @@
 
 
                 <label for="item_price"> Giá:</label>
-                <input type="text" id="items_price" placeholder="Nhập giá của món ăn:" required>
+                <input type="text" id="items_price" placeholder="Nhập giá của món ăn:">
 
                 <label for="item_details">Chi tiết món ăn:</label>
-                <input type="text" id="items_details" placeholder="Nhập chi tiết món ăn:" required>
+                <input type="text" id="items_details" placeholder="Nhập chi tiết món ăn:">
 
                 <label for="item_image">Hình ảnh:</label>
                 <input type="file" id="items_image">
