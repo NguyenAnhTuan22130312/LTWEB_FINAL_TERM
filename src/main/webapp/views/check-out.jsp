@@ -212,11 +212,6 @@
 
               </div>
             </div>
-            <div class="price-bill" id="tongtientudenlay">
-              <div class="price-final" id="checkout-cart-price-final">
-                ${totalAmount}&nbsp;đ
-              </div>
-            </div>
           </div>
           <button class="complete-checkout-btn" onclick="showOrderSuccess()">
             Đặt hàng
