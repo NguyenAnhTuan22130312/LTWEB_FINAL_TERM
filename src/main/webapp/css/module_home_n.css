@@ -93,7 +93,14 @@
   margin-top: 30px;
   width: 100%;
   height: max-content;
+
 }
+
+.popup-content .button-cart .linktocart {
+  text-decoration: none;
+  color: white;
+}
+
 
 .popup-content .button-cart:hover {
   background-color: #c0392b;

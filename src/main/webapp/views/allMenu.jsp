@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Menu các món cơm</title>
     <link href="${pageContext.request.contextPath}/Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/allmenu.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/allmenu_n.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signinCssModule.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_submenu_catelory.css"/>
     <link
@@ -174,7 +174,7 @@
                     </span>
                     <button class="button-cart">
 
-                        <a href="${addtoCart}">
+                        <a class="linktocart" href="${addtoCart}">
                             Thêm vào giỏ hàng
                         </a>
                     </button>

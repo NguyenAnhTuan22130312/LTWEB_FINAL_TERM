@@ -9,7 +9,7 @@
     <title>Food T^3</title>
     <link href='Images/LOGO_V2.png' rel='icon' type='image/x-icon'/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/newhome.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_home.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/module_home_n.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
@@ -159,7 +159,7 @@
                     </span>
                     <button class="button-cart">
 
-                        <a href="${addtoCart}">
+                        <a class="linktocart"  href="${addtoCart}">
                             Thêm vào giỏ hàng
                         </a>
                     </button>
@@ -202,7 +202,7 @@
                     </span>
                     <button class="button-cart">
 
-                        <a href="${addtoCart}">
+                        <a class="linktocart"  href="${addtoCart}">
                             Thêm vào giỏ hàng
                         </a>
                     </button>
@@ -245,7 +245,7 @@
                     </span>
                     <button class="button-cart">
 
-                        <a href="${addtoCart}">
+                        <a class="linktocart"  href="${addtoCart}">
                             Thêm vào giỏ hàng
                         </a>
                     </button>
@@ -288,7 +288,7 @@
                     </span>
                     <button class="button-cart">
 
-                        <a href="${addtoCart}">
+                        <a class="linktocart"  href="${addtoCart}">
                             Thêm vào giỏ hàng
                         </a>
                     </button>

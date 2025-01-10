@@ -52,7 +52,7 @@ public class AjaxSearchController extends HttpServlet {
                         "                    </span>\n" +
                         "                    <button class=\"button-cart\">\n" +
                         "\n" +
-                        "                        <a href=\"${addtoCart}\">\n" +
+                        "                        <a class=\"linktocart\" href=\"${addtoCart}\">\n" +
                         "                            Thêm vào giỏ hàng\n" +
                         "                        </a>\n" +
                         "                    </button>\n" +
