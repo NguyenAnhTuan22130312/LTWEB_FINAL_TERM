@@ -100,6 +100,14 @@ public class FoodControllerAjax extends HttpServlet {
                         "                <span class=\"close\" onclick=\"closePopup('" + food.getIdFood() + "')\">&times;</span>\n" +
                         "            </div>");
             }
+            out.println("<div class=\"pagination\" style=\"width:1200px;margin:0px auto; padding-left:35px; text-align:center;\">");
+
+            for (int i = 1; i <= totalPages; i++) {
+                out.println("<button onclick=\"loadSP('" + option + "', " + i + ")\" class=\"" + (page == i ? "active" : "") + "\">" + i + "</button>");
+            }
+
+            out.println("</div>");
+
         }
     }
 

@@ -9,15 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix review roi">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/allmenu_n.css" afterDir="false" />
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="fix nhe card food">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/AjaxSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/AjaxSearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/FoodControllerAjax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/FoodControllerAjax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/allmenu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/module_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/module_home_n.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/allmenu_n.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/allmenu_n.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/menu.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +286,7 @@
       <workItem from="1736382235121" duration="4344000" />
       <workItem from="1736459138776" duration="489000" />
       <workItem from="1736459640083" duration="1248000" />
-      <workItem from="1736477845212" duration="2425000" />
+      <workItem from="1736477845212" duration="5768000" />
     </task>
     <task id="LOCAL-00001" summary="update newhome, food">
       <option name="closed" value="true" />
@@ -427,7 +424,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736460796279</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix nhe card food">
+      <option name="closed" value="true" />
+      <created>1736480936552</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1736480936552</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +466,8 @@
     <MESSAGE value="block button search" />
     <MESSAGE value="dang loi contact" />
     <MESSAGE value="fix review roi" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix review roi" />
+    <MESSAGE value="fix nhe card food" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix nhe card food" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

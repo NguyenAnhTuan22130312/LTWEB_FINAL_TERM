@@ -313,7 +313,7 @@ html {
   margin-top: 15px;
 }
 
-.pagination a {
+.pagination button {
   color: darkred;
   font-size: 15px;
   text-decoration: none;
@@ -321,7 +321,7 @@ html {
   display: inline-block;
 }
 
-.pagination a.active {
+.pagination buttom.active {
   background-color: rgba(122, 8, 8, 0.905);
   font-weight: bold;
   border-radius: 5px;
