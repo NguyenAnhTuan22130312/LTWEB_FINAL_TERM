@@ -10,10 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="da hoan thanh fix trang menu">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/Invoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/models/InvoiceDetail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/allmenu_n.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/allmenu_n.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +96,7 @@
     "Application.DbContext.executor": "Run",
     "Application.FoodCartDAO.executor": "Run",
     "Application.FoodDAO.executor": "Run",
+    "Application.InvoiceDAO.executor": "Run",
     "Application.LoginDAO.executor": "Run",
     "Application.MD5.executor": "Run",
     "Application.Order.executor": "Run",
@@ -129,9 +131,9 @@
       <recent name="hcmuaf.nlu.edu.vn.testproject.daos" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.31">
-    <configuration name="FoodDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hcmuaf.nlu.edu.vn.testproject.daos.FoodDAO" />
+  <component name="RunManager" selected="Application.InvoiceDAO">
+    <configuration name="InvoiceDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hcmuaf.nlu.edu.vn.testproject.daos.InvoiceDAO" />
       <module name="testProject" />
       <extension name="coverage">
         <pattern>
@@ -153,7 +155,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="84419680-5e01-4d10-a9d4-785d294bab79" />
+        <option name="BASE_DIRECTORY_NAME" value="4a3109f8-8c61-465b-ab10-d55d30f48352" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -161,7 +163,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="61625" />
+        <option name="DEBUG_PORT" value="51756" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -231,12 +233,12 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.FoodDAO" />
+      <item itemvalue="Application.InvoiceDAO" />
       <item itemvalue="Tomcat Server.Tomcat 10.1.31" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FoodDAO" />
+        <item itemvalue="Application.InvoiceDAO" />
       </list>
     </recent_temporary>
   </component>
