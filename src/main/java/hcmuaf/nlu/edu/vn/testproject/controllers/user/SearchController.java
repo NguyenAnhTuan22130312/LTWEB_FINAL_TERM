@@ -20,6 +20,8 @@ public class SearchController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String textSearch = request.getParameter("text");
+
+
         FoodDAO dao = new FoodDAO();
         String option = request.getParameter("option");
         List<Food> foodList= new ArrayList<>();
