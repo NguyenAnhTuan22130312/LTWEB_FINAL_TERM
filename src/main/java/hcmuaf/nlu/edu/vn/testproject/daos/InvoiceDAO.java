@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 public class InvoiceDAO {
     public void addInvoice(Invoice invoice) {
-        String query = "INSERT INTO invoice (idAcc, recipientName, phoneNumber, deliveryAddress, note, orderDate, totalAmount, idCode, paymentMethod, isPaid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO invoice (idAcc, recipientName, phoneNumber, deliveryAddress, note, orderDate, totalAmount, idCode, paymentMethod, isPaid) VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)";
         Connection conn = null;
         PreparedStatement ps = null;
         try {
@@ -21,10 +21,9 @@ public class InvoiceDAO {
             ps.setString(5, invoice.getNote());
             ps.setString(6, invoice.getOrderDate());
             ps.setInt(7, invoice.getTotalAmount());
-            ps.setInt(8, invoice.getIdCode());
-            ps.setInt(9, invoice.getPaymentMethod());
-            ps.setInt(10, invoice.getIsPaid());
-            ps.executeQuery();
+            ps.setInt(8, invoice.getPaymentMethod());
+            ps.setInt(9, invoice.getIsPaid());
+            ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -40,7 +39,7 @@ public class InvoiceDAO {
             ps.setInt(2, detail.getIdFood());
             ps.setInt(3, detail.getQuantity());
             ps.setInt(4, detail.getTotalAmount());
-            ps.executeQuery();
+            ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,22 +54,19 @@ public class InvoiceDAO {
         invoice.setNote("Giao hàng vào buổi sáng");
         invoice.setOrderDate("2025/1/1");
         invoice.setTotalAmount(500000);
-        invoice.setIdCode(12345);
-        invoice.setPaymentMethod((byte) 1);  // 1 cho thẻ tín dụng, 0 cho tiền mặt
-        invoice.setIsPaid((byte) 1); // 1 cho đã thanh toán, 0 cho chưa thanh toán
+        invoice.setPaymentMethod(1);  // 1 cho thẻ tín dụng, 0 cho tiền mặt
+        invoice.setIsPaid(1); // 1 cho đã thanh toán, 0 cho chưa thanh toán
 
         // Tạo đối tượng InvoiceDetail
         InvoiceDetail detail = new InvoiceDetail();
-        detail.setIdInvoice(1);  // Giả sử idInvoice là 1
-        detail.setIdFood(101);  // Giả sử idFood là 101
+        detail.setIdInvoice(2);  // Giả sử idInvoice là 1
+        detail.setIdFood(12);  // Giả sử idFood là 101
         detail.setQuantity(2);
         detail.setTotalAmount(200000);
 
         // Khởi tạo InvoiceDAO
         InvoiceDAO dao = new InvoiceDAO();
 
-        // Thêm Invoice vào cơ sở dữ liệu
-        dao.addInvoice(invoice);
 
         // Thêm InvoiceDetail vào cơ sở dữ liệu
         dao.addInvoiceDetail(detail);
