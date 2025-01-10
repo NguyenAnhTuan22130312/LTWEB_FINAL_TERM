@@ -33,6 +33,7 @@
         </div>
         <h2 class="checkout-title">Thanh toán</h2>
       </div>
+      <form action="checkout" method="post">
       <main class="checkout-section container">
         <div class="checkout-col-left">
           <div class="checkout-row">
@@ -42,17 +43,23 @@
               <div class="content-group">
                 <p class="checkout-content-label">Phương thức thanh toán</p>
                 <div class="checkout-payment-type">
-                  <button class="payment-btn active" id="tienmat">
-                    <i class="fa-duotone fa-money-bill"></i>
-                    Thanh toán khi nhận hàng
-                  </button>
-                  <button class="payment-btn" id="thenganhang">
-                    <i class="fa-duotone fa-solid fa-credit-card"></i>
-                    Thanh toán bằng thẻ ngân hàng
-                  </button>
+                  <div class="payment-btn active" id="tienmat">
+                    <input type="radio" id="nhanhang" name="paymentMethod" value="1">
+                    <label for="nhanhang">
+                      <i class="fa-duotone fa-money-bill"></i>
+                      Thanh toán khi nhận hàng
+                    </label>
+                  </div>
+                  <div class="payment-btn" id="thenganhang">
+                    <input type="radio" id="nganhang" name="paymentMethod" value="2">
+                    <label for="nganhang">
+                      <i class="fa-duotone fa-solid fa-credit-card"></i>
+                      Thanh toán bằng thẻ ngân hàng
+                    </label>
+                  </div>
                   <div class="content-group chk-ship" id="thenganhang-group">
                     <div class="content-group">
-                      <form action="" class="info-the-ngan-hang">
+                      <form class="info-the-ngan-hang">
                         <div class="form-group">
                           <input
                             id="tenchuthe"
@@ -96,20 +103,23 @@
                       </form>
                     </div>
                   </div>
-                  <button class="payment-btn" id="vidientu">
-                    <i class="fa-duotone fa-solid fa-wallet"></i>
-                    Thanh toán bằng ví điện tử
-                  </button>
+                  <div class="payment-btn" id="vidientu">
+                    <input type="radio" id="dientu" name="paymentMethod" value="3">
+                    <label for="dientu">
+                      <i class="fa-duotone fa-solid fa-wallet"></i>
+                      Thanh toán bằng ví điện tử
+                    </label>
+                  </div>
                   <div class="content-group chk-ship" id="vidientu-group">
                     <div class="checkout-type-order">
-                      <button
+                      <div
                         class="type-wallet-btn active" id="google-pay-icon">
                         <i class="fa-brands fa-google-pay"></i>
-                      </button>
+                      </div>
 
-                      <button class="type-wallet-btn" id="paypal-icon">
+                      <div class="type-wallet-btn" id="paypal-icon">
                         <i class="fa-brands fa-paypal"></i>
-                      </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -119,6 +129,7 @@
                 <textarea
                   type="text"
                   class="note-order"
+                  name="note-order"
                   placeholder="Nhập ghi chú"
                 ></textarea>
               </div>
@@ -128,7 +139,6 @@
             <div class="checkout-col-title">Thông tin người nhận</div>
             <div class="checkout-col-content">
               <div class="content-group">
-                <form action="" class="info-nhan-hang">
                   <div class="form-group">
                     <input
                       id="tennguoinhan"
@@ -162,7 +172,6 @@
                     />
                     <span class="form-message"></span>
                   </div>
-                </form>
               </div>
             </div>
           </div>
@@ -213,12 +222,15 @@
               </div>
             </div>
           </div>
-          <button class="complete-checkout-btn" onclick="showOrderSuccess()">
+          <input type="hidden" name="totalAmount" value="${totalAmount}" />
+          <button class="complete-checkout-btn">
             Đặt hàng
           </button>
         </div>
       </main>
+      </form>
     </div>
+
     <div id="order-success-modal" class="modal" style="display: none">
       <div class="modal-content">
         <div class="modal-check">

@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 public class InvoiceDAO {
     public void addInvoice(Invoice invoice) {
-        String query = "INSERT INTO invoice (idAcc, recipientName, phoneNumber, deliveryAddress, note, orderDate, totalAmount, idCode, paymentMethod, isPaid) VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)";
+        String query = "INSERT INTO invoice (idAcc, recipientName, phoneNumber, deliveryAddress, note, orderDate, totalAmount, idCode, paymentMethod, isPaid) VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, NULL)";
         Connection conn = null;
         PreparedStatement ps = null;
         try {
@@ -22,7 +22,7 @@ public class InvoiceDAO {
             ps.setString(6, invoice.getOrderDate());
             ps.setInt(7, invoice.getTotalAmount());
             ps.setInt(8, invoice.getPaymentMethod());
-            ps.setInt(9, invoice.getIsPaid());
+
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

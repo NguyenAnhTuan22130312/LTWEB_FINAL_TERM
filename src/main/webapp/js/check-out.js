@@ -1,39 +1,33 @@
-// Xử lý phương thức thanh toán
-let tienmat = document.querySelector("#tienmat");
-let thenganhang = document.querySelector("#thenganhang");
-let vidientu = document.querySelector("#vidientu");
-let thenganhangGroup = document.querySelector("#thenganhang-group");
-let vidientuGroup = document.querySelector("#vidientu-group");
+document.addEventListener('DOMContentLoaded', function () {
+  const tienmat = document.getElementById('tienmat');
+  const thenganhang = document.getElementById('thenganhang');
+  const vidientu = document.getElementById('vidientu');
 
-function togglePaymentMethod(method, group) {
-  const isActive = method.classList.contains("active");
+  const thenganhangGroup = document.getElementById('thenganhang-group');
+  const vidientuGroup = document.getElementById('vidientu-group');
 
-  // Đặt lại trạng thái của tất cả các phương thức thanh toán
-  tienmat.classList.remove("active");
-  thenganhang.classList.remove("active");
-  vidientu.classList.remove("active");
-  thenganhangGroup.style.display = "none";
-  vidientuGroup.style.display = "none";
+  // Xử lý sự kiện khi người dùng chọn "Thanh toán khi nhận hàng"
+  tienmat.addEventListener('click', function () {
+    // Ẩn các form khác
+    thenganhangGroup.style.display = 'none';
+    vidientuGroup.style.display = 'none';
+  });
 
-  // Nếu phương thức chưa được kích hoạt thì kích hoạt nó
-  if (!isActive) {
-    method.classList.add("active");
-    if (group) group.style.display = "block";
-  }
-}
+  // Xử lý sự kiện khi người dùng chọn "Thanh toán bằng thẻ ngân hàng"
+  thenganhang.addEventListener('click', function () {
+    // Ẩn form khác và hiển thị form thẻ ngân hàng
+    thenganhangGroup.style.display = 'block';
+    vidientuGroup.style.display = 'none';
+  });
 
-// Sự kiện khi nhấn vào từng phương thức thanh toán
-tienmat.addEventListener("click", () => {
-  togglePaymentMethod(tienmat);
+  // Xử lý sự kiện khi người dùng chọn "Thanh toán bằng ví điện tử"
+  vidientu.addEventListener('click', function () {
+    // Ẩn form khác và hiển thị form ví điện tử
+    thenganhangGroup.style.display = 'none';
+    vidientuGroup.style.display = 'block';
+  });
 });
 
-thenganhang.addEventListener("click", () => {
-  togglePaymentMethod(thenganhang, thenganhangGroup);
-});
-
-vidientu.addEventListener("click", () => {
-  togglePaymentMethod(vidientu, vidientuGroup);
-});
 
 // Xử lý các ví điện tử
 let googlepay = document.querySelector("#google-pay-icon");
@@ -68,12 +62,4 @@ paypal.addEventListener("click", () => {
 });
 
 
-
-
-//Xu ly thong bao
-function showOrderSuccess() {
-  const modal = document.getElementById("order-success-modal");
-  modal.style.display = "flex";
-  setTimeout(closeModal, 5000); // Đóng modal sau 3 giây  }
-}
 
