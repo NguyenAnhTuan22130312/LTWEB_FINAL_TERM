@@ -22,7 +22,6 @@
     />
     <script src="${pageContext.request.contextPath}/js/module_dangnhap.js" defer></script>
 </head>
-
 <body>
 <div id="header">
     <div class="containerheaderAll">
@@ -206,6 +205,7 @@
 
 
 </div>
+
 <!-- Xử lý footer -->
 <jsp:include page="footer.jsp"></jsp:include>
 <script>

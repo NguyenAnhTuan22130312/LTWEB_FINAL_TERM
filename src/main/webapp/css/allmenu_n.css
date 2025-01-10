@@ -319,13 +319,15 @@ html {
   text-decoration: none;
   padding: 8px 15px;
   display: inline-block;
+  border: none;
 }
 
-.pagination buttom.active {
+.pagination .active {
   background-color: rgba(122, 8, 8, 0.905);
   font-weight: bold;
   border-radius: 5px;
   color: white;
+
 }
 
 .pagination a:hover:not(.active) {
@@ -336,6 +338,7 @@ html {
   max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
+  height: auto;
 }
 
 /* Xử lý Pop up */

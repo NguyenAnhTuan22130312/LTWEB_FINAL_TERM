@@ -62,8 +62,21 @@ public class FoodServiceListFilter {
             case "banchay":
                 lsFood = foodDAO.getTopSold();
                 break;
-            default:
+            case"1":
                 lsFood = foodDAO.getFoodsByCategory(Integer.parseInt(option));
+                break;
+            case"2":
+                lsFood = foodDAO.getFoodsByCategory(Integer.parseInt(option));
+                break;
+            case"3":
+                lsFood = foodDAO.getFoodsByCategory(Integer.parseInt(option));
+                break;
+            case"4":
+                lsFood = foodDAO.getFoodsByCategory(Integer.parseInt(option));
+                break;
+            default:
+                lsFood= foodDAO.searchByName(option);
+                break;
         }
         return lsFood;
     }
