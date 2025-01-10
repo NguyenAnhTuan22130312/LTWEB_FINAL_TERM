@@ -257,6 +257,8 @@ html {
   gap: 20px;
   justify-items: center;
   padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
@@ -312,6 +314,14 @@ html {
 .pagination {
   text-align: center;
   margin-top: 15px;
+  width: 100%;
+}
+.content_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa cả .content_section và .pagination */
+  justify-content: center;
+  width: 100%;
 }
 
 .pagination button {

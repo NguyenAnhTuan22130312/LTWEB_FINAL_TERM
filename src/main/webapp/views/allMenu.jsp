@@ -147,7 +147,7 @@
         </div>
     </div>
 
-
+    <div class="content_wrapper">
     <div id="content_section" class="content_section">
         <c:forEach var="food" items="${list}">
             <div class="card" onclick="showPopup('${food.idFood}')">
@@ -188,6 +188,7 @@
             </c:forEach>
 
         </div>
+    </div>
     </div>
     <%--    <div class="pagination" style="width:1200px;margin:0px auto; padding-left:35px ;  text-align:center;">--%>
     <%--        <c:if test="${currentPage > 1}">--%>
