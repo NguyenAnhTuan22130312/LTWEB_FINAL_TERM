@@ -67,6 +67,7 @@ public class FoodControllerAjax extends HttpServlet {
         if(foodList.isEmpty())
             out.println("<h2 style=\"max-width: 1200px; text-align: center;\"> Không có món ăn phù hợp</h2>");
         else {
+            out.println("<div class=\"content_section\">");
             for (Food food : foodList) {
 
                 out.println("<div class=\"card\" onclick=\"showPopup('" + food.getIdFood() + "')\">\n" +
@@ -100,6 +101,8 @@ public class FoodControllerAjax extends HttpServlet {
                         "                <span class=\"close\" onclick=\"closePopup('" + food.getIdFood() + "')\">&times;</span>\n" +
                         "            </div>");
             }
+            out.println("</div>");
+
             out.println("<div class=\"pagination\" style=\"width:1200px;margin:0px auto; padding-left:35px; text-align:center;\">");
 
             for (int i = 1; i <= totalPages; i++) {

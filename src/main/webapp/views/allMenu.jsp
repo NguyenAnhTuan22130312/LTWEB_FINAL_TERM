@@ -147,8 +147,9 @@
         </div>
     </div>
 
-    <div class="content_wrapper">
-    <div id="content_section" class="content_section">
+
+    <div id="content_section">
+        <div class="content_section">
         <c:forEach var="food" items="${list}">
             <div class="card" onclick="showPopup('${food.idFood}')">
                 <img src="${food.img}" alt="${food.foodName}"/>
@@ -181,6 +182,7 @@
                 <span class="close" onclick="closePopup('${food.idFood}')">&times;</span>
             </div>
         </c:forEach>
+        </div>
         <div class="pagination" style="width:1200px;margin:0px auto; padding-left:35px; text-align:center;">
 
             <c:forEach begin="1" end="${totalPages}" var="i">
@@ -189,7 +191,7 @@
 
         </div>
     </div>
-    </div>
+
     <%--    <div class="pagination" style="width:1200px;margin:0px auto; padding-left:35px ;  text-align:center;">--%>
     <%--        <c:if test="${currentPage > 1}">--%>
     <%--            <a onclick="" href="allmenu?option=${param.option}&page=${currentPage - 1}"><</a>--%>

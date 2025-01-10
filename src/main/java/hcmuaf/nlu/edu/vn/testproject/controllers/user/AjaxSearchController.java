@@ -27,8 +27,9 @@ public class AjaxSearchController extends HttpServlet {
         if(foodList.isEmpty())
             out.println("<h2 style=\"max-width: 1200px; text-align: center;\"> Không có món ăn phù hợp</h2>");
         else {
+            out.println("<div class=\"content_section\">");
             for (Food food : foodList) {
-                out.println("");
+
                 out.println("<div class=\"card\" onclick=\"showPopup('" + food.getIdFood() + "')\">\n" +
                         "                <img src=\"" + food.getImg() + "\" alt=\"" + food.getFoodName() + "\"/>\n" +
                         "                <div class=\"card_content\">\n" +
@@ -60,6 +61,7 @@ public class AjaxSearchController extends HttpServlet {
                         "                <span class=\"close\" onclick=\"closePopup('" + food.getIdFood() + "')\">&times;</span>\n" +
                         "            </div>");
             }
+            out.println("</div>");
         }
     }
 
