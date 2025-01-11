@@ -30,13 +30,12 @@ public class FoodControllerAjax extends HttpServlet {
         // Tính toán offset
         int pageSize = 10; // Kích thước trang
         int offset = (page - 1) * pageSize;
-        List<Food> foodList= new ArrayList<>();
-        int totalFoods=0;
+        List<Food> foodList = new ArrayList<>();
+        int totalFoods = 0;
 
         // Lấy giá trị option từ request
         String option = request.getParameter("option");
         if (option != null) {
-
             foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
             totalFoods = foodList.size(); // Tổng số món theo option
 
@@ -45,8 +44,9 @@ public class FoodControllerAjax extends HttpServlet {
                     Math.min(offset, totalFoods),
                     Math.min(offset + pageSize, totalFoods)
             );
-        }else{
+        } else {
             response.sendRedirect(request.getContextPath() + "/search");
+            return;
         }
 
         // Tính tổng số trang
@@ -62,21 +62,19 @@ public class FoodControllerAjax extends HttpServlet {
         request.setAttribute("currentPage", page);
         request.setAttribute("totalPages", totalPages);
 
-
         PrintWriter out = response.getWriter();
-        if(foodList.isEmpty())
+        if (foodList.isEmpty()) {
             out.println("<h2 style=\"max-width: 1200px; text-align: center;\"> Không có món ăn phù hợp</h2>");
-        else {
+        } else {
             out.println("<div class=\"content_section\">");
             for (Food food : foodList) {
-
+                String addToCartUrl = request.getContextPath() + "/addtoCart?foodID=" + food.getIdFood();
                 out.println("<div class=\"card\" onclick=\"showPopup('" + food.getIdFood() + "')\">\n" +
                         "                <img src=\"" + food.getImg() + "\" alt=\"" + food.getFoodName() + "\"/>\n" +
                         "                <div class=\"card_content\">\n" +
                         "                    <h3>" + food.getFoodName() + "</h3>\n" +
                         "                    <p>" + food.getPrice() + "đ</p>\n" +
-                        "                    <c:url value=\"addtoCart?foodID=" + food.getIdFood() + "\" var=\"addtoCart\"/>\n" +
-                        "                    <a class=\"btn\" href=\"${addtoCart?foodID=" + food.getIdFood() + "}\" onclick=\"event.stopPropagation()\">\n" +
+                        "                    <a class=\"btn\" href=\"" + addToCartUrl + "\" onclick=\"event.stopPropagation()\">\n" +
                         "                        Thêm vào giỏ hàng\n" +
                         "                    </a>\n" +
                         "                </div>\n" +
@@ -92,8 +90,7 @@ public class FoodControllerAjax extends HttpServlet {
                         "                           " + food.getDescription() + "\n" +
                         "                    </span>\n" +
                         "                    <button class=\"button-cart\">\n" +
-                        "\n" +
-                        "                        <a class=\"linktocart\" href=\"${addtoCart}\">\n" +
+                        "                        <a class=\"linktocart\" href=\"" + addToCartUrl + "\">\n" +
                         "                            Thêm vào giỏ hàng\n" +
                         "                        </a>\n" +
                         "                    </button>\n" +
@@ -104,17 +101,15 @@ public class FoodControllerAjax extends HttpServlet {
             out.println("</div>");
 
             out.println("<div class=\"pagination\" style=\"width:1200px;margin:0px auto; padding-left:35px; text-align:center;\">");
-
             for (int i = 1; i <= totalPages; i++) {
                 out.println("<button onclick=\"loadSP('" + option + "', " + i + ")\" class=\"" + (page == i ? "active" : "") + "\">" + i + "</button>");
             }
-
             out.println("</div>");
-
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Xử lý POST nếu cần
     }
 }
