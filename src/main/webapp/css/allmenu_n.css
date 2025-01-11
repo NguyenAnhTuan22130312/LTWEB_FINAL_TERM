@@ -433,6 +433,11 @@ html {
   color: white;
 }
 
+.popup-content .button-cart .btn {
+  text-decoration: none ;
+  color: white;
+}
+
 .popup-content .button-cart:hover {
   background-color: #c0392b;
   color: white;

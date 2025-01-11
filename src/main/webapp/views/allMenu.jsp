@@ -174,7 +174,7 @@
                     </span>
                     <button class="button-cart">
 
-                        <a class="linktocart" href="${addtoCart}">
+                        <a class="linktocart" href="${addtoCart}" >
                             Thêm vào giỏ hàng
                         </a>
                     </button>

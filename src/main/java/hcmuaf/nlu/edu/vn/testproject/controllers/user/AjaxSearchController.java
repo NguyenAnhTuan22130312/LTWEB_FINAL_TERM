@@ -35,9 +35,9 @@ public class AjaxSearchController extends HttpServlet {
                         "                <div class=\"card_content\">\n" +
                         "                    <h3>" + food.getFoodName() + "</h3>\n" +
                         "                    <p>" + food.getPrice() + "đ</p>\n" +
-                        "                    <a class=\"linktocart\" href=\"" + addToCartUrl + "\">\n" +
-                        "                            Thêm vào giỏ hàng\n" +
-                        "                        </a>\n" +
+                        "                     <a class=\"btn\" href=\"" + addToCartUrl + "\" onclick=\"event.stopPropagation()\">\n" +
+                        "                        Thêm vào giỏ hàng\n" +
+                        "                    </a>\n" +
                         "                </div>\n" +
                         "            </div>\n" +
                         "\n" +
@@ -52,9 +52,9 @@ public class AjaxSearchController extends HttpServlet {
                         "                    </span>\n" +
                         "                    <button class=\"button-cart\">\n" +
                         "\n" +
-                        "                        <a class=\"linktocart\" href=\"" + addToCartUrl + "\">\n" +
-                        "                            Thêm vào giỏ hàng\n" +
-                        "                        </a>\n" +
+                        "                         <a class=\"btn\" href=\"" + addToCartUrl + "\" onclick=\"event.stopPropagation()\" style=\"text-decoration: none; color: white;\">\n" +
+                        "                        Thêm vào giỏ hàng\n" +
+                        "                    </a>\n" +
                         "                    </button>\n" +
                         "                </div>\n" +
                         "                <span class=\"close\" onclick=\"closePopup('" + food.getIdFood() + "')\">&times;</span>\n" +
