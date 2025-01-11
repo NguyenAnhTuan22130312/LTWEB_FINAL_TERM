@@ -76,7 +76,7 @@ public class FoodControllerAjax extends HttpServlet {
                         "                    <h3>" + food.getFoodName() + "</h3>\n" +
                         "                    <p>" + food.getPrice() + "đ</p>\n" +
                         "                    <c:url value=\"addtoCart?foodID=" + food.getIdFood() + "\" var=\"addtoCart\"/>\n" +
-                        "                    <a class=\"btn\" href=\"${addtoCart}\">\n" +
+                        "                    <a class=\"btn\" href=\"${addtoCart?foodID=" + food.getIdFood() + "}\" onclick=\"event.stopPropagation()\">\n" +
                         "                        Thêm vào giỏ hàng\n" +
                         "                    </a>\n" +
                         "                </div>\n" +

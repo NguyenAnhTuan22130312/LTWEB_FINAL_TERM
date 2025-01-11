@@ -142,7 +142,7 @@
                     <h3>${food.foodName}</h3>
                     <p>${food.price}đ</p>
                     <c:url value="addtoCart?foodID=${food.idFood}" var="addtoCart"/>
-                    <a class="btn" href="${addtoCart}">
+                    <a class="btn" onclick="event.stopPropagation()" href="${addtoCart}">
                         Thêm vào giỏ hàng
                     </a>
                 </div>
@@ -185,7 +185,7 @@
                     <h3>${food.foodName}</h3>
                     <p>${food.price}đ</p>
                     <c:url value="addtoCart?foodID=${food.idFood}" var="addtoCart"/>
-                    <a class="btn" href="${addtoCart}">
+                    <a class="btn" onclick="event.stopPropagation()" href="${addtoCart}">
                         Thêm vào giỏ hàng
                     </a>
                 </div>
@@ -228,7 +228,7 @@
                     <h3>${food.foodName}</h3>
                     <p>${food.price}đ</p>
                     <c:url value="addtoCart?foodID=${food.idFood}" var="addtoCart"/>
-                    <a class="btn" href="${addtoCart}">
+                    <a class="btn" onclick="event.stopPropagation()" href="${addtoCart}">
                         Thêm vào giỏ hàng
                     </a>
                 </div>
@@ -271,7 +271,7 @@
                     <h3>${food.foodName}</h3>
                     <p>${food.price}đ</p>
                     <c:url value="addtoCart?foodID=${food.idFood}" var="addtoCart"/>
-                    <a class="btn" href="${addtoCart}">
+                    <a class="btn" onclick="event.stopPropagation()" href="${addtoCart}">
                         Thêm vào giỏ hàng
                     </a>
                 </div>
