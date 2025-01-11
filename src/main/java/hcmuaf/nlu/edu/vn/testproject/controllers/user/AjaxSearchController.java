@@ -29,16 +29,15 @@ public class AjaxSearchController extends HttpServlet {
         else {
             out.println("<div class=\"content_section\">");
             for (Food food : foodList) {
-
+                String addToCartUrl = request.getContextPath() + "/addtoCart?foodID=" + food.getIdFood();
                 out.println("<div class=\"card\" onclick=\"showPopup('" + food.getIdFood() + "')\">\n" +
                         "                <img src=\"" + food.getImg() + "\" alt=\"" + food.getFoodName() + "\"/>\n" +
                         "                <div class=\"card_content\">\n" +
                         "                    <h3>" + food.getFoodName() + "</h3>\n" +
                         "                    <p>" + food.getPrice() + "đ</p>\n" +
-                        "                    <c:url value=\"addtoCart?foodID=" + food.getIdFood() + "\" var=\"addtoCart\"/>\n" +
-                        "                    <a class=\"btn\" href=\"${addtoCart}\">\n" +
-                        "                        Thêm vào giỏ hàng\n" +
-                        "                    </a>\n" +
+                        "                    <a class=\"linktocart\" href=\"" + addToCartUrl + "\">\n" +
+                        "                            Thêm vào giỏ hàng\n" +
+                        "                        </a>\n" +
                         "                </div>\n" +
                         "            </div>\n" +
                         "\n" +
@@ -53,7 +52,7 @@ public class AjaxSearchController extends HttpServlet {
                         "                    </span>\n" +
                         "                    <button class=\"button-cart\">\n" +
                         "\n" +
-                        "                        <a class=\"linktocart\" href=\"${addtoCart}\" onclick=\"event.stopPropagation()\">\n" +
+                        "                        <a class=\"linktocart\" href=\"" + addToCartUrl + "\">\n" +
                         "                            Thêm vào giỏ hàng\n" +
                         "                        </a>\n" +
                         "                    </button>\n" +
