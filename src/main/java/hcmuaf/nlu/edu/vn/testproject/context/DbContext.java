@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DbContext {
     // Thông tin cấu hình database
-    private final String URL = "jdbc:mysql://localhost:3306/foodt3"; // Thay 'your_database_name' bằng tên database của bạn
+    private final String URL = "jdbc:mysql://localhost:3306/foodt4"; // Thay 'your_database_name' bằng tên database của bạn
     private final String USER = "root"; // Tên user, mặc định là 'root'
     private final String PASSWORD = ""; // Mật khẩu, thường mặc định trống trên phpMyAdmin
 

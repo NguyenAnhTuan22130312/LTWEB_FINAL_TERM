@@ -3,17 +3,20 @@ import hcmuaf.nlu.edu.vn.testproject.context.DbContext;
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.models.Invoice;
 import hcmuaf.nlu.edu.vn.testproject.models.InvoiceDetail;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
+import java.sql.*;
+
 public class InvoiceDAO {
     public void addInvoice(Invoice invoice) {
         String query = "INSERT INTO invoice (idAcc, recipientName, phoneNumber, deliveryAddress, note, orderDate, totalAmount, idCode, paymentMethod, isPaid) VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, NULL)";
         Connection conn = null;
         PreparedStatement ps = null;
+        ResultSet rs = null; // Dùng ResultSet để lấy giá trị id vừa chèn vào
         try {
             conn = new DbContext().getConnection();
-            ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS); // Thêm tùy chọn để lấy key được sinh ra
+
+            // Gán các tham số vào câu lệnh SQL
             ps.setInt(1, invoice.getIdAcc());
             ps.setString(2, invoice.getRecipientName());
             ps.setString(3, invoice.getPhoneNumber());
@@ -23,11 +26,34 @@ public class InvoiceDAO {
             ps.setInt(7, invoice.getTotalAmount());
             ps.setInt(8, invoice.getPaymentMethod());
 
-            ps.executeUpdate();
-        } catch (Exception e) {
+            // Thực thi câu lệnh INSERT
+            int affectedRows = ps.executeUpdate();
+
+            if (affectedRows > 0) {
+                // Lấy ID của hóa đơn vừa chèn vào
+                rs = ps.getGeneratedKeys();
+                if (rs.next()) {
+                    // Đặt idInvoice cho đối tượng Invoice
+                    invoice.setIdInvoice(rs.getInt(1));
+                    System.out.println("Invoice ID generated: " + invoice.getIdInvoice());
+                }
+            }
+
+        } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                if (conn != null) conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
     }
+
     public void addInvoiceDetail(InvoiceDetail detail) {
         String query = "INSERT INTO invoicedetail (idInvoice, idFood, quantity, totalAmount) VALUES (?, ?, ?, ?)";
         Connection conn = null;

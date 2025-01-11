@@ -67,7 +67,6 @@ public class CheckoutController extends HttpServlet {
         // Lấy thông tin từ form và session
         HttpSession session = request.getSession();
         Account currentUser = (Account) session.getAttribute("currentUser");
-
         int idAcc = currentUser.getIdAcc();
 
 
@@ -102,17 +101,18 @@ public class CheckoutController extends HttpServlet {
         try {
             // Thêm hóa đơn vào cơ sở dữ liệu
             invoiceDAO.addInvoice(invoice);
+            Order order = (Order) session.getAttribute("order");
 
-            // Giả sử bạn đã có thông tin chi tiết đơn hàng (InvoiceDetail)
-            // Đây là ví dụ đơn giản, bạn có thể lấy thông tin từ giỏ hàng và các chi tiết tương ứng
-            InvoiceDetail detail = new InvoiceDetail();
-            detail.setIdInvoice(invoice.getIdInvoice());  // ID của hóa đơn vừa thêm
-            detail.setIdFood(1);  // Ví dụ về ID món ăn
-            detail.setQuantity(2);  // Số lượng
-            detail.setTotalAmount(100000);  // Tổng tiền cho món ăn này
+            for (Item item : order.getItems()) {
+                InvoiceDetail detail = new InvoiceDetail();
+                detail.setIdInvoice(invoice.getIdInvoice());
+                detail.setIdFood(item.getFood().getIdFood());
+                detail.setQuantity(item.getQuantity());
+                detail.setTotalAmount(item.getQuantity() * item.getFood().getPrice());
 
-            // Thêm chi tiết hóa đơn vào cơ sở dữ liệu
-            invoiceDAO.addInvoiceDetail(detail);
+                // Thêm chi tiết hóa đơn vào cơ sở dữ liệu
+                invoiceDAO.addInvoiceDetail(detail);
+            }
 
             // Sau khi thêm thành công, chuyển hướng đến trang thành công
             response.sendRedirect("home");
