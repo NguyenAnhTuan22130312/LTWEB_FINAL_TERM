@@ -18,6 +18,9 @@ public class DiscountDAO {
     }
 
     public List<Discount> getAllDiscounts() {
+        // Xóa danh sách cũ trước khi thêm dữ liệu mới
+        discounts.clear();
+
         String query = "SELECT * FROM discountcode";
         Connection conn = null;
         PreparedStatement ps = null;
@@ -60,6 +63,44 @@ public class DiscountDAO {
             closeResources(rs, ps, conn);
         }
         return discounts;
+    }
+
+    // Phương thúc thêm mã giảm giá
+    public boolean addDiscount(Discount discount) {
+        String query = "INSERT INTO discountcode (codeName, discountRate, title, description, startDate, endDate) VALUES (?, ?, ?, ?, ?, ?)";
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try {
+            conn = new DbContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, discount.getCodeName());
+            ps.setDouble(2, discount.getDiscountRate());
+            ps.setString(3, discount.getTitle());
+            ps.setString(4, discount.getDescription());
+            ps.setDate(5, new java.sql.Date(discount.getStartDate().getTime()));
+            ps.setDate(6, new java.sql.Date(discount.getEndDate().getTime()));
+
+            int rowsAffected = ps.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException | ClassNotFoundException e) {
+            System.err.println("Lỗi khi thêm mã giảm giá: " + e.getMessage());
+            return false;
+        } finally {
+            closeResources(null, ps, conn);
+        }
+    }
+
+    public boolean deleteDiscount(int idCode) {
+        String query = "DELETE FROM discountcode WHERE idCode = ?";
+        try (Connection conn = new DbContext().getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setInt(1, idCode);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException | ClassNotFoundException e) {
+            System.err.println("Lỗi khi xóa mã giảm giá: " + e.getMessage());
+        }
+        return false;
     }
 
     // Phương thức đóng các tài nguyên

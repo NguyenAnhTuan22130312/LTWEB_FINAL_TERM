@@ -1,7 +1,9 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers.admin;
 
+import hcmuaf.nlu.edu.vn.testproject.models.AccDetail;
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
+import hcmuaf.nlu.edu.vn.testproject.services.AccdetailService;
 import hcmuaf.nlu.edu.vn.testproject.services.FoodServiceListFilter;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -26,6 +28,7 @@ public class AdminController extends HttpServlet {
         }
 
         FoodServiceListFilter foodServiceListFilter = new FoodServiceListFilter();
+        AccdetailService accdetailService = new AccdetailService();
         try {
             // Lấy danh sách tất cả món ăn
             List<Food> allFood = foodServiceListFilter.getOption("tatca");
@@ -34,8 +37,13 @@ public class AdminController extends HttpServlet {
             // Lấy danh sách 4 món bán chạy nhất
             List<Food> lst4Sold = foodServiceListFilter.getTop4Sold();
 
+            // Lấy số lương khách hàng
+            List<AccDetail> allAcc = accdetailService.getAccDetails();
+            int totalAcc = allAcc.size();
+
             // Gán dữ liệu vào request
             request.setAttribute("totalFoods", totalFoods);
+            request.setAttribute("totalAccs", totalAcc);
             request.setAttribute("lst4Sold", lst4Sold);
 
             // Chuyển hướng đến trang admin.jsp

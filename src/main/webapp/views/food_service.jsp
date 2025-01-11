@@ -30,6 +30,24 @@
                 </option>
             </c:forEach>
         </select>
+        <select id="special_filter" onchange="location.href=this.value;">
+            <option value="foodservice?option=danhgiacao"
+            ${currentCategory == null || currentCategory == 'danhgiacao' ? 'selected' : ''}>
+                Món được đánh giá cao
+            </option>
+            <option value="foodservice?option=dexuat"
+            ${currentCategory == null || currentCategory == 'dexuat' ? 'selected' : ''}>
+                Món được đề xuất
+            </option>
+            <option value="foodservice?option=quantam"
+            ${currentCategory == null || currentCategory == 'quantam' ? 'selected' : ''}>
+                Món được quan tâm nhiều
+            </option>
+            <option value="foodservice?option=banchay"
+            ${currentCategory == null || currentCategory == 'banchay' ? 'selected' : ''}>
+                Món được bán chạy
+            </option>
+        </select>
 
         <form action="foodservice" method="get">
             <input value="${search}" name="text" type="text" placeholder="Tìm kiếm theo món..."/>
@@ -84,26 +102,28 @@
             <i class="fa-solid fa-xmark"></i>
           </span>
             <h2>CẬP NHẬT MÓN</h2>
-            <form id="update_item_form">
+            <form id="update_item_form" action="foodservice" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="action" value="update">
+                <input type="hidden" name="idFood" value="${food.idFood}">
                 <label for="items_name">Tên Món:</label>
-                <input type="text" id="items_name" placeholder="Nhập tên món ăn...">
+                <input type="text" id="items_name" name="foodName" placeholder="Nhập tên món ăn..." required>
 
                 <label for="items_category">Loại Món:</label>
-                <select id="items_category">
+                <select id="items_category" name="idCategory">
                     <c:forEach var="category" items="${listC}">
                         <option value="${category.idCategory}">${category.nameCategory}</option>
                     </c:forEach>
                 </select>
 
+                <label for="items_price"> Giá:</label>
+                <input type="number" id="items_price" name="price" placeholder="Nhập giá của món ăn:" required>
 
-                <label for="item_price"> Giá:</label>
-                <input type="text" id="items_price" placeholder="Nhập giá của món ăn:">
+                <label for="items_details">Chi tiết món ăn:</label>
+                <input id="items_details" name="description" placeholder="Nhập chi tiết món ăn:"
+                       required>
 
-                <label for="item_details">Chi tiết món ăn:</label>
-                <input type="text" id="items_details" placeholder="Nhập chi tiết món ăn:">
-
-                <label for="item_image">Hình ảnh:</label>
-                <input type="file" id="items_image">
+                <label for="items_image">Hình ảnh:</label>
+                <input type="file" id="items_image" name="img" required>
 
                 <button type="submit">Lưu</button>
             </form>
@@ -133,19 +153,26 @@
                         ${food.price}
                 </div>
                 <div class="actions">
-                    <button class="update_item_btn">
-                        <i class="fas fa-edit">
-                        </i>
-                    </button>
+                    <!-- Nút cập nhật mở popup bằng JavaScript -->
+                    <form action="foodservice" method="post" style="display: inline">
+                        <input type="hidden" name="action" value="update">
+                        <input type="hidden" name="idFood" value="${food.idFood}">
+                        <button type="button" class="update_item_btn" onclick="openUpdatePopup(${food.idFood})">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </form>
+
+                    <!-- Nút xóa có xác nhận -->
                     <form action="foodservice" method="post" style="display: inline">
                         <input type="hidden" name="action" value="delete">
                         <input type="hidden" name="idFood" value="${food.idFood}">
-                        <button type="submit" class="delete_item_btn">
-                            <i class="fas fa-trash">
-                            </i>
+                        <button type="submit" class="delete_item_btn"
+                                onclick="return confirm('Bạn có chắc chắn muốn xóa món này?')">
+                            <i class="fas fa-trash"></i>
                         </button>
                     </form>
                 </div>
+
             </div>
         </c:forEach>
     </div>

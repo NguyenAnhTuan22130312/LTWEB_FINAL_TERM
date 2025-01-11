@@ -13,4 +13,11 @@ public class DiscountService {
         return discounts;
     }
 
+    public boolean addDiscount(Discount discount) {
+        return dao.addDiscount(discount);
+    }
+
+    public boolean deleteDiscount(int idCode) {
+        return dao.deleteDiscount(idCode);
+    }
 }

@@ -7,6 +7,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 @WebServlet(name = "DiscountController", value = "/discount")
@@ -23,5 +24,30 @@ public class DiscountController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+
+        if ("add".equals(action)) {
+            String codeName = request.getParameter("codeName");
+            Double discountRate = Double.parseDouble(request.getParameter("discountRate"));
+            String title = request.getParameter("title");
+            String description = request.getParameter("description");
+            Date startDate = java.sql.Date.valueOf(request.getParameter("startDate"));
+            Date endDate = java.sql.Date.valueOf(request.getParameter("endDate"));
+
+            Discount discount = new Discount(0, codeName, discountRate, title, description, startDate, endDate);
+
+            if (discountService.addDiscount(discount)) {
+                response.sendRedirect("discount?success=add");
+            } else {
+                response.sendRedirect("discount?error=add");
+            }
+        } else if ("delete".equals(action)) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            if (discountService.deleteDiscount(id)) {
+                response.sendRedirect("discount?success=delete");
+            } else {
+                response.sendRedirect("discount?error=delete");
+            }
+        }
     }
 }

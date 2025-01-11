@@ -37,3 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+function openUpdatePopup(idFood) {
+    document.getElementById('update_popup').classList.remove('hidden');
+    document.getElementById('update_item_form').elements['idFood'].value = idFood;
+}
+
+

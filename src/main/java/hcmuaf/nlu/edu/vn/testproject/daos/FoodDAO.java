@@ -238,7 +238,8 @@ public class FoodDAO {
 
     // phương thức thêm món ăn
     public boolean addFood(Food food) {
-        String query = "INSERT INTO food (idCategory, foodName, price, discountPrice, img, description, quantity, sold, createdAt, updatedAt, isDeleted, views) " +
+        String query = "INSERT INTO food (idCategory, foodName, price, discountPrice, " +
+                "img, description, quantity, sold, createdAt, updatedAt, isDeleted, views) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Connection conn = null;
         PreparedStatement ps = null;
@@ -267,13 +268,39 @@ public class FoodDAO {
             return false;
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
+        } finally {
+            closeResources(null, ps, conn);
         }
     }
 
-    public static void main(String[] args) {
-        FoodDAO foodDAO = new FoodDAO();
-        foodDAO.deleteFood(81);
+    // Phuơng thức cập nhật thông tin món ăn
+    public boolean updateFood(Food food) {
+        String query = "UPDATE food SET idCategory = ?, foodName = ?, price = ?, img = ?, " +
+                "description = ?, updatedAt = ? WHERE idFood = ?";
+        Connection conn = null;
+        PreparedStatement ps = null;
 
+        try {
+            conn = new DbContext().getConnection();
+            ps = conn.prepareStatement(query);
 
+            ps.setInt(1, food.getIdCategory());
+            ps.setString(2, food.getFoodName());
+            ps.setInt(3, food.getPrice());
+            ps.setString(4, food.getImg());
+            ps.setString(5, food.getDescription());
+            ps.setTimestamp(6, food.getUpdatedAt());
+            ps.setInt(7, food.getIdFood());
+
+            int rowUpdated = ps.executeUpdate();
+            return rowUpdated > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } finally {
+            closeResources(null, ps, conn);
+        }
     }
 }

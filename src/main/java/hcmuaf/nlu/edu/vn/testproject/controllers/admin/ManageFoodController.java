@@ -18,9 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @MultipartConfig(
-        fileSizeThreshold =  1024*1024*2, // 2MB
-        maxFileSize = 1024*1024*10, // 10MB
-        maxRequestSize = 1024*1024*50 // 50MB
+        fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+        maxFileSize = 1024 * 1024 * 10, // 10MB
+        maxRequestSize = 1024 * 1024 * 50 // 50MB
 )
 
 @WebServlet(name = "ManageFoodController", value = "/foodservice")
@@ -35,7 +35,7 @@ public class ManageFoodController extends HttpServlet {
         HttpSession session = request.getSession();
         Account currentUser = (Account) session.getAttribute("currentUser");
 
-        if (currentUser.getIdRole() == 2) {
+        if (currentUser == null || currentUser.getIdRole() == 2) {
             // Chuyển hướng về trang home nếu người dùng chưa đăng nhập
             response.sendRedirect("home");
             return;
@@ -145,6 +145,38 @@ public class ManageFoodController extends HttpServlet {
             } else {
                 response.sendRedirect("foodservice?status=error");
             }
+        } else if ("update".equals(action)) {
+            idFood = Integer.parseInt(request.getParameter("idFood"));
+            String foodName = request.getParameter("foodName");
+            int category = Integer.parseInt(request.getParameter("idCategory"));
+            int price = Integer.parseInt(request.getParameter("price"));
+            String description = request.getParameter("description");
+
+            // Xử lý file upload
+            Part filePath = request.getPart("img");
+            String fileName = Paths.get(filePath.getSubmittedFileName()).getFileName().toString();
+            String imgPath;
+
+            if (!fileName.isEmpty()) {
+                String uploadPath = getServletContext().getRealPath("/") + "Images/Food/";
+                File uploadDir = new File(uploadPath);
+                if (!uploadDir.exists()) {
+                    uploadDir.mkdirs();
+                }
+                filePath.write(uploadPath + fileName);
+                imgPath = "Images/Food/" + fileName;
+            } else {
+                imgPath = request.getParameter("currentImage"); // Giữ nguyên ảnh cũ nếu không cập nhật
+            }
+
+            Food updatedFood = new Food(idFood, foodName, price, 0, 0, imgPath, description, category, 0, 0, 0, new Timestamp(System.currentTimeMillis()), null);
+            boolean result = foodServiceListFilter.updateFood(updatedFood);
+            if (result) {
+                response.sendRedirect("foodservice?status=success");
+            } else {
+                response.sendRedirect("foodservice?status=error");
+            }
+
         }
     }
 }

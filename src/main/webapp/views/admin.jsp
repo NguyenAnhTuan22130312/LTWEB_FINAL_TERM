@@ -24,13 +24,15 @@
         <h2>Quản lý cửa hàng</h2>
         <div class="cards">
             <div class="card">
-                <img
-                        alt="Illustration of a person holding a shopping bag"
-                        height="100"
-                        src="${pageContext.request.contextPath}/Images/logo/admin_logo_cus.jpg"
+                <a href="customersevice">
+                    <img
+                            alt="Illustration of a person holding a shopping bag"
+                            height="100"
+                            src="${pageContext.request.contextPath}/Images/logo/admin_logo_cus.jpg"
 
-                />
-                <div class="number">3</div>
+                    />
+                </a>
+                <div class="number">${totalAccs}</div>
                 <h3>Khách hàng</h3>
             </div>
             <div class="card">
@@ -46,12 +48,14 @@
                 <h3>Sản phẩm</h3>
             </div>
             <div class="card">
-                <img
-                        alt="Illustration of a person using a mobile phone"
-                        height="100"
-                        src="${pageContext.request.contextPath}/Images/logo/admin_logo_money.jpg"
+                <a href="statistical">
+                    <img
+                            alt="Illustration of a person using a mobile phone"
+                            height="100"
+                            src="${pageContext.request.contextPath}/Images/logo/admin_logo_money.jpg"
 
-                />
+                    />
+                </a>
                 <div class="number">330.000đ</div>
                 <h3>Doanh thu</h3>
             </div>
@@ -72,8 +76,7 @@
         </div>
     </div>
 </div>
-</div>
-<script src="${pageContext.request.contextPath}/js/module_dangnhap.js"></script>
+
 <script src="${pageContext.request.contextPath}/js/admin.js"></script>
 </body>
 </html>

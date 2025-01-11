@@ -21,7 +21,7 @@
     <div class="header">QUẢN LÝ BANNER</div>
     <div class="banner-management">
         <h2>Danh sách Banner</h2>
-        <table >
+        <table>
             <thead>
             <tr>
                 <th>#</th>
@@ -40,7 +40,10 @@
                         <form action="banner" method="post" style="display: inline">
                             <input type="hidden" name="action" value="delete">
                             <input type="hidden" name="id" value="${bann.id}">
-                            <button class="delete"><i class="fas fa-trash"></i> Xóa</button>
+                            <button class="delete" onclick="return confirm('Bạn có chắc chắn muốn xóa banner này?')"><i
+                                    class="fas fa-trash"></i>
+                                Xóa
+                            </button>
                         </form>
                     </td>
                     <td>
@@ -60,7 +63,7 @@
             <i class="fa-solid fa-xmark"></i> 
           </span>
             <h2>THÊM BANNER MỚI</h2>
-            <form id="new_item_form"action="banner" method="post" enctype="multipart/form-data">
+            <form id="new_item_form" action="banner" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="add">
                 <label for="item_image">Hình ảnh:</label>
                 <input type="file" name="image" id="item_image" required>
