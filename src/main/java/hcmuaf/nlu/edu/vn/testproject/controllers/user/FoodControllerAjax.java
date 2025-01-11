@@ -20,34 +20,25 @@ public class FoodControllerAjax extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        FoodServiceListFilter foodServiceListFilter = new FoodServiceListFilter();
 
-        // Lấy số trang, nếu không có thì mặc định là trang 1
-        int page = 1;
-        if (request.getParameter("page") != null) {
-            page = Integer.parseInt(request.getParameter("page"));
-        }
-        // Tính toán offset
+
+        int page = Integer.parseInt(request.getParameter("page"));
+
         int pageSize = 10; // Kích thước trang
         int offset = (page - 1) * pageSize;
-        List<Food> foodList = new ArrayList<>();
         int totalFoods = 0;
 
         // Lấy giá trị option từ request
         String option = request.getParameter("option");
-        if (option != null) {
-            foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
-            totalFoods = foodList.size(); // Tổng số món theo option
+        FoodServiceListFilter foodServiceListFilter = new FoodServiceListFilter();
+        List<Food> foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
+        totalFoods = foodList.size(); // Tổng số món theo option
 
-            // Áp dụng phân trang
-            foodList = foodList.subList(
-                    Math.min(offset, totalFoods),
-                    Math.min(offset + pageSize, totalFoods)
-            );
-        } else {
-            response.sendRedirect(request.getContextPath() + "/search");
-            return;
-        }
+        // Áp dụng phân trang
+        foodList = foodList.subList(
+                Math.min(offset, totalFoods),
+                Math.min(offset + pageSize, totalFoods)
+        );
 
         // Tính tổng số trang
         int totalPages = (int) Math.ceil((double) totalFoods / pageSize);
