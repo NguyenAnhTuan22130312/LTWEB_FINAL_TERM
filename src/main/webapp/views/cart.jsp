@@ -40,6 +40,15 @@
     <div class="cart-container">
         <div class="cart-left">
 
+            <!-- Hiển thị thông báo thanh toán thành công nếu có -->
+            <c:if test="${not empty sessionScope.paymentSuccessMessage}">
+                <div class="success-message" id="success-message">
+                    <p>${sessionScope.paymentSuccessMessage}</p>
+                </div>
+                <!-- Xóa thông báo sau khi hiển thị -->
+                <c:remove var="paymentSuccessMessage"/>
+            </c:if>
+
                 <table class="cart-table">
                     <thead>
                     <tr>
@@ -90,10 +99,6 @@
 
 
                 </table>
-
-
-
-
 
 
             <div class="cart-buttons">

@@ -113,9 +113,9 @@ public class CheckoutController extends HttpServlet {
                 // Thêm chi tiết hóa đơn vào cơ sở dữ liệu
                 invoiceDAO.addInvoiceDetail(detail);
             }
-
-            // Sau khi thêm thành công, chuyển hướng đến trang thành công
-            response.sendRedirect("home");
+            session.removeAttribute("order");
+            session.setAttribute("paymentSuccessMessage", "Thanh toán thành công!");
+            response.sendRedirect("cart");
         } catch (Exception e) {
             e.printStackTrace();
             response.sendRedirect("checkout.jsp?error=true");
