@@ -6,6 +6,7 @@ public class InvoiceDetail {
     private int idFood;
     private int quantity;
     private int totalAmount;
+    private Food food;
 
     public InvoiceDetail() {
     }
@@ -27,6 +28,13 @@ public class InvoiceDetail {
         this.idFood = idFood;
         this.quantity = quantity;
         this.totalAmount = totalAmount;
+    }
+    public Food getFood() {
+        return food;
+    }
+
+    public void setFood(Food food) {
+        this.food = food;
     }
 
     public int getIdDetail() {

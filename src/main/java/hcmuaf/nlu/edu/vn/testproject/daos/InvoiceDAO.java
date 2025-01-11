@@ -1,10 +1,13 @@
 package hcmuaf.nlu.edu.vn.testproject.daos;
 import hcmuaf.nlu.edu.vn.testproject.context.DbContext;
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
+import hcmuaf.nlu.edu.vn.testproject.models.Food;
 import hcmuaf.nlu.edu.vn.testproject.models.Invoice;
 import hcmuaf.nlu.edu.vn.testproject.models.InvoiceDetail;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InvoiceDAO {
     public void addInvoice(Invoice invoice) {
@@ -70,33 +73,60 @@ public class InvoiceDAO {
             e.printStackTrace();
         }
     }
+
+    public List<InvoiceDetail> getInvoiceDetails() {
+        // Truy vấn gộp món ăn theo foodName và tính tổng số lượng, tổng doanh thu
+        String query = "SELECT f.foodName, f.img, SUM(id.quantity) AS totalQuantity, SUM(id.totalAmount) AS totalAmount " +
+                "FROM invoicedetail id " +
+                "JOIN food f ON id.idFood = f.idFood " +
+                "GROUP BY f.foodName, f.img";
+
+        List<InvoiceDetail> details = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            conn = new DbContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                InvoiceDetail detail = new InvoiceDetail();
+                detail.setQuantity(rs.getInt("totalQuantity"));  // Tổng số lượng bán
+                detail.setTotalAmount(rs.getInt("totalAmount"));  // Tổng doanh thu
+
+                Food food = new Food();
+                food.setFoodName(rs.getString("foodName"));
+                food.setImg(rs.getString("img"));
+
+                detail.setFood(food);
+                details.add(detail);
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                if (conn != null) conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+        return details;
+    }
+
+
     public static void main(String[] args) {
-        // Tạo đối tượng Invoice
-        Invoice invoice = new Invoice();
-        invoice.setIdAcc(1);
-        invoice.setRecipientName("Nguyen Van A");
-        invoice.setPhoneNumber("0123456789");
-        invoice.setDeliveryAddress("123 Đường ABC, Quận 1, TP.HCM");
-        invoice.setNote("Giao hàng vào buổi sáng");
-        invoice.setOrderDate("2025/1/1");
-        invoice.setTotalAmount(500000);
-        invoice.setPaymentMethod(1);  // 1 cho thẻ tín dụng, 0 cho tiền mặt
-        invoice.setIsPaid(1); // 1 cho đã thanh toán, 0 cho chưa thanh toán
-
-        // Tạo đối tượng InvoiceDetail
-        InvoiceDetail detail = new InvoiceDetail();
-        detail.setIdInvoice(2);  // Giả sử idInvoice là 1
-        detail.setIdFood(12);  // Giả sử idFood là 101
-        detail.setQuantity(2);
-        detail.setTotalAmount(200000);
-
-        // Khởi tạo InvoiceDAO
         InvoiceDAO dao = new InvoiceDAO();
-
-
-        // Thêm InvoiceDetail vào cơ sở dữ liệu
-        dao.addInvoiceDetail(detail);
-
-        System.out.println("Đã thêm Invoice và InvoiceDetail thành công!");
+        List<InvoiceDetail> invoiceDetails = dao.getInvoiceDetails();
+        for (InvoiceDetail detail : invoiceDetails) {
+            System.out.println("Tên món ăn: " + detail.getFood().getFoodName());
+            System.out.println("Hình ảnh món ăn: " + detail.getFood().getImg());
+            System.out.println("Số lượng bán: " + detail.getQuantity());
+            System.out.println("Doanh thu: " + detail.getTotalAmount());
+            System.out.println("-----------------------------------");
+        }
     }
 }

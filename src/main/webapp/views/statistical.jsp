@@ -6,7 +6,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Thống kê</title>
-    <link href="Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
+    <link href="${pageContext.request.contextPath}/Images/LOGO_V2.png" rel="icon" type="image/x-icon"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/statistical.css"/>
 
     <link
@@ -46,21 +46,21 @@
             <i class="fas fa-utensils"> </i>
             <div class="text">
                 <p>Sản phẩm được bán ra</p>
-                <p class="number">3</p>
+                <p class="number">${totalProducts}</p>
             </div>
         </div>
         <div class="card">
             <i class="fas fa-file-alt"> </i>
             <div class="text">
                 <p>Số lượng bán ra</p>
-                <p class="number">7</p>
+                <p class="number">${totalQuantity}</p>
             </div>
         </div>
         <div class="card">
             <i class="fas fa-dollar-sign"> </i>
             <div class="text">
                 <p>Doanh thu</p>
-                <p class="number">330.000 đ</p>
+                <p class="number">${totalRevenue} đ</p>
             </div>
         </div>
     </div>
@@ -76,65 +76,24 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td class="product_name">
-                <img
-                        alt="Đậu hũ xào nấm chay"
-                        height="50"
-                        src="../Images/Food/Com/Com-chien-duong-chau.png"
-                />
-                Cơm chiên dương châu
-            </td>
-            <td>7</td>
-            <td>210.000 đ</td>
-            <td>
-                <button class="details-button">
-                    <i class="fas fa-eye"> </i>
-                    CHI TIẾT
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td class="product_name">
-                <img
-                        alt="Miến xào rau củ chay"
-                        height="50"
-                        src="../Images/Food/Com/Com-chien-ga-xoi-mo.png"
-                />
-                Cơm gà xối mỡ
-            </td>
-            <td>3</td>
-            <td>90.000 đ</td>
-            <td>
-                <button class="details-button">
-                    <i class="fas fa-eye"> </i>
-                    CHI TIẾT
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td class="product_name">
-                <img
-                        alt="Phở bò tái"
-                        height="50"
-                        src="../Images/Food/Pho/Pho-bo-tai.png"
-                        width="50"
-                />
-                Phở bò tái
-            </td>
-            <td>1</td>
-            <td>30.000 đ</td>
-            <td>
-                <button class="details-button">
-                    <i class="fas fa-eye"> </i>
-                    CHI TIẾT
-                </button>
-            </td>
-        </tr>
+        <c:forEach var="detail" items="${invoiceDetails}" varStatus="status">
+            <tr>
+                <td>${status.index + 1}</td>
+                <td class="product_name">
+                    <img alt="${detail.food.foodName}" height="50" src="${pageContext.request.contextPath}/${detail.food.img}" />
+                        ${detail.food.foodName}
+                </td>
+                <td>${detail.quantity}</td>
+                <td>${detail.totalAmount} đ</td>
+                <td>
+                    <button class="details-button">
+                        <i class="fas fa-eye"></i> CHI TIẾT
+                    </button>
+                </td>
+            </tr>
+        </c:forEach>
         </tbody>
+
     </table>
 </div>
 </body>
