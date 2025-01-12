@@ -12,9 +12,11 @@ import java.util.List;
 public class InvoiceDAO {
     public void addInvoice(Invoice invoice) {
         String query = "INSERT INTO invoice (idAcc, recipientName, phoneNumber, deliveryAddress, note, orderDate, totalAmount, idCode, paymentMethod, isPaid) VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, NULL)";
+        String query2 = "INSERT INTO orderstatus (idInvoice, orderStatus) VALUES (?, 1)";
         Connection conn = null;
         PreparedStatement ps = null;
-        ResultSet rs = null; // Dùng ResultSet để lấy giá trị id vừa chèn vào
+        PreparedStatement ps2 = null;
+        ResultSet rs = null;
         try {
             conn = new DbContext().getConnection();
             ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS); // Thêm tùy chọn để lấy key được sinh ra
@@ -36,9 +38,15 @@ public class InvoiceDAO {
                 // Lấy ID của hóa đơn vừa chèn vào
                 rs = ps.getGeneratedKeys();
                 if (rs.next()) {
-                    // Đặt idInvoice cho đối tượng Invoice
+
                     invoice.setIdInvoice(rs.getInt(1));
-                    System.out.println("Invoice ID generated: " + invoice.getIdInvoice());
+
+
+                    int idInvoice = rs.getInt(1);
+                    ps2 = conn.prepareStatement(query2);
+                    ps2.setInt(1, idInvoice);
+                    ps2.executeUpdate();
+
                 }
             }
 
