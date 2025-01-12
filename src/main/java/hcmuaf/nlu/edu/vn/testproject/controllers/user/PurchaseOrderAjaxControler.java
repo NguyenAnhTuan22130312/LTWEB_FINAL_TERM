@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "PurchaseOrderAjaxControler", value = "/orderAjax")
+@WebServlet(name = "PurchaseOrderAjaxControler", value = "/PurchaseOrderAjaxControler")
 public class PurchaseOrderAjaxControler extends HttpServlet {
 
     @Override
@@ -20,7 +20,7 @@ public class PurchaseOrderAjaxControler extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         InvoiceOrderServices invoiceOrderServices = new InvoiceOrderServices();
 
-        String optionOrder = request.getParameter("oOrder");
+        String optionOrder = request.getParameter("text");
         if (optionOrder == null) {
             optionOrder = "0";
         }

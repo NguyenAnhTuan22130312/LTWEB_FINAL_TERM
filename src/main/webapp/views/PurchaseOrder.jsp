@@ -29,10 +29,10 @@
 <!-- Xử lý container -->
 <div id="containe">
     <div class="order-status-container">
-        <button class="status-button"  onclick="optionOrder()">Tất cả</button>
-        <button class="status-button"  onclick="optionOrder(1)">Đang vận chuyển</button>
-        <button class="status-button" onclick="optionOrder(2)">Đã vận chuyển</button>
-        <button class="status-button" onclick="optionOrder(3)">Đã hủy</button>
+        <button class="status-button" onclick="ajaxOrder(0)">Tất cả</button>
+        <button class="status-button" onclick="ajaxOrder(1)">Đang vận chuyển</button>
+        <button class="status-button" onclick="ajaxOrder(2)">Đã vận chuyển</button>
+        <button class="status-button" onclick="ajaxOrder(3)">Đã hủy</button>
     </div>
     <div class="search-box-container">
         <input
@@ -101,9 +101,10 @@
 <!-- Xử lý footer -->
 <jsp:include page="footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/js/module_OrderInvoice_ajax.js"></script>
-<script src="${pageContext.request.contextPath}/js/home.js"></script>
+<%--<script src="${pageContext.request.contextPath}/js/home.js"></script>--%>
 <script src="${pageContext.request.contextPath}/js/purchase.js"></script>
 <script src="${pageContext.request.contextPath}/js/details.js"></script>
 <script src="${pageContext.request.contextPath}/js/module_popup_purchase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
 </html>
