@@ -10,6 +10,7 @@
     <link href='${pageContext.request.contextPath}/Images/LOGO_V2.png' rel='icon' type='image/x-icon'/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/food_service.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <script src="${pageContext.request.contextPath}/libs/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
@@ -85,8 +86,8 @@
                     <input type="number" id="item_price" name="price" placeholder="Nhập giá của món ăn:" required>
 
                     <label for="item_details">Chi tiết món ăn:</label>
-                    <input id="item_details" name="description" placeholder="Nhập chi tiết món ăn:"
-                           required>
+                    <textarea id="item_details" name="description" placeholder="Nhập chi tiết món ăn:"
+                              required></textarea>
 
                     <label for="item_image">Hình ảnh:</label>
                     <input type="file" id="item_image" name="img" required>
@@ -120,8 +121,9 @@
                     <input type="number" id="items_price" name="price" placeholder="Nhập giá của món ăn:" required>
 
                     <label for="items_details">Chi tiết món ăn:</label>
-                    <input id="items_details" name="description" placeholder="Nhập chi tiết món ăn:"
-                           required>
+                    <textarea id="items_details" name="description" placeholder="Nhập chi tiết món ăn:"
+                              required>
+                    </textarea>
 
                     <label for="items_image">Hình ảnh:</label>
                     <input type="file" id="items_image" name="img" required>
@@ -194,6 +196,7 @@
     </div>
 </div>
 
+<script>CKEDITOR.replace('item_details');</script>
 <script src="${pageContext.request.contextPath}/js/food_service.js"></script>
 </body>
 </html>

@@ -46,7 +46,7 @@ public class DiscountController extends HttpServlet {
             Date startDate = java.sql.Date.valueOf(request.getParameter("startDate"));
             Date endDate = java.sql.Date.valueOf(request.getParameter("endDate"));
 
-            Discount discount = new Discount(0, codeName, discountRate, title, description, startDate, endDate);
+            Discount discount = new Discount(0, codeName, discountRate / 100, title, description, startDate, endDate);
 
             if (discountService.addDiscount(discount)) {
                 response.sendRedirect("discount?success=add");
