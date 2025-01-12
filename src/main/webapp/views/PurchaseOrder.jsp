@@ -29,13 +29,11 @@
 <!-- Xử lý container -->
 <div id="containe">
     <div class="order-status-container">
-        <button class="status-button" id="btn_all" onclick="showSection('all_purchase')">Tất cả</button>
-        <button class="status-button" id="btn_transport" onclick="showSection('ondelivering')">Đang vận chuyển</button>
-        <button class="status-button" id="btn_delivered" onclick="showSection('alreadyDelivered')">Đã vận chuyển
-        </button>
-        <button class="status-button" id="btn_cancelled" onclick="showSection('checkcancelled')">Đã hủy</button>
+        <button class="status-button"  onclick="optionOrder()">Tất cả</button>
+        <button class="status-button"  onclick="optionOrder(1)">Đang vận chuyển</button>
+        <button class="status-button" onclick="optionOrder(2)">Đã vận chuyển</button>
+        <button class="status-button" onclick="optionOrder(3)">Đã hủy</button>
     </div>
-
     <div class="search-box-container">
         <input
                 type="text"
@@ -46,146 +44,65 @@
     </div>
 
     <div id="content_section">
+        <c:forEach var="iorder" items="${ois}">
+            <div class="order-container">
+                <div class="order-card">
+                    <div class="idDonHang">
+                        <i class="fa-regular fa-copy"></i> ${String.format("%06d", iorder.idInvoice)}
+                    </div>
+                    <div class="line_st"></div>
+                    <c:forEach var="item" items="${iorder.orderInvoiceDetail}">
+                        <div class="product-item">
+                            <img
+                                    src="${item.img}"
+                                    class="product-image"
+                            />
+                            <div class="product-info">
+                                <h3 class="product-name">${item.foodName}</h3>
+                                <p class="product-quantity">Số lượng: ${item.quantity}</p>
+                            </div>
+                            <div class="product-total">
+                                <div class="money" >${item.totalAmount}&nbsp;đ</div>
+                            </div>
+                        </div>
+                    </c:forEach>
 
-        <div class="order-container">
-            <div class="order-card">
-                <div class="idDonHang">
-                    <i class="fa-regular fa-copy"></i> 123456678
-                </div>
-                <div class="line_st"></div>
-                <div class="product-item">
-                    <img
-                            src="../Images/Food/Pho/Pho-bo-tai.png"
-                            alt="Pho"
-                            class="product-image"
-                    />
-                    <div class="product-info">
-                        <h3 class="product-name">Phở bò tái</h3>
-                        <p class="product-quantity">Số lượng: 1</p>
+                    <div class="line_end"></div>
+                    <div class="order-total">
+                        <strong>Tổng tiền:</strong>
+                        <span class="total-money" id="totalAmount">${iorder.totalAmount}&nbsp;đ</span>
                     </div>
-                    <div class="product-total">
-                        <div class="money">35.000&nbsp;đ</div>
-                    </div>
-                </div>
+                    <div class="order-footer">
+                        <div class="order-status">
+                            Trạng thái:
+                            <c:choose>
+                                <c:when test="${iorder.orderSt == 1}">
+                                    Đang giao
+                                </c:when>
+                                <c:when test="${iorder.orderSt == 2}">
+                                    Đã giao
+                                </c:when>
+                                <c:when test="${iorder.orderSt == 3}">
+                                    Đã hủy
+                                </c:when>
 
-                <div class="product-item">
-                    <img
-                            src="../Images/Food/Bun/Bun-thit-nuong.png"
-                            alt="Bun"
-                            class="product-image"
-                    />
-                    <div class="product-info">
-                        <h3 class="product-name">Bún thịt nướng</h3>
-                        <p class="product-quantity">Số lượng: 3</p>
+                            </c:choose></div>
+                        <button class="info-order-button" onclick="goToDetails()">Chi tiết</button>
+                        <button class="cancel-order-button">Hủy đơn hàng</button>
                     </div>
-                    <div class="product-total">
-                        <div class="money">75.000&nbsp;đ</div>
-                    </div>
-                </div>
-
-                <div class="product-item">
-                    <img
-                            src="../Images/Food/Nuoc/Tra_chanh_gia_tay.png"
-                            alt="Tra chanh"
-                            class="product-image"
-                    />
-                    <div class="product-info">
-                        <h3 class="product-name">Trà chanh giã tay</h3>
-                        <p class="product-quantity">Số lượng: 4</p>
-                    </div>
-                    <div class="product-total">
-                        <div class="money">80.000&nbsp;đ</div>
-                    </div>
-                </div>
-                <div class="line_end"></div>
-                <div class="order-total">
-                    <strong>Tổng tiền:</strong>
-                    <span class="total-money">190.000&nbsp;đ</span>
-                </div>
-                <div class="order-footer">
-                    <div class="order-status">Trạng thái: Đang xử lý</div>
-                    <button class="info-order-button" onclick="goToDetails()">Chi tiết</button>
-                    <button class="cancel-order-button">Hủy đơn hàng</button>
                 </div>
             </div>
-        </div>
-
+        </c:forEach>
     </div>
-
-<%--    <div id="all_purchase" class="section active">--%>
-<%--        <div class="order-container">--%>
-<%--            <div class="order-card">--%>
-<%--                <div class="idDonHang">--%>
-<%--                    <i class="fa-regular fa-copy"></i> 123456678--%>
-<%--                </div>--%>
-<%--                <div class="line_st"></div>--%>
-<%--                <div class="product-item">--%>
-<%--                    <img--%>
-<%--                            src="../Images/Food/Pho/Pho-bo-tai.png"--%>
-<%--                            alt="Pho"--%>
-<%--                            class="product-image"--%>
-<%--                    />--%>
-<%--                    <div class="product-info">--%>
-<%--                        <h3 class="product-name">Phở bò tái</h3>--%>
-<%--                        <p class="product-quantity">Số lượng: 1</p>--%>
-<%--                    </div>--%>
-<%--                    <div class="product-total">--%>
-<%--                        <div class="money">35.000&nbsp;đ</div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-
-<%--                <div class="product-item">--%>
-<%--                    <img--%>
-<%--                            src="../Images/Food/Bun/Bun-thit-nuong.png"--%>
-<%--                            alt="Bun"--%>
-<%--                            class="product-image"--%>
-<%--                    />--%>
-<%--                    <div class="product-info">--%>
-<%--                        <h3 class="product-name">Bún thịt nướng</h3>--%>
-<%--                        <p class="product-quantity">Số lượng: 3</p>--%>
-<%--                    </div>--%>
-<%--                    <div class="product-total">--%>
-<%--                        <div class="money">75.000&nbsp;đ</div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-
-<%--                <div class="product-item">--%>
-<%--                    <img--%>
-<%--                            src="../Images/Food/Nuoc/Tra_chanh_gia_tay.png"--%>
-<%--                            alt="Tra chanh"--%>
-<%--                            class="product-image"--%>
-<%--                    />--%>
-<%--                    <div class="product-info">--%>
-<%--                        <h3 class="product-name">Trà chanh giã tay</h3>--%>
-<%--                        <p class="product-quantity">Số lượng: 4</p>--%>
-<%--                    </div>--%>
-<%--                    <div class="product-total">--%>
-<%--                        <div class="money">80.000&nbsp;đ</div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="line_end"></div>--%>
-<%--                <div class="order-total">--%>
-<%--                    <strong>Tổng tiền:</strong>--%>
-<%--                    <span class="total-money">190.000&nbsp;đ</span>--%>
-<%--                </div>--%>
-<%--                <div class="order-footer">--%>
-<%--                    <div class="order-status">Trạng thái: Đang xử lý</div>--%>
-<%--                    <button class="info-order-button" onclick="goToDetails()">Chi tiết</button>--%>
-<%--                    <button class="cancel-order-button">Hủy đơn hàng</button>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-
-<%--    </div>--%>
 
 
 </div>
 
 <!-- Xử lý footer -->
 <jsp:include page="footer.jsp"></jsp:include>
-
+<script src="${pageContext.request.contextPath}/js/module_OrderInvoice_ajax.js"></script>
 <script src="${pageContext.request.contextPath}/js/home.js"></script>
-<script src="${pageContext.request.contextPath}/js/transport.js"></script>
+<script src="${pageContext.request.contextPath}/js/purchase.js"></script>
 <script src="${pageContext.request.contextPath}/js/details.js"></script>
 <script src="${pageContext.request.contextPath}/js/module_popup_purchase.js"></script>
 </body>

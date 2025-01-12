@@ -50,6 +50,7 @@ public class InvoiceOrderDao {
                                 rs.getInt("idCode"),
                                 rs.getInt("paymentMethod"),
                                 rs.getInt("isPaid"),
+                                rs.getInt("orderSt"),
                                 InvoiceOrderDetailDao.getInvoiceOrderDetails(rs.getInt("idInvoice"))
 
                         ));
@@ -76,15 +77,45 @@ public class InvoiceOrderDao {
         }
     }
 
-    public List<OrderInvoice> getData() {
+    public List<OrderInvoice> getAll() {
         return data;
     }
 
+
+
+    public List <OrderInvoice> getInvoiceShipping(){
+        List<OrderInvoice> ois = new ArrayList<>();
+        for (OrderInvoice oi : data) {
+            if (oi.getOrderSt()==1) {
+               ois.add(oi);
+            }
+        }
+        return ois;
+    }
+    public List <OrderInvoice> getInvoiceDelivered(){
+        List<OrderInvoice> ois = new ArrayList<>();
+        for (OrderInvoice oi : data) {
+            if (oi.getOrderSt()==2) {
+                ois.add(oi);
+            }
+        }
+        return ois;
+    }
+    public List <OrderInvoice> getInvoiceCancelled(){
+        List<OrderInvoice> ois = new ArrayList<>();
+        for (OrderInvoice oi : data) {
+            if (oi.getOrderSt()==3) {
+                ois.add(oi);
+            }
+        }
+        return ois;
+    }
     public static void main(String[] args) {
         InvoiceOrderDao dao = new InvoiceOrderDao();
-        System.out.println(dao.getData());
+        List<OrderInvoice> ois = dao.getAll();
+        for(OrderInvoice oi : ois){
+            System.out.println(oi.getOrderInvoiceDetail().toString());
+        }
     }
-
-//    public List <OrderInvoice> get
 
 }

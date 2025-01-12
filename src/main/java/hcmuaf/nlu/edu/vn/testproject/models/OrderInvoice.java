@@ -15,12 +15,13 @@ public class OrderInvoice {
     private int idCode;
     private int paymentMethod;
     private int isPaid;
-    private List<InvoiceDetail> invoiceDetails;
+    private int orderSt;
+    private List<OrderInvoiceDetail> orderInvoiceDetail;
 
     public OrderInvoice() {
     }
 
-    public OrderInvoice(int idInvoice, int idAcc, String recipientName, String phoneNumber, String deliveryAddress, String note, String orderDate, int totalAmount, int idCode, int paymentMethod, int isPaid, List<InvoiceDetail> invoiceDetails) {
+    public OrderInvoice(int idInvoice, int idAcc, String recipientName, String phoneNumber, String deliveryAddress, String note, String orderDate, int totalAmount, int idCode, int paymentMethod, int isPaid, int orderSt, List<OrderInvoiceDetail> orderInvoiceDetail) {
         this.idInvoice = idInvoice;
         this.idAcc = idAcc;
         this.recipientName = recipientName;
@@ -32,7 +33,27 @@ public class OrderInvoice {
         this.idCode = idCode;
         this.paymentMethod = paymentMethod;
         this.isPaid = isPaid;
-        this.invoiceDetails = invoiceDetails;
+        this.orderSt = orderSt;
+        this.orderInvoiceDetail = orderInvoiceDetail;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderInvoice{" +
+                "idInvoice=" + idInvoice +
+                ", idAcc=" + idAcc +
+                ", recipientName='" + recipientName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", deliveryAddress='" + deliveryAddress + '\'' +
+                ", note='" + note + '\'' +
+                ", orderDate='" + orderDate + '\'' +
+                ", totalAmount=" + totalAmount +
+                ", idCode=" + idCode +
+                ", paymentMethod=" + paymentMethod +
+                ", isPaid=" + isPaid +
+                ", orderSt=" + orderSt +
+                ", orderInvoiceDetail=" + orderInvoiceDetail +
+                '}';
     }
 
     public int getIdInvoice() {
@@ -123,29 +144,19 @@ public class OrderInvoice {
         this.isPaid = isPaid;
     }
 
-    public List<InvoiceDetail> getInvoiceDetails() {
-        return invoiceDetails;
+    public int getOrderSt() {
+        return orderSt;
     }
 
-    public void setInvoiceDetails(List<InvoiceDetail> invoiceDetails) {
-        this.invoiceDetails = invoiceDetails;
+    public void setOrderSt(int orderSt) {
+        this.orderSt = orderSt;
     }
 
-    @Override
-    public String toString() {
-        return "OrderInvoice{" +
-                "idInvoice=" + idInvoice +
-                ", idAcc=" + idAcc +
-                ", recipientName='" + recipientName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", deliveryAddress='" + deliveryAddress + '\'' +
-                ", note='" + note + '\'' +
-                ", orderDate='" + orderDate + '\'' +
-                ", totalAmount=" + totalAmount +
-                ", idCode=" + idCode +
-                ", paymentMethod=" + paymentMethod +
-                ", isPaid=" + isPaid +
-                ", invoiceDetails=" + invoiceDetails +
-                '}';
+    public List<OrderInvoiceDetail> getOrderInvoiceDetail() {
+        return orderInvoiceDetail;
+    }
+
+    public void setOrderInvoiceDetail(List<OrderInvoiceDetail> orderInvoiceDetail) {
+        this.orderInvoiceDetail = orderInvoiceDetail;
     }
 }

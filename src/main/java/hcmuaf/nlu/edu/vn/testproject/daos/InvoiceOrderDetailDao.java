@@ -3,6 +3,7 @@ package hcmuaf.nlu.edu.vn.testproject.daos;
 import hcmuaf.nlu.edu.vn.testproject.context.DbContext;
 import hcmuaf.nlu.edu.vn.testproject.models.InvoiceDetail;
 import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoice;
+import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoiceDetail;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,9 +16,9 @@ public class InvoiceOrderDetailDao {
 
 
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu
-    public static List<InvoiceDetail> getInvoiceOrderDetails(int idInvoice) {
-        List<InvoiceDetail> data = new ArrayList<>();
-        String query = "SELECT * FROM invoicedetail where idInvoice=?";
+    public static List<OrderInvoiceDetail> getInvoiceOrderDetails(int idInvoice) {
+        List<OrderInvoiceDetail> data = new ArrayList<>();
+        String query = "SELECT * FROM invoicedetail id join food f ON id.idFood = f.idFood where idInvoice=?";
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -30,12 +31,14 @@ public class InvoiceOrderDetailDao {
 
             while (rs.next()) {
                 data.add(
-                        new InvoiceDetail(
+                        new OrderInvoiceDetail(
                                 rs.getInt("idDetail"),
                                 rs.getInt("idInvoice"),
                                 rs.getInt("idFood"),
+                                rs.getString("foodname"),
                                 rs.getInt("quantity"),
-                                rs.getInt("totalAmount")
+                                rs.getInt("totalAmount"),
+                                rs.getString("img")
                         ));
             }
 
