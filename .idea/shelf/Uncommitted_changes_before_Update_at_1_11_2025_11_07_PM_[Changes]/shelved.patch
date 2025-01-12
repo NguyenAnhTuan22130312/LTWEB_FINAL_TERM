@@ -1,0 +1,345 @@
+Index: src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package hcmuaf.nlu.edu.vn.testproject.context;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.DriverManager;\r\nimport java.sql.SQLException;\r\n\r\npublic class DbContext {\r\n    // Thông tin cấu hình database\r\n    private final String URL = \"jdbc:mysql://localhost:3306/foodt3\"; // Thay 'your_database_name' bằng tên database của bạn\r\n    private final String USER = \"root\"; // Tên user, mặc định là 'root'\r\n    private final String PASSWORD = \"\"; // Mật khẩu, thường mặc định trống trên phpMyAdmin\r\n\r\n    public Connection getConnection() throws ClassNotFoundException, SQLException {\r\n        // Đăng ký MySQL Driver\r\n        Class.forName(\"com.mysql.cj.jdbc.Driver\");\r\n        // Kết nối tới database\r\n        return DriverManager.getConnection(URL, USER, PASSWORD);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        try {\r\n            DbContext db = new DbContext();\r\n            Connection conn = db.getConnection();\r\n            System.out.println(\"Kết nối thành công!\");\r\n            conn.close();\r\n        } catch (Exception e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java b/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java
+--- a/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java	(revision 6e5167b3a0a3893bc5cb133e268ce378c37b99b6)
++++ b/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java	(date 1736611595330)
+@@ -6,7 +6,7 @@
+ 
+ public class DbContext {
+     // Thông tin cấu hình database
+-    private final String URL = "jdbc:mysql://localhost:3306/foodt3"; // Thay 'your_database_name' bằng tên database của bạn
++    private final String URL = "jdbc:mysql://localhost:3306/foodt4"; // Thay 'your_database_name' bằng tên database của bạn
+     private final String USER = "root"; // Tên user, mặc định là 'root'
+     private final String PASSWORD = ""; // Mật khẩu, thường mặc định trống trên phpMyAdmin
+ 
+Index: src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/CheckoutController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package hcmuaf.nlu.edu.vn.testproject.controllers.user;\r\n\r\n\r\nimport hcmuaf.nlu.edu.vn.testproject.daos.FoodCartDAO;\r\nimport hcmuaf.nlu.edu.vn.testproject.daos.InvoiceDAO;\r\nimport hcmuaf.nlu.edu.vn.testproject.models.*;\r\nimport hcmuaf.nlu.edu.vn.testproject.services.FoodService;\r\nimport jakarta.servlet.*;\r\nimport jakarta.servlet.http.*;\r\nimport jakarta.servlet.annotation.*;\r\n\r\n\r\nimport java.io.IOException;\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.Date;\r\n\r\n\r\n@WebServlet(name = \"CheckoutController\", value = \"/checkout\")\r\npublic class CheckoutController extends HttpServlet {\r\n\r\n\r\n    private FoodService foodService;\r\n\r\n\r\n    @Override\r\n    public void init() throws ServletException {\r\n        foodService = new FoodCartDAO();\r\n        super.init();\r\n\r\n\r\n    }\r\n\r\n\r\n    @Override\r\n    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n        HttpSession session = request.getSession();\r\n\r\n        // Kiểm tra xem người dùng đã đăng nhập chưa (kiểm tra session attribute \"currentUser\")\r\n        Account currentUser = (Account) session.getAttribute(\"currentUser\");\r\n\r\n        if (currentUser == null) {\r\n\r\n            response.sendRedirect(\"login\");\r\n        } else {\r\n            // Nếu người dùng đã đăng nhập, tiếp tục với việc thanh toán\r\n            Order order = (Order) session.getAttribute(\"order\");\r\n\r\n            if (order == null || order.getItems().isEmpty()) {\r\n                response.sendRedirect(\"cart\"); // Nếu giỏ hàng trống, chuyển về giỏ hàng\r\n            } else {\r\n                // Tính toán tổng tiền và truyền dữ liệu đến trang thanh toán\r\n                int totalAmount = 0;\r\n                for (Item item : order.getItems()) {\r\n                    totalAmount += item.getQuantity() * item.getFood().getPrice();\r\n                }\r\n                request.setAttribute(\"order\", order);\r\n                request.setAttribute(\"totalAmount\", totalAmount);\r\n                RequestDispatcher dispatcher = request.getRequestDispatcher(\"views/check-out.jsp\");\r\n                dispatcher.forward(request, response);\r\n            }\r\n        }\r\n    }\r\n\r\n\r\n    @Override\r\n    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n        // Lấy thông tin từ form và session\r\n        HttpSession session = request.getSession();\r\n        Account currentUser = (Account) session.getAttribute(\"currentUser\");\r\n\r\n        int idAcc = currentUser.getIdAcc();\r\n\r\n\r\n        // id của tài khoản từ session\r\n        String recipientName = request.getParameter(\"tennguoinhan\");\r\n        String phoneNumber = request.getParameter(\"sdtnhan\");\r\n        String deliveryAddress = request.getParameter(\"diachinhan\");\r\n\r\n\r\n        String note = request.getParameter(\"note-order\");\r\n        int totalAmount = Integer.parseInt(request.getParameter(\"totalAmount\"));\r\n        int paymentMethod = Integer.parseInt(request.getParameter(\"paymentMethod\"));\r\n\r\n        // Tạo thời gian hiện tại (ngày giờ)\r\n        SimpleDateFormat sdf = new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\");\r\n        String orderDate = sdf.format(new Date());\r\n\r\n        // Tạo đối tượng Invoice từ thông tin form\r\n        Invoice invoice = new Invoice();\r\n        invoice.setIdAcc(idAcc);\r\n        invoice.setRecipientName(recipientName);\r\n        invoice.setPhoneNumber(phoneNumber);\r\n        invoice.setDeliveryAddress(deliveryAddress);\r\n        invoice.setNote(note);\r\n        invoice.setOrderDate(orderDate);\r\n        invoice.setTotalAmount(totalAmount);\r\n        invoice.setPaymentMethod(paymentMethod);\r\n\r\n        // Khởi tạo DAO để lưu thông tin vào database\r\n        InvoiceDAO invoiceDAO = new InvoiceDAO();\r\n\r\n        try {\r\n            // Thêm hóa đơn vào cơ sở dữ liệu\r\n            invoiceDAO.addInvoice(invoice);\r\n\r\n            // Giả sử bạn đã có thông tin chi tiết đơn hàng (InvoiceDetail)\r\n            // Đây là ví dụ đơn giản, bạn có thể lấy thông tin từ giỏ hàng và các chi tiết tương ứng\r\n            InvoiceDetail detail = new InvoiceDetail();\r\n            detail.setIdInvoice(invoice.getIdInvoice());  // ID của hóa đơn vừa thêm\r\n            detail.setIdFood(1);  // Ví dụ về ID món ăn\r\n            detail.setQuantity(2);  // Số lượng\r\n            detail.setTotalAmount(100000);  // Tổng tiền cho món ăn này\r\n\r\n            // Thêm chi tiết hóa đơn vào cơ sở dữ liệu\r\n            invoiceDAO.addInvoiceDetail(detail);\r\n\r\n            // Sau khi thêm thành công, chuyển hướng đến trang thành công\r\n            response.sendRedirect(\"home\");\r\n        } catch (Exception e) {\r\n            e.printStackTrace();\r\n            response.sendRedirect(\"checkout.jsp?error=true\");\r\n        }\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/CheckoutController.java b/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/CheckoutController.java
+--- a/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/CheckoutController.java	(revision 6e5167b3a0a3893bc5cb133e268ce378c37b99b6)
++++ b/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/CheckoutController.java	(date 1736611595332)
+@@ -67,7 +67,6 @@
+         // Lấy thông tin từ form và session
+         HttpSession session = request.getSession();
+         Account currentUser = (Account) session.getAttribute("currentUser");
+-
+         int idAcc = currentUser.getIdAcc();
+ 
+ 
+@@ -102,17 +101,18 @@
+         try {
+             // Thêm hóa đơn vào cơ sở dữ liệu
+             invoiceDAO.addInvoice(invoice);
++            Order order = (Order) session.getAttribute("order");
+ 
+-            // Giả sử bạn đã có thông tin chi tiết đơn hàng (InvoiceDetail)
+-            // Đây là ví dụ đơn giản, bạn có thể lấy thông tin từ giỏ hàng và các chi tiết tương ứng
+-            InvoiceDetail detail = new InvoiceDetail();
+-            detail.setIdInvoice(invoice.getIdInvoice());  // ID của hóa đơn vừa thêm
+-            detail.setIdFood(1);  // Ví dụ về ID món ăn
+-            detail.setQuantity(2);  // Số lượng
+-            detail.setTotalAmount(100000);  // Tổng tiền cho món ăn này
++            for (Item item : order.getItems()) {
++                InvoiceDetail detail = new InvoiceDetail();
++                detail.setIdInvoice(invoice.getIdInvoice());
++                detail.setIdFood(item.getFood().getIdFood());
++                detail.setQuantity(item.getQuantity());
++                detail.setTotalAmount(item.getQuantity() * item.getFood().getPrice());
+ 
+-            // Thêm chi tiết hóa đơn vào cơ sở dữ liệu
+-            invoiceDAO.addInvoiceDetail(detail);
++                // Thêm chi tiết hóa đơn vào cơ sở dữ liệu
++                invoiceDAO.addInvoiceDetail(detail);
++            }
+ 
+             // Sau khi thêm thành công, chuyển hướng đến trang thành công
+             response.sendRedirect("home");
+Index: .idea/artifacts/testProject.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"ArtifactManager\">\r\n  <artifact type=\"exploded-war\" name=\"testProject\">\r\n    <output-path>$PROJECT_DIR$/out/artifacts/testProject</output-path>\r\n    <root id=\"root\">\r\n      <element id=\"directory\" name=\"WEB-INF\">\r\n        <element id=\"directory\" name=\"classes\">\r\n          <element id=\"module-output\" name=\"testProject\" />\r\n        </element>\r\n        <element id=\"directory\" name=\"lib\">\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.mysql:mysql-connector-j:8.0.33\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.protobuf:protobuf-java:3.21.9\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: jakarta.el:jakarta.el-api:5.0.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.sun.mail:javax.mail:1.6.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: javax.activation:activation:1.1.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: javax.mail:javax.mail-api:1.6.2\" />\r\n        </element>\r\n      </element>\r\n      <element id=\"javaee-facet-resources\" facet=\"testProject/web/Web2\" />\r\n      <element id=\"javaee-facet-resources\" facet=\"testProject/web/Web\" />\r\n    </root>\r\n  </artifact>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/artifacts/testProject.xml b/.idea/artifacts/testProject.xml
+--- a/.idea/artifacts/testProject.xml	(revision 6e5167b3a0a3893bc5cb133e268ce378c37b99b6)
++++ b/.idea/artifacts/testProject.xml	(date 1736611595328)
+@@ -17,7 +17,10 @@
+           <element id="library" level="project" name="Maven: javax.mail:javax.mail-api:1.6.2" />
+         </element>
+       </element>
++      <element id="javaee-facet-resources" facet="testProject/web/Web3" />
+       <element id="javaee-facet-resources" facet="testProject/web/Web2" />
++      <element id="javaee-facet-resources" facet="testProject/web/Web5" />
++      <element id="javaee-facet-resources" facet="testProject/web/Web4" />
+       <element id="javaee-facet-resources" facet="testProject/web/Web" />
+     </root>
+   </artifact>
+Index: src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/AjaxSearchController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package hcmuaf.nlu.edu.vn.testproject.controllers.user;\r\n\r\nimport hcmuaf.nlu.edu.vn.testproject.daos.FoodDAO;\r\nimport hcmuaf.nlu.edu.vn.testproject.models.Food;\r\nimport jakarta.servlet.*;\r\nimport jakarta.servlet.http.*;\r\nimport jakarta.servlet.annotation.*;\r\n\r\nimport java.io.IOException;\r\nimport java.io.PrintWriter;\r\nimport java.util.List;\r\n\r\n@WebServlet(name = \"AjaxSearchController\", value = \"/AjaxSearchController\")\r\npublic class AjaxSearchController extends HttpServlet {\r\n\r\n    @Override\r\n    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n        response.setContentType(\"text/html\");\r\n        response.setCharacterEncoding(\"UTF-8\");\r\n\r\n        String textSearch = request.getParameter(\"text\");\r\n        FoodDAO dao = new FoodDAO();\r\n        List<Food> foodList = dao.searchByName(textSearch);\r\n        request.setAttribute(\"list\", foodList);\r\n\r\n        PrintWriter out = response.getWriter();\r\n        if(foodList.isEmpty())\r\n            out.println(\"<h2 style=\\\"max-width: 1200px; text-align: center;\\\"> Không có món ăn phù hợp</h2>\");\r\n        else {\r\n            out.println(\"<div class=\\\"content_section\\\">\");\r\n            for (Food food : foodList) {\r\n\r\n                out.println(\"<div class=\\\"card\\\" onclick=\\\"showPopup('\" + food.getIdFood() + \"')\\\">\\n\" +\r\n                        \"                <img src=\\\"\" + food.getImg() + \"\\\" alt=\\\"\" + food.getFoodName() + \"\\\"/>\\n\" +\r\n                        \"                <div class=\\\"card_content\\\">\\n\" +\r\n                        \"                    <h3>\" + food.getFoodName() + \"</h3>\\n\" +\r\n                        \"                    <p>\" + food.getPrice() + \"đ</p>\\n\" +\r\n                        \"                    <c:url value=\\\"addtoCart?foodID=\" + food.getIdFood() + \"\\\" var=\\\"addtoCart\\\"/>\\n\" +\r\n                        \"                    <a class=\\\"btn\\\" href=\\\"${addtoCart}\\\">\\n\" +\r\n                        \"                        Thêm vào giỏ hàng\\n\" +\r\n                        \"                    </a>\\n\" +\r\n                        \"                </div>\\n\" +\r\n                        \"            </div>\\n\" +\r\n                        \"\\n\" +\r\n                        \"            <!-- Popup chi tiết món ăn -->\\n\" +\r\n                        \"            <div id=\\\"\" + food.getIdFood() + \"\\\" class=\\\"popup\\\">\\n\" +\r\n                        \"                <div class=\\\"popup-content\\\">\\n\" +\r\n                        \"                    <img src=\\\"\" + food.getImg() + \"\\\" alt=\\\"\" + food.getFoodName() + \"\\\"/>\\n\" +\r\n                        \"                    <h3>\" + food.getFoodName() + \"</h3>\\n\" +\r\n                        \"                    <p>Giá: \" + food.getPrice() + \"đ</p>\\n\" +\r\n                        \"                    <span>\\n\" +\r\n                        \"                           \" + food.getDescription() + \"\\n\" +\r\n                        \"                    </span>\\n\" +\r\n                        \"                    <button class=\\\"button-cart\\\">\\n\" +\r\n                        \"\\n\" +\r\n                        \"                        <a class=\\\"linktocart\\\" href=\\\"${addtoCart}\\\" onclick=\\\"event.stopPropagation()\\\">\\n\" +\r\n                        \"                            Thêm vào giỏ hàng\\n\" +\r\n                        \"                        </a>\\n\" +\r\n                        \"                    </button>\\n\" +\r\n                        \"                </div>\\n\" +\r\n                        \"                <span class=\\\"close\\\" onclick=\\\"closePopup('\" + food.getIdFood() + \"')\\\">&times;</span>\\n\" +\r\n                        \"            </div>\");\r\n            }\r\n            out.println(\"</div>\");\r\n        }\r\n    }\r\n\r\n    @Override\r\n    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/AjaxSearchController.java b/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/AjaxSearchController.java
+--- a/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/AjaxSearchController.java	(revision 6e5167b3a0a3893bc5cb133e268ce378c37b99b6)
++++ b/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/AjaxSearchController.java	(date 1736611595331)
+@@ -29,16 +29,15 @@
+         else {
+             out.println("<div class=\"content_section\">");
+             for (Food food : foodList) {
+-
++                String addToCartUrl = request.getContextPath() + "/addtoCart?foodID=" + food.getIdFood();
+                 out.println("<div class=\"card\" onclick=\"showPopup('" + food.getIdFood() + "')\">\n" +
+                         "                <img src=\"" + food.getImg() + "\" alt=\"" + food.getFoodName() + "\"/>\n" +
+                         "                <div class=\"card_content\">\n" +
+                         "                    <h3>" + food.getFoodName() + "</h3>\n" +
+                         "                    <p>" + food.getPrice() + "đ</p>\n" +
+-                        "                    <c:url value=\"addtoCart?foodID=" + food.getIdFood() + "\" var=\"addtoCart\"/>\n" +
+-                        "                    <a class=\"btn\" href=\"${addtoCart}\">\n" +
+-                        "                        Thêm vào giỏ hàng\n" +
+-                        "                    </a>\n" +
++                        "                    <a class=\"linktocart\" href=\"" + addToCartUrl + "\">\n" +
++                        "                            Thêm vào giỏ hàng\n" +
++                        "                        </a>\n" +
+                         "                </div>\n" +
+                         "            </div>\n" +
+                         "\n" +
+@@ -53,7 +52,7 @@
+                         "                    </span>\n" +
+                         "                    <button class=\"button-cart\">\n" +
+                         "\n" +
+-                        "                        <a class=\"linktocart\" href=\"${addtoCart}\" onclick=\"event.stopPropagation()\">\n" +
++                        "                        <a class=\"linktocart\" href=\"" + addToCartUrl + "\">\n" +
+                         "                            Thêm vào giỏ hàng\n" +
+                         "                        </a>\n" +
+                         "                    </button>\n" +
+Index: src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceDAO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package hcmuaf.nlu.edu.vn.testproject.daos;\r\nimport hcmuaf.nlu.edu.vn.testproject.context.DbContext;\r\nimport hcmuaf.nlu.edu.vn.testproject.models.Account;\r\nimport hcmuaf.nlu.edu.vn.testproject.models.Invoice;\r\nimport hcmuaf.nlu.edu.vn.testproject.models.InvoiceDetail;\r\nimport java.sql.Connection;\r\nimport java.sql.PreparedStatement;\r\nimport java.sql.ResultSet;\r\npublic class InvoiceDAO {\r\n    public void addInvoice(Invoice invoice) {\r\n        String query = \"INSERT INTO invoice (idAcc, recipientName, phoneNumber, deliveryAddress, note, orderDate, totalAmount, idCode, paymentMethod, isPaid) VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, NULL)\";\r\n        Connection conn = null;\r\n        PreparedStatement ps = null;\r\n        try {\r\n            conn = new DbContext().getConnection();\r\n            ps = conn.prepareStatement(query);\r\n            ps.setInt(1, invoice.getIdAcc());\r\n            ps.setString(2, invoice.getRecipientName());\r\n            ps.setString(3, invoice.getPhoneNumber());\r\n            ps.setString(4, invoice.getDeliveryAddress());\r\n            ps.setString(5, invoice.getNote());\r\n            ps.setString(6, invoice.getOrderDate());\r\n            ps.setInt(7, invoice.getTotalAmount());\r\n            ps.setInt(8, invoice.getPaymentMethod());\r\n\r\n            ps.executeUpdate();\r\n        } catch (Exception e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n    public void addInvoiceDetail(InvoiceDetail detail) {\r\n        String query = \"INSERT INTO invoicedetail (idInvoice, idFood, quantity, totalAmount) VALUES (?, ?, ?, ?)\";\r\n        Connection conn = null;\r\n        PreparedStatement ps = null;\r\n        try {\r\n            conn = new DbContext().getConnection();\r\n            ps = conn.prepareStatement(query);\r\n            ps.setInt(1, detail.getIdInvoice());\r\n            ps.setInt(2, detail.getIdFood());\r\n            ps.setInt(3, detail.getQuantity());\r\n            ps.setInt(4, detail.getTotalAmount());\r\n            ps.executeUpdate();\r\n        } catch (Exception e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n    public static void main(String[] args) {\r\n        // Tạo đối tượng Invoice\r\n        Invoice invoice = new Invoice();\r\n        invoice.setIdAcc(1);\r\n        invoice.setRecipientName(\"Nguyen Van A\");\r\n        invoice.setPhoneNumber(\"0123456789\");\r\n        invoice.setDeliveryAddress(\"123 Đường ABC, Quận 1, TP.HCM\");\r\n        invoice.setNote(\"Giao hàng vào buổi sáng\");\r\n        invoice.setOrderDate(\"2025/1/1\");\r\n        invoice.setTotalAmount(500000);\r\n        invoice.setPaymentMethod(1);  // 1 cho thẻ tín dụng, 0 cho tiền mặt\r\n        invoice.setIsPaid(1); // 1 cho đã thanh toán, 0 cho chưa thanh toán\r\n\r\n        // Tạo đối tượng InvoiceDetail\r\n        InvoiceDetail detail = new InvoiceDetail();\r\n        detail.setIdInvoice(2);  // Giả sử idInvoice là 1\r\n        detail.setIdFood(12);  // Giả sử idFood là 101\r\n        detail.setQuantity(2);\r\n        detail.setTotalAmount(200000);\r\n\r\n        // Khởi tạo InvoiceDAO\r\n        InvoiceDAO dao = new InvoiceDAO();\r\n\r\n\r\n        // Thêm InvoiceDetail vào cơ sở dữ liệu\r\n        dao.addInvoiceDetail(detail);\r\n\r\n        System.out.println(\"Đã thêm Invoice và InvoiceDetail thành công!\");\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceDAO.java b/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceDAO.java
+--- a/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceDAO.java	(revision 6e5167b3a0a3893bc5cb133e268ce378c37b99b6)
++++ b/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceDAO.java	(date 1736611595333)
+@@ -3,17 +3,20 @@
+ import hcmuaf.nlu.edu.vn.testproject.models.Account;
+ import hcmuaf.nlu.edu.vn.testproject.models.Invoice;
+ import hcmuaf.nlu.edu.vn.testproject.models.InvoiceDetail;
+-import java.sql.Connection;
+-import java.sql.PreparedStatement;
+-import java.sql.ResultSet;
++
++import java.sql.*;
++
+ public class InvoiceDAO {
+     public void addInvoice(Invoice invoice) {
+         String query = "INSERT INTO invoice (idAcc, recipientName, phoneNumber, deliveryAddress, note, orderDate, totalAmount, idCode, paymentMethod, isPaid) VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, NULL)";
+         Connection conn = null;
+         PreparedStatement ps = null;
++        ResultSet rs = null; // Dùng ResultSet để lấy giá trị id vừa chèn vào
+         try {
+             conn = new DbContext().getConnection();
+-            ps = conn.prepareStatement(query);
++            ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS); // Thêm tùy chọn để lấy key được sinh ra
++
++            // Gán các tham số vào câu lệnh SQL
+             ps.setInt(1, invoice.getIdAcc());
+             ps.setString(2, invoice.getRecipientName());
+             ps.setString(3, invoice.getPhoneNumber());
+@@ -23,11 +26,34 @@
+             ps.setInt(7, invoice.getTotalAmount());
+             ps.setInt(8, invoice.getPaymentMethod());
+ 
+-            ps.executeUpdate();
+-        } catch (Exception e) {
++            // Thực thi câu lệnh INSERT
++            int affectedRows = ps.executeUpdate();
++
++            if (affectedRows > 0) {
++                // Lấy ID của hóa đơn vừa chèn vào
++                rs = ps.getGeneratedKeys();
++                if (rs.next()) {
++                    // Đặt idInvoice cho đối tượng Invoice
++                    invoice.setIdInvoice(rs.getInt(1));
++                    System.out.println("Invoice ID generated: " + invoice.getIdInvoice());
++                }
++            }
++
++        } catch (SQLException e) {
+             e.printStackTrace();
++        } catch (ClassNotFoundException e) {
++            throw new RuntimeException(e);
++        } finally {
++            try {
++                if (rs != null) rs.close();
++                if (ps != null) ps.close();
++                if (conn != null) conn.close();
++            } catch (SQLException ex) {
++                ex.printStackTrace();
++            }
+         }
+     }
++
+     public void addInvoiceDetail(InvoiceDetail detail) {
+         String query = "INSERT INTO invoicedetail (idInvoice, idFood, quantity, totalAmount) VALUES (?, ?, ?, ?)";
+         Connection conn = null;
+Index: src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/FoodControllerAjax.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package hcmuaf.nlu.edu.vn.testproject.controllers.user;\r\n\r\nimport hcmuaf.nlu.edu.vn.testproject.models.Category;\r\nimport hcmuaf.nlu.edu.vn.testproject.models.Food;\r\nimport hcmuaf.nlu.edu.vn.testproject.services.CategoryService;\r\nimport hcmuaf.nlu.edu.vn.testproject.services.FoodServiceListFilter;\r\nimport jakarta.servlet.*;\r\nimport jakarta.servlet.http.*;\r\nimport jakarta.servlet.annotation.*;\r\n\r\nimport java.io.IOException;\r\nimport java.io.PrintWriter;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\n@WebServlet(name = \"FoodControllerAjax\", value = \"/menuajax\")\r\npublic class FoodControllerAjax extends HttpServlet {\r\n\r\n    @Override\r\n    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n        response.setContentType(\"text/html;charset=UTF-8\");\r\n\r\n        FoodServiceListFilter foodServiceListFilter = new FoodServiceListFilter();\r\n\r\n        // Lấy số trang, nếu không có thì mặc định là trang 1\r\n        int page = 1;\r\n        if (request.getParameter(\"page\") != null) {\r\n            page = Integer.parseInt(request.getParameter(\"page\"));\r\n        }\r\n        // Tính toán offset\r\n        int pageSize = 10; // Kích thước trang\r\n        int offset = (page - 1) * pageSize;\r\n        List<Food> foodList= new ArrayList<>();\r\n        int totalFoods=0;\r\n\r\n        // Lấy giá trị option từ request\r\n        String option = request.getParameter(\"option\");\r\n        if (option != null) {\r\n\r\n            foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option\r\n            totalFoods = foodList.size(); // Tổng số món theo option\r\n\r\n            // Áp dụng phân trang\r\n            foodList = foodList.subList(\r\n                    Math.min(offset, totalFoods),\r\n                    Math.min(offset + pageSize, totalFoods)\r\n            );\r\n        }else{\r\n            response.sendRedirect(request.getContextPath() + \"/search\");\r\n        }\r\n\r\n        // Tính tổng số trang\r\n        int totalPages = (int) Math.ceil((double) totalFoods / pageSize);\r\n\r\n        // Lấy danh sách danh mục\r\n        CategoryService cs = new CategoryService();\r\n        List<Category> categoryList = cs.getCategories();\r\n\r\n        // Đặt thuộc tính cho JSP\r\n        request.setAttribute(\"list\", foodList);\r\n        request.setAttribute(\"listC\", categoryList);\r\n        request.setAttribute(\"currentPage\", page);\r\n        request.setAttribute(\"totalPages\", totalPages);\r\n\r\n\r\n        PrintWriter out = response.getWriter();\r\n        if(foodList.isEmpty())\r\n            out.println(\"<h2 style=\\\"max-width: 1200px; text-align: center;\\\"> Không có món ăn phù hợp</h2>\");\r\n        else {\r\n            out.println(\"<div class=\\\"content_section\\\">\");\r\n            for (Food food : foodList) {\r\n\r\n                out.println(\"<div class=\\\"card\\\" onclick=\\\"showPopup('\" + food.getIdFood() + \"')\\\">\\n\" +\r\n                        \"                <img src=\\\"\" + food.getImg() + \"\\\" alt=\\\"\" + food.getFoodName() + \"\\\"/>\\n\" +\r\n                        \"                <div class=\\\"card_content\\\">\\n\" +\r\n                        \"                    <h3>\" + food.getFoodName() + \"</h3>\\n\" +\r\n                        \"                    <p>\" + food.getPrice() + \"đ</p>\\n\" +\r\n                        \"                    <c:url value=\\\"addtoCart?foodID=\" + food.getIdFood() + \"\\\" var=\\\"addtoCart\\\"/>\\n\" +\r\n                        \"                    <a class=\\\"btn\\\" href=\\\"${addtoCart?foodID=\" + food.getIdFood() + \"}\\\" onclick=\\\"event.stopPropagation()\\\">\\n\" +\r\n                        \"                        Thêm vào giỏ hàng\\n\" +\r\n                        \"                    </a>\\n\" +\r\n                        \"                </div>\\n\" +\r\n                        \"            </div>\\n\" +\r\n                        \"\\n\" +\r\n                        \"            <!-- Popup chi tiết món ăn -->\\n\" +\r\n                        \"            <div id=\\\"\" + food.getIdFood() + \"\\\" class=\\\"popup\\\">\\n\" +\r\n                        \"                <div class=\\\"popup-content\\\">\\n\" +\r\n                        \"                    <img src=\\\"\" + food.getImg() + \"\\\" alt=\\\"\" + food.getFoodName() + \"\\\"/>\\n\" +\r\n                        \"                    <h3>\" + food.getFoodName() + \"</h3>\\n\" +\r\n                        \"                    <p>Giá: \" + food.getPrice() + \"đ</p>\\n\" +\r\n                        \"                    <span>\\n\" +\r\n                        \"                           \" + food.getDescription() + \"\\n\" +\r\n                        \"                    </span>\\n\" +\r\n                        \"                    <button class=\\\"button-cart\\\">\\n\" +\r\n                        \"\\n\" +\r\n                        \"                        <a class=\\\"linktocart\\\" href=\\\"${addtoCart}\\\">\\n\" +\r\n                        \"                            Thêm vào giỏ hàng\\n\" +\r\n                        \"                        </a>\\n\" +\r\n                        \"                    </button>\\n\" +\r\n                        \"                </div>\\n\" +\r\n                        \"                <span class=\\\"close\\\" onclick=\\\"closePopup('\" + food.getIdFood() + \"')\\\">&times;</span>\\n\" +\r\n                        \"            </div>\");\r\n            }\r\n            out.println(\"</div>\");\r\n\r\n            out.println(\"<div class=\\\"pagination\\\" style=\\\"width:1200px;margin:0px auto; padding-left:35px; text-align:center;\\\">\");\r\n\r\n            for (int i = 1; i <= totalPages; i++) {\r\n                out.println(\"<button onclick=\\\"loadSP('\" + option + \"', \" + i + \")\\\" class=\\\"\" + (page == i ? \"active\" : \"\") + \"\\\">\" + i + \"</button>\");\r\n            }\r\n\r\n            out.println(\"</div>\");\r\n\r\n        }\r\n    }\r\n\r\n    @Override\r\n    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/FoodControllerAjax.java b/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/FoodControllerAjax.java
+--- a/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/FoodControllerAjax.java	(revision 6e5167b3a0a3893bc5cb133e268ce378c37b99b6)
++++ b/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/FoodControllerAjax.java	(date 1736611595332)
+@@ -30,13 +30,12 @@
+         // Tính toán offset
+         int pageSize = 10; // Kích thước trang
+         int offset = (page - 1) * pageSize;
+-        List<Food> foodList= new ArrayList<>();
+-        int totalFoods=0;
++        List<Food> foodList = new ArrayList<>();
++        int totalFoods = 0;
+ 
+         // Lấy giá trị option từ request
+         String option = request.getParameter("option");
+         if (option != null) {
+-
+             foodList = foodServiceListFilter.getOption(option); // Lấy danh sách dựa trên option
+             totalFoods = foodList.size(); // Tổng số món theo option
+ 
+@@ -45,8 +44,9 @@
+                     Math.min(offset, totalFoods),
+                     Math.min(offset + pageSize, totalFoods)
+             );
+-        }else{
++        } else {
+             response.sendRedirect(request.getContextPath() + "/search");
++            return;
+         }
+ 
+         // Tính tổng số trang
+@@ -62,21 +62,19 @@
+         request.setAttribute("currentPage", page);
+         request.setAttribute("totalPages", totalPages);
+ 
+-
+         PrintWriter out = response.getWriter();
+-        if(foodList.isEmpty())
++        if (foodList.isEmpty()) {
+             out.println("<h2 style=\"max-width: 1200px; text-align: center;\"> Không có món ăn phù hợp</h2>");
+-        else {
++        } else {
+             out.println("<div class=\"content_section\">");
+             for (Food food : foodList) {
+-
++                String addToCartUrl = request.getContextPath() + "/addtoCart?foodID=" + food.getIdFood();
+                 out.println("<div class=\"card\" onclick=\"showPopup('" + food.getIdFood() + "')\">\n" +
+                         "                <img src=\"" + food.getImg() + "\" alt=\"" + food.getFoodName() + "\"/>\n" +
+                         "                <div class=\"card_content\">\n" +
+                         "                    <h3>" + food.getFoodName() + "</h3>\n" +
+                         "                    <p>" + food.getPrice() + "đ</p>\n" +
+-                        "                    <c:url value=\"addtoCart?foodID=" + food.getIdFood() + "\" var=\"addtoCart\"/>\n" +
+-                        "                    <a class=\"btn\" href=\"${addtoCart?foodID=" + food.getIdFood() + "}\" onclick=\"event.stopPropagation()\">\n" +
++                        "                    <a class=\"btn\" href=\"" + addToCartUrl + "\" onclick=\"event.stopPropagation()\">\n" +
+                         "                        Thêm vào giỏ hàng\n" +
+                         "                    </a>\n" +
+                         "                </div>\n" +
+@@ -92,8 +90,7 @@
+                         "                           " + food.getDescription() + "\n" +
+                         "                    </span>\n" +
+                         "                    <button class=\"button-cart\">\n" +
+-                        "\n" +
+-                        "                        <a class=\"linktocart\" href=\"${addtoCart}\">\n" +
++                        "                        <a class=\"linktocart\" href=\"" + addToCartUrl + "\">\n" +
+                         "                            Thêm vào giỏ hàng\n" +
+                         "                        </a>\n" +
+                         "                    </button>\n" +
+@@ -104,17 +101,15 @@
+             out.println("</div>");
+ 
+             out.println("<div class=\"pagination\" style=\"width:1200px;margin:0px auto; padding-left:35px; text-align:center;\">");
+-
+             for (int i = 1; i <= totalPages; i++) {
+                 out.println("<button onclick=\"loadSP('" + option + "', " + i + ")\" class=\"" + (page == i ? "active" : "") + "\">" + i + "</button>");
+             }
+-
+             out.println("</div>");
+-
+         }
+     }
+ 
+     @Override
+     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
++        // Xử lý POST nếu cần
+     }
+-}
+\ No newline at end of file
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"testProject\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"1b577079-df54-4f83-82a8-59695a8c1873\" name=\"Changes\" comment=\"test\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/webapp/js/module_stopPopup.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/AjaxSearchController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/AjaxSearchController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/FoodControllerAjax.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/FoodControllerAjax.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/views/newhome.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/views/newhome.jsp\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CompilerWorkspaceConfiguration\">\r\n    <option name=\"MAKE_PROJECT_ON_SAVE\" value=\"true\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"servlet\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Jsp File\" />\r\n        <option value=\"Servlet\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;NguyenAnhTuan22130311&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/NguyenAnhTuan22130312/LTWEB_FINAL_TERM.git&quot;,\r\n    &quot;accountId&quot;: &quot;711777fb-6a46-4549-961e-a2bf0967db8a&quot;\r\n  }\r\n}</component>\r\n  <component name=\"KubernetesApiPersistence\">{}</component>\r\n  <component name=\"KubernetesApiProvider\">{\r\n  &quot;isMigrated&quot;: true\r\n}</component>\r\n  <component name=\"LogFilters\">\r\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\r\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\r\n    <option name=\"FILTER_INFO\" value=\"true\" />\r\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\r\n    <option name=\"CUSTOM_FILTER\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"Security Analysis\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2qRVSt5ul6Vg0Pnvix8oRrxCeLz\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.AccdetailDAO.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.BannerDao.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.BannerService.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.ContactController.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.ContactDao.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.ContactService.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.DbContext.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.FoodCartDAO.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.FoodDAO.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.InvoiceDAO.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.LoginDAO.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.MD5.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.Order.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.SignUpDAO.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;Tomcat Server.Tomcat 10.1.31.executor&quot;: &quot;Run&quot;,\r\n    &quot;Tomcat Server.da.executor&quot;: &quot;Run&quot;,\r\n    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;G:/Nam3HocKy1/BTLapTrinhWeb/gitdoanck/LTWEB_FINAL_TERM/src/main/webapp/css&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15039062&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"G:\\Nam3HocKy1\\BTLapTrinhWeb\\gitdoanck\\LTWEB_FINAL_TERM\\src\\main\\webapp\\css\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"hcmuaf.nlu.edu.vn.testproject.daos\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Tomcat Server.Tomcat 10.1.31\">\r\n    <configuration name=\"InvoiceDAO\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"hcmuaf.nlu.edu.vn.testproject.daos.InvoiceDAO\" />\r\n      <module name=\"testProject\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"hcmuaf.nlu.edu.vn.testproject.daos.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Tomcat 10.1.31\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 10.1.31\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\r\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\r\n      <deployment>\r\n        <artifact name=\"testProject\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/testProject\" />\r\n          </settings>\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"4a3109f8-8c61-465b-ab10-d55d30f48352\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\r\n      <predefined_log_file id=\"Tomcat Manager\" />\r\n      <predefined_log_file id=\"Tomcat Host Manager\" />\r\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"51756\" />\r\n      </RunnerSettings>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"testProject\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.InvoiceDAO\" />\r\n      <item itemvalue=\"Tomcat Server.Tomcat 10.1.31\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.InvoiceDAO\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"1b577079-df54-4f83-82a8-59695a8c1873\" name=\"Changes\" comment=\"\" />\r\n      <created>1734625377476</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1734625377476</updated>\r\n      <workItem from=\"1734625378675\" duration=\"9140000\" />\r\n      <workItem from=\"1734704410804\" duration=\"1847000\" />\r\n      <workItem from=\"1734794978961\" duration=\"853000\" />\r\n      <workItem from=\"1734796248428\" duration=\"4335000\" />\r\n      <workItem from=\"1734804965306\" duration=\"21000\" />\r\n      <workItem from=\"1734809321924\" duration=\"2207000\" />\r\n      <workItem from=\"1734887135268\" duration=\"1239000\" />\r\n      <workItem from=\"1734895809052\" duration=\"8966000\" />\r\n      <workItem from=\"1734927841486\" duration=\"7987000\" />\r\n      <workItem from=\"1735055320504\" duration=\"3449000\" />\r\n      <workItem from=\"1735089455607\" duration=\"1312000\" />\r\n      <workItem from=\"1735090778404\" duration=\"153000\" />\r\n      <workItem from=\"1735090945938\" duration=\"124000\" />\r\n      <workItem from=\"1735091079579\" duration=\"108000\" />\r\n      <workItem from=\"1735091866485\" duration=\"150000\" />\r\n      <workItem from=\"1735092045242\" duration=\"6506000\" />\r\n      <workItem from=\"1735099515219\" duration=\"3369000\" />\r\n      <workItem from=\"1735103005363\" duration=\"784000\" />\r\n      <workItem from=\"1735109589576\" duration=\"12384000\" />\r\n      <workItem from=\"1735137908404\" duration=\"53000\" />\r\n      <workItem from=\"1735138083850\" duration=\"3452000\" />\r\n      <workItem from=\"1735303080614\" duration=\"8972000\" />\r\n      <workItem from=\"1735338368983\" duration=\"6613000\" />\r\n      <workItem from=\"1735396518345\" duration=\"2633000\" />\r\n      <workItem from=\"1736144229406\" duration=\"831000\" />\r\n      <workItem from=\"1736259331705\" duration=\"11710000\" />\r\n      <workItem from=\"1736382235121\" duration=\"4344000\" />\r\n      <workItem from=\"1736459138776\" duration=\"489000\" />\r\n      <workItem from=\"1736459640083\" duration=\"1248000\" />\r\n      <workItem from=\"1736477845212\" duration=\"17612000\" />\r\n      <workItem from=\"1736505832039\" duration=\"385000\" />\r\n      <workItem from=\"1736540391409\" duration=\"4738000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"update newhome, food\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1734808436139</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1734808436139</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"update home\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1734899532346</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1734899532346</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"da fix xong trang new home va allmenu\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1734903568528</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1734903568528</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"fix them teo trang home voi menu\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1734905092052</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1734905092052</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"fix link\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1734905730507</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1734905730507</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"fix duoc contact rui\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1734988480026</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1734988480026</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"chinh de khi sua duoc sesion\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1734988646671</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1734988646671</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"chinh de khi sua duoc sesion\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1734988662136</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1734988662136</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"fix menu, do an theo category\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1735015521936</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1735015521936</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"fix menu, do an theo category\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1735015529230</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1735015529230</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"toi uu foodcontroller, da fix duoc phan trang\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1735034677874</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1735034677874</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"fix contact\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1735056645230</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1735056645230</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"fix duoc banner\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1735117425037</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1735117425037</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"nhưng buoc dau cua AjaxSearchController\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1735149148795</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1735149148795</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"block button search\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1735154800537</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1735154800537</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"dang loi contact\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1735189100675</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1735189100675</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"fix review roi\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736460796279</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736460796279</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"fix nhe card food\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736480936552</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736480936552</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"fix phan trang\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736489737674</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736489737674</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"sua checkout\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736492636534</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736492636534</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"fix duoc phan trang\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736498691033</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736498691033</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"da hoan thanh fix trang menu\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736500089276</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736500089276</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"test\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736531872682</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736531872682</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"24\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"update newhome, food\" />\r\n    <MESSAGE value=\"update home\" />\r\n    <MESSAGE value=\"da fix xong trang new home va allmenu\" />\r\n    <MESSAGE value=\"fix them teo trang home voi menu\" />\r\n    <MESSAGE value=\"fix link\" />\r\n    <MESSAGE value=\"fix duoc contact rui\" />\r\n    <MESSAGE value=\"chinh de khi sua duoc sesion\" />\r\n    <MESSAGE value=\"fix menu, do an theo category\" />\r\n    <MESSAGE value=\"toi uu foodcontroller, da fix duoc phan trang\" />\r\n    <MESSAGE value=\"fix contact\" />\r\n    <MESSAGE value=\"fix duoc banner\" />\r\n    <MESSAGE value=\"nhưng buoc dau cua AjaxSearchController\" />\r\n    <MESSAGE value=\"block button search\" />\r\n    <MESSAGE value=\"dang loi contact\" />\r\n    <MESSAGE value=\"fix review roi\" />\r\n    <MESSAGE value=\"fix nhe card food\" />\r\n    <MESSAGE value=\"fix phan trang\" />\r\n    <MESSAGE value=\"sua checkout\" />\r\n    <MESSAGE value=\"fix duoc phan trang\" />\r\n    <MESSAGE value=\"da hoan thanh fix trang menu\" />\r\n    <MESSAGE value=\"test\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"test\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6e5167b3a0a3893bc5cb133e268ce378c37b99b6)
++++ b/.idea/workspace.xml	(date 1736611595330)
+@@ -10,13 +10,11 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="test">
+-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/module_stopPopup.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/artifacts/testProject.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/testProject.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/AjaxSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/AjaxSearchController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/FoodControllerAjax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/FoodControllerAjax.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/allMenu.jsp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/newhome.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/CheckoutController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceDAO.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -157,7 +155,7 @@
+         </artifact>
+       </deployment>
+       <server-settings>
+-        <option name="BASE_DIRECTORY_NAME" value="4a3109f8-8c61-465b-ab10-d55d30f48352" />
++        <option name="BASE_DIRECTORY_NAME" value="58e5530e-8f30-4244-96f8-bb4ba25503f8" />
+       </server-settings>
+       <predefined_log_file enabled="true" id="Tomcat" />
+       <predefined_log_file enabled="true" id="Tomcat Catalina" />
+@@ -165,7 +163,7 @@
+       <predefined_log_file id="Tomcat Host Manager" />
+       <predefined_log_file id="Tomcat Localhost Access" />
+       <RunnerSettings RunnerId="Debug">
+-        <option name="DEBUG_PORT" value="51756" />
++        <option name="DEBUG_PORT" value="56961" />
+       </RunnerSettings>
+       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+         <option name="USE_ENV_VARIABLES" value="true" />
+@@ -292,6 +290,7 @@
+       <workItem from="1736477845212" duration="17612000" />
+       <workItem from="1736505832039" duration="385000" />
+       <workItem from="1736540391409" duration="4738000" />
++      <workItem from="1736609453309" duration="1307000" />
+     </task>
+     <task id="LOCAL-00001" summary="update newhome, food">
+       <option name="closed" value="true" />

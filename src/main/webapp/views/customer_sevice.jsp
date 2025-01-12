@@ -60,7 +60,10 @@
 
                 <td>${listAcc.phoneNumber != null ? listAcc.phoneNumber : '<span style="color: red;">Chưa cập nhật SĐT</span>'}</td>
 
-                <td>${listAcc.email != null ? listAcc.email : '<span style="color: red;">chưa cập nhật email</span>'}</td>
+                <td>
+                        ${listAcc.email != "" ? listAcc.email : '<span style="color: red;">chưa cập nhật email</span>'}
+                </td>
+
 
                 <td>
                     <button class="detail_btn"
