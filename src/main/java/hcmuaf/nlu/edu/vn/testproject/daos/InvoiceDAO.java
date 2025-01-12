@@ -12,7 +12,7 @@ import java.util.List;
 public class InvoiceDAO {
     public void addInvoice(Invoice invoice) {
         String query = "INSERT INTO invoice (idAcc, recipientName, phoneNumber, deliveryAddress, note, orderDate, totalAmount, idCode, paymentMethod, isPaid) VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, NULL)";
-        String query2 = "INSERT INTO orderstatus (idInvoice, orderStatus) VALUES (?, 1)";
+        String query2 = "INSERT INTO orderstatus (idInvoice, orderSt) VALUES (?, 1)";
         Connection conn = null;
         PreparedStatement ps = null;
         PreparedStatement ps2 = null;

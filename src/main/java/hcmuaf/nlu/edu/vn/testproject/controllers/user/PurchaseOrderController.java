@@ -25,7 +25,7 @@ public class PurchaseOrderController extends HttpServlet {
         List<OrderInvoice> ois = invoiceOrderServices.getOption(optionOrder);
         request.setAttribute("ois", ois);
 
-        request.getRequestDispatcher("/views/PurchaseOrder.jsp").forward(request, response);
+        request.getRequestDispatcher("views/PurchaseOrder.jsp").forward(request, response);
     }
 
     @Override

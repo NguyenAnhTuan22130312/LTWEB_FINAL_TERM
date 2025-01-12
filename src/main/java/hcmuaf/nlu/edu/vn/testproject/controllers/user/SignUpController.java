@@ -7,6 +7,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "SignUpController", value = "/signup")
 public class SignUpController extends HttpServlet {
@@ -22,24 +23,27 @@ public class SignUpController extends HttpServlet {
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("application/json;charset=UTF-8"); // Đảm bảo trả về JSON
+
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("pass");
 
+        PrintWriter out = response.getWriter();
+
+        // Kiểm tra nếu có thông tin thiếu
         if (username == null || password == null || email == null || username.trim().isEmpty() || password.trim().isEmpty() || email.trim().isEmpty()) {
-            request.setAttribute("errorMessage", "Vui lòng nhập đầy đủ thông tin");
-            request.getRequestDispatcher("views/signin.jsp").forward(request, response);
+            out.print("{\"status\": \"error\", \"message\": \"Vui lòng nhập đầy đủ thông tin\"}");
             return;
         }
 
-        Account account = SignUpDAO.checkUserExist(username,email);
-        //nếu như chưa có tên người dùng nào
+        Account account = SignUpDAO.checkUserExist(username, email);
+        // Nếu chưa có tên người dùng hoặc email đã tồn tại
         if (account == null) {
+            // Đăng ký người dùng mới
             SignUpDAO.signUp(username, password, email);
-            response.sendRedirect("login");
-
-        }else {
+            out.print("{\"status\": \"success\", \"message\": \"Đăng ký thành công, vui lòng đăng nhập.\"}");
+        } else {
             String errorMessage;
             if (account.getUserName().equals(username)) {
                 errorMessage = "Tên người dùng đã tồn tại.";
@@ -47,10 +51,7 @@ public class SignUpController extends HttpServlet {
                 errorMessage = "Email đã được sử dụng.";
             }
 
-            request.setAttribute("errorMessage", errorMessage);
-            System.out.println("Error Message: " + request.getAttribute("errorMessage"));
-            request.getRequestDispatcher("views/signin.jsp").forward(request, response);
+            out.print("{\"status\": \"error\", \"message\": \"" + errorMessage + "\"}");
         }
-
     }
 }

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signin.css" />
   </head>
   <body>
+  <div id="messageContainer" style="color: red; margin-top: 10px; font-weight: bold; text-align: center;"></div>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
         <form action="signup" method="post">
@@ -40,12 +41,8 @@
           <input name="pass" type="password" placeholder="Mật khẩu" />
           <button type="submit">Đăng ký</button>
         </form>
-        <c:set var="errorMessage" value="Test error message" />
-        <c:if test="${not empty errorMessage}">
-          <div style="color: red; margin-top: 10px; font-weight: bold;">
-              ${errorMessage}
-          </div>
-        </c:if>
+
+
 
 
       </div>
@@ -88,6 +85,8 @@
     </div>
 
     <script src="${pageContext.request.contextPath}/js/signin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/loginAjax.js"></script>
 
   </body>
 </html>
