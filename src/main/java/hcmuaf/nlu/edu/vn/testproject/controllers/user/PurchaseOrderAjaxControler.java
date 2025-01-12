@@ -1,5 +1,6 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers.user;
 
+import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
 import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoice;
 import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoiceDetail;
@@ -18,7 +19,9 @@ public class PurchaseOrderAjaxControler extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        InvoiceOrderServices invoiceOrderServices = new InvoiceOrderServices();
+        HttpSession session = request.getSession();
+        Account acc = (Account) session.getAttribute("currentUser");
+        InvoiceOrderServices invoiceOrderServices = new InvoiceOrderServices(acc.getIdAcc());
 
         String optionOrder = request.getParameter("text");
         if (optionOrder == null) {

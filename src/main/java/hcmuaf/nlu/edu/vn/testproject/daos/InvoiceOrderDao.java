@@ -5,6 +5,7 @@ import hcmuaf.nlu.edu.vn.testproject.models.Food;
 import hcmuaf.nlu.edu.vn.testproject.models.Invoice;
 import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoice;
 import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoiceDetail;
+import jakarta.servlet.http.HttpSession;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,17 +19,19 @@ import java.util.Map;
 public class InvoiceOrderDao {
 
     private List<OrderInvoice> data;
+    private int id;
 
-    public InvoiceOrderDao() {
+    public InvoiceOrderDao(int id) {
         this.data = new ArrayList<>();
-        getAllInvoice();
+        this.id = id;
+        getAllInvoice(id);
     }
 
 
     // Hàm lấy tất cả các món ăn từ cơ sở dữ liệu
-    public void getAllInvoice() {
+    public void getAllInvoice(int id) {
 
-        String query = "SELECT * FROM invoice inv join orderstatus os ON inv.idInvoice = os.idInvoice;";
+        String query = "SELECT * FROM invoice inv join orderstatus os ON inv.idInvoice = os.idInvoice where idAcc = ?;";
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -36,6 +39,7 @@ public class InvoiceOrderDao {
         try {
             con = new DbContext().getConnection();
             ps = con.prepareStatement(query);
+            ps.setInt(1, id);
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -161,15 +165,6 @@ public class InvoiceOrderDao {
     }
 
 
-    public static void main(String[] args) {
-        InvoiceOrderDao dao = new InvoiceOrderDao();
-//        List<OrderInvoice> ois = dao.getAll();
-//        for(OrderInvoice oi : ois){
-//            System.out.println(oi.getOrderInvoiceDetail().toString());
-//        }
-//    System.out.println(dao.getInvoiceOrder(1));
-//        dao.canclInvoice(1);
-        System.out.println(dao.getTotalShippingInvoices());
-    }
+
 
 }

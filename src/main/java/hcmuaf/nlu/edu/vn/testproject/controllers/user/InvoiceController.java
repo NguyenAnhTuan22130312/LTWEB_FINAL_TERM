@@ -1,5 +1,6 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers.user;
 
+import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.models.Item;
 import hcmuaf.nlu.edu.vn.testproject.models.Order;
 import hcmuaf.nlu.edu.vn.testproject.services.InvoiceOrderServices;
@@ -16,7 +17,8 @@ public class InvoiceController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        InvoiceOrderServices invoiceOrderServices = new InvoiceOrderServices();
+        Account acc = (Account) session.getAttribute("currentUser");
+        InvoiceOrderServices invoiceOrderServices = new InvoiceOrderServices(acc.getIdAcc());
         int totaldh = invoiceOrderServices.getTotalDonHang();
 
         session.setAttribute("totaldh", totaldh);

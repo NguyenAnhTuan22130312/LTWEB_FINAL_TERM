@@ -12,9 +12,10 @@ import java.util.List;
 
 public class InvoiceOrderServices {
     public InvoiceOrderDao invoiceOrderDao;
-
-    public InvoiceOrderServices() {
-        this.invoiceOrderDao = new InvoiceOrderDao();
+    private int id;
+    public InvoiceOrderServices(int id) {
+        this.id = id;
+        this.invoiceOrderDao = new InvoiceOrderDao(id);
     }
 
     public List<OrderInvoice> getOption(String option) {
@@ -54,8 +55,5 @@ public class InvoiceOrderServices {
         return invoiceOrderDao.getTotalShippingInvoices();
     }
 
-    public static void main(String[] args) {
-        InvoiceOrderServices is = new InvoiceOrderServices();
-        System.out.println(is.getTotalDonHang());
-    }
+
 }

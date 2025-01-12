@@ -1,5 +1,6 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers.user;
 
+import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoice;
 import hcmuaf.nlu.edu.vn.testproject.services.InvoiceOrderServices;
 import jakarta.servlet.*;
@@ -17,8 +18,10 @@ public class PurchaseOrderDetail extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String id = request.getParameter("id");
-        InvoiceOrderServices service = new InvoiceOrderServices();
-        OrderInvoice oi = service.getOrder(id);
+        HttpSession session = request.getSession();
+        Account acc = (Account) session.getAttribute("currentUser");
+        InvoiceOrderServices invoiceOrderServices = new InvoiceOrderServices(acc.getIdAcc());
+        OrderInvoice oi = invoiceOrderServices.getOrder(id);
         request.setAttribute("order", oi);
 
 
