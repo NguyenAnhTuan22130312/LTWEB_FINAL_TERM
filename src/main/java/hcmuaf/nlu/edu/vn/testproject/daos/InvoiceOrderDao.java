@@ -110,12 +110,22 @@ public class InvoiceOrderDao {
         }
         return ois;
     }
+    public OrderInvoice getInvoiceOrder(int id) {
+        for (OrderInvoice oi : data) {
+            if (oi.getIdInvoice()==id) {
+                return oi;
+            }
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         InvoiceOrderDao dao = new InvoiceOrderDao();
-        List<OrderInvoice> ois = dao.getAll();
-        for(OrderInvoice oi : ois){
-            System.out.println(oi.getOrderInvoiceDetail().toString());
-        }
+//        List<OrderInvoice> ois = dao.getAll();
+//        for(OrderInvoice oi : ois){
+//            System.out.println(oi.getOrderInvoiceDetail().toString());
+//        }
+    System.out.println(dao.getInvoiceOrder(1));
     }
 
 }

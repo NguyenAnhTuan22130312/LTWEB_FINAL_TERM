@@ -87,7 +87,7 @@
                                 </c:when>
 
                             </c:choose></div>
-                        <button class="info-order-button" onclick="goToDetails()">Chi tiết</button>
+                        <a class="info-order-button" href="PurchaseOrderDetail?id=${iorder.idInvoice}" style="text-decoration: none">Chi tiết</a>
                         <button class="cancel-order-button">Hủy đơn hàng</button>
                     </div>
                 </div>

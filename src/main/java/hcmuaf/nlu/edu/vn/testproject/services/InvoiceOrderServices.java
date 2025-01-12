@@ -8,15 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InvoiceOrderServices {
-    private InvoiceOrderDao invoiceOrderDao ;
+    public InvoiceOrderDao invoiceOrderDao;
 
     public InvoiceOrderServices() {
         this.invoiceOrderDao = new InvoiceOrderDao();
     }
+
     public List<OrderInvoice> getOption(String option) {
         List<OrderInvoice> ois = new ArrayList<>();
         switch (option) {
-            case  "0":
+            case "0":
                 ois = invoiceOrderDao.getAll();
                 break;
             case "1":
@@ -33,11 +34,16 @@ public class InvoiceOrderServices {
         return ois;
     }
 
+    public OrderInvoice getOrder(String orderId) {
+        int id = Integer.parseInt(orderId);
+        return invoiceOrderDao.getInvoiceOrder(id);
+    }
+
     public static void main(String[] args) {
         InvoiceOrderServices is = new InvoiceOrderServices();
         List<OrderInvoice> ois = is.getOption("0");
 
-        for(OrderInvoice oi : ois){
+        for (OrderInvoice oi : ois) {
             System.out.println(oi);
             System.out.println(oi.getOrderInvoiceDetail().toString());
         }

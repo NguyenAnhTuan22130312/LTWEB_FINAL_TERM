@@ -44,7 +44,7 @@ public class PurchaseOrderAjaxControler extends HttpServlet {
                         "            <div class=\"order-container\">\n" +
                                 "                <div class=\"order-card\">\n" +
                                 "                    <div class=\"idDonHang\">\n" +
-                                "                        <i class=\"fa-regular fa-copy\"></i> " + oi.getIdInvoice() + "\n" +
+                                "                        <i class=\"fa-regular fa-copy\"></i> " + formattedId + "\n" +
                                 "                    </div>\n" +
                                 "                    <div class=\"line_st\"></div>\n");
                 for (OrderInvoiceDetail oid : oi.getOrderInvoiceDetail()) {
@@ -72,7 +72,7 @@ public class PurchaseOrderAjaxControler extends HttpServlet {
                         "                    </div>\n" +
                         "                    <div class=\"order-footer\">\n" +
                         "                        <div class=\"order-status\">Trạng thái: " + orderst + " </div>\n" +
-                        "                        <button class=\"info-order-button\" onclick=\"goToDetails()\">Chi tiết</button>\n" +
+                        "                         <a class=\"info-order-button\" href=\"PurchaseOrderDetail?id="+oi.getIdInvoice()+"\" style=\"text-decoration: none\">Chi tiết</a>" +
                         "                        <button class=\"cancel-order-button\">Hủy đơn hàng</button>\n" +
                         "                    </div>\n" +
                         "                </div>\n" +
