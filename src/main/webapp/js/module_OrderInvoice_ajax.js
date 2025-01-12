@@ -1,10 +1,10 @@
 function ajaxOrder(param){
-    var textValue = param.value;
+
     $.ajax({
         url: "PurchaseOrderAjaxControler",
         type:"get",
         data: {
-            text: textValue
+            text: param
         },
         success: function (data){
             var row = document.getElementById("content_section");
