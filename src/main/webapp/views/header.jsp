@@ -37,7 +37,7 @@
                         </div>
                     </c:if>
                     <div class="nav_item_shop">
-                        <a href="<%= (session.getAttribute("currentuser") != null) ? "PurchaseOrder" : "login" %>" class="nav-item">
+                        <a href="<%= (session.getAttribute("currentUser") != null) ? "PurchaseOrder" : "login" %>" class="nav-item">
                             <i class="fa-solid fa-truck-fast"></i> Đơn hàng
                         </a>
                         <a href="order" class="count">
