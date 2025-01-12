@@ -18,6 +18,11 @@ public class PurchaseOrderController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         InvoiceOrderServices invoiceOrderServices = new InvoiceOrderServices();
 
+        String id = request.getParameter("id");
+        if(id!=null){
+            invoiceOrderServices.cancelInvoice(id);
+        }
+
         String optionOrder="0";
         if(optionOrder==null)
             optionOrder= request.getParameter("optionOrder");

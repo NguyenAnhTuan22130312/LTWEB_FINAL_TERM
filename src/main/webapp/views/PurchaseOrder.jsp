@@ -90,7 +90,7 @@
                         <c:if test="${iorder.orderSt == 1}">
                             <!-- Hiển thị cả thẻ <a> và <button> khi order.orderSt là 1 -->
                             <a class="info-order-button" href="PurchaseOrderDetail?id=${iorder.idInvoice}" style="text-decoration: none">Chi tiết</a>
-                            <button class="cancel-order-button">Hủy đơn hàng</button>
+                            <a class="cancel-order-button" href="PurchaseOrder?id=${iorder.idInvoice}">Hủy đơn hàng</a>
                         </c:if>
 
                         <c:if test="${iorder.orderSt == 2 || iorder.orderSt == 3}">

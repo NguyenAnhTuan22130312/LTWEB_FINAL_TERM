@@ -66,6 +66,26 @@ public class InvoiceOrderDao {
         }
     }
 
+    public void canclInvoice(int id) {
+
+        String query = "UPDATE orderstatus SET orderSt = 3 WHERE idInvoice = ?;";
+        Connection con = null;
+        PreparedStatement ps = null;
+
+
+        try {
+            con = new DbContext().getConnection();
+            ps = con.prepareStatement(query);
+            ps.setInt(1,id);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            System.err.println("Lỗi khi truy vấn dữ liệu: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     // Phương thức đóng các tài nguyên
     private void closeResources(ResultSet rs, PreparedStatement ps, Connection con) {
         try {
@@ -125,7 +145,8 @@ public class InvoiceOrderDao {
 //        for(OrderInvoice oi : ois){
 //            System.out.println(oi.getOrderInvoiceDetail().toString());
 //        }
-    System.out.println(dao.getInvoiceOrder(1));
+//    System.out.println(dao.getInvoiceOrder(1));
+        dao.canclInvoice(1);
     }
 
 }

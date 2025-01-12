@@ -9,12 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="gan hoan thanh xong don hang">
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="gan hoan thanh don hang">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/PurchaseOrderAjaxControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/PurchaseOrderAjaxControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/PurchaseOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/PurchaseOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceOrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/InvoiceOrderServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/services/InvoiceOrderServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/PurchaseOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/PurchaseOrder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/details.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -504,7 +504,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736683208005</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="gan hoan thanh don hang">
+      <option name="closed" value="true" />
+      <created>1736684179905</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1736684179905</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +552,8 @@
     <MESSAGE value="da hoan thanh fix trang menu" />
     <MESSAGE value="test" />
     <MESSAGE value="gan hoan thanh xong don hang" />
-    <option name="LAST_COMMIT_MESSAGE" value="gan hoan thanh xong don hang" />
+    <MESSAGE value="gan hoan thanh don hang" />
+    <option name="LAST_COMMIT_MESSAGE" value="gan hoan thanh don hang" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

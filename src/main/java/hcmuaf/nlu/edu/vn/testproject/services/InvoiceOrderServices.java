@@ -48,4 +48,8 @@ public class InvoiceOrderServices {
             System.out.println(oi.getOrderInvoiceDetail().toString());
         }
     }
+    public void cancelInvoice(String orderId) {
+        int id = Integer.parseInt(orderId);
+        invoiceOrderDao.canclInvoice(id);
+    }
 }
