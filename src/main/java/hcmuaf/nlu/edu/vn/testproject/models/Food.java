@@ -11,7 +11,6 @@ public class Food {
     private String img;
     private String description;
     private int idCategory;
-    private int isDeleted;
     private int sold;
     private int views;
     private Timestamp createdAt;
@@ -21,7 +20,7 @@ public class Food {
 
     }
 
-    public Food(int idFood, String foodName, int price, int discountPrice, int quantity, String img, String description, int idCategory, int isDeleted, int sold, int views, Timestamp createdAt, Timestamp updatedAt) {
+    public Food(int idFood, String foodName, int price, int discountPrice, int quantity, String img, String description, int idCategory, int sold, int views, Timestamp createdAt, Timestamp updatedAt) {
         this.idFood = idFood;
         this.foodName = foodName;
         this.price = price;
@@ -30,7 +29,6 @@ public class Food {
         this.img = img;
         this.description = description;
         this.idCategory = idCategory;
-        this.isDeleted = isDeleted;
         this.sold = sold;
         this.views = views;
         this.createdAt = createdAt;
@@ -99,14 +97,6 @@ public class Food {
 
     public void setIdCategory(int idCategory) {
         this.idCategory = idCategory;
-    }
-
-    public Integer getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(Integer isDeleted) {
-        this.isDeleted = isDeleted;
     }
 
     public Integer getSold() {

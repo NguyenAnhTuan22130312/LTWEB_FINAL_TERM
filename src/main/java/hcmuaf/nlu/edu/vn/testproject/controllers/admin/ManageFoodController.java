@@ -137,7 +137,7 @@ public class ManageFoodController extends HttpServlet {
             // Đường dẫn vào database
             String imgPath = "Images/Food/" + fileName;
 
-            Food newFood = new Food(0, foodName, price, 0, 0, imgPath, description, category, 0, 0, 0, new Timestamp(System.currentTimeMillis()), null);
+            Food newFood = new Food(0, foodName, price, 0, 0, imgPath, description, category, 0, 0, new Timestamp(System.currentTimeMillis()), null);
 
             boolean result = foodServiceListFilter.addFood(newFood);
             if (result) {
@@ -169,14 +169,13 @@ public class ManageFoodController extends HttpServlet {
                 imgPath = request.getParameter("currentImage"); // Giữ nguyên ảnh cũ nếu không cập nhật
             }
 
-            Food updatedFood = new Food(idFood, foodName, price, 0, 0, imgPath, description, category, 0, 0, 0, new Timestamp(System.currentTimeMillis()), null);
+            Food updatedFood = new Food(idFood, foodName, price, 0, 0, imgPath, description, category, 0, 0, new Timestamp(System.currentTimeMillis()), null);
             boolean result = foodServiceListFilter.updateFood(updatedFood);
             if (result) {
                 response.sendRedirect("foodservice?status=success");
             } else {
                 response.sendRedirect("foodservice?status=error");
             }
-
         }
     }
 }

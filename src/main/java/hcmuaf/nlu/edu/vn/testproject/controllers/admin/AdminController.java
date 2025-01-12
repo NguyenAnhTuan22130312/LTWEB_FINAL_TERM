@@ -1,8 +1,10 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers.admin;
 
+import hcmuaf.nlu.edu.vn.testproject.daos.InvoiceDAO;
 import hcmuaf.nlu.edu.vn.testproject.models.AccDetail;
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
+import hcmuaf.nlu.edu.vn.testproject.models.InvoiceDetail;
 import hcmuaf.nlu.edu.vn.testproject.services.AccdetailService;
 import hcmuaf.nlu.edu.vn.testproject.services.FoodServiceListFilter;
 import jakarta.servlet.*;
@@ -21,7 +23,7 @@ public class AdminController extends HttpServlet {
         HttpSession session = request.getSession();
         Account currentUser = (Account) session.getAttribute("currentUser");
 
-        if (currentUser.getIdRole() == 2) {
+        if (currentUser == null || currentUser.getIdRole() == 2) {
             // Chuyển hướng về trang home nếu người dùng chưa đăng nhập
             response.sendRedirect("home");
             return;
@@ -41,10 +43,20 @@ public class AdminController extends HttpServlet {
             List<AccDetail> allAcc = accdetailService.getAccDetails();
             int totalAcc = allAcc.size();
 
+            // Lấy doanh thu trong thống kê
+            InvoiceDAO dao = new InvoiceDAO();
+            List<InvoiceDetail> invoiceDetails = dao.getInvoiceDetails();
+            int totalPrice = 0;
+            for (InvoiceDetail invoiceDetail : invoiceDetails) {
+                totalPrice += invoiceDetail.getTotalAmount();
+
+            }
+
             // Gán dữ liệu vào request
             request.setAttribute("totalFoods", totalFoods);
             request.setAttribute("totalAccs", totalAcc);
             request.setAttribute("lst4Sold", lst4Sold);
+            request.setAttribute("totalRevenue", totalPrice);
 
             // Chuyển hướng đến trang admin.jsp
             request.getRequestDispatcher("views/admin.jsp").forward(request, response);

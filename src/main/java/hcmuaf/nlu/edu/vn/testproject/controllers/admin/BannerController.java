@@ -1,5 +1,6 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers.admin;
 
+import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.models.Banner;
 import hcmuaf.nlu.edu.vn.testproject.services.BannerService;
 import jakarta.servlet.*;
@@ -22,6 +23,15 @@ public class BannerController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession();
+        Account currentUser = (Account) session.getAttribute("currentUser");
+
+        if (currentUser == null || currentUser.getIdRole() == 2) {
+            // Chuyển hướng về trang home nếu người dùng chưa đăng nhập
+            response.sendRedirect("home");
+            return;
+        }
         BannerService bannerService = new BannerService();
         List<Banner> banners = bannerService.getBanners();
         request.setAttribute("bans", banners);

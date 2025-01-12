@@ -1,4 +1,5 @@
 package hcmuaf.nlu.edu.vn.testproject.daos;
+
 import hcmuaf.nlu.edu.vn.testproject.context.DbContext;
 import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
@@ -123,6 +124,16 @@ public class InvoiceDAO {
             }
         }
         return details;
+    }
+
+    public List<InvoiceDetail> searchByName(String textSearch) {
+        List<InvoiceDetail> invoiceDetails = new ArrayList<>();
+        for (InvoiceDetail invoiceDetail : getInvoiceDetails()) {
+            if (invoiceDetail.getFood().getFoodName().toLowerCase().contains(textSearch.toLowerCase())) {
+                invoiceDetails.add(invoiceDetail);
+            }
+        }
+        return invoiceDetails;
     }
 
 

@@ -53,7 +53,6 @@ public class FoodDAO {
                                 rs.getString("img"),
                                 rs.getString("description"),
                                 rs.getInt("idCategory"),
-                                rs.getInt("isDeleted"),
                                 rs.getInt("sold"),
                                 rs.getInt("views"),
                                 rs.getTimestamp("createdAt"),
@@ -109,7 +108,6 @@ public class FoodDAO {
                                 rs.getString("img"),
                                 rs.getString("description"),
                                 rs.getInt("idCategory"),
-                                rs.getInt("isDeleted"),
                                 rs.getInt("sold"),
                                 rs.getInt("views"),
                                 rs.getTimestamp("createdAt"),
@@ -239,8 +237,8 @@ public class FoodDAO {
     // phương thức thêm món ăn
     public boolean addFood(Food food) {
         String query = "INSERT INTO food (idCategory, foodName, price, discountPrice, " +
-                "img, description, quantity, sold, createdAt, updatedAt, isDeleted, views) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "img, description, quantity, sold, createdAt, updatedAt, views) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Connection conn = null;
         PreparedStatement ps = null;
 
@@ -258,8 +256,7 @@ public class FoodDAO {
             ps.setInt(8, food.getSold());
             ps.setTimestamp(9, food.getCreatedAt());
             ps.setObject(10, food.getUpdatedAt());
-            ps.setInt(11, food.getIsDeleted());
-            ps.setInt(12, food.getViews());
+            ps.setInt(11, food.getViews());
 
             int rowInserted = ps.executeUpdate();
             return rowInserted > 0;

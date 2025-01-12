@@ -26,17 +26,17 @@ public class ResetPasswordController extends HttpServlet {
             ResetService service = new ResetService();
 
             if (tokenForgetPass == null) {
-                request.setAttribute("mess", "Invalid token");
+                request.setAttribute("mess", "Đã có lỗi xảy ra vui lòng thực hiện lại yêu cầu");
                 request.getRequestDispatcher("views/reset_pass.jsp").forward(request, response);
                 return;
             }
             if (tokenForgetPass.isUsed()) {
-                request.setAttribute("mess", "Token already used");
+                request.setAttribute("mess", "Bạn đã thay đổi mật khẩu thành công. Vui lòng thực hiện đăng nhập");
                 request.getRequestDispatcher("views/reset_pass.jsp").forward(request, response);
                 return;
             }
             if (service.isExpireTime(tokenForgetPass.getExperyTime())) {
-                request.setAttribute("mess", "Token is expired");
+                request.setAttribute("mess", "Phiên làm việc đã hết hạn. Vui lòng thực hiện lại yêu cầu");
                 request.getRequestDispatcher("views/reset_pass.jsp").forward(request, response);
                 return;
             }
@@ -71,19 +71,19 @@ public class ResetPasswordController extends HttpServlet {
 
         // Kiểm tra token tồn tại
         if (tokenForgetPass == null) {
-            request.setAttribute("mess", "Invalid token");
+            request.setAttribute("mess", "Đã có lỗi xảy ra vui lòng thực hiện lại yêu cầu");
             request.getRequestDispatcher("views/reset_pass.jsp").forward(request, response);
             return;
         }
         // Kiểm tra token đã được sử dụng
         if (tokenForgetPass.isUsed()) {
-            request.setAttribute("mess", "Token already used");
+            request.setAttribute("mess", "Bạn đã thay đổi mật khẩu thành công. Vui lòng thực hiện đăng nhập");
             request.getRequestDispatcher("views/reset_pass.jsp").forward(request, response);
             return;
         }
         // Kiểm tra token đã quá hạn
         if (service.isExpireTime(tokenForgetPass.getExperyTime())) {
-            request.setAttribute("mess", "Token is expired");
+            request.setAttribute("mess", "Phiên làm việc đã hết hạn. Vui lòng thực hiện lại yêu cầu");
             request.getRequestDispatcher("views/reset_pass.jsp").forward(request, response);
             return;
         }
