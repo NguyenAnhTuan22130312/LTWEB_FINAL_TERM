@@ -29,6 +29,11 @@ public class DonHangSession implements Filter {
             int totaldh = invoiceOrderServices.getTotalDonHang();
             session.setAttribute("totaldh", totaldh);
         }
+        if (session.getAttribute("currentUser") == null) {
+
+            int totaldh = 0;
+            session.setAttribute("totaldh", totaldh);
+        }
 
         chain.doFilter(request, response);
     }
