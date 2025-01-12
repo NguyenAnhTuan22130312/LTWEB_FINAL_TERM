@@ -6,13 +6,14 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "OrderController", value = "/purchaseOrder")
-public class OrderController extends HttpServlet {
+@WebServlet(name = "PurchaseOrderController", value = "/PurchaseOrder")
+public class PurchaseOrderController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("/purchaseOrder.jsp").forward(request, response);
+
+        request.getRequestDispatcher("/views/PurchaseOrder.jsp").forward(request, response);
     }
 
     @Override

@@ -55,7 +55,7 @@
                         </div>
                     </c:if>
                     <div class="nav_item_shop">
-                        <a href="order" class="nav-item">
+                        <a href="PurchaseOrder" class="nav-item">
                             <i class="fa-solid fa-truck-fast"></i> Đơn hàng
                         </a>
                         <a href="order" class="count">2</a>
