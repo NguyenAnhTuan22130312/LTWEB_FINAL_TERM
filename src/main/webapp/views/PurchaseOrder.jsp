@@ -87,8 +87,17 @@
                                 </c:when>
 
                             </c:choose></div>
-                        <a class="info-order-button" href="PurchaseOrderDetail?id=${iorder.idInvoice}" style="text-decoration: none">Chi tiết</a>
-                        <button class="cancel-order-button">Hủy đơn hàng</button>
+                        <c:if test="${iorder.orderSt == 1}">
+                            <!-- Hiển thị cả thẻ <a> và <button> khi order.orderSt là 1 -->
+                            <a class="info-order-button" href="PurchaseOrderDetail?id=${iorder.idInvoice}" style="text-decoration: none">Chi tiết</a>
+                            <button class="cancel-order-button">Hủy đơn hàng</button>
+                        </c:if>
+
+                        <c:if test="${iorder.orderSt == 2 || iorder.orderSt == 3}">
+                            <!-- Chỉ hiển thị thẻ <a> khi order.orderSt là 2 hoặc 3 -->
+                            <a class="info-order-button" href="PurchaseOrderDetail?id=${iorder.idInvoice}" style="text-decoration: none">Chi tiết</a>
+                        </c:if>
+
                     </div>
                 </div>
             </div>

@@ -9,14 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/loginAjax.js" afterDir="false" />
+    <list default="true" id="1b577079-df54-4f83-82a8-59695a8c1873" name="Changes" comment="gan hoan thanh xong don hang">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/context/DbContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/PurchaseOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/PurchaseOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/daos/InvoiceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/signin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/PurchaseOrderAjaxControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hcmuaf/nlu/edu/vn/testproject/controllers/user/PurchaseOrderAjaxControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/PurchaseOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/PurchaseOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/details.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,46 +85,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AccdetailDAO.executor": "Run",
-    "Application.BannerDao.executor": "Run",
-    "Application.BannerService.executor": "Run",
-    "Application.ContactController.executor": "Run",
-    "Application.ContactDao.executor": "Run",
-    "Application.ContactService.executor": "Run",
-    "Application.DbContext.executor": "Run",
-    "Application.FoodCartDAO.executor": "Run",
-    "Application.FoodDAO.executor": "Run",
-    "Application.InvoiceDAO.executor": "Run",
-    "Application.InvoiceOrderDao.executor": "Run",
-    "Application.InvoiceOrderDetailDao.executor": "Run",
-    "Application.LoginDAO.executor": "Run",
-    "Application.MD5.executor": "Run",
-    "Application.Order.executor": "Run",
-    "Application.SignUpDAO.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 10.1.31.executor": "Run",
-    "Tomcat Server.da.executor": "Run",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/Nam3HocKy1/BTLapTrinhWeb/gitdoanck/LTWEB_FINAL_TERM/src/main/webapp/js",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15039062",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AccdetailDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BannerDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BannerService.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ContactController.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ContactDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ContactService.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DbContext.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FoodCartDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FoodDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InvoiceDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InvoiceOrderDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InvoiceOrderDetailDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MD5.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Order.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SignUpDAO.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.31.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.da.executor&quot;: &quot;Run&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/Nam3HocKy1/BTLapTrinhWeb/gitdoanck/LTWEB_FINAL_TERM/src/main/webapp/js&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15039062&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\Nam3HocKy1\BTLapTrinhWeb\gitdoanck\LTWEB_FINAL_TERM\src\main\webapp\js" />
@@ -498,7 +496,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736531872682</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="gan hoan thanh xong don hang">
+      <option name="closed" value="true" />
+      <created>1736683208005</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1736683208005</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +543,8 @@
     <MESSAGE value="fix duoc phan trang" />
     <MESSAGE value="da hoan thanh fix trang menu" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="gan hoan thanh xong don hang" />
+    <option name="LAST_COMMIT_MESSAGE" value="gan hoan thanh xong don hang" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

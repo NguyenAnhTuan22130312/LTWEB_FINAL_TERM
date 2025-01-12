@@ -120,7 +120,9 @@
                 </div>
                 <div class="details">
                     <p class="status-text">Đã hủy</p>
+                    <p class="description">Có gì không vừa ý, mong quý khách hãy liên hệ với  chúng tôi</p>
                 </div>
+
             </div>
         </c:if>
 

@@ -71,10 +71,11 @@ public class PurchaseOrderAjaxControler extends HttpServlet {
                         "                        <span class=\"total-money\">" + oi.getTotalAmount() + "&nbsp;đ</span>\n" +
                         "                    </div>\n" +
                         "                    <div class=\"order-footer\">\n" +
-                        "                        <div class=\"order-status\">Trạng thái: " + orderst + " </div>\n" +
-                        "                         <a class=\"info-order-button\" href=\"PurchaseOrderDetail?id="+oi.getIdInvoice()+"\" style=\"text-decoration: none\">Chi tiết</a>" +
-                        "                        <button class=\"cancel-order-button\">Hủy đơn hàng</button>\n" +
-                        "                    </div>\n" +
+                        "                        <div class=\"order-status\">Trạng thái: " + orderst + " </div>\n");
+                if(oi.getOrderSt()==1)out.println("<a class=\"info-order-button\" href=\"PurchaseOrderDetail?id=${iorder.idInvoice}\" style=\"text-decoration: none\">Chi tiết</a>\n" +
+                        "    <button class=\"cancel-order-button\">Hủy đơn hàng</button>");
+                if(oi.getOrderSt()==2||oi.getOrderSt()==3)out.println("<a class=\"info-order-button\" href=\"PurchaseOrderDetail?id=${iorder.idInvoice}\" style=\"text-decoration: none\">Chi tiết</a>");
+                out.println("                    </div>\n" +
                         "                </div>\n" +
                         "            </div>\n"
                 );
