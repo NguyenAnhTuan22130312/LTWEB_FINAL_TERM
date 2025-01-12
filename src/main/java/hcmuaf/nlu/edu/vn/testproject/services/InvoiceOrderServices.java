@@ -3,8 +3,11 @@ package hcmuaf.nlu.edu.vn.testproject.services;
 import hcmuaf.nlu.edu.vn.testproject.daos.InvoiceOrderDao;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
 import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoice;
+import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoiceDetail;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class InvoiceOrderServices {
@@ -29,8 +32,12 @@ public class InvoiceOrderServices {
             case "3":
                 ois = invoiceOrderDao.getInvoiceCancelled();
                 break;
+            default:
+                ois= invoiceOrderDao.filterOrderByFoodName(option);
+                break;
 
         }
+        Collections.reverse(ois);
         return ois;
     }
 
@@ -39,17 +46,16 @@ public class InvoiceOrderServices {
         return invoiceOrderDao.getInvoiceOrder(id);
     }
 
-    public static void main(String[] args) {
-        InvoiceOrderServices is = new InvoiceOrderServices();
-        List<OrderInvoice> ois = is.getOption("0");
-
-        for (OrderInvoice oi : ois) {
-            System.out.println(oi);
-            System.out.println(oi.getOrderInvoiceDetail().toString());
-        }
-    }
     public void cancelInvoice(String orderId) {
         int id = Integer.parseInt(orderId);
         invoiceOrderDao.canclInvoice(id);
+    }
+    public int getTotalDonHang() {
+        return invoiceOrderDao.getTotalShippingInvoices();
+    }
+
+    public static void main(String[] args) {
+        InvoiceOrderServices is = new InvoiceOrderServices();
+        System.out.println(is.getTotalDonHang());
     }
 }

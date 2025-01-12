@@ -4,6 +4,7 @@ import hcmuaf.nlu.edu.vn.testproject.context.DbContext;
 import hcmuaf.nlu.edu.vn.testproject.models.Food;
 import hcmuaf.nlu.edu.vn.testproject.models.Invoice;
 import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoice;
+import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoiceDetail;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -139,6 +140,27 @@ public class InvoiceOrderDao {
         return null;
     }
 
+    public List<OrderInvoice> filterOrderByFoodName( String foodName) {
+        List<OrderInvoice> filteredOrders = new ArrayList<>();
+        for (OrderInvoice order : data) {
+            for (OrderInvoiceDetail detail : order.getOrderInvoiceDetail()) {
+                if (detail.getFoodName().toLowerCase().contains(foodName.toLowerCase())) {
+                    filteredOrders.add(order);
+                    break;
+                }
+            }
+        }
+
+        return filteredOrders;
+    }
+
+    public int getTotalShippingInvoices() {
+        return (int) data.stream()
+                .filter(order -> order.getOrderSt() == 1)
+                .count();
+    }
+
+
     public static void main(String[] args) {
         InvoiceOrderDao dao = new InvoiceOrderDao();
 //        List<OrderInvoice> ois = dao.getAll();
@@ -146,7 +168,8 @@ public class InvoiceOrderDao {
 //            System.out.println(oi.getOrderInvoiceDetail().toString());
 //        }
 //    System.out.println(dao.getInvoiceOrder(1));
-        dao.canclInvoice(1);
+//        dao.canclInvoice(1);
+        System.out.println(dao.getTotalShippingInvoices());
     }
 
 }

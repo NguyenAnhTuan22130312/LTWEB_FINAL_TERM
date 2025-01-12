@@ -36,7 +36,7 @@
     </div>
     <div class="search-box-container">
         <input
-                type="text"
+                oninput="searchByNameInvoice(this)" value="${txtS}" name="text" type="text"
                 placeholder="Tìm kiếm đơn hàng..."
                 class="search-input"
         />
@@ -90,7 +90,7 @@
                         <c:if test="${iorder.orderSt == 1}">
                             <!-- Hiển thị cả thẻ <a> và <button> khi order.orderSt là 1 -->
                             <a class="info-order-button" href="PurchaseOrderDetail?id=${iorder.idInvoice}" style="text-decoration: none">Chi tiết</a>
-                            <a class="cancel-order-button" href="PurchaseOrder?id=${iorder.idInvoice}">Hủy đơn hàng</a>
+                            <a class="cancel-order-button" href="javascript:void(0);" onclick="confirmCancel(${iorder.idInvoice})" style="text-decoration: none">Hủy đơn hàng</a>
                         </c:if>
 
                         <c:if test="${iorder.orderSt == 2 || iorder.orderSt == 3}">
@@ -109,11 +109,14 @@
 
 <!-- Xử lý footer -->
 <jsp:include page="footer.jsp"></jsp:include>
+<script src="${pageContext.request.contextPath}/js/module_search_invoice_ajax.js"></script>
 <script src="${pageContext.request.contextPath}/js/module_OrderInvoice_ajax.js"></script>
-<%--<script src="${pageContext.request.contextPath}/js/home.js"></script>--%>
 <script src="${pageContext.request.contextPath}/js/purchase.js"></script>
 <script src="${pageContext.request.contextPath}/js/details.js"></script>
 <script src="${pageContext.request.contextPath}/js/module_popup_purchase.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/isCancelOrder.js"></script>
+<script src="${pageContext.request.contextPath}/js/module_search_Invoice.js"></script>
+
 </body>
 </html>

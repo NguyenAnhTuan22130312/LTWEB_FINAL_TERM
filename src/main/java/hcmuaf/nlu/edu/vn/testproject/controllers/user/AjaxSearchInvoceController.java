@@ -1,6 +1,5 @@
 package hcmuaf.nlu.edu.vn.testproject.controllers.user;
 
-import hcmuaf.nlu.edu.vn.testproject.models.Food;
 import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoice;
 import hcmuaf.nlu.edu.vn.testproject.models.OrderInvoiceDetail;
 import hcmuaf.nlu.edu.vn.testproject.services.InvoiceOrderServices;
@@ -12,8 +11,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "PurchaseOrderAjaxControler", value = "/PurchaseOrderAjaxControler")
-public class PurchaseOrderAjaxControler extends HttpServlet {
+@WebServlet(name = "AjaxSearchInvoceController", value = "/AjaxSearchInvoceController")
+public class AjaxSearchInvoceController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

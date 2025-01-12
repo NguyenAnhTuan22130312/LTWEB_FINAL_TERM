@@ -1,10 +1,10 @@
-function ajaxOrder(param){
-    var textValue = param.value;
+function searchByNameInvoice(param){
+    var txtSearch= param.value;
     $.ajax({
-        url: "PurchaseOrderAjaxControler",
+        url: "AjaxSearchInvoceController",
         type:"get",
         data: {
-            text: textValue
+            text: txtSearch
         },
         success: function (data){
             var row = document.getElementById("content_section");
@@ -13,7 +13,6 @@ function ajaxOrder(param){
         }
     })
 }
-
 function formatNumber(number) {
     return number.toLocaleString('vi-VN'); // Định dạng số kiểu Việt Nam
 }
