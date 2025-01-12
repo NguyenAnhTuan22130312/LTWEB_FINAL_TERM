@@ -12,6 +12,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/food_service.css"/>
 </head>
 <body>
 <div class="container">
@@ -20,26 +21,27 @@
 
     <div class="content">
         <div class="header">
-            <select>
-                <option>Tất cả</option>
+            <select style="max-width: 150px" onchange="window.location.href=this.value">
+                <option value="ordermanagement?option=all">Tất cả</option>
+                <option value="ordermanagement?option=shipping">Đang giao</option>
+                <option value="ordermanagement?option=delivered">Đã giao</option>
+                <option value="ordermanagement?option=canceled">Đã hủy</option>
+                <option value="ordermanagement?option=yearmonth">Theo tháng</option>
+                <option value="ordermanagement?option=year">Theo năm</option>
             </select>
-            <input placeholder="Tìm kiếm mã đơn hoặc khách hàng..." type="text"/>
-            <input
-                    onblur="(this.type='text')"
-                    onfocus="(this.type='date')"
-                    placeholder="Từ"
-                    type="text"
-            />
-            <input
-                    onblur="(this.type='text')"
-                    onfocus="(this.type='date')"
-                    placeholder="Đến"
-                    type="text"
-            />
+
+<%--            <input placeholder="Tìm kiếm mã đơn hoặc khách hàng..." type="text"/>--%>
+
+            <form action="SearchInvoice" method="get">
+                <input style="width: 800px" name="text" type="text" placeholder="Tìm kiếm mã đơn hoặc khách hàng"/>
+                <button type="submit">
+                    <i class="fa-solid fa-search"></i>
+                </button>
+            </form>
+
             <div class="icons">
-                <i class="fas fa-sort-amount-down"> </i>
-                <i class="fas fa-sort-amount-up"> </i>
-                <i class="fas fa-sync-alt"> </i>
+                <a href="ordermanagement"><i class="fas fa-sync-alt"> </i></a>
+
             </div>
         </div>
 
@@ -54,42 +56,50 @@
             </tr>
             </thead>
             <tbody>
+            <c:forEach var="oi" items="${ois}">
+                <tr>
+                    <td>${String.format("%06d",oi.idInvoice)}</td>
+                    <td>${oi.recipientName}</td>
+                    <td>${oi.orderDate}</td>
+                    <td class="money">${oi.totalAmount}</td>
+                    <td>
+                        <button class="details-button">
+                            <c:choose>
+                                <c:when test="${oi.orderSt == 1}">
+                                    Đang giao
+                                </c:when>
+                                <c:when test="${oi.orderSt == 2}">
+                                    Đã giao
+                                </c:when>
+                                <c:when test="${oi.orderSt == 3}">
+                                    Đã hủy
+                                </c:when>
 
-            <tr>
-                <td>DH1</td>
-                <td>TuanAnh</td>
-                <td>17/11/2024</td>
-                <td>210.000đ</td>
-                <td>
-                    <button class="details-button">Đang vận chuyển</button>
-                </td>
-            </tr>
+                            </c:choose>
+                        </button>
+                    </td>
+                </tr>
 
-            <tr>
-                <td>DH2</td>
-                <td>Hữu Trung</td>
-                <td>20/11/2024</td>
-                <td>30.000đ</td>
-                <td>
-                    <button class="details-button">Đã hoàn thành</button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>DH3</td>
-                <td>Anh Tuấn</td>
-                <td>21/11/2024</td>
-                <td>90.000đ</td>
-                <td>
-                    <button class="details-button">Đã hoàn thành</button>
-                </td>
-            </tr>
-
-
+            </c:forEach>
             </tbody>
         </table>
+        <div class="pagi" style="width:800px; height:50px; margin:20px auto; padding-left:35px; text-align:center; z-index: 999">
+            <c:if test="${currentPage > 1}">
+                <a onclick="" href="ordermanagement?option=${param.option}&page=${currentPage - 1}"><</a>
+            </c:if>
+
+            <c:forEach begin="1" end="${totalPages}" var="i">
+                <a href="ordermanagement?option=${param.option}&page=${i}"
+                   class="${currentPage == i ? 'active' : ''}">${i}</a>
+            </c:forEach>
+
+            <c:if test="${currentPage < totalPages}">
+                <a href="ordermanagement?option=${param.option}&page=${currentPage + 1}">></a>
+            </c:if>
+        </div>
     </div>
 </div>
 <script src="js/module_dangnhap.js"></script>
+<script src="${pageContext.request.contextPath}/js/purchase.js"></script>
 </body>
 </html>
