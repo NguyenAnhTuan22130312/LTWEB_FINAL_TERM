@@ -23,7 +23,7 @@ public class CancelBtnController extends HttpServlet {
         if(id!=null){
             invoiceOrderServices.cancelInvoice(id);
         }
-        request.getRequestDispatcher("PurchaseOrder").forward(request, response);
+       response.sendRedirect("PurchaseOrder");
     }
 
     @Override

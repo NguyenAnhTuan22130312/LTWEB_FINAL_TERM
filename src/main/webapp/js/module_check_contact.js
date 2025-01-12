@@ -2,7 +2,7 @@ document.querySelector(".submit-btn").addEventListener("click", function (e) {
     e.preventDefault(); // Ngăn form gửi đi trước khi kiểm tra
 
     let isValid = true;
-
+    const contactForm = document.getElementById("contactForm");
     // Kiểm tra các trường nhập liệu
     const nameField = document.getElementById("name");
     if (!nameField.value.trim()) {
@@ -43,7 +43,8 @@ document.querySelector(".submit-btn").addEventListener("click", function (e) {
     // Gửi form nếu hợp lệ
     if (isValid) {
         alert("Cảm ơn vì đã liên hệ với chúng tôi!");
-        document.querySelector("form").submit(); // Gửi form (nếu cần)
+        // document.querySelector("form").submit(); // Gửi form (nếu cần)
+        contactForm.submit();
     }
 });
 

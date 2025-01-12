@@ -47,7 +47,7 @@
                 </a>
             </li>
             <li>
-                <a href="order">
+                <a href="PurchaseOrder">
                     <i class="fas fa-shopping-cart"></i>
                     <div class="namemenu">Đơn Mua</div>
                 </a>

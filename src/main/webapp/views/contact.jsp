@@ -19,11 +19,11 @@
     <script src="../js/module_dangnhap.js" defer></script>
     <style>
         .input-field::placeholder {
-            color: #ccc; /* Màu placeholder mặc định */
+            color: #ccc;
         }
 
         .input-field.error::placeholder {
-            color: red; /* Màu placeholder khi có lỗi */
+            color: red;
         }
 
     </style>
@@ -39,7 +39,7 @@
     <div class="form-section">
         <h2>Liên hệ với chúng tôi</h2>
 
-        <form action="${pageContext.request.contextPath}/contactcontrolle" method="post">
+        <form id="contactForm" action="contactcontrolle" method="post">
 
             <div class="form-group">
                 <label for="name">Họ và Tên *</label>
@@ -80,7 +80,7 @@
                         class="input-field"
                 ></textarea>
             </div>
-            <button class="submit-btn">Gửi</button>
+            <button type="submit" class="submit-btn">Gửi</button>
         </form>
     </div>
     <div class="containerright">
@@ -121,9 +121,8 @@
 <!-- Xử lý footer -->
 <jsp:include page="footer.jsp"></jsp:include>
 
-<script src="js/home.js">
+<script src="${pageContext.request.contextPath}/js/home.js">
 </script>
-<script src="<c:url value="/js/module_check_contact.js" />"></script>
 </body>
 
 </html>

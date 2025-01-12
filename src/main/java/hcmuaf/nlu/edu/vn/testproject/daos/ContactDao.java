@@ -41,7 +41,7 @@ public class ContactDao {
             closeResources( ps, con);
         }
 
-        return false;
+        return row>0;
     }
     private void closeResources(PreparedStatement ps, Connection con) {
         try {

@@ -22,16 +22,21 @@ public class ContactController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         HttpSession session = request.getSession();
-        Account account = (Account) session.getAttribute("account");
-        int id = account.getIdAcc();
-
+        Account account = (Account) session.getAttribute("currentUser");
+        int id =1;
+        if (account != null)
+        id = account.getIdAcc();
         String name = request.getParameter("name");
+        if(name == null || name.isEmpty())name="";
         String email = request.getParameter("email");
+        if(email == null || email.isEmpty())email="";
         String title = request.getParameter("title");
+        if(title == null || title.isEmpty())title="";
         String message = request.getParameter("message");
+        if(message == null || message.isEmpty())message="";
         ContactService cs = new ContactService();
         cs.sendContactSV(id, name, email, title, message);
-        request.getRequestDispatcher("views/contact.jsp").forward(request, response);
+        response.sendRedirect("contactcontrolle");
 
     }
 }

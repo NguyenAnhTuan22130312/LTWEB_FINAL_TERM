@@ -91,7 +91,7 @@
                     </ul>
                 </div>
                 <div class="search">
-                    <form action="search" method="get">
+                    <form id="searchForm" action="search" method="get">
                         <input value="${txtS}" name="text" type="text" placeholder="Tìm kiếm món ăn"/>
                         <button type="submit">
                             <i class="fa-solid fa-search"></i>
