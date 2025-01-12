@@ -15,86 +15,69 @@
     />
 </head>
 <body>
-<jsp:include page="leftAdmin.jsp"></jsp:include>
+<div class="container">
 
-<div class="content">
-    <div class="header">
-        <select>
-            <option>Tất cả</option>
-        </select>
-        <input placeholder="Tìm kiếm tên món..." type="text"/>
-        <input
-                onblur="(this.type='text')"
-                onfocus="(this.type='date')"
-                placeholder="Từ"
-                type="text"
-        />
-        <input
-                onblur="(this.type='text')"
-                onfocus="(this.type='date')"
-                placeholder="Đến"
-                type="text"
-        />
-        <div class="icons">
-            <i class="fas fa-sort-amount-down"> </i>
-            <i class="fas fa-sort-amount-up"> </i>
-            <i class="fas fa-sync-alt"> </i>
-        </div>
-    </div>
-    <div class="summary">
-        <div class="card">
-            <i class="fas fa-utensils"> </i>
-            <div class="text">
-                <p>Sản phẩm được bán ra</p>
-                <p class="number">${totalProducts}</p>
-            </div>
-        </div>
-        <div class="card">
-            <i class="fas fa-file-alt"> </i>
-            <div class="text">
-                <p>Số lượng bán ra</p>
-                <p class="number">${totalQuantity}</p>
-            </div>
-        </div>
-        <div class="card">
-            <i class="fas fa-dollar-sign"> </i>
-            <div class="text">
-                <p>Doanh thu</p>
-                <p class="number">${totalRevenue} đ</p>
-            </div>
-        </div>
-    </div>
+    <jsp:include page="leftAdmin.jsp"></jsp:include>
 
-    <table>
-        <thead>
-        <tr>
-            <th>STT</th>
-            <th>TÊN MÓN</th>
-            <th>SỐ LƯỢNG BÁN</th>
-            <th>DOANH THU</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach var="detail" items="${invoiceDetails}" varStatus="status">
+    <div class="content">
+        <div class="header">
+            <form action="statistical" method="get">
+                <input value="${search}" name="text" type="text" placeholder="Tìm tên món ăn..."/>
+                <button type="submit">
+                    <i class="fa-solid fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <div class="summary">
+            <div class="card">
+                <i class="fas fa-utensils"> </i>
+                <div class="text">
+                    <p>Sản phẩm được bán ra</p>
+                    <p class="number">${totalProducts}</p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-file-alt"> </i>
+                <div class="text">
+                    <p>Số lượng bán ra</p>
+                    <p class="number">${totalQuantity}</p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-dollar-sign"> </i>
+                <div class="text">
+                    <p>Doanh thu</p>
+                    <p class="number">${totalRevenue} đ</p>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
             <tr>
-                <td>${status.index + 1}</td>
-                <td class="product_name">
-                    <img alt="${detail.food.foodName}" height="50" src="${pageContext.request.contextPath}/${detail.food.img}" />
-                        ${detail.food.foodName}
-                </td>
-                <td>${detail.quantity}</td>
-                <td>${detail.totalAmount} đ</td>
-                <td>
-                    <button class="details-button">
-                        <i class="fas fa-eye"></i> CHI TIẾT
-                    </button>
-                </td>
+                <th>STT</th>
+                <th>TÊN MÓN</th>
+                <th>SỐ LƯỢNG BÁN</th>
+                <th>DOANH THU</th>
             </tr>
-        </c:forEach>
-        </tbody>
+            </thead>
+            <tbody>
+            <c:forEach var="detail" items="${invoiceDetails}" varStatus="status">
+                <tr>
+                    <td>${status.index + 1}</td>
+                    <td class="product_name">
+                        <img alt="${detail.food.foodName}" height="50"
+                             src="${pageContext.request.contextPath}/${detail.food.img}"/>
+                            ${detail.food.foodName}
+                    </td>
+                    <td>${detail.quantity}</td>
+                    <td>${detail.totalAmount} đ</td>
+                </tr>
+            </c:forEach>
+            </tbody>
 
-    </table>
+        </table>
+    </div>
 </div>
 </body>
 </html>

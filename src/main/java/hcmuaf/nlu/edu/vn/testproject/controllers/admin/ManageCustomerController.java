@@ -2,6 +2,7 @@ package hcmuaf.nlu.edu.vn.testproject.controllers.admin;
 
 import hcmuaf.nlu.edu.vn.testproject.daos.AccdetailDAO;
 import hcmuaf.nlu.edu.vn.testproject.models.AccDetail;
+import hcmuaf.nlu.edu.vn.testproject.models.Account;
 import hcmuaf.nlu.edu.vn.testproject.services.AccdetailService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -17,6 +18,15 @@ public class ManageCustomerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession();
+        Account currentUser = (Account) session.getAttribute("currentUser");
+
+        if (currentUser == null || currentUser.getIdRole() == 2) {
+            // Chuyển hướng về trang home nếu người dùng chưa đăng nhập
+            response.sendRedirect("home");
+            return;
+        }
+
         AccdetailDAO dao = new AccdetailDAO();
         AccdetailService accdetailService = new AccdetailService();
         List<AccDetail> listAcc = new ArrayList<>();
