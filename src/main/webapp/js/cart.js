@@ -5,12 +5,11 @@ window.onload = function() {
             successMessage.style.display = "none";
         }, 2000);
     }
-};
-window.onload = function() {
-    var successMessage = document.getElementById("success-message");
-    if (successMessage) {
+
+    var emptyCartMessage = document.getElementById("empty-cart-message");
+    if (emptyCartMessage) {
         setTimeout(function() {
-            successMessage.style.display = "none";
+            emptyCartMessage.style.display = "none";
         }, 2000);
     }
 };

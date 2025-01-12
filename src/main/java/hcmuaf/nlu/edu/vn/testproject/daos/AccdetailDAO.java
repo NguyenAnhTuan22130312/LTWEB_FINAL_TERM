@@ -149,4 +149,29 @@ public class AccdetailDAO {
         System.out.println(dao.getAccountById(16));
         System.out.println(dao.getAccDetailById(16));
     }
+
+    public void addAccDetail(int idAcc, String fullName, String address, String phoneNumber, String birthDate, int gender) {
+        Connection con = null;
+        PreparedStatement ps = null;
+        String query = "INSERT INTO accDetail (idAcc, fullName, phoneNumber, address, birthDate, gender, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, NOW(),NOW())";
+        try {
+            con = new DbContext().getConnection();
+            ps = con.prepareStatement(query);
+            ps.setInt(1, idAcc);
+            ps.setString(2, fullName);
+            ps.setString(3, phoneNumber);
+            ps.setString(4, address);
+            ps.setString(5, birthDate);
+            ps.setInt(6, gender);
+
+            // Thực thi câu lệnh thêm mới
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Đảm bảo đóng tài nguyên sau khi thực hiện xong
+            closeResources(null, ps, con);
+        }
+    }
+
 }

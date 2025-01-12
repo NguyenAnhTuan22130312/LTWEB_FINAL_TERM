@@ -20,8 +20,6 @@ public class AccDetailController extends HttpServlet {
 
         if (currentUser != null) {
             int userId = currentUser.getIdAcc();  // Lấy ID từ session
-            // Sử dụng userId để thực hiện các thao tác với dữ liệu người dùng
-            // Ví dụ, lấy thông tin tài khoản và chi tiết tài khoản
             AccdetailDAO accountDAO = new AccdetailDAO();
             Account account = accountDAO.getAccountById(userId);
             AccDetail accDetail = accountDAO.getAccDetailById(userId);
@@ -39,6 +37,7 @@ public class AccDetailController extends HttpServlet {
         }
     }
 
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Lấy thông tin từ form
@@ -52,22 +51,30 @@ public class AccDetailController extends HttpServlet {
         Account account = (Account) request.getSession().getAttribute("currentUser");  // Sử dụng "currentUser"
 
         if (account != null) {
-            // Kiểm tra nếu AccDetail chưa được khởi tạo, tạo mới nếu cần
+            // Lấy thông tin chi tiết tài khoản (AccDetail) từ Account
             AccDetail accDetail = account.getAccDetail();
+
             if (accDetail == null) {
-                accDetail = new AccDetail(); // Tạo đối tượng AccDetail mới nếu nó null
+                // Nếu chưa có AccDetail, tạo mới AccDetail
+                accDetail = new AccDetail();
             }
 
-            // Cập nhật thông tin người dùng
+            // Cập nhật thông tin người dùng vào AccDetail
             accDetail.setFullName(fullName);
             accDetail.setPhoneNumber(phoneNumber);
             accDetail.setAddress(address);
             accDetail.setBirthDate(birthDate);
             accDetail.setGender(Integer.parseInt(gender));
 
-            // Cập nhật thông tin vào cơ sở dữ liệu
+            // Cập nhật thông tin vào cơ sở dữ liệu (cập nhật hoặc tạo mới AccDetail)
             AccdetailDAO accdetailDAO = new AccdetailDAO();
-            accdetailDAO.updateAccdetail(account.getIdAcc(), fullName, address, phoneNumber, birthDate, Integer.parseInt(gender));
+            if (accDetail.getIdAcc() == 0) {
+                // Nếu chưa có AccDetail trong cơ sở dữ liệu (ID = 0), thêm mới
+                accdetailDAO.addAccDetail(account.getIdAcc(), fullName, address, phoneNumber, birthDate, Integer.parseInt(gender));
+            } else {
+                // Nếu đã có AccDetail, thực hiện cập nhật
+                accdetailDAO.updateAccdetail(account.getIdAcc(), fullName, address, phoneNumber, birthDate, Integer.parseInt(gender));
+            }
 
             // Cập nhật lại thông tin trong session
             account.setAccDetail(accDetail);  // Cập nhật lại thông tin AccDetail trong Account
@@ -79,6 +86,7 @@ public class AccDetailController extends HttpServlet {
             response.getWriter().write("Không tìm thấy tài khoản trong session.");
         }
     }
+
 }
 
 
