@@ -59,7 +59,6 @@
                 <th>TÊN MÓN</th>
                 <th>SỐ LƯỢNG BÁN</th>
                 <th>DOANH THU</th>
-                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -73,11 +72,6 @@
                     </td>
                     <td>${detail.quantity}</td>
                     <td>${detail.totalAmount} đ</td>
-                    <td>
-                        <button class="details-button">
-                            <i class="fas fa-eye"></i> CHI TIẾT
-                        </button>
-                    </td>
                 </tr>
             </c:forEach>
             </tbody>

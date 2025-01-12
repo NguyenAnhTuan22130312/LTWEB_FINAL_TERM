@@ -95,18 +95,6 @@ body {
   margin-right: 10px;
 }
 
-.content {
-    margin: 0;
-    width: 100%;
-    padding: 20px;
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
 .header select, .header input {
     padding: 10px;
     border: 1px solid #ccc;
