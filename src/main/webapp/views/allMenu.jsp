@@ -159,7 +159,7 @@
     <div id="content_section">
         <div class="content_section">
         <c:forEach var="food" items="${list}">
-            <div class="card" onclick="showPopup('${food.idFood}')">
+            <div class="card" onclick="showPopup('${food.idFood}');getU('${food.idFood}')">
                 <img src="${food.img}" alt="${food.foodName}"/>
                 <div class="card_content">
                     <h3>${food.foodName}</h3>
@@ -211,6 +211,7 @@
     });
 </script>
 <script src="${pageContext.request.contextPath}/js/module_search_ajax.js"></script>
+<script src="${pageContext.request.contextPath}/js/ViewU.js"></script>
 <script src="${pageContext.request.contextPath}/js/test_module_load_ajax.js"></script>
 <script src="${pageContext.request.contextPath}/js/menu.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
