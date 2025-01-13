@@ -116,7 +116,7 @@
         </div>
     </div>
 </div>
-<script src="js/module_dangnhap.js"></script>
+
 <script src="${pageContext.request.contextPath}/js/purchase.js"></script>
 </body>
 </html>

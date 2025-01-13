@@ -46,7 +46,7 @@
                                 class="product-image"
                         />
                         <div class="product-info">
-                            <h3 class="product-name">${item.foodName}<</h3>
+                            <h3 class="product-name">${item.foodName}</h3>
                             <p class="product-quantity">Số lượng: ${item.quantity}</p>
                         </div>
                         <div class="product-total">

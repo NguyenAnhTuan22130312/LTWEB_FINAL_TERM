@@ -28,8 +28,9 @@ public class StatisticalController extends HttpServlet {
 
         InvoiceDAO dao = new InvoiceDAO();
         List<InvoiceDetail> invoiceDetails = new ArrayList<>();
+        int totalProducts = 0;
 
-        int totalProducts = invoiceDetails.size();
+
         int totalQuantity = 0;
         int totalPrice = 0;
 
@@ -38,8 +39,8 @@ public class StatisticalController extends HttpServlet {
             invoiceDetails = dao.searchByName(txtSearch);
         } else {
             invoiceDetails = dao.getInvoiceDetails();
-
-            // Tính số lượng món ăn và
+            totalProducts = invoiceDetails.size();
+            // Tính số lượng món ăn và tổng giá
             for (InvoiceDetail invoiceDetail : invoiceDetails) {
                 totalQuantity += invoiceDetail.getQuantity();
                 totalPrice += invoiceDetail.getTotalAmount();
