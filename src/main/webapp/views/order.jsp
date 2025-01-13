@@ -22,15 +22,31 @@
     <div class="content">
         <div class="header">
             <select style="max-width: 150px" onchange="window.location.href=this.value">
-                <option value="ordermanagement?option=all">Tất cả</option>
-                <option value="ordermanagement?option=shipping">Đang giao</option>
-                <option value="ordermanagement?option=delivered">Đã giao</option>
-                <option value="ordermanagement?option=canceled">Đã hủy</option>
-                <option value="ordermanagement?option=yearmonth">Theo tháng</option>
-                <option value="ordermanagement?option=year">Theo năm</option>
+                <option value="ordermanagement?option=all"
+                ${currentCategory == null || currentCategory == 'all' ? 'selected' : ''}>
+                    Tất cả
+                </option>
+                <option value="ordermanagement?option=shipping"
+                ${currentCategory == null || currentCategory == 'shipping' ? 'selected' : ''}>
+                    Đang giao
+                </option>
+                <option value="ordermanagement?option=delivered"
+                ${currentCategory == null || currentCategory == 'delivered' ? 'selected' : ''}>
+                    Đã giao
+                </option>
+                <option value="ordermanagement?option=canceled"
+                ${currentCategory == null || currentCategory == 'canceled' ? 'selected' : ''}>
+                    Đã hủy
+                </option>
+                <option value="ordermanagement?option=yearmonth"
+                ${currentCategory == null || currentCategory == 'yearmonth' ? 'selected' : ''}>
+                    Theo tháng
+                </option>
+                <option value="ordermanagement?option=year"
+                ${currentCategory == null || currentCategory == 'year' ? 'selected' : ''}>
+                    Theo năm
+                </option>
             </select>
-
-<%--            <input placeholder="Tìm kiếm mã đơn hoặc khách hàng..." type="text"/>--%>
 
             <form action="SearchInvoice" method="get">
                 <input style="width: 800px" name="text" type="text" placeholder="Tìm kiếm mã đơn hoặc khách hàng"/>
@@ -83,7 +99,8 @@
             </c:forEach>
             </tbody>
         </table>
-        <div class="pagi" style="width:800px; height:50px; margin:20px auto; padding-left:35px; text-align:center; z-index: 999">
+        <div class="pagi"
+             style="width:800px; height:50px; margin:20px auto; padding-left:35px; text-align:center; z-index: 999">
             <c:if test="${currentPage > 1}">
                 <a onclick="" href="ordermanagement?option=${param.option}&page=${currentPage - 1}"><</a>
             </c:if>

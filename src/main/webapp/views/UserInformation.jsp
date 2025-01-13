@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li>
-                <a href="order">
+                <a href="PurchaseOrder">
                     <i class="fas fa-shopping-cart"></i>
                     <div class="namemenu">Đơn Hàng</div>
                 </a>
@@ -109,10 +109,8 @@
     </div>
 </div>
 
-
 <jsp:include page="footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/js/UserInformation.js"></script>
-
 
 </body>
 </html>

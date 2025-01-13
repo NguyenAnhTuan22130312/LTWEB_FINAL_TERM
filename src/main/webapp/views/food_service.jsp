@@ -10,7 +10,6 @@
     <link href='${pageContext.request.contextPath}/Images/LOGO_V2.png' rel='icon' type='image/x-icon'/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/food_service.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-    <script src="${pageContext.request.contextPath}/libs/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
@@ -196,7 +195,6 @@
     </div>
 </div>
 
-<script>CKEDITOR.replace('item_details');</script>
 <script src="${pageContext.request.contextPath}/js/food_service.js"></script>
 </body>
 </html>
