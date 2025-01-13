@@ -143,7 +143,7 @@
     </div>
     <div id="content_section lst4Sold" class="content_section">
         <c:forEach var="food" items="${lst4Sold}">
-            <div class="card" onclick="showPopup('${food.idFood}')">
+            <div class="card" onclick="showPopup('${food.idFood}');getU('${food.idFood}')">
                 <img src="${food.img}" alt="${food.foodName}"/>
                 <div class="card_content">
                     <h3>${food.foodName}</h3>
@@ -186,7 +186,7 @@
     </div>
     <div id="content_section lst4View" class="content_section">
         <c:forEach var="food" items="${lst4View}">
-            <div class="card" onclick="showPopup('${food.idFood}')">
+            <div class="card" onclick="showPopup('${food.idFood}');getU('${food.idFood}')">
                 <img src="${food.img}" alt="${food.foodName}"/>
                 <div class="card_content">
                     <h3>${food.foodName}</h3>
@@ -229,7 +229,7 @@
     </div>
     <div id="content_section lst4Propose" class="content_section">
         <c:forEach var="food" items="${lst4Propose}">
-            <div class="card" onclick="showPopup('${food.idFood}')">
+            <div class="card" onclick="showPopup('${food.idFood}');getU('${food.idFood}')">
                 <img src="${food.img}" alt="${food.foodName}"/>
                 <div class="card_content">
                     <h3>${food.foodName}</h3>
@@ -272,7 +272,7 @@
     </div>
     <div id="content_section" class="content_section">
         <c:forEach var="food" items="${lst4Rate}">
-            <div class="card" onclick="showPopup('${food.idFood}')">
+            <div class="card" onclick="showPopup('${food.idFood}');getU('${food.idFood}')">
                 <img src="${food.img}" alt="${food.foodName}"/>
                 <div class="card_content">
                     <h3>${food.foodName}</h3>
@@ -341,6 +341,7 @@
 <script src="js/home.js">
 </script>
 <script src="js/module_popup_home.js"></script>
+<script src="${pageContext.request.contextPath}/js/ViewU.js"></script>
 </body>
 
 </html>
